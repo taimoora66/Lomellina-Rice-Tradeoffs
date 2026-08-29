@@ -155,3 +155,22 @@ audit remain mandatory.
 Begin Phase 2B data acquisition and reproducibility audit, starting with
 MEDWATERICE and RiceFloodIT, while continuing targeted citation chasing
 of the strongest novelty competitors.
+
+## Current Phase Time Estimate
+
+Phase 2 — Evidence and data acquisition
+
+Estimated duration:
+
+**7–12 working days**
+
+Current subsection:
+
+**Phase 2B — Open-data acquisition and provenance audit**
+
+Immediate order:
+
+1. MEDWATERICE
+2. RiceFloodIT
+3. core GIS layers
+4. restricted publication-critical data requests

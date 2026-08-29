@@ -1271,3 +1271,37 @@ New methods should be proposed only when:
 * existing project evidence is insufficient;
 * a current GO/NO-GO gate requires them;
 * or new literature/data materially change the scientific position.
+
+# Estimated Phase Durations
+
+These are planning estimates in working days, not fixed deadlines.
+
+| Phase | Description | Estimated duration |
+|---|---|---:|
+| 1 | Protocol freeze and reproducibility foundation | 2–3 days |
+| 2 | Evidence and data acquisition | 7–12 days |
+| 3 | Data audit and reproduction | 5–8 days |
+| 4 | EFS quantitative analysis | 7–12 days |
+| 5 | Sentinel pilot | 4–7 days |
+| 6 | EFS freeze and publication Gate A | 2–4 days |
+| 7 | Hydrological reproduction | 7–14 days |
+| 8 | Fixed-composition configuration experiment | 10–20 days |
+| 9 | Robust uncertainty and decision analysis | 7–14 days |
+| 10 | Publication freeze and final audit | 5–10 days |
+
+## Interpretation
+
+EFS completion through Phase 6:
+
+Approximately 27–46 working days.
+
+Conditional publication extension through Phases 7–10:
+
+Approximately an additional 29–58 working days.
+
+These estimates exclude delays caused by restricted-data requests,
+institutional approvals, unavailable model access, or collaborator
+response times.
+
+A failed GO/NO-GO gate may shorten the project because downstream
+analyses must then stop rather than continue unnecessarily.
