@@ -1,0 +1,4 @@
+year,treatment,n_compared,mean_difference_mm,max_absolute_difference_mm,rmse_mm
+2020,AWD,148,0.0,0.0,0.0
+2020,DFL,160,0.0,0.0,0.0
+2020,WFL,148,0.0,0.0,0.0
