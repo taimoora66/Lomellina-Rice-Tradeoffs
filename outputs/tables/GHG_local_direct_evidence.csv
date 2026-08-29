@@ -1,0 +1,5 @@
+study_id,year,study_location,evidence_tier,comparison,CH4_direction,N2O_direction,GWP_direction,yield_direction,drying_severity,transferability_to_Lomellina,key_limitation,doi
+Lagomarsino_2016,2016,Central Italy,A2,AWD_vs_continuous_flooding,decrease,increase,increase,decrease,strong,high,Strong drying and site-specific N2O response; not directly transferable as an emission factor,10.1016/S1002-0160(15)60063-7
+Meijide_2017,2017,Mediterranean rice field Italy,A2,midseason_drainage_vs_flooding,decrease,increase,decrease,contextual,moderate,high,Drainage regime differs from MEDWATERICE AWD definition,10.1016/j.agee.2016.08.017
+Italian_N2O_process_2018,2018,Italy,A2,AWD_vs_flooding,not_primary,increase,not_primary,not_primary,context_specific,high,Mechanistic N2O study rather than complete seasonal GHG balance,10.1016/j.soilbio.2018.01.032
+Vitali_2024,2024,Temperate Northern Italy,A1,AWD_vs_WFL,decrease,no_clear_increase,decrease,maintained_or_higher,mild_and_strong,very_high,Two AWD severities and limited seasons; do not transfer exact percentages to Lomellina,10.1016/j.fcr.2024.109550
