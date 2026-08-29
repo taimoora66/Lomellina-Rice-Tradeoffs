@@ -105,3 +105,53 @@ Do not begin new modelling before Phase 2 evidence and data audits are complete.
 ## Next Exact Action
 
 Finish and commit the Phase-1 repository foundation.
+## Phase 2A Update — 2026-08-29
+
+Hostile novelty search started.
+
+Current G1 verdict:
+
+**AMBER / OPEN**
+
+Broad novelty claims have been rejected for:
+
+- spatial irrigation allocation;
+- upstream/downstream positioning;
+- staggered irrigation;
+- peak-demand reduction;
+- canal scheduling;
+- groundwater-canal coupling.
+
+The surviving candidate contribution remains the strict
+fixed-composition configuration/synchronization experiment.
+
+### Next Exact Action
+
+Identify and fully compare the strongest 8–15 competitor studies against
+the fixed-composition criteria before declaring G1 GO or NO-GO.
+
+## G1 Interim Decision — 2026-08-29
+
+The initial hostile competitor audit now contains 15 bibliographically
+verified competitors.
+
+**G1 status: GO-CONDITIONAL / REFRAME**
+
+Meaning:
+
+The broad publication concept is rejected as novel.
+
+The publication track may continue only around the narrow hypothesis
+that irrigation-regime configuration has an independent hydrological
+effect when management composition is held exactly constant.
+
+This is not final novelty certification.
+
+Forward/backward citation searching and a final pre-submission novelty
+audit remain mandatory.
+
+### Next Exact Action
+
+Begin Phase 2B data acquisition and reproducibility audit, starting with
+MEDWATERICE and RiceFloodIT, while continuing targeted citation chasing
+of the strongest novelty competitors.
