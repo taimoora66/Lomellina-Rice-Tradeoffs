@@ -174,3 +174,155 @@ Immediate order:
 2. RiceFloodIT
 3. core GIS layers
 4. restricted publication-critical data requests
+
+## G3 Decision — MEDWATERICE
+
+**Status: GO WITH RESTRICTIONS**
+
+The Lomellina 2019–2020 field datasets are usable for constrained
+field-scale hydrological and production evidence.
+
+Main limitations:
+
+- only one instrumented plot per irrigation regime;
+- repeated measurements are not independent replicates;
+- management regimes include seeding-method differences;
+- groundwater piezometer layouts differ among treatments/years;
+- percolation includes derived/model-estimated quantities;
+- local GHG observations are inadequate.
+
+### Next Exact Action
+
+Perform numerical QA and reproduction of MEDWATERICE key hydrological
+variables, while beginning RiceFloodIT acquisition for the independent
+2000–2021 historical hydroperiod analysis.
+
+## RiceFloodIT G2 Decision
+
+**G2 = GO WITH DESIGN CONTROL**
+
+RiceFloodIT version 2021.01 was acquired from Zenodo and verified by
+file size and MD5 checksum.
+
+### QA results
+
+- temporal coverage: 2000–2021;
+- 22 complete years;
+- 80,926 pixel-year observations;
+- 4,331 unique pixels;
+- seven stable subdistricts A–G;
+- no missing values;
+- no duplicate pixel-year records;
+- FF values remain within the documented 0–1 range;
+- no pixel changes subdistrict through time.
+
+### Spatial-support issue
+
+Only 2,419 pixels occur in all 22 years.
+
+Because the annual spatial sample changes substantially through time,
+the primary long-term FF analysis will use the fixed 2,419-pixel
+balanced panel.
+
+The changing-support full dataset will be retained as a sensitivity
+analysis.
+
+### Observation-support issue
+
+Number of MODIS images contributing to a pixel-year FF estimate ranges
+from 1 to 6.
+
+Primary balanced-panel results will therefore be complemented by
+sensitivity analyses based on MODIS image-count support.
+
+### Inference rule
+
+Pixel-year observations are repeated spatial-temporal measurements,
+not independent experimental replicates.
+
+Long-term statistical inference will therefore be conducted on annual
+and/or explicitly modelled spatial-temporal structure rather than by
+treating 80,926 records as independent observations.
+
+## Frozen Result R1 — RiceFloodIT Long-Term Hydroperiod Signal
+
+### Analytical population
+
+Primary analysis uses the 2,419 RiceFloodIT pixels observed in every
+year from 2000 through 2021.
+
+Changing-support full-sample results are retained as sensitivity
+analysis.
+
+### Primary result
+
+Mean balanced-panel FF:
+
+- 2000: 0.383478
+- 2021: 0.082912
+
+Equal six-year period comparison:
+
+- 2000–2005 mean FF: 0.331694
+- 2016–2021 mean FF: 0.123661
+- absolute change: -0.208033
+- relative change: -62.72%
+
+### Trend estimates
+
+Primary balanced-panel OLS descriptive slope:
+
+- -0.013236 FF units/year
+
+Theil-Sen robust slope:
+
+- -0.013313 FF units/year
+- 95% interval: -0.016348 to -0.010195
+
+### Temporal-dependence robustness
+
+Residual lag-1 correlation:
+
+- 0.278
+
+Durbin-Watson:
+
+- 1.432
+
+Residual moving/circular block bootstrap:
+
+Block length 3:
+- 95% slope interval: -0.016332 to -0.010126
+
+Block length 4:
+- 95% slope interval: -0.016368 to -0.010096
+
+Block length 5:
+- 95% slope interval: -0.016399 to -0.009991
+
+All tested intervals remained below zero.
+
+### Sensitivity
+
+The declining trajectory is also present when:
+
+- all available yearly pixels are used;
+- balanced-panel observations with count < 3 are excluded;
+- FF values are weighted by MODIS-image count.
+
+The independent RiceFloodIT water-seeded proportion (WS) series also
+shows a negative temporal trajectory.
+
+### Interpretation Boundary
+
+This result supports a marked long-term decline in the remotely sensed
+sowing-period flooding signal.
+
+It does not by itself establish:
+
+- causal effects of a particular irrigation regime;
+- proportional biodiversity loss;
+- proportional groundwater-recharge loss;
+- proportional irrigation-water saving;
+- continuous flooded-day duration.
+

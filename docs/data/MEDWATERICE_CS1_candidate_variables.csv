@@ -1,0 +1,685 @@
+﻿"year","treatment","sheet","cell","text"
+"2019","AWD","Groundwater","A1","GROUNDWATER"
+"2019","AWD","Groundwater","C1","NOTE: Groundwater quality sampling was conducted during 7 sampling events: (1) in piezometrs P2, P5, P6 and P7; (2 and 3) in all piezometers from P1 tp P7; (4,5,6,7)in piezometers P2, P5, P6 and P7."
+"2019","AWD","Groundwater","A2","Date"
+"2019","AWD","Groundwater","C2","Depth (cm) PIEZOMETER P6
+"
+"2019","AWD","Groundwater","N2","Pesticides content: MCPA (µg/L)  PIEZOMETER P6
+"
+"2019","AWD","Groundwater","O2","Pesticides content: Clomazone  (µg/L)  PIEZOMETER P6
+"
+"2019","DFL","Groundwater","A1","GROUNDWATER"
+"2019","DFL","Groundwater","C1","NOTE: Groundwater quality sampling was conducted during 7 sampling events: (1) in piezometrs P2, P5, P6 and P7; (2 and 3) in all piezometers from P1 tp P7; (4,5,6,7)in piezometers P2, P5, P6 and P7."
+"2019","DFL","Groundwater","A2","Date"
+"2019","DFL","Groundwater","C2","Depth (cm) PIEZOMETER P3
+"
+"2019","DFL","Groundwater","D2","Depth (cm) PIEZOMETER P4
+"
+"2019","DFL","Groundwater","E2","Depth (cm) PIEZOMETER P7
+"
+"2019","DFL","Groundwater","I2","N-NO3 (mg/l) PIEZOMETER P3
+"
+"2019","DFL","Groundwater","J2","N-NO3 (mg/l) PIEZOMETER P4
+"
+"2019","DFL","Groundwater","K2","N-NO3 (mg/l) PIEZOMETER P7
+"
+"2019","DFL","Groundwater","L2","N-NO2 (mg/l) PIEZOMETER
+P3"
+"2019","DFL","Groundwater","M2","N-NO2 (mg/l)
+PIEZOMETER P4"
+"2019","DFL","Groundwater","N2","N-NO2 (mg/l)
+PIEZOMETER P7"
+"2019","DFL","Groundwater","O2","N-UREA (mg/l) PIEZOMETER 3"
+"2019","DFL","Groundwater","P2","N-UREA (mg/l) PIEZOMETER 4"
+"2019","DFL","Groundwater","Q2","N-UREA (mg/l) PIEZOMETER 7"
+"2019","DFL","Groundwater","R2","N-NH3 (mg/l)
+PIEZOMETER P3"
+"2019","DFL","Groundwater","S2","N-NH3 (mg/l)
+PIEZOMETER P4"
+"2019","DFL","Groundwater","T2","N-NH3 (mg/l) PIEZOMETER
+P7"
+"2019","DFL","Groundwater","U2","N-TOT (mg/l) PIEZOMETER
+P3"
+"2019","DFL","Groundwater","V2","N-TOT (mg/l) PIEZOMETER
+P4"
+"2019","DFL","Groundwater","W2","N-TOT (mg/l) PIEZOMETER
+P7"
+"2019","DFL","Groundwater","X2"," P-PO4 (mg/l) PIEZOMETER 3"
+"2019","DFL","Groundwater","Y2","P-PO4 (mg/l) PIEZOMETER 4"
+"2019","DFL","Groundwater","Z2","P-PO4 (mg/l) PIEZOMETER 7"
+"2019","DFL","Groundwater","AA2","K (mg/l) PIEZOMETER 3"
+"2019","DFL","Groundwater","AB2","K (mg/l) PIEZOMETER 4"
+"2019","DFL","Groundwater","AC2","K (mg/l) PIEZOMETER 7"
+"2019","DFL","Groundwater","AJ2","Pesticides content: MCPA (µg/L)  PIEZOMETER P3
+"
+"2019","DFL","Groundwater","AK2","Pesticides content: MCPA (µg/L) PIEZOMETER P4
+"
+"2019","DFL","Groundwater","AL2","Pesticides content: MCPA (µg/L) PIEZOMETER P7
+"
+"2019","DFL","Groundwater","AM2","Pesticides content: Clomazone  (µg/L)  PIEZOMETER P3
+"
+"2019","DFL","Groundwater","AN2","Pesticides content: Clomazone  (µg/L) PIEZOMETER P4
+"
+"2019","DFL","Groundwater","AO2","Pesticides content: Clomazone (µg/L) PIEZOMETER P7
+"
+"2019","WFL","Groundwater","A1","GROUNDWATER"
+"2019","WFL","Groundwater","C1","NOTE: Groundwater quality sampling was conducted during 7 sampling events: (1) in piezometrs P2, P5, P6 and P7; (2 and 3) in all piezometers from P1 tp P7; (4,5,6,7)in piezometers P2, P5, P6 and P7."
+"2019","WFL","Groundwater","A2","Date"
+"2019","WFL","Groundwater","C2","Depth (cm) PIEZOMETER P1
+"
+"2019","WFL","Groundwater","D2","Depth (cm) PIEZOMETER P2
+"
+"2019","WFL","Groundwater","E2","Depth (cm) PIEZOMETER P5
+"
+"2019","WFL","Groundwater","I2","N-NO3 (mg/l) PIEZOMETER P1
+"
+"2019","WFL","Groundwater","J2","N-NO3 (mg/l) PIEZOMETER P2
+"
+"2019","WFL","Groundwater","K2","N-NO3 (mg/l) PIEZOMETER P5
+"
+"2019","WFL","Groundwater","L2","N-NO2 (mg/l) PIEZOMETER
+P1"
+"2019","WFL","Groundwater","M2","N-NO2 (mg/l)
+PIEZOMETER P2"
+"2019","WFL","Groundwater","N2","N-NO2 (mg/l)
+PIEZOMETER P5"
+"2019","WFL","Groundwater","O2","N-UREA (mg/l) PIEZOMETER 1"
+"2019","WFL","Groundwater","P2","N-UREA (mg/l) PIEZOMETER 2"
+"2019","WFL","Groundwater","Q2","N-UREA (mg/l) PIEZOMETER 5"
+"2019","WFL","Groundwater","R2","N-NH3 (mg/l)
+PIEZOMETER P1"
+"2019","WFL","Groundwater","S2","N-NH3 (mg/l)
+PIEZOMETER P2"
+"2019","WFL","Groundwater","T2","N-NH3 (mg/l) PIEZOMETER
+P5"
+"2019","WFL","Groundwater","U2","N-TOT (mg/l) PIEZOMETER
+P1"
+"2019","WFL","Groundwater","V2","N-TOT (mg/l) PIEZOMETER
+P2"
+"2019","WFL","Groundwater","W2","N-TOT (mg/l) PIEZOMETER
+P5"
+"2019","WFL","Groundwater","X2","P-PO4 (mg/l) PIEZOMETER 1"
+"2019","WFL","Groundwater","Y2","P-PO4 (mg/l) PIEZOMETER 2"
+"2019","WFL","Groundwater","Z2","P-PO4 (mg/l) PIEZOMETER 5"
+"2019","WFL","Groundwater","AA2","K (mg/l) PIEZOMETER 1"
+"2019","WFL","Groundwater","AB2","K (mg/l) PIEZOMETER 2"
+"2019","WFL","Groundwater","AC2","K (mg/l) PIEZOMETER 5"
+"2019","WFL","Groundwater","AJ2","Pesticides content: MCPA (µg/L)  PIEZOMETER P1
+"
+"2019","WFL","Groundwater","AK2","Pesticides content: MCPA (µg/L) PIEZOMETER P2
+"
+"2019","WFL","Groundwater","AL2","Pesticides content: MCPA (µg/L) PIEZOMETER P5
+"
+"2019","WFL","Groundwater","AM2","Pesticides content: Clomazone  (µg/L)  PIEZOMETER P1
+"
+"2019","WFL","Groundwater","AN2","Pesticides content: Clomazone  (µg/L) PIEZOMETER P2
+"
+"2019","WFL","Groundwater","AO2","Pesticides content: Clomazone (µg/L) PIEZOMETER P5
+"
+"2020","AWD","Groundwater","A1","GROUNDWATER"
+"2020","AWD","Groundwater","A2","Date"
+"2020","AWD","Groundwater","C2","Depth (cm) PIEZOMETER P1
+"
+"2020","AWD","Groundwater","D2","Depth (cm) PIEZOMETER P2
+"
+"2020","AWD","Groundwater","E2","Depth (cm) PIEZOMETER P5
+"
+"2020","AWD","Groundwater","I2","N-NO3 (mg/l) PIEZOMETER P1
+"
+"2020","AWD","Groundwater","J2","N-NO3 (mg/l) PIEZOMETER P2
+"
+"2020","AWD","Groundwater","K2","N-NO3 (mg/l) PIEZOMETER P5
+"
+"2020","AWD","Groundwater","L2","N-NO2 (mg/l) PIEZOMETER P1"
+"2020","AWD","Groundwater","M2","N-NO2 (mg/l)
+PIEZOMETER P2"
+"2020","AWD","Groundwater","N2","N-NO2 (mg/l)
+PIEZOMETER P5"
+"2020","AWD","Groundwater","O2","N-UREA (mg/l) PIEZOMETER 1"
+"2020","AWD","Groundwater","P2","N-UREA (mg/l) PIEZOMETER 2"
+"2020","AWD","Groundwater","Q2","N-UREA (mg/l) PIEZOMETER 5"
+"2020","AWD","Groundwater","R2","N-NH3 (mg/l)
+PIEZOMETER P1"
+"2020","AWD","Groundwater","S2","N-NH3 (mg/l)
+PIEZOMETER P2"
+"2020","AWD","Groundwater","T2","N-NH3 (mg/l) PIEZOMETER
+P5"
+"2020","AWD","Groundwater","U2","N-TOT (mg/l) PIEZOMETER
+P1"
+"2020","AWD","Groundwater","V2","N-TOT (mg/l) PIEZOMETER
+P2"
+"2020","AWD","Groundwater","W2","N-TOT (mg/l) PIEZOMETER
+P5"
+"2020","AWD","Groundwater","X2","P-PO4 (mg/l) PIEZOMETER P1"
+"2020","AWD","Groundwater","Y2","P-PO4 (mg/l) PIEZOMETER P2"
+"2020","AWD","Groundwater","Z2","P-PO4 (mg/l) PIEZOMETER P5"
+"2020","AWD","Groundwater","AA2","K (mg/l) PIEZOMETER P1"
+"2020","AWD","Groundwater","AB2","K (mg/l) PIEZOMETER P2"
+"2020","AWD","Groundwater","AC2","K (mg/l) PIEZOMETER P5"
+"2020","AWD","Groundwater","AJ2","Pesticides content: MCPA (µg/L)  PIEZOMETER P1
+"
+"2020","AWD","Groundwater","AK2","Pesticides content: MCPA (µg/L) PIEZOMETER P2
+"
+"2020","AWD","Groundwater","AL2","Pesticides content: MCPA (µg/L) PIEZOMETER P5
+"
+"2020","AWD","Groundwater","AM2","Pesticides content: Clomazone  (µg/L)  PIEZOMETER P1
+"
+"2020","AWD","Groundwater","AN2","Pesticides content: Clomazone  (µg/L) PIEZOMETER P2
+"
+"2020","AWD","Groundwater","AO2","Pesticides content: Clomazone (µg/L) PIEZOMETER P5
+"
+"2020","DFL","Groundwater","A1","GROUNDWATER"
+"2020","DFL","Groundwater","A2","Date"
+"2020","DFL","Groundwater","C2","Depth (cm) PIEZOMETER P3
+"
+"2020","DFL","Groundwater","D2","Depth (cm) PIEZOMETER P4
+"
+"2020","DFL","Groundwater","E2","Depth (cm) PIEZOMETER P7
+"
+"2020","DFL","Groundwater","I2","N-NO3 (mg/l) PIEZOMETER P3
+"
+"2020","DFL","Groundwater","J2","N-NO3 (mg/l) PIEZOMETER P4
+"
+"2020","DFL","Groundwater","K2","N-NO3 (mg/l) PIEZOMETER P7
+"
+"2020","DFL","Groundwater","L2","N-NO2 (mg/l) PIEZOMETER
+P3"
+"2020","DFL","Groundwater","M2","N-NO2 (mg/l)
+PIEZOMETER P4"
+"2020","DFL","Groundwater","N2","N-NO2 (mg/l)
+PIEZOMETER P7"
+"2020","DFL","Groundwater","O2","N-UREA (mg/l) PIEZOMETER P3"
+"2020","DFL","Groundwater","P2","N-UREA (mg/l) PIEZOMETER P4"
+"2020","DFL","Groundwater","Q2","N-UREA (mg/l) PIEZOMETER P7"
+"2020","DFL","Groundwater","R2","N-NH3 (mg/l)
+PIEZOMETER P3"
+"2020","DFL","Groundwater","S2","N-NH3 (mg/l)
+PIEZOMETER P4"
+"2020","DFL","Groundwater","T2","N-NH3 (mg/l) PIEZOMETER
+P7"
+"2020","DFL","Groundwater","U2","N-TOT (mg/l) PIEZOMETER
+P3"
+"2020","DFL","Groundwater","V2","N-TOT (mg/l) PIEZOMETER
+P4"
+"2020","DFL","Groundwater","W2","N-TOT (mg/l) PIEZOMETER
+P7"
+"2020","DFL","Groundwater","X2"," P-PO4 (mg/l) PIEZOMETER P3"
+"2020","DFL","Groundwater","Y2","P-PO4 (mg/l) PIEZOMETER P4"
+"2020","DFL","Groundwater","Z2","P-PO4 (mg/l) PIEZOMETER P7"
+"2020","DFL","Groundwater","AA2","K (mg/l) PIEZOMETER P3"
+"2020","DFL","Groundwater","AB2","K (mg/l) PIEZOMETER P4"
+"2020","DFL","Groundwater","AC2","K (mg/l) PIEZOMETER P7"
+"2020","DFL","Groundwater","AJ2","Pesticides content: MCPA (µg/L)  PIEZOMETER P3
+"
+"2020","DFL","Groundwater","AK2","Pesticides content: MCPA (µg/L) PIEZOMETER P4
+"
+"2020","DFL","Groundwater","AL2","Pesticides content: MCPA (µg/L) PIEZOMETER P7
+"
+"2020","DFL","Groundwater","AM2","Pesticides content: Clomazone  (µg/L)  PIEZOMETER P3
+"
+"2020","DFL","Groundwater","AN2","Pesticides content: Clomazone  (µg/L) PIEZOMETER P4
+"
+"2020","DFL","Groundwater","AO2","Pesticides content: Clomazone (µg/L) PIEZOMETER P7
+"
+"2020","WFL","Groundwater","A1","GROUNDWATER"
+"2020","WFL","Groundwater","A2","Date"
+"2020","WFL","Groundwater","C2","Depth (cm) PIEZOMETER P6
+"
+"2020","WFL","Groundwater","D2","Depth (cm) PIEZOMETER P8
+"
+"2020","WFL","Groundwater","E2","Depth (cm) PIEZOMETER P9
+"
+"2020","WFL","Groundwater","I2","N-NO3 (mg/l) PIEZOMETER P6
+"
+"2020","WFL","Groundwater","J2","N-NO3 (mg/l) PIEZOMETER P8
+"
+"2020","WFL","Groundwater","K2","N-NO3 (mg/l) PIEZOMETER P9
+"
+"2020","WFL","Groundwater","L2","N-NO2 (mg/l) PIEZOMETER
+P6"
+"2020","WFL","Groundwater","M2","N-NO2 (mg/l)
+PIEZOMETER P8"
+"2020","WFL","Groundwater","N2","N-NO2 (mg/l)
+PIEZOMETER P9"
+"2020","WFL","Groundwater","O2","N-UREA (mg/l) PIEZOMETER 6"
+"2020","WFL","Groundwater","P2","N-UREA (mg/l) PIEZOMETER 8"
+"2020","WFL","Groundwater","Q2","N-UREA (mg/l) PIEZOMETER 9"
+"2020","WFL","Groundwater","R2","N-NH3 (mg/l)
+PIEZOMETER P6"
+"2020","WFL","Groundwater","S2","N-NH3 (mg/l)
+PIEZOMETER P8"
+"2020","WFL","Groundwater","T2","N-NH3 (mg/l) PIEZOMETER
+P9"
+"2020","WFL","Groundwater","U2","N-TOT (mg/l) PIEZOMETER
+P6"
+"2020","WFL","Groundwater","V2","N-TOT (mg/l) PIEZOMETER
+P8"
+"2020","WFL","Groundwater","W2","N-TOT (mg/l) PIEZOMETER
+P9"
+"2020","WFL","Groundwater","X2","P-PO4 (mg/l) PIEZOMETER 6"
+"2020","WFL","Groundwater","Y2","P-PO4 (mg/l) PIEZOMETER "
+"2020","WFL","Groundwater","Z2","P-PO4 (mg/l) PIEZOMETER 9"
+"2020","WFL","Groundwater","AA2","K (mg/l) PIEZOMETER 6"
+"2020","WFL","Groundwater","AB2","K (mg/l) PIEZOMETER 8"
+"2020","WFL","Groundwater","AC2","K (mg/l) PIEZOMETER 9"
+"2020","WFL","Groundwater","AJ2","Pesticides content: MCPA (µg/L)  PIEZOMETER P6
+"
+"2020","WFL","Groundwater","AK2","Pesticides content: MCPA (µg/L) PIEZOMETER P8
+"
+"2020","WFL","Groundwater","AL2","Pesticides content: MCPA (µg/L) PIEZOMETER P9
+"
+"2020","WFL","Groundwater","AM2","Pesticides content: Clomazone  (µg/L)  PIEZOMETER P6
+"
+"2020","WFL","Groundwater","AN2","Pesticides content: Clomazone  (µg/L) PIEZOMETER P8
+"
+"2020","WFL","Groundwater","AO2","Pesticides content: Clomazone (µg/L) PIEZOMETER P9
+"
+"2019","AWD","Irrig","A1","IRRIGATION"
+"2019","AWD","Irrig","A2","Date"
+"2019","AWD","Irrig","C2","Irrig inflow (mm)
+E3 (Flowmeter at inlet)"
+"2019","AWD","Irrig","D2","Irrig outflow (mm)
+ U3 (flowmeter at outlet)"
+"2019","AWD","Irrig","E2","Irrig water ponding water level in the field (mm)"
+"2019","AWD","Irrig","F2","Sampling point for nutrients (N, P, K) and pesticides (MCPA, Clomazone) analysis                                                                                                                                                                                                                                                              E(in): irrigation inlet                                                                                                                                                                                                                                                                                                  U(out): irrigation outlet"
+"2019","DFL","Irrig","A1","IRRIGATION"
+"2019","DFL","Irrig","A2","Date"
+"2019","DFL","Irrig","C2","Irrig inflow (mm)
+"
+"2019","DFL","Irrig","D2","Irrig inflow (mm)
+"
+"2019","DFL","Irrig","E2","Irrig water salinity (dS/m)"
+"2019","DFL","Irrig","F2","Irrig water ponding water level in the field (mm)"
+"2019","DFL","Irrig","G2","Sampling point for nutrients (N, P, K) and pesticides (MCPA, Clomazone) analysis                                                                                                                                                                                                                                                              E(in): irrigation inlet                                                                                                                                                                                                                                                                                                  U(out): irrigation outlet"
+"2019","WFL","Irrig","A1","IRRIGATION"
+"2019","WFL","Irrig","A2","Date"
+"2019","WFL","Irrig","C2","Irrig inflow (mm)
+E1 (Flowmeter at inlet)"
+"2019","WFL","Irrig","D2","Irrig outflow (mm)
+ U1 (flowmeter at outlet)"
+"2019","WFL","Irrig","E2","Irrig water salinity (dS/m)"
+"2019","WFL","Irrig","F2","Irrig water ponding water level in the field (mm)"
+"2019","WFL","Irrig","G2","Sampling point for nutrients (N, P, K) and pesticides (MCPA, Clomazone) analysis                                                                                                                                                                                                                                                              E(in): irrigation inlet                                                                                                                                                                                                                                                                                                  U(out): irrigation outlet"
+"2020","AWD","Irrig","A1","IRRIGATION"
+"2020","AWD","Irrig","A2","Date"
+"2020","AWD","Irrig","C2","Irrig inflow (mm)
+E3 (Flowmeter at inlet)"
+"2020","AWD","Irrig","D2","Irrig outflow (mm)
+ U1 (flowmeter at outlet)"
+"2020","AWD","Irrig","E2","Irrig water ponding water level in the field (mm)"
+"2020","AWD","Irrig","F2","Sampling point for nutrients (N, P, K) and pesticides (MCPA, Clomazone) analysis                                                                                                                                                                                                                                                              E(in): irrigation inlet                                                                                                                                                                                                                                                                                                  U(out): irrigation outlet"
+"2020","AWD","Irrig","P2","Pesticides content: MCPA (µg/L) outflow (U3)"
+"2020","AWD","Irrig","Q2","Pesticides content: Clomazone (µg/L) outflow (U3)"
+"2020","AWD","Irrig","R2","Pesticides content: MCPA (µg/L) inflow (E1)"
+"2020","AWD","Irrig","S2","Pesticides content: Clomazone (µg/L) inflow (E1)"
+"2020","DFL","Irrig","A1","IRRIGATION"
+"2020","DFL","Irrig","A2","Date"
+"2020","DFL","Irrig","C2","Irrig inflow (mm)
+"
+"2020","DFL","Irrig","D2","Irrig inflow (mm)
+"
+"2020","DFL","Irrig","E2","Irrig water salinity (dS/m)"
+"2020","DFL","Irrig","F2","Irrig water ponding water level in the field (mm)"
+"2020","DFL","Irrig","G2","Sampling point for nutrients (N, P, K) and pesticides (MCPA, Clomazone) analysis                                                                                                                                                                                                                                                              E(in): irrigation inlet                                                                                                                                                                                                                                                                                                  U(out): irrigation outlet"
+"2020","DFL","Irrig","Q2","Pesticides content: MCPA (µg/L) inflow (E6)"
+"2020","DFL","Irrig","R2","Pesticides content: Clomazone (µg/L) inflow (E6)"
+"2020","DFL","Irrig","S2","Pesticides content: MCPA (µg/L) outflow (U6)"
+"2020","DFL","Irrig","T2","Pesticides content: Clomazone (µg/L) outflow (U6)"
+"2020","DFL","Irrig","U2","Pesticides content: MCPA (µg/L) inflow (E1)"
+"2020","DFL","Irrig","V2","Pesticides content: Clomazone (µg/L) inflow (E1)"
+"2020","WFL","Irrig","A1","IRRIGATION"
+"2020","WFL","Irrig","A2","Date"
+"2020","WFL","Irrig","C2","Irrig inflow (mm)
+E1 (Flowmeter at inlet)"
+"2020","WFL","Irrig","D2","Irrig outflow (mm)
+ U3 (flowmeter at outlet)"
+"2020","WFL","Irrig","E2","Irrig water salinity (dS/m)"
+"2020","WFL","Irrig","F2","Irrig water ponding water level in the field (mm)"
+"2020","WFL","Irrig","G2","Sampling point for nutrients (N, P, K) and pesticides (MCPA, Clomazone) analysis                                                                                                                                                                                                                                                              E(in): irrigation inlet                                                                                                                                                                                                                                                                                                  U(out): irrigation outlet"
+"2020","WFL","Irrig","Q2","Pesticides content: MCPA (µg/L) inflow (E1)"
+"2020","WFL","Irrig","R2","Pesticides content: Clomazone (µg/L) inflow (E1)"
+"2020","WFL","Irrig","S2","Pesticides content: MCPA (µg/L) outflow (U3)"
+"2020","WFL","Irrig","T2","Pesticides content: Clomazone (µg/L) outflow (U3)"
+"2019","AWD","Managem oper","A1","SOIL, CROP AND IRRIGATION MANAGEMENT OPERATIONS"
+"2019","AWD","Managem oper","A2","Year and plot"
+"2019","AWD","Managem oper","B3","Date"
+"2019","AWD","Managem oper","B4","Depth"
+"2019","AWD","Managem oper","B5","Date"
+"2019","AWD","Managem oper","B6","Depth (cm)"
+"2019","AWD","Managem oper","A7","Levelling"
+"2019","AWD","Managem oper","B7","Date"
+"2019","AWD","Managem oper","B9","Date"
+"2019","AWD","Managem oper","B10","Depth (cm)"
+"2019","AWD","Managem oper","B11","Date"
+"2019","AWD","Managem oper","B12","Variety"
+"2019","AWD","Managem oper","B14","Date"
+"2019","DFL","Managem oper","A1","SOIL, CROP, AND IRRIGATION MANAGEMENT OPERATIONS"
+"2019","DFL","Managem oper","A2","Year and plot"
+"2019","DFL","Managem oper","B3","Date"
+"2019","DFL","Managem oper","B4","Depth"
+"2019","DFL","Managem oper","B5","Date"
+"2019","DFL","Managem oper","B6","Depth (cm)"
+"2019","DFL","Managem oper","A7","Levelling"
+"2019","DFL","Managem oper","B7","Date"
+"2019","DFL","Managem oper","B9","Date"
+"2019","DFL","Managem oper","B10","Depth (cm)"
+"2019","DFL","Managem oper","B11","Date"
+"2019","DFL","Managem oper","B12","Variety"
+"2019","DFL","Managem oper","B14","Date"
+"2019","WFL","Managem oper","A1","SOIL, CROP AND IRRIGATION MANAGEMENT OPERATIONS"
+"2019","WFL","Managem oper","A2","Year and plot"
+"2019","WFL","Managem oper","B3","Date"
+"2019","WFL","Managem oper","B4","Depth"
+"2019","WFL","Managem oper","B5","Date"
+"2019","WFL","Managem oper","B6","Depth (cm)"
+"2019","WFL","Managem oper","A7","Levelling"
+"2019","WFL","Managem oper","B7","Date"
+"2019","WFL","Managem oper","B9","Date"
+"2019","WFL","Managem oper","B10","Depth (cm)"
+"2019","WFL","Managem oper","B11","Date"
+"2019","WFL","Managem oper","B12","Variety"
+"2019","WFL","Managem oper","B14","Date"
+"2020","AWD","Managem oper","A1","SOIL, CROP AND IRRIGATION MANAGEMENT OPERATIONS"
+"2020","AWD","Managem oper","A2","Year and plot"
+"2020","AWD","Managem oper","B3","Date"
+"2020","AWD","Managem oper","B4","Depth"
+"2020","AWD","Managem oper","B5","Date"
+"2020","AWD","Managem oper","B6","Depth (cm)"
+"2020","AWD","Managem oper","A7","Levelling"
+"2020","AWD","Managem oper","B7","Date"
+"2020","AWD","Managem oper","B9","Date"
+"2020","AWD","Managem oper","B10","Depth (cm)"
+"2020","AWD","Managem oper","B11","Date"
+"2020","AWD","Managem oper","B12","Variety"
+"2020","AWD","Managem oper","B14","Date"
+"2020","DFL","Managem oper","A1","SOIL, CROP, AND IRRIGATION MANAGEMENT OPERATIONS"
+"2020","DFL","Managem oper","A2","Year and plot"
+"2020","DFL","Managem oper","B3","Date"
+"2020","DFL","Managem oper","B4","Depth"
+"2020","DFL","Managem oper","B5","Date"
+"2020","DFL","Managem oper","B6","Depth (cm)"
+"2020","DFL","Managem oper","A7","Levelling"
+"2020","DFL","Managem oper","B7","Date"
+"2020","DFL","Managem oper","B9","Date"
+"2020","DFL","Managem oper","B10","Depth (cm)"
+"2020","DFL","Managem oper","B11","Date"
+"2020","DFL","Managem oper","B12","Variety"
+"2020","DFL","Managem oper","B14","Date"
+"2020","WFL","Managem oper","A1","SOIL, CROP AND IRRIGATION MANAGEMENT OPERATIONS"
+"2020","WFL","Managem oper","A2","Year and plot"
+"2020","WFL","Managem oper","B3","Date"
+"2020","WFL","Managem oper","B4","Depth"
+"2020","WFL","Managem oper","B5","Date"
+"2020","WFL","Managem oper","B6","Depth (cm)"
+"2020","WFL","Managem oper","A7","Levelling"
+"2020","WFL","Managem oper","B7","Date"
+"2020","WFL","Managem oper","B9","Date"
+"2020","WFL","Managem oper","B10","Depth (cm)"
+"2020","WFL","Managem oper","B11","Date"
+"2020","WFL","Managem oper","B12","Variety"
+"2020","WFL","Managem oper","B14","Date"
+"2019","AWD","Other water","A1","OTHER WATER (OR NUTRIENT, OR PESTICIDE) BALANCE COMPONENTS"
+"2019","AWD","Other water","A2","Date"
+"2019","AWD","Other water","C2","Qin (mm)"
+"2019","AWD","Other water","D2","Qout (mm)"
+"2019","AWD","Other water","E2","h_lev (mm)"
+"2019","AWD","Other water","F2","Rain(mm)"
+"2019","AWD","Other water","G2","ETc_Adj(mm)"
+"2019","AWD","Other water","H2","Delta_L (mm)"
+"2019","AWD","Other water","I2","Delta_S (mm)"
+"2019","AWD","Other water","J2","Perc_Bal (mm)"
+"2019","AWD","Other water","K2","Perc_MODEL (mm)"
+"2019","AWD","Other water","M2","Qin (mm) and Qout (mm) are the irrigation fluxes (L/s average in the day) entering and exiting the parcel through the irrigation inlet and outlet, divided by the parcel surface (1400.30 m2). "
+"2019","AWD","Other water","M3","h_lev (mm) is the measured ponding water level in the parcel (average value during the day)."
+"2019","AWD","Other water","M4","Rain (mm): daily rainfall."
+"2019","AWD","Other water","M5","ETc_Adj(mm): daily actual evapotranspiration."
+"2019","AWD","Other water","M6","Delta L (mm) daily change in ponding water storage computed at the end of the day [end of day(i) - end of day(i-1)]."
+"2019","AWD","Other water","M7","Delta S (mm) daily change in water stored within the soil layer above the LCL (Less Conductive Layer) computed at the end of the day [end of day(i) - end of day(i-1)]."
+"2019","AWD","Other water","M8","Perc_Bal (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon) obtained from the water balance (Qin-Qout +Rain -Etc_Adj -Delta_L -Delta_S)."
+"2019","AWD","Other water","M9","Perc_MODEL (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon), modelled with a distributed Darcy-type model."
+"2019","DFL","Other water","A1","OTHER WATER (OR NUTRIENT, OR PESTICIDE) BALANCE COMPONENTS"
+"2019","DFL","Other water","A2","Date"
+"2019","DFL","Other water","C2","Qin (mm)"
+"2019","DFL","Other water","D2","Qout (mm)"
+"2019","DFL","Other water","E2","h_lev (mm)"
+"2019","DFL","Other water","F2","Rain(mm)"
+"2019","DFL","Other water","G2","ETc_Adj(mm)"
+"2019","DFL","Other water","H2","Delta_L (mm)"
+"2019","DFL","Other water","I2","Delta_S (mm)"
+"2019","DFL","Other water","J2","Perc_Bal (mm)"
+"2019","DFL","Other water","K2","Perc_MODEL (mm)"
+"2019","DFL","Other water","M2","Qin (mm) and Qout (mm) are the irrigation fluxes (L/s average in the day) entering and exiting the parcel through the irrigation inlet and outlet, divided by the parcel surface (1400.30 m2). "
+"2019","DFL","Other water","M3","h_lev (mm) is the measured ponding water level in the parcel (average value during the day)."
+"2019","DFL","Other water","M4","Rain (mm): daily rainfall."
+"2019","DFL","Other water","M5","ETc_Adj(mm): daily actual evapotranspiration."
+"2019","DFL","Other water","M6","Delta L (mm) daily change in ponding water storage computed at the end of the day [end of day(i) - end of day(i-1)]."
+"2019","DFL","Other water","M7","Delta S (mm) daily change in water stored within the soil layer above the LCL (Less Conductive Layer) computed at the end of the day [end of day(i) - end of day(i-1)]."
+"2019","DFL","Other water","M8","Perc_Bal (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon) obtained from the water balance (Qin-Qout +Rain -Etc_Adj -Delta_L -Delta_S)."
+"2019","DFL","Other water","M9","Perc_MODEL (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon), modelled with a distributed Darcy-type model."
+"2019","WFL","Other water","A1","OTHER WATER (OR NUTRIENT, OR PESTICIDE) BALANCE COMPONENTS"
+"2019","WFL","Other water","A2","Date"
+"2019","WFL","Other water","C2","Qin (mm)"
+"2019","WFL","Other water","D2","Qout (mm)"
+"2019","WFL","Other water","E2","h_lev (mm)"
+"2019","WFL","Other water","F2","Rain(mm)"
+"2019","WFL","Other water","G2","ETc_Adj(mm)"
+"2019","WFL","Other water","H2","Delta_L (mm)"
+"2019","WFL","Other water","I2","Delta_S (mm)"
+"2019","WFL","Other water","J2","Perc_Bal (mm)"
+"2019","WFL","Other water","K2","Perc_MODEL (mm)"
+"2019","WFL","Other water","M2","Qin (mm) and Qout (mm) are the irrigation fluxes (L/s average in the day) entering and exiting the parcel through the irrigation inlet and outlet, divided by the parcel surface (1400.30 m2). "
+"2019","WFL","Other water","M3","h_lev (mm) is the measured ponding water level in the parcel (average value during the day)."
+"2019","WFL","Other water","M4","Rain (mm): daily rainfall."
+"2019","WFL","Other water","M5","ETc_Adj(mm): daily actual evapotranspiration."
+"2019","WFL","Other water","M6","Delta L (mm) daily change in ponding water storage computed at the end of the day [end of day(i) - end of day(i-1)]."
+"2019","WFL","Other water","M7","Delta S (mm) daily change in water stored within the soil layer above the LCL (Less Conductive Layer) computed at the end of the day [end of day(i) - end of day(i-1)]."
+"2019","WFL","Other water","M8","Perc_Bal (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon) obtained from the water balance (Qin-Qout +Rain -Etc_Adj -Delta_L -Delta_S)."
+"2019","WFL","Other water","M9","Perc_MODEL (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon), modelled with a distributed Darcy-type model."
+"2020","AWD","Other water","A1","OTHER WATER (OR NUTRIENT, OR PESTICIDE) BALANCE COMPONENTS"
+"2020","AWD","Other water","A2","Date"
+"2020","AWD","Other water","C2","Qin (mm)"
+"2020","AWD","Other water","D2","Qout (mm)"
+"2020","AWD","Other water","E2","h_lev (mm)"
+"2020","AWD","Other water","F2","Rain(mm)"
+"2020","AWD","Other water","G2","ETc_Adj(mm)"
+"2020","AWD","Other water","H2","Delta_L (mm)"
+"2020","AWD","Other water","I2","Delta_S (mm)"
+"2020","AWD","Other water","J2","Perc_Bal (mm)"
+"2020","AWD","Other water","K2","Qnet_meas (mm)"
+"2020","AWD","Other water","L2","Perc_MODEL_havier_soil_zone (mm)"
+"2020","AWD","Other water","N2","Qin (mm) and Qout (mm) are the irrigation fluxes (L/s average in the day) entering and exiting the parcel through the irrigation inlet and outlet, divided by the parcel surface (1400.30 m2). Fluxes are corrected when clear affected by errors (see paper MEDWATERICE for better explanations)."
+"2020","AWD","Other water","N3","h_lev (mm) is the measured ponding water level in the parcel (average value during the day)"
+"2020","AWD","Other water","N4","Rain and ETc_Adj pasted here from sheets perc_mm and ET_mm to allow an easier comparison"
+"2020","AWD","Other water","N5","Delta L (mm) daily change in ponding water storage computed at the end of the day [end of day(i) - end of day(i-1)]"
+"2020","AWD","Other water","N6","Delta S (mm) daily change in water stored within the soil layer above the LCL (Less Conductive Layer) computed at the end of the day [end of day(i) - end of day(i-1)]"
+"2020","AWD","Other water","N7","Qnet_meas (mm) is the net irrigation (i.e. Qin-Qout) obtained by the measured Qin and Qout (mm)"
+"2020","AWD","Other water","N8","Qnet_MODEL (mm) is the net irrigation (i.e. Qin-Qout) obtained by inverting the distributed Darcy model (i.e. it is the net water supply needed to close the balance; once the soil characteristics have been calibrated and Perc_MODEL has been simulated)"
+"2020","AWD","Other water","N9","Perc_MODEL (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon), modelled with the distributed Darcy model (see MEDWATERICE paper for better explanations)."
+"2020","AWD","Other water","N10","Perc_Bal (mm) percolation obtained from the water balance (Qnet_meas +Rain -Etc_Adj -Delta_L -Delta_S)"
+"2020","AWD","Other water","N11","Perc_MODEL_havier_soil (mm) percolation obtained by the distributed Darcy model considering only the zone having low Ks (Ks is obtained by calibration, objective was a proxy of the difference between Qnet_model and Qnet_meas)"
+"2020","DFL","Other water","A1","OTHER WATER (OR NUTRIENT, OR PESTICIDE) BALANCE COMPONENTS"
+"2020","DFL","Other water","A2","Date"
+"2020","DFL","Other water","C2","Qin (mm)"
+"2020","DFL","Other water","D2","Qout (mm)"
+"2020","DFL","Other water","E2","h_lev (mm)"
+"2020","DFL","Other water","F2","Rain(mm)"
+"2020","DFL","Other water","G2","ETc_Adj(mm)"
+"2020","DFL","Other water","J2","Perc_Bal (mm)"
+"2020","DFL","Other water","K2","Qnet_meas (mm)"
+"2020","DFL","Other water","L2","Perc_MODEL_havier_soil_zone (mm)"
+"2020","DFL","Other water","N2","Qin (mm) and Qout (mm) are the irrigation fluxes (L/s average in the day) entering and exiting the parcel through the irrigation inlet and outlet, divided by the parcel surface (1400.30 m2). Fluxes are corrected when clear affected by errors (see paper MEDWATERICE for better explanations)."
+"2020","DFL","Other water","N3","h_lev (mm) is the measured ponding water level in the parcel (average value during the day)"
+"2020","DFL","Other water","N4","Rain and ETc_Adj pasted here from sheets perc_mm and ET_mm to allow an easier comparison"
+"2020","DFL","Other water","N5","Delta L (mm) daily change in ponding water storage computed at the end of the day [end of day(i) - end of day(i-1)]"
+"2020","DFL","Other water","N6","Delta S (mm) daily change in water stored within the soil layer above the LCL (Less Conductive Layer) computed at the end of the day [end of day(i) - end of day(i-1)]"
+"2020","DFL","Other water","N7","Qnet_meas (mm) is the net irrigation (i.e. Qin-Qout) obtained by the measured Qin and Qout (mm)"
+"2020","DFL","Other water","N8","Qnet_MODEL (mm) is the net irrigation (i.e. Qin-Qout) obtained by inverting the distributed Darcy model (i.e. it is the net water supply needed to close the balance; once the soil characteristics have been calibrated and Perc_MODEL has been simulated)"
+"2020","DFL","Other water","N9","Perc_MODEL (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon), modelled with the distributed Darcy model (see MEDWATERICE paper for better explanations)."
+"2020","DFL","Other water","N10","Perc_Bal (mm) percolation obtained from the water balance (Qnet_meas +Rain -Etc_Adj -Delta_L -Delta_S)"
+"2020","DFL","Other water","N11","Perc_MODEL_havier_soil (mm) percolation obtained by the distributed Darcy model considering only the zone having low Ks (Ks is obtained by calibration, objective was a proxy of the difference between Qnet_model and Qnet_meas)"
+"2020","WFL","Other water","A1","OTHER WATER (OR NUTRIENT, OR PESTICIDE) BALANCE COMPONENTS"
+"2020","WFL","Other water","A2","DATE"
+"2020","WFL","Other water","B2","Qin (mm)"
+"2020","WFL","Other water","C2","Qout (mm)"
+"2020","WFL","Other water","D2","h_lev (mm)"
+"2020","WFL","Other water","E2","Rain(mm)"
+"2020","WFL","Other water","F2","ETc_Adj(mm)"
+"2020","WFL","Other water","G2","Delta_L (mm)"
+"2020","WFL","Other water","H2","Delta_S (mm)"
+"2020","WFL","Other water","I2","Perc_Bal (mm)"
+"2020","WFL","Other water","J2","Qnet_meas (mm)"
+"2020","WFL","Other water","K2","Perc_MODEL_havier_soil_zone (mm)"
+"2020","WFL","Other water","M2","Qin (mm) and Qout (mm) are the irrigation fluxes (L/s average in the day) entering and exiting the parcel through the irrigation inlet and outlet, divided by the parcel surface (1400.30 m2). Fluxes are corrected when clear affected by errors (see paper MEDWATERICE for better explanations)."
+"2020","WFL","Other water","M3","h_lev (mm) is the measured ponding water level in the parcel (average value during the day)"
+"2020","WFL","Other water","M4","Rain and ETc_Adj pasted here from sheets perc_mm and ET_mm to allow an easier comparison"
+"2020","WFL","Other water","M5","Delta L (mm) daily change in ponding water storage computed at the end of the day [end of day(i) - end of day(i-1)]"
+"2020","WFL","Other water","M6","Delta S (mm) daily change in water stored within the soil layer above the LCL (Less Conductive Layer) computed at the end of the day [end of day(i) - end of day(i-1)]"
+"2020","WFL","Other water","M7","Qnet_meas (mm) is the net irrigation (i.e. Qin-Qout) obtained by the measured Qin and Qout (mm)"
+"2020","WFL","Other water","M8","Qnet_MODEL (mm) is the net irrigation (i.e. Qin-Qout) obtained by inverting the distributed Darcy model (i.e. it is the net water supply needed to close the balance; once the soil characteristics have been calibrated and Perc_MODEL has been simulated)"
+"2020","WFL","Other water","M9","Perc_MODEL (mm) is the percolation under the LCL (Less Conductive Layer, also called hardpan, usually located under the plugged horizon), modelled with the distributed Darcy model (see MEDWATERICE paper for better explanations)."
+"2020","WFL","Other water","M10","Perc_Bal (mm) percolation obtained from the water balance (Qnet_meas +Rain -Etc_Adj -Delta_L -Delta_S)"
+"2020","WFL","Other water","M11","Perc_MODEL_havier_soil (mm) percolation obtained by the distributed Darcy model considering only the zone having low Ks (Ks is obtained by calibration, objective was a proxy of the difference between Qnet_model and Qnet_meas)"
+"2019","AWD","Yield+product","A1","YIELD AND PRODUCT QUALITY"
+"2019","AWD","Yield+product","A2","Date"
+"2019","AWD","Yield+product","B2","Plot"
+"2019","AWD","Yield+product","D2","Rice grain yield at 14% humidity (t/ha)"
+"2019","AWD","Yield+product","E2","Straw yield if sold (t/ha)"
+"2019","AWD","Yield+product","F2","Yield comp
+Nº panic/m2"
+"2019","AWD","Yield+product","G2","Yield comp
+Nº of grains by panicle"
+"2019","AWD","Yield+product","H2","Yield comp
+Weight of 1000 grains at 14% hum (g)"
+"2019","AWD","Yield+product","I2","Yield comp Harvest Index
+"
+"2019","AWD","Yield+product","J2","Yield comp
+Sterility (%)"
+"2019","AWD","Yield+product","K2","Milled rice yield (%)"
+"2019","AWD","Yield+product","L2","Head rice yield (%)"
+"2019","AWD","Yield+product","M2","Yield comp
+Chalkiness (%)"
+"2019","AWD","Yield+product","N2","Yield comp
+Damaged kernels (%)"
+"2019","AWD","Yield+product","Q2","MMA(V) μg kg-1"
+"2019","AWD","Yield+product","T2","Cadmium of rice grain (μg kg-1)"
+"2019","AWD","Yield+product","U2","N % content (grain)"
+"2019","DFL","Yield+product","A1","YIELD AND PRODUCT QUALITY"
+"2019","DFL","Yield+product","A2","Date"
+"2019","DFL","Yield+product","B2","Plot"
+"2019","DFL","Yield+product","D2","Rice grain yield at 14% humidity (t/ha)"
+"2019","DFL","Yield+product","E2","Straw yield if sold (t/ha)"
+"2019","DFL","Yield+product","F2","Yield comp
+Nº panic/m2"
+"2019","DFL","Yield+product","G2","Yield comp
+Nº of grains by panicle"
+"2019","DFL","Yield+product","H2","Yield comp
+Weight of 1000 grains at 14% hum (g)"
+"2019","DFL","Yield+product","I2","Yield comp Harvest Index
+"
+"2019","DFL","Yield+product","J2","Yield comp
+Sterility (%)"
+"2019","DFL","Yield+product","K2","Milled rice yield (%)"
+"2019","DFL","Yield+product","L2","Head rice yield (%)"
+"2019","DFL","Yield+product","M2","Yield comp
+Chalkiness (%)"
+"2019","DFL","Yield+product","N2","Yield comp
+Damaged kernels (%)"
+"2019","DFL","Yield+product","Q2","MMA(V) μg kg-1"
+"2019","DFL","Yield+product","T2","Cadmium of rice grain (μg kg-1)"
+"2019","DFL","Yield+product","U2","N % content (grain)"
+"2019","WFL","Yield+product","A1","YIELD AND PRODUCT QUALITY"
+"2019","WFL","Yield+product","A2","Date"
+"2019","WFL","Yield+product","B2","Plot"
+"2019","WFL","Yield+product","D2","Rice grain yield at 14% humidity (t/ha)"
+"2019","WFL","Yield+product","E2","Straw yield if sold (t/ha)"
+"2019","WFL","Yield+product","F2","Yield comp
+Nº panic/m2"
+"2019","WFL","Yield+product","G2","Yield comp
+Nº of grains by panicle"
+"2019","WFL","Yield+product","H2","Yield comp
+Weight of 1000 grains at 14% hum (g)"
+"2019","WFL","Yield+product","I2","Yield comp Harvest Index
+"
+"2019","WFL","Yield+product","J2","Yield comp
+Sterility (%)"
+"2019","WFL","Yield+product","K2","Milled rice yield (%)"
+"2019","WFL","Yield+product","L2","Head rice yield (%)"
+"2019","WFL","Yield+product","M2","Yield comp
+Chalkiness (%)"
+"2019","WFL","Yield+product","N2","Yield comp
+Damaged kernels (%)"
+"2019","WFL","Yield+product","Q2","MMA(V) μg kg-1"
+"2019","WFL","Yield+product","T2","Cadmium of rice grain (μg kg-1)"
+"2019","WFL","Yield+product","U2","N % content (grain)"
+"2020","AWD","Yield+product","A1","YIELD AND PRODUCT QUALITY"
+"2020","AWD","Yield+product","A2","Date"
+"2020","AWD","Yield+product","B2","Plot"
+"2020","AWD","Yield+product","D2","Rice grain yield at 14% humidity (t/ha)"
+"2020","AWD","Yield+product","E2","Straw yield if sold (t/ha)"
+"2020","AWD","Yield+product","F2","Yield comp
+Nº panic/m2"
+"2020","AWD","Yield+product","G2","Yield comp
+Nº of grains by panicle"
+"2020","AWD","Yield+product","H2","Yield comp
+Weight of 1000 grains at 14% hum (g)"
+"2020","AWD","Yield+product","I2","Yield comp Harvest Index
+"
+"2020","AWD","Yield+product","J2","Yield comp
+Sterility (%)"
+"2020","AWD","Yield+product","K2","Milled rice yield (%)"
+"2020","AWD","Yield+product","L2","Head rice yield (%)"
+"2020","AWD","Yield+product","M2","Yield comp
+Chalkiness (%)"
+"2020","AWD","Yield+product","N2","Yield comp
+Damaged kernels (%)"
+"2020","AWD","Yield+product","Q2","MMA(V) μg kg-1"
+"2020","AWD","Yield+product","T2","Cadmium of rice grain (μg kg-1)"
+"2020","AWD","Yield+product","U2","N % content (grain)"
+"2020","DFL","Yield+product","A1","YIELD AND PRODUCT QUALITY"
+"2020","DFL","Yield+product","A2","Date"
+"2020","DFL","Yield+product","B2","Plot"
+"2020","DFL","Yield+product","D2","Rice grain yield at 14% humidity (t/ha)"
+"2020","DFL","Yield+product","E2","Straw yield if sold (t/ha)"
+"2020","DFL","Yield+product","F2","Yield comp
+Nº panic/m2"
+"2020","DFL","Yield+product","G2","Yield comp
+Nº of grains by panicle"
+"2020","DFL","Yield+product","H2","Yield comp
+Weight of 1000 grains at 14% hum (g)"
+"2020","DFL","Yield+product","I2","Yield comp Harvest Index
+"
+"2020","DFL","Yield+product","J2","Yield comp
+Sterility (%)"
+"2020","DFL","Yield+product","K2","Milled rice yield (%)"
+"2020","DFL","Yield+product","L2","Head rice yield (%)"
+"2020","DFL","Yield+product","M2","Yield comp
+Chalkiness (%)"
+"2020","DFL","Yield+product","N2","Yield comp
+Damaged kernels (%)"
+"2020","DFL","Yield+product","Q2","MMA(V) μg kg-1"
+"2020","DFL","Yield+product","T2","Cadmium of rice grain (μg kg-1)"
+"2020","DFL","Yield+product","U2","N % content (grain)"
+"2020","WFL","Yield+product","A1","YIELD AND PRODUCT QUALITY"
+"2020","WFL","Yield+product","A2","Date"
+"2020","WFL","Yield+product","B2","Plot"
+"2020","WFL","Yield+product","D2","Rice grain yield at 14% humidity (t/ha)"
+"2020","WFL","Yield+product","E2","Straw yield if sold (t/ha)"
+"2020","WFL","Yield+product","F2","Yield comp
+Nº panic/m2"
+"2020","WFL","Yield+product","G2","Yield comp
+Nº of grains by panicle"
+"2020","WFL","Yield+product","H2","Yield comp
+Weight of 1000 grains at 14% hum (g)"
+"2020","WFL","Yield+product","I2","Yield comp Harvest Index
+"
+"2020","WFL","Yield+product","J2","Yield comp
+Sterility (%)"
+"2020","WFL","Yield+product","K2","Milled rice yield (%)"
+"2020","WFL","Yield+product","L2","Head rice yield (%)"
+"2020","WFL","Yield+product","M2","Yield comp
+Chalkiness (%)"
+"2020","WFL","Yield+product","N2","Yield comp
+Damaged kernels (%)"
+"2020","WFL","Yield+product","Q2","MMA(V) μg kg-1"
+"2020","WFL","Yield+product","T2","Cadmium of rice grain (μg kg-1)"
+"2020","WFL","Yield+product","U2","N % content (grain)"

@@ -1,0 +1,153 @@
+﻿{
+    "created":  "2021-12-30T16:06:47.683036+00:00",
+    "modified":  "2021-12-31T01:48:44.739471+00:00",
+    "id":  4313730,
+    "conceptrecid":  "4313204",
+    "doi":  "10.5281/zenodo.4313730",
+    "conceptdoi":  "10.5281/zenodo.4313204",
+    "doi_url":  "https://doi.org/10.5281/zenodo.4313730",
+    "metadata":  {
+                     "title":  "RiceFloodIT: Water Management in the Italian Rice Paddies Estimated from MODIS data",
+                     "doi":  "10.5281/zenodo.4313730",
+                     "publication_date":  "2021-12-30",
+                     "description":  "\u003cp\u003eThis repository includes two datasets used in\u0026nbsp;Ranghetti et al. (2018) and Ranghetti \u0026amp; Boschetti\u0026nbsp;(2022) to analyse the\u0026nbsp;magnitude of a decreasing trend in the extent of submerged rice paddies during the rice-sowing period in the Italian rice district: methods used to generate these data from MODIS remote sensing imagery are described in these papers.\u003c/p\u003e\n\n\u003cul\u003e\n\t\u003cli\u003e\u003cstrong\u003effavg_2021.csv\u003c/strong\u003e: this dataset includes values of yearly FF\u003csub\u003eavg\u003c/sub\u003e\u0026nbsp;(averaged Flooding Fraction) at pixel level. Each record represent the FF\u003csub\u003eavg\u003c/sub\u003e value of a specific pixel in a specific year.\n\n\t\u003cul\u003e\n\t\t\u003cli\u003e\u003cstrong\u003ex\u003c/strong\u003e and \u003cstrong\u003ey\u003c/strong\u003e identifies the latitude and longitude of each record (in UTM32 coordinates);\u003c/li\u003e\n\t\t\u003cli\u003e\u003cstrong\u003esubdistrict\u003c/strong\u003e represent the sub-district ID of each pixel (\u0026quot;A\u0026quot; to \u0026quot;G\u0026quot;);\u003c/li\u003e\n\t\t\u003cli\u003e\u003cstrong\u003eyear\u003c/strong\u003e is the year whose each record refers to;\u003c/li\u003e\n\t\t\u003cli\u003e\u003cstrong\u003eff\u003c/strong\u003e is the FFavg value (range 0-1);\u003c/li\u003e\n\t\t\u003cli\u003e\u003cstrong\u003ecount\u003c/strong\u003e is the number of MODIS images used to generate each FF\u003csub\u003eavg\u003c/sub\u003e aggregated value.\u003c/li\u003e\n\t\u003c/ul\u003e\n\t\u003c/li\u003e\n\t\u003cli\u003e\u003cstrong\u003ews_2021.csv\u003c/strong\u003e: this dataset includes values of WS (proportion of Water-Seeded rice surface) at sub-district and district levels.\n\t\u003cul\u003e\n\t\t\u003cli\u003e\u003cstrong\u003esubdistrict\u003c/strong\u003e represent the sub-district ID of each record (\u0026quot;A\u0026quot; to \u0026quot;G\u0026quot;, plus \u0026quot;all\u0026quot; which identifies values aggregated at district level);\u003c/li\u003e\n\t\t\u003cli\u003e\u003cstrong\u003eyear\u003c/strong\u003e is the year whose each record refers to;\u003c/li\u003e\n\t\t\u003cli\u003e\u003cstrong\u003ews\u003c/strong\u003e is the WS value (range 0-1);\u003c/li\u003e\n\t\t\u003cli\u003e\u003cstrong\u003ecount\u003c/strong\u003e is the number of pixels used to generate each WS aggregated record.\u003c/li\u003e\n\t\u003c/ul\u003e\n\t\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cp\u003eCurrent data version (2021.01) includes estimated values in the period 2000-2021.\u003c/p\u003e\n\n\u003cp\u003eReferences:\u003c/p\u003e\n\n\u003cp\u003eRanghetti, Luigi, Elisa Cardarelli, Mirco Boschetti, Lorenzo Busetto\u0026nbsp;and Mauro Fasola. 2018. \u0026ldquo;Assessment of Water Management Changes in the Italian Rice Paddies from 2000 to 2016 Using Satellite Data: A Contribution to Agro-Ecological Studies.\u0026rdquo; \u003cem\u003eRemote Sensing\u003c/em\u003e 10 (3). doi:\u003ca href=\"https://doi.org/10.3390/rs10030416\"\u003e10.3390/rs10030416\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003eRanghetti, Luigi\u0026nbsp;and Mirco Boschetti. 2022. \u0026ldquo;Updated trends of water management practice in the Italian rice paddies from remotely sensed imagery.\u0026rdquo; \u003cem\u003eEuropean Journal of Remote Sensing\u003c/em\u003e 55\u0026nbsp;(1), pp. 1-9. doi:\u003ca href=\"https://doi.org/10.1080/22797254.2021.2002726\"\u003e10.1080/22797254.2021.2002726\u003c/a\u003e.\u003c/p\u003e",
+                     "access_right":  "open",
+                     "creators":  [
+                                      {
+                                          "name":  "Luigi Ranghetti",
+                                          "affiliation":  "CNR-IREA",
+                                          "orcid":  "0000-0001-6207-5188"
+                                      }
+                                  ],
+                     "keywords":  [
+                                      "MODIS",
+                                      "Rice monitoring",
+                                      "Water management",
+                                      "NDFI"
+                                  ],
+                     "related_identifiers":  [
+                                                 {
+                                                     "identifier":  "10.3390/rs10030416",
+                                                     "relation":  "isDocumentedBy",
+                                                     "resource_type":  "publication-article",
+                                                     "scheme":  "doi"
+                                                 },
+                                                 {
+                                                     "identifier":  "10.1016/j.jag.2016.06.018",
+                                                     "relation":  "isDocumentedBy",
+                                                     "resource_type":  "publication-article",
+                                                     "scheme":  "doi"
+                                                 },
+                                                 {
+                                                     "identifier":  "10.1080/22797254.2021.2002726",
+                                                     "relation":  "isDocumentedBy",
+                                                     "resource_type":  "publication-article",
+                                                     "scheme":  "doi"
+                                                 }
+                                             ],
+                     "version":  "2021.01",
+                     "references":  [
+                                        "Ranghetti, Luigi, Elisa Cardarelli, Mirco Boschetti, Lorenzo Busetto and Mauro Fasola. 2018. \"Assessment of Water Management Changes in the Italian Rice Paddies from 2000 to 2016 Using Satellite Data: A Contribution to Agro-Ecological Studies.\" Remote Sensing 10 (3). https://doi.org/10.3390/rs10030416.",
+                                        "Ranghetti, Luigi and Mirco Boschetti. 2022. \"Updated trends of water management practice in the Italian rice paddies from remotely sensed imagery.\" European Journal of Remote Sensing 55 (1), pp. 1-9. https://doi.org/10.1080/22797254.2021.2002726."
+                                    ],
+                     "language":  "eng",
+                     "resource_type":  {
+                                           "title":  "Dataset",
+                                           "type":  "dataset"
+                                       },
+                     "license":  {
+                                     "id":  "cc-by-4.0"
+                                 },
+                     "relations":  {
+                                       "version":  [
+                                                       {
+                                                           "index":  1,
+                                                           "is_last":  true,
+                                                           "parent":  {
+                                                                          "pid_type":  "recid",
+                                                                          "pid_value":  "4313204"
+                                                                      }
+                                                       }
+                                                   ]
+                                   }
+                 },
+    "title":  "RiceFloodIT: Water Management in the Italian Rice Paddies Estimated from MODIS data",
+    "links":  {
+                  "self":  "https://zenodo.org/api/records/4313730",
+                  "self_html":  "https://zenodo.org/records/4313730",
+                  "preview_html":  "https://zenodo.org/records/4313730?preview=1",
+                  "doi":  "https://doi.org/10.5281/zenodo.4313730",
+                  "self_doi":  "https://doi.org/10.5281/zenodo.4313730",
+                  "self_doi_html":  "https://zenodo.org/doi/10.5281/zenodo.4313730",
+                  "reserve_doi":  "https://zenodo.org/api/records/4313730/draft/pids/doi",
+                  "parent":  "https://zenodo.org/api/records/4313204",
+                  "parent_html":  "https://zenodo.org/records/4313204",
+                  "parent_doi":  "https://doi.org/10.5281/zenodo.4313204",
+                  "parent_doi_html":  "https://zenodo.org/doi/10.5281/zenodo.4313204",
+                  "self_iiif_manifest":  "https://zenodo.org/api/iiif/record:4313730/manifest",
+                  "self_iiif_sequence":  "https://zenodo.org/api/iiif/record:4313730/sequence/default",
+                  "files":  "https://zenodo.org/api/records/4313730/files",
+                  "media_files":  "https://zenodo.org/api/records/4313730/media-files",
+                  "archive":  "https://zenodo.org/api/records/4313730/files-archive",
+                  "archive_media":  "https://zenodo.org/api/records/4313730/media-files-archive",
+                  "latest":  "https://zenodo.org/api/records/4313730/versions/latest",
+                  "latest_html":  "https://zenodo.org/records/4313730/latest",
+                  "versions":  "https://zenodo.org/api/records/4313730/versions",
+                  "draft":  "https://zenodo.org/api/records/4313730/draft",
+                  "access_links":  "https://zenodo.org/api/records/4313730/access/links",
+                  "access_grants":  "https://zenodo.org/api/records/4313730/access/grants",
+                  "access_users":  "https://zenodo.org/api/records/4313730/access/users",
+                  "access_request":  "https://zenodo.org/api/records/4313730/access/request",
+                  "access":  "https://zenodo.org/api/records/4313730/access",
+                  "communities":  "https://zenodo.org/api/records/4313730/communities",
+                  "communities-suggestions":  "https://zenodo.org/api/records/4313730/communities-suggestions",
+                  "request_deletion":  "https://zenodo.org/api/records/4313730/request-deletion",
+                  "file_modification":  "https://zenodo.org/api/records/4313730/file-modification",
+                  "quota_increase":  "https://zenodo.org/api/records/4313730/quota-increase",
+                  "requests":  "https://zenodo.org/api/records/4313730/requests"
+              },
+    "updated":  "2021-12-31T01:48:44.739471+00:00",
+    "recid":  "4313730",
+    "revision":  2,
+    "files":  [
+                  {
+                      "id":  "7eb8cc68-a7e8-4b58-9ceb-234a28179088",
+                      "key":  "ffavg_2021.csv",
+                      "size":  4010685,
+                      "checksum":  "md5:05897144108f9cd0f06756f6eb794611",
+                      "links":  {
+                                    "self":  "https://zenodo.org/api/records/4313730/files/ffavg_2021.csv/content"
+                                }
+                  },
+                  {
+                      "id":  "77583e68-3cdd-4ef9-bf90-05726a4427c5",
+                      "key":  "ws_2021.csv",
+                      "size":  5208,
+                      "checksum":  "md5:d6793d6c9ae2190e4e58c030f6ba161a",
+                      "links":  {
+                                    "self":  "https://zenodo.org/api/records/4313730/files/ws_2021.csv/content"
+                                }
+                  }
+              ],
+    "swh":  {
+
+            },
+    "owners":  [
+                   {
+                       "id":  "45865"
+                   }
+               ],
+    "status":  "published",
+    "stats":  {
+                  "downloads":  248,
+                  "unique_downloads":  215,
+                  "views":  509,
+                  "unique_views":  483,
+                  "version_downloads":  144,
+                  "version_unique_downloads":  126,
+                  "version_unique_views":  283,
+                  "version_views":  298
+              },
+    "state":  "done",
+    "submitted":  true
+}
