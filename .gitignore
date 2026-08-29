@@ -1,0 +1,65 @@
+# ==========================================================
+# LOMELLINA RICE TRADE-OFFS
+# ==========================================================
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Conda
+.conda/
+
+# Secrets
+.env
+*.key
+credentials.*
+config/paths.yml
+
+# VS Code machine-specific settings
+.vscode/
+
+# Raw/external/intermediate datasets
+data/raw/*
+data/external/*
+data/interim/*
+
+# Large geospatial / remote-sensing files
+*.tif
+*.tiff
+*.jp2
+*.hdf
+*.h5
+*.nc
+*.grib
+*.grb
+*.SAFE
+
+# Archives
+*.zip
+*.7z
+*.rar
+
+# GIS temporary files
+*.aux.xml
+*.ovr
+*.qmd
+*.qml~
+*.lock
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Microsoft Office temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
