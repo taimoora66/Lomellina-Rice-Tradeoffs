@@ -1,0 +1,283 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  8763,
+                 "identifier":  "RD_UNIMI/UE2OA1",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/UE2OA1",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-24",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/UE2OA1",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  544,
+                                       "datasetId":  8763,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/UE2OA1",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/UE2OA1",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  18,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-24T14:36:50Z",
+                                       "releaseTime":  "2025-10-24T14:36:50Z",
+                                       "createTime":  "2022-04-08T07:54:07Z",
+                                       "publicationDate":  "2025-10-24",
+                                       "citationDate":  "2025-10-24",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2021"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Gharsallah, Olfa"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "University of Milan"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Gharsallah, Olfa"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "University of Milan"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2021 agricultural season from a pilot field located in Brandezzata (Italy), where Dry Seeding and delayed Flooding (DFL-aut) were applied with enhanced control of ponding water levels through automated gates. It includes also the experimental layout and the rice variety cultivated in the pilot field."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Gharsallah, Olfa"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2022-04-08"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2021-04-26"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2021-09-21"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties",
+                                                                                                                "Groundwater level",
+                                                                                                                "Irrigation volumes",
+                                                                                                                "Water balance components",
+                                                                                                                "Crop development",
+                                                                                                                "Rice yield",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the automated gate (AutomGate) 2021",
+                                                         "label":  "MEDWATERICE DMP_CS1_ITALY_AutomGate_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  544,
+                                                         "dataFile":  {
+                                                                          "id":  17553,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/UE2OA1/K1ZNWG",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/UE2OA1/K1ZNWG",
+                                                                          "filename":  "MEDWATERICE DMP_CS1_ITALY_AutomGate_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  97976,
+                                                                          "description":  "Data collected at pilot field adopting the automated gate (AutomGate) 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-prod:1879999c1f2-bfe8495f1490",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "4c582d3809d71af545a05166413b147a",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "4c582d3809d71af545a05166413b147a"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-04-19",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Cultivated rice varieties in 2021",
+                                                         "label":  "MEDWATERICE DMP_CS1_varieties_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  544,
+                                                         "dataFile":  {
+                                                                          "id":  17555,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/UE2OA1/LOXOHV",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/UE2OA1/LOXOHV",
+                                                                          "filename":  "MEDWATERICE DMP_CS1_varieties_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  377561,
+                                                                          "description":  "Cultivated rice varieties in 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-prod:187999cf3ba-24cc92755373",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "ca9a5fc99237de76dd5ec04dfaa24b5b",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "ca9a5fc99237de76dd5ec04dfaa24b5b"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-04-19",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Experimental layout during the agricultural season 2021",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS1_ITALY_AutomGate_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  544,
+                                                         "dataFile":  {
+                                                                          "id":  17554,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/UE2OA1/AC81IQ",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/UE2OA1/AC81IQ",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS1_ITALY_AutomGate_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  8934403,
+                                                                          "description":  "Experimental layout during the agricultural season 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-prod:187999a8d3b-1523efdc7524",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "9ebe94e0178578de0ff3611ce4db1023",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "9ebe94e0178578de0ff3611ce4db1023"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-04-19",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE_CS1_LOMELLINA_ITALY_2021.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  544,
+                                                         "dataFile":  {
+                                                                          "id":  214134,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/UE2OA1/V4YIAH",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/UE2OA1/V4YIAH",
+                                                                          "filename":  "README FILE_CS1_LOMELLINA_ITALY_2021.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  4166,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a158c7691-69cc869df416",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "f16c7b081676c2091ae852fc6be11744",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "f16c7b081676c2091ae852fc6be11744"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

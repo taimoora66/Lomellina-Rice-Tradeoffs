@@ -1,0 +1,425 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  8714,
+                 "identifier":  "RD_UNIMI/NFTARS",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/NFTARS",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-24",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/NFTARS",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  536,
+                                       "datasetId":  8714,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/NFTARS",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/NFTARS",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  10,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-24T14:35:48Z",
+                                       "releaseTime":  "2025-10-24T14:35:48Z",
+                                       "createTime":  "2022-03-30T16:30:34Z",
+                                       "publicationDate":  "2025-10-24",
+                                       "citationDate":  "2025-10-24",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2021"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "de Lima, Isabel"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Universidade de Coimbra"
+                                                                                                                                          },
+                                                                                                                    "authorIdentifierScheme":  {
+                                                                                                                                                   "typeName":  "authorIdentifierScheme",
+                                                                                                                                                   "multiple":  false,
+                                                                                                                                                   "typeClass":  "controlledVocabulary",
+                                                                                                                                                   "value":  "ORCID"
+                                                                                                                                               }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "de Lima, Isabel"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Universidade de Coimbra"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2021 agricultural season in the Lower Mondego Valley case study (Portugal). The experiment was conducted in pilot fields located on two experimental farms: Quinta do Canal (Alqueidão) and Bico da Barca (Alqueidão). At each farm, two experimental irrigation strategies were tested: (1) wet seeding with continuous flooding (WFL) and (2) wet seeding with alternate wetting and drying (AWD). The dataset also includes the experimental field layouts and details on the cultivated rice varieties."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "de Lima, Isabel"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2022-03-30"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2021-05-07"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2021-09-30"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties,",
+                                                                                                                "Groundwater quality",
+                                                                                                                "Rice yield and product quality"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Rice variety cultivated in 2021, at pilot farm Bico da Barca (CS4).",
+                                                         "label":  "MEDWATERICE DMP_CS4_BB_Rice_variety_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8716,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/S9QQ3A",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/S9QQ3A",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_BB_Rice_variety_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  94188,
+                                                                          "description":  "Rice variety cultivated in 2021, at pilot farm Bico da Barca (CS4).",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdba7d5a7-9318d75a8148",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "60e8395292eadc0fa48c76ed2c60e2b2",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "60e8395292eadc0fa48c76ed2c60e2b2"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected in 2021 at Bico da Barca (Plot 2), in the Lower Mondego Valley; wet seeding and alternate wetting and drying irrigation (AWD) was adopted",
+                                                         "label":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Bico_da_Barca_AWD_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8731,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/QCP2WY",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/QCP2WY",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Bico_da_Barca_AWD_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  1002682,
+                                                                          "description":  "Data collected in 2021 at Bico da Barca (Plot 2), in the Lower Mondego Valley; wet seeding and alternate wetting and drying irrigation (AWD) was adopted",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbee3477-54be1c768e75",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "b2329fb55bd8aa7c443dd1265ef57043",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "b2329fb55bd8aa7c443dd1265ef57043"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected in 2021 at Bico da Barca (Plot 1), in the Lower Mondego Valley; wet seeding and conventional continuous flooding irrigation (WFL) was adopted",
+                                                         "label":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Bico_da_Barca_WFL_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8729,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/KRQBGJ",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/KRQBGJ",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Bico_da_Barca_WFL_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  1002057,
+                                                                          "description":  "Data collected in 2021 at Bico da Barca (Plot 1), in the Lower Mondego Valley; wet seeding and conventional continuous flooding irrigation (WFL) was adopted",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbee35b2-db6c0504f39b",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "f9a078c4349b637c1b0195e5a7870a21",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "f9a078c4349b637c1b0195e5a7870a21"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected in 2021 at Quinta do Canal (Plot 2), in the Lower Mondego Valley; wet seeding and alternate wetting and drying irrigation (AWD) was adopted",
+                                                         "label":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Quinta_do_Canal_AWD_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8730,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/8TADSI",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/8TADSI",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Quinta_do_Canal_AWD_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  1557005,
+                                                                          "description":  "Data collected in 2021 at Quinta do Canal (Plot 2), in the Lower Mondego Valley; wet seeding and alternate wetting and drying irrigation (AWD) was adopted",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbee36d7-96dc2c214126",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "c4a8da9c0be116528af440750af5247c",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "c4a8da9c0be116528af440750af5247c"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected in 2021 at Quinta do Canal (Plot 1), in the Lower Mondego Valley; wet seeding and conventional continuous flooding irrigation (WFL) was adopted",
+                                                         "label":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Quinta_do_Canal_WFL_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8728,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/IPFJVY",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/IPFJVY",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Quinta_do_Canal_WFL_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  1558288,
+                                                                          "description":  "Data collected in 2021 at Quinta do Canal (Plot 1), in the Lower Mondego Valley; wet seeding and conventional continuous flooding irrigation (WFL) was adopted",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbee37fe-9093012f95b9",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "a651dbb1664493ceef1837ee9bdb0c38",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "a651dbb1664493ceef1837ee9bdb0c38"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Rice variety cultivated in 2021, at pilot farm Quinta do Canal (CS4).",
+                                                         "label":  "MEDWATERICE DMP_CS4_QC_Rice_variety_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8715,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/L0L8FL",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/L0L8FL",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_QC_Rice_variety_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  94198,
+                                                                          "description":  "Rice variety cultivated in 2021, at pilot farm Quinta do Canal (CS4).",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdba7d6fb-4118f797ac7c",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "920a0431404b8e357f15a503766069fe",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "920a0431404b8e357f15a503766069fe"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Layout of the pilot plots at Bico da Barca (Pilot Farm 2 of CS4) reporting details about the instrumentation installed in 2021",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS4_BB_PORTUGAL_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8722,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/I3QRSG",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/I3QRSG",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS4_BB_PORTUGAL_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  92125,
+                                                                          "description":  "Layout of the pilot plots at Bico da Barca (Pilot Farm 2 of CS4) reporting details about the instrumentation installed in 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbb695e9-eb06009f1faa",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "daddaec3722b03c894f135f5346eff2b",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "daddaec3722b03c894f135f5346eff2b"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Layout of the pilot plots at Quinta do Canal (Pilot Farm 1 of CS4) reporting details about the instrumentation installed in 2021",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS4_QC_PORTUGAL_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  8721,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/FSNEQC",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/FSNEQC",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS4_QC_PORTUGAL_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  89134,
+                                                                          "description":  "Layout of the pilot plots at Quinta do Canal (Pilot Farm 1 of CS4) reporting details about the instrumentation installed in 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbb6977c-fba7bf960d02",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "108423ec3c90195340e4950bb92d6b4c",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "108423ec3c90195340e4950bb92d6b4c"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE CS4_LOWER MODEGO VALLEY_PORTUGAL_2021.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  536,
+                                                         "dataFile":  {
+                                                                          "id":  214141,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/NFTARS/HUAWQW",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/NFTARS/HUAWQW",
+                                                                          "filename":  "README FILE CS4_LOWER MODEGO VALLEY_PORTUGAL_2021.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  4835,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a166caf29-468b8ce0fc79",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "334ec1f4a3a619c4922f79c65576b4bc",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "334ec1f4a3a619c4922f79c65576b4bc"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

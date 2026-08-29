@@ -1,0 +1,340 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  5747,
+                 "identifier":  "RD_UNIMI/OZSVBI",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/OZSVBI",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-24",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/OZSVBI",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  316,
+                                       "datasetId":  5747,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/OZSVBI",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/OZSVBI",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  28,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-24T14:37:18Z",
+                                       "releaseTime":  "2025-10-24T14:37:18Z",
+                                       "createTime":  "2021-01-13T09:28:05Z",
+                                       "publicationDate":  "2025-10-24",
+                                       "citationDate":  "2025-10-24",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2020"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Gharsallah, Olfa"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "University of Milan"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Gharsallah, Olfa"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "University of Milan"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected at pilot fields: Wet Seeding and continuous Flooding irrigation (WFL), Dry seeding and delayed FLooding (DFL), and Alternate Wetting and Drying (AWD), during the agricultural season 2020. It contains also the Experimental layout, and the rice variety cultivated in the pilot fields."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Gharsallah, Olfa"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2021-01-13"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2020-04-24"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2020-09-30"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil pesticides analysis",
+                                                                                                                "Soil water status",
+                                                                                                                "Groundwater level and quality",
+                                                                                                                "Irrigation volumes and quality",
+                                                                                                                "Water balance components",
+                                                                                                                "Crop development",
+                                                                                                                "Rice yield and product quality",
+                                                                                                                "Soil and crop management operations "
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy alternate wetting and drying (AWD) 2020",
+                                                         "label":  "MEDWATERICE DMP_CS1_ITALY_AWD_2020_03_12_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  316,
+                                                         "dataFile":  {
+                                                                          "id":  11824,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/OZSVBI/QRDLGT",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/OZSVBI/QRDLGT",
+                                                                          "filename":  "MEDWATERICE DMP_CS1_ITALY_AWD_2020_03_12_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  214832,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy alternate wetting and drying (AWD) 2020",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180b8bab42b-455ffc23fdcc",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "02b01b7a5737e97d88cf042febb31a27",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "02b01b7a5737e97d88cf042febb31a27"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-05-12",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy dry seeding rice with continuous flooding (DFL) 2020",
+                                                         "label":  "MEDWATERICE DMP_CS1_ITALY_DFL_2020_03_12_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  316,
+                                                         "dataFile":  {
+                                                                          "id":  11822,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/OZSVBI/TGE1WI",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/OZSVBI/TGE1WI",
+                                                                          "filename":  "MEDWATERICE DMP_CS1_ITALY_DFL_2020_03_12_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  168616,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy dry seeding rice with continuous flooding (DFL) 2020",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180b8bab528-4e3d46852662",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "faa737fa86d2bed46abb50c846af296b",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "faa737fa86d2bed46abb50c846af296b"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-05-12",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy water seeding with continuous flooding (WFL) 2020",
+                                                         "label":  "MEDWATERICE DMP_CS1_ITALY_WFL_2020_03_12_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  316,
+                                                         "dataFile":  {
+                                                                          "id":  11823,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/OZSVBI/S5PFYV",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/OZSVBI/S5PFYV",
+                                                                          "filename":  "MEDWATERICE DMP_CS1_ITALY_WFL_2020_03_12_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  163173,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy water seeding with continuous flooding (WFL) 2020",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180b8bab606-6ad7f9c3e8b5",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "ce0f34b16380f481230d39421db44c5c",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "ce0f34b16380f481230d39421db44c5c"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-05-12",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Cultivated rice varieties in 2020",
+                                                         "label":  "MEDWATERICE DMP_CS1_varieties_2020.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  316,
+                                                         "dataFile":  {
+                                                                          "id":  8061,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/OZSVBI/BY09EF",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/OZSVBI/BY09EF",
+                                                                          "filename":  "MEDWATERICE DMP_CS1_varieties_2020.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  9261,
+                                                                          "description":  "Cultivated rice varieties in 2020",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e9b175aa4-1e4953381e48",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "f9c72513f1dc56debcf5dfc3cf9336ab",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "f9c72513f1dc56debcf5dfc3cf9336ab"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-27",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Layout of the experimental platform at ENR-CRR reporting details about the instrumentation installed in the pilot fields 2020",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS1_ITALY_2020.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  316,
+                                                         "dataFile":  {
+                                                                          "id":  6156,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/OZSVBI/CONCHB",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/OZSVBI/CONCHB",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS1_ITALY_2020.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  169341,
+                                                                          "description":  "Layout of the experimental platform at ENR-CRR reporting details about the instrumentation installed in the pilot fields 2020",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17a8b9e14fb-551f12d212d7",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "2b730b45464641aa86dc839e0b0b9f34",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "2b730b45464641aa86dc839e0b0b9f34"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2021-07-09",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE_CS1_LOMELLINA_ITALY_2020.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  316,
+                                                         "dataFile":  {
+                                                                          "id":  214133,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/OZSVBI/JQSIM6",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/OZSVBI/JQSIM6",
+                                                                          "filename":  "README FILE_CS1_LOMELLINA_ITALY_2020.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  5529,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a158bc1ca-69e7fbbb7a0c",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "2b7e8c33089b60b051e8365548a74b81",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "2b7e8c33089b60b051e8365548a74b81"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

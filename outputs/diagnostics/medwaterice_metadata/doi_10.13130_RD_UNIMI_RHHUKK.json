@@ -1,0 +1,339 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  17315,
+                 "identifier":  "RD_UNIMI/RHHUKK",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/RHHUKK",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-24",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/RHHUKK",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  802,
+                                       "datasetId":  17315,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/RHHUKK",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/RHHUKK",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  10,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-24T14:32:08Z",
+                                       "releaseTime":  "2025-10-24T14:32:08Z",
+                                       "createTime":  "2023-03-06T13:36:01Z",
+                                       "publicationDate":  "2025-10-24",
+                                       "citationDate":  "2025-10-24",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2021"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Goncalves, José"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Instituto Politécnico de Coimbra"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Goncalves, José"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Instituto Politécnico de Coimbra"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2021 agricultural season in the Lis Valley case study area (Portugal). The experiments were carried out in pilot fields at the Nuno Guilherme pilot farm, testing two irrigation strategies: (i) wet seeding with traditional continuous flooding (WFL) and (ii) wet seeding with alternate wetting and drying (AWD). It also includes data from a surface drip irrigation (DRIP) field tested at the Delfim Eugénio pilot farm. The dataset further provides the experimental field layouts and details of the cultivated rice varieties."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Goncalves, José"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2023-03-06"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2021-05-01"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2021-10-31"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physical-properties",
+                                                                                                                "Groundwater level and quality",
+                                                                                                                "Irrigation volumes",
+                                                                                                                "Water balance components",
+                                                                                                                "Crop development",
+                                                                                                                "Rice yield and quality",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy alternate wetting and drying (AWD) 2021",
+                                                         "label":  "MEDWATERICE DMP_CS5_LisValley_PT_AWD_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  802,
+                                                         "dataFile":  {
+                                                                          "id":  17323,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/RHHUKK/YHY00M",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/RHHUKK/YHY00M",
+                                                                          "filename":  "MEDWATERICE DMP_CS5_LisValley_PT_AWD_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  95629,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy alternate wetting and drying (AWD) 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:186b72a1a0d-4493678eaa61",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "014b4db65406f7ac75ec1234af58a944",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "014b4db65406f7ac75ec1234af58a944"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-03-06",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy surface drip irrigation (DRIP) 2021",
+                                                         "label":  "MEDWATERICE DMP_CS5_LisValley_PT_DRIP_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  802,
+                                                         "dataFile":  {
+                                                                          "id":  17321,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/RHHUKK/7NBRU7",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/RHHUKK/7NBRU7",
+                                                                          "filename":  "MEDWATERICE DMP_CS5_LisValley_PT_DRIP_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  85020,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy surface drip irrigation (DRIP) 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:186b72a1afd-367e833de7a9",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "809d1e39a7286b7b0b37a62a4ff585fe",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "809d1e39a7286b7b0b37a62a4ff585fe"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-03-06",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Cultivated rice varieties in 2021",
+                                                         "label":  "MEDWATERICE DMP_CS5_LisValley_PT_RICE-varieties_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  802,
+                                                         "dataFile":  {
+                                                                          "id":  17324,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/RHHUKK/J6AF7A",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/RHHUKK/J6AF7A",
+                                                                          "filename":  "MEDWATERICE DMP_CS5_LisValley_PT_RICE-varieties_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  423760,
+                                                                          "description":  "Cultivated rice varieties in 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:186b72a1c4f-cbb8110e3dc3",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "a2b4549c1d5b87cd3b2efe95a230a60e",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "a2b4549c1d5b87cd3b2efe95a230a60e"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-03-06",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy wet seeding and continuous flooding (WFL) 2021",
+                                                         "label":  "MEDWATERICE DMP_CS5_LisValley_PT_WFL_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  802,
+                                                         "dataFile":  {
+                                                                          "id":  17325,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/RHHUKK/WAKUFL",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/RHHUKK/WAKUFL",
+                                                                          "filename":  "MEDWATERICE DMP_CS5_LisValley_PT_WFL_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  96511,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy wet seeding and continuous flooding (WFL) 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:186b72a1d1d-47aef926a57d",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "4c7722ca98fad2d85b010127908642be",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "4c7722ca98fad2d85b010127908642be"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-03-06",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Experimental layout 2021",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS5_PORTUGAL_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  802,
+                                                         "dataFile":  {
+                                                                          "id":  17322,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/RHHUKK/UYVDPM",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/RHHUKK/UYVDPM",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS5_PORTUGAL_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  1026142,
+                                                                          "description":  "Experimental layout 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:186b72a1f68-b0b1f3afbc36",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "90ab5de69b62c2ab2b2100301f32c3da",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "90ab5de69b62c2ab2b2100301f32c3da"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-03-06",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE CS5_LIS VALLEY_PORTUGAL_2021.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  802,
+                                                         "dataFile":  {
+                                                                          "id":  214147,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/RHHUKK/O00H8I",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/RHHUKK/O00H8I",
+                                                                          "filename":  "README FILE CS5_LIS VALLEY_PORTUGAL_2021.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  4738,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a168d5219-43d030939f71",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "a1daf2f5e2cfb6f08a8ab47fdc25c48e",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "a1daf2f5e2cfb6f08a8ab47fdc25c48e"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

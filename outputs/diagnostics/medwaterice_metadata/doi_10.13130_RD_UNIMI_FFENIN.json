@@ -1,0 +1,435 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  11791,
+                 "identifier":  "RD_UNIMI/FFENIN",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/FFENIN",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-27",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/FFENIN",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  563,
+                                       "datasetId":  11791,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/FFENIN",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/FFENIN",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  17,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-27T12:12:08Z",
+                                       "releaseTime":  "2025-10-27T12:12:08Z",
+                                       "createTime":  "2022-04-29T13:20:32Z",
+                                       "publicationDate":  "2025-10-27",
+                                       "citationDate":  "2025-10-27",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2021"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Abdrabbo Shehata"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Agricultural Research Centre (Egypt)"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Abdrabbo Shehata"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Agricultural Research Centre (Egypt)"
+                                                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Olfa Gharsallah"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "University of Milan"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2021 agricultural season in the Nile Delta case study (Egypt). Four irrigation strategies were tested: in the Northern Nile Delta, traditional flooding (WFL) and HYBRID, each tested with two water qualities (freshwater and drainage water); and in the Eastern Nile Delta, sprinkler irrigation and surface drip irrigation. For each strategy, three cultivation methods were applied (drill seeding, raised beds, and the System of Rice Intensification (SRI)) in combination with five rice varieties (Giza 177, Giza 178, Sakha Super 300, Hybrid Rice-EH1, and Dry Rice-L1). The dataset also includes the experimental field layouts and detailed information on the cultivated rice varieties."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Gharsallah, Olfa"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2022-04-29"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2021-05-01"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2021-10-31"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties",
+                                                                                                                "Irrigation volumes and quality",
+                                                                                                                "Water balance components",
+                                                                                                                "Rice yield",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the drip irrigation strategy (DRIP) 2021",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_DRIP_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11797,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/PACPK7",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/PACPK7",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_DRIP_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  65233,
+                                                                          "description":  "Data collected at pilot field adopting the drip irrigation strategy (DRIP) 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:18075805415-9f69f891a5e1",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "19d1dfe6bd7d80018930f662161f7a2d",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "19d1dfe6bd7d80018930f662161f7a2d"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy of hybrid irrigation and drainage water (HYBRID-DRAINAGE WATER)  2021",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_HYBRID-DRAINAGE WATER_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11795,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/VSHZZU",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/VSHZZU",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_HYBRID-DRAINAGE WATER_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  69799,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy of hybrid irrigation and drainage water (HYBRID-DRAINAGE WATER)  2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180757ec96a-3ffb650e7687",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "82ee623a363048edbcf91d6c8a035b53",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "82ee623a363048edbcf91d6c8a035b53"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy of hybrid irrigation and freshwater (HYBRID-FRESHWATER)  2021",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_HYBRID-FRESHWATER_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11794,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/COTDJS",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/COTDJS",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_HYBRID-FRESHWATER_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  65174,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy of hybrid irrigation and freshwater (HYBRID-FRESHWATER)  2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180757de7c7-75106717a56e",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "c4667c3ccecea4d59b14147009434586",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "c4667c3ccecea4d59b14147009434586"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the sprinkler irrigation strategy (SPRINKLER) 2021",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_SPRINKLER_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11796,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/ZYR8YV",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/ZYR8YV",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_SPRINKLER_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  65180,
+                                                                          "description":  "Data collected at pilot field adopting the sprinkler irrigation strategy (SPRINKLER) 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180757fca99-582ebee62a83",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "aee238d05d15ba73e9a8252ea1a8400b",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "aee238d05d15ba73e9a8252ea1a8400b"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Cultivated rice varieties in 2021",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_varieties_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11799,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/O4H0GF",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/O4H0GF",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_varieties_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  90899,
+                                                                          "description":  "Cultivated rice varieties in 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:1807581627c-f1f025fe50ab",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "6c5cefa0e9403738f93c1fe4a1fa2540",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "6c5cefa0e9403738f93c1fe4a1fa2540"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and drainage water (WFL-DRAINAGE WATER)  2021",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_WFL-DRAINAGE WATER_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11793,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/F2FUGK",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/F2FUGK",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_WFL-DRAINAGE WATER_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  64268,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and drainage water (WFL-DRAINAGE WATER)  2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180757d1c84-9afa4ffa39a9",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "59d9af898ca44bf9c39a8ce028b59f8a",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "59d9af898ca44bf9c39a8ce028b59f8a"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and freshwater (WFL-FRESHWATER)  2021",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_WFL-FRESHWATER_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11792,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/LCMUN7",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/LCMUN7",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_WFL-FRESHWATER_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  63864,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and freshwater (WFL-FRESHWATER)  2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:180757b4a78-1306c7ac1a12",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "cb797bfcd0ab118089339daf9351482a",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "cb797bfcd0ab118089339daf9351482a"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Layout of the experimental platform 2021",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS6_EGYPT_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  11798,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/17QJFY",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/17QJFY",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS6_EGYPT_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  234423,
+                                                                          "description":  "Layout of the experimental platform 2021",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:1807580f661-1af3a1895d9a",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "35538cf3411c3c07f60dcfa985bc75b2",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "35538cf3411c3c07f60dcfa985bc75b2"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE CS6_NILE DELTA_EGYPT__2021.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  563,
+                                                         "dataFile":  {
+                                                                          "id":  214155,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FFENIN/AUSJH6",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FFENIN/AUSJH6",
+                                                                          "filename":  "README FILE CS6_NILE DELTA_EGYPT__2021.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  5298,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a24dfae6c-c78885000270",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "c8bf055ff7734101ae120a8bd2c666a4",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "c8bf055ff7734101ae120a8bd2c666a4"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-27",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

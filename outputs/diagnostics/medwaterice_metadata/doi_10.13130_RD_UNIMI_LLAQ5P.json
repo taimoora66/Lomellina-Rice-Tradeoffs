@@ -1,0 +1,291 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  206764,
+                 "identifier":  "RD_UNIMI/LLAQ5P",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/LLAQ5P",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-27",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/LLAQ5P",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  1786,
+                                       "datasetId":  206764,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/LLAQ5P",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/LLAQ5P",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  10,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-27T15:10:59Z",
+                                       "releaseTime":  "2025-10-27T15:10:59Z",
+                                       "createTime":  "2025-09-09T13:21:21Z",
+                                       "publicationDate":  "2025-10-27",
+                                       "citationDate":  "2025-10-27",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  true,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2021"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Enginsu Melih"
+                                                                                                                                   }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Enginsu Melih"
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2021 agricultural season in the Bafra Valley (Turkey). In 2021, two irrigation management strategies were tested, cultivating only one rice variety (Rekor CL). The tow irrigation managements were: 1) WFL: dry seeding and immediate field flooding + continuous flooding; 2) 2) AWD(-15): dry seeding and immediate field flooding + alternate wetting and drying (water tube threshold equal to -15 cm below the soil surface). The dataset also includes the experimental field layouts and details of the cultivated rice varieties."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Gharsallah, Olfa"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2025-09-09"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2021-06-11"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2021-10-25"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties",
+                                                                                                                "Irrigation volumes and quality",
+                                                                                                                "Water balance components",
+                                                                                                                "Crop development",
+                                                                                                                "Yield and product quality",
+                                                                                                                "CH4 and N2O emissions",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS7__Bafra Valley AWD15_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  1786,
+                                                         "dataFile":  {
+                                                                          "id":  206767,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LLAQ5P/MDIKCC",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LLAQ5P/MDIKCC",
+                                                                          "filename":  "MEDWATERICE DMP_CS7__Bafra Valley AWD15_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  94188,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:1992ea34704-436cc77381f7",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "a8a1126d27fb545bf37c1905dd41e9e3",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "a8a1126d27fb545bf37c1905dd41e9e3"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-09-09",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  true
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS7__Bafra Valley CF_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  1786,
+                                                         "dataFile":  {
+                                                                          "id":  206765,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LLAQ5P/KVLSP9",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LLAQ5P/KVLSP9",
+                                                                          "filename":  "MEDWATERICE DMP_CS7__Bafra Valley CF_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  92521,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:1992ea34875-fb33ca742226",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "4e774c1e40a5622d3cfe4b2a0efb2882",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "4e774c1e40a5622d3cfe4b2a0efb2882"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-09-09",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  true
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS7_TURKEY_2021 .pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  1786,
+                                                         "dataFile":  {
+                                                                          "id":  206768,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LLAQ5P/3SIBYW",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LLAQ5P/3SIBYW",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS7_TURKEY_2021 .pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  47882,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:1992ea34981-49c429a637f4",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "208ba7d8fafe8abcc223926a9f96cf0d",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "208ba7d8fafe8abcc223926a9f96cf0d"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-09-09",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  true
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE CS7_BAFRA VALLEY_TURKEY_2021.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  1786,
+                                                         "dataFile":  {
+                                                                          "id":  214159,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LLAQ5P/LAZSRO",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LLAQ5P/LAZSRO",
+                                                                          "filename":  "README FILE CS7_BAFRA VALLEY_TURKEY_2021.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  4608,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a25fe1dbd-143f4885d3c4",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "b2ed43a62cb554697fa98d2de6d48f31",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "b2ed43a62cb554697fa98d2de6d48f31"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-27",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  true
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "Variety Characteristics-CS7-2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  1786,
+                                                         "dataFile":  {
+                                                                          "id":  206766,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LLAQ5P/TS34BC",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LLAQ5P/TS34BC",
+                                                                          "filename":  "Variety Characteristics-CS7-2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  96821,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:1992ea34a8c-1ea80efa1594",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "3961689cc4f060357824c7ed97dbc7cb",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "3961689cc4f060357824c7ed97dbc7cb"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-09-09",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  true
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

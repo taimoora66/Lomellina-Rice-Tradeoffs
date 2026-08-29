@@ -1,0 +1,300 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  8674,
+                 "identifier":  "RD_UNIMI/Q4S2PN",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/Q4S2PN",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-24",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/Q4S2PN",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  527,
+                                       "datasetId":  8674,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/Q4S2PN",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/Q4S2PN",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  9,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-24T14:34:56Z",
+                                       "releaseTime":  "2025-10-24T14:34:56Z",
+                                       "createTime":  "2022-03-21T09:40:13Z",
+                                       "publicationDate":  "2025-10-24",
+                                       "citationDate":  "2025-10-24",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural Season 2021"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Mira, Concepcion"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Tepro Consultores SL, Spain"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Mira, Concepcion"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Tepro Consultores SL, Spain"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the agricultural season 2021. The experimentation was conducted in two fields located at the Desmaisieres farms: 1) wet seeding and continuous flooding (Control); 2) 14% reduction in water inflow/outflow during whole crop cycle and  22% reduction in water inflow/outflow from day 100 after sowing (RT2). The dataset includes also the experimental layouts of the pilot fields and the rice varieties cultivated under each irrigation treatment."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Mira, Concepcion"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2022-03-21"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2021-05-30"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2021-10-28"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties",
+                                                                                                                "Irrigation volumes",
+                                                                                                                "Crop development",
+                                                                                                                "Rice yield and product quality",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "label":  "DMP_CS3_CONTROL_Desmaisieres_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  527,
+                                                         "dataFile":  {
+                                                                          "id":  8676,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/Q4S2PN/ZKTU27",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/Q4S2PN/ZKTU27",
+                                                                          "filename":  "DMP_CS3_CONTROL_Desmaisieres_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  4829863,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fabd91862-a3035c3f5922",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "503fb7de42796d0c5bee297e45453a6d",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "503fb7de42796d0c5bee297e45453a6d"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-21",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "DMP_CS3_RT2_Desmaisieres_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  527,
+                                                         "dataFile":  {
+                                                                          "id":  8677,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/Q4S2PN/X0HL7R",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/Q4S2PN/X0HL7R",
+                                                                          "filename":  "DMP_CS3_RT2_Desmaisieres_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  5978513,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fabd90f6b-b69976c57192",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "96e4b1eac04e8869727a90b5f8679cf3",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "96e4b1eac04e8869727a90b5f8679cf3"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-21",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "EXPERIMENTAL LAYOUT_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  527,
+                                                         "dataFile":  {
+                                                                          "id":  17311,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/Q4S2PN/DFARAF",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/Q4S2PN/DFARAF",
+                                                                          "filename":  "EXPERIMENTAL LAYOUT_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  367659,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:1869cc9bd2a-fe734015a009",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "76b40966e5d4c696e47aaaad6a922a78",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "76b40966e5d4c696e47aaaad6a922a78"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2023-03-01",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICEDMP_CS3_Varieties_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  527,
+                                                         "dataFile":  {
+                                                                          "id":  8675,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/Q4S2PN/NZPQ2U",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/Q4S2PN/NZPQ2U",
+                                                                          "filename":  "MEDWATERICEDMP_CS3_Varieties_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  38285,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fabd9125f-40c13df9bf7b",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "8260bd19234cc6840e1c476f6477907e",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "8260bd19234cc6840e1c476f6477907e"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-21",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE CS3_QUADALQUIVIR_SPAIN_2021.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  527,
+                                                         "dataFile":  {
+                                                                          "id":  214137,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/Q4S2PN/VCWQ2Y",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/Q4S2PN/VCWQ2Y",
+                                                                          "filename":  "README FILE CS3_QUADALQUIVIR_SPAIN_2021.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  4452,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a164142eb-23532e707d47",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "3de2a920c0336c7c3105dc51f82f13d9",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "3de2a920c0336c7c3105dc51f82f13d9"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

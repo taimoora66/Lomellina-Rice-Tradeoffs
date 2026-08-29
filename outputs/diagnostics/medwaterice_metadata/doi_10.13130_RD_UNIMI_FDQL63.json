@@ -1,0 +1,337 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  6037,
+                 "identifier":  "RD_UNIMI/FDQL63",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/FDQL63",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-24",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/FDQL63",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  331,
+                                       "datasetId":  6037,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/FDQL63",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/FDQL63",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  24,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-24T14:38:09Z",
+                                       "releaseTime":  "2025-10-24T14:38:09Z",
+                                       "createTime":  "2021-03-11T09:50:10Z",
+                                       "publicationDate":  "2025-10-24",
+                                       "citationDate":  "2025-10-24",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2019"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Pinsach, Jaume"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Universitat de Girona"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Pinsach, Jaume"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Universitat de Girona"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2019 agricultural season as part of the Baix Ter case study (CS2), where three irrigation strategies were tested: (i) wet seeding with continuous flooding (WFL); (ii) dry seeding with delayed flooding starting from the three-leaf stage (DFL); and (iii) dry seeding with subsurface drip irrigation (SDI). WFL and DFL were applied at the Mas Pla pilot farm, located in the Pals area within a traditional rice-growing region. SDI was implemented at the Camp del Cobert pilot farm, also in Pals, but outside the conventional rice cultivation area. The dataset also includes the experimental layouts of the FL and SDI pilot fields, as well as the rice varieties cultivated in those fields."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Pinsach, Jaume"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2021-03-11"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2019-05-01"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2019-11-16"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties",
+                                                                                                                "Soil water status",
+                                                                                                                "Groundwater level",
+                                                                                                                "Irrigation volumes and quality",
+                                                                                                                "ETc",
+                                                                                                                "Crop development",
+                                                                                                                "Rice yield"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Plot map of farm where flooded irrigation data was collected",
+                                                         "label":  "Mas Pla_2019.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  331,
+                                                         "dataFile":  {
+                                                                          "id":  6042,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FDQL63/U6CV3C",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FDQL63/U6CV3C",
+                                                                          "filename":  "Mas Pla_2019.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  1064638,
+                                                                          "description":  "Plot map of farm where flooded irrigation data was collected",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:178216efe8d-3aa65cf0230a",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "cfd2c6631ad5ac55282d25980a109f33",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "cfd2c6631ad5ac55282d25980a109f33"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2021-03-11",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected during 2019 at farm scale using subsurface drip irrigation (SDI)",
+                                                         "label":  "MEDWATERICE DMP_CS2_COBERT_SDI_2019.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  4,
+                                                         "datasetVersionId":  331,
+                                                         "dataFile":  {
+                                                                          "id":  6040,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FDQL63/USFASJ",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FDQL63/USFASJ",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_COBERT_SDI_2019.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  2673326,
+                                                                          "description":  "Data collected during 2019 at farm scale using subsurface drip irrigation (SDI)",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17820aec593-520f326f677f",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "10a39d7ab4b4e656add20c1b2a25f461",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "10a39d7ab4b4e656add20c1b2a25f461"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2021-03-11",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected during 2019 at farm scale using flood irrigation (FL)",
+                                                         "label":  "MEDWATERICE DMP_CS2_Mas Pla_2019.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  3,
+                                                         "datasetVersionId":  331,
+                                                         "dataFile":  {
+                                                                          "id":  6038,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FDQL63/FYVQRJ",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FDQL63/FYVQRJ",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_Mas Pla_2019.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  140008,
+                                                                          "description":  "Data collected during 2019 at farm scale using flood irrigation (FL)",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17820aec6ff-9504a8914665",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "b901bf14300bb61179d4d777bf7cf18e",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "b901bf14300bb61179d4d777bf7cf18e"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2021-03-11",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS2_varieties_2019.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  331,
+                                                         "dataFile":  {
+                                                                          "id":  8042,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FDQL63/LYCYKM",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FDQL63/LYCYKM",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_varieties_2019.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  40059,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e6d0a64ca-5e2f0f21a106",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "45432a8d041935caba0f479f4ccda0f3",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "45432a8d041935caba0f479f4ccda0f3"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-18",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Details of the subsurface drip irrigation plot design and sampling points",
+                                                         "label":  "Plots Field Data 2019.pptx",
+                                                         "restricted":  false,
+                                                         "version":  2,
+                                                         "datasetVersionId":  331,
+                                                         "dataFile":  {
+                                                                          "id":  6039,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FDQL63/4VYXNU",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FDQL63/4VYXNU",
+                                                                          "filename":  "Plots Field Data 2019.pptx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                                                                          "friendlyType":  "MS Powerpoint",
+                                                                          "filesize":  1699245,
+                                                                          "description":  "Details of the subsurface drip irrigation plot design and sampling points",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17820aec993-085a0a63dca7",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "71e230e8f97e50e8b3f9df2f9017935f",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "71e230e8f97e50e8b3f9df2f9017935f"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2021-03-11",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE_CS2_Baix Ter_Spain_2019.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  331,
+                                                         "dataFile":  {
+                                                                          "id":  214130,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/FDQL63/TVDLPX",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/FDQL63/TVDLPX",
+                                                                          "filename":  "README FILE_CS2_Baix Ter_Spain_2019.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  5207,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a157dea67-cb54e5ed39c3",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "e65a230e1a283cfbbd688688c28f0cdf",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "e65a230e1a283cfbbd688688c28f0cdf"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

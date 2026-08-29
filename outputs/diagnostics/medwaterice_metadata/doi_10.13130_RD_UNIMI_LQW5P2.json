@@ -1,0 +1,293 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  6071,
+                 "identifier":  "RD_UNIMI/LQW5P2",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/LQW5P2",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-24",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/LQW5P2",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  340,
+                                       "datasetId":  6071,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/LQW5P2",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/LQW5P2",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  15,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-24T14:35:57Z",
+                                       "releaseTime":  "2025-10-24T14:35:57Z",
+                                       "createTime":  "2021-03-24T12:27:38Z",
+                                       "publicationDate":  "2025-10-24",
+                                       "citationDate":  "2025-10-24",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2019"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "de Lima, Isabel"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Universidade de Coimbra"
+                                                                                                                                          },
+                                                                                                                    "authorIdentifierScheme":  {
+                                                                                                                                                   "typeName":  "authorIdentifierScheme",
+                                                                                                                                                   "multiple":  false,
+                                                                                                                                                   "typeClass":  "controlledVocabulary",
+                                                                                                                                                   "value":  "ORCID"
+                                                                                                                                               },
+                                                                                                                    "authorIdentifier":  {
+                                                                                                                                             "typeName":  "authorIdentifier",
+                                                                                                                                             "multiple":  false,
+                                                                                                                                             "typeClass":  "primitive",
+                                                                                                                                             "value":  "0000-0002-5134-4175"
+                                                                                                                                         }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "de Lima, Isabel"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Universidade de Coimbra"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset comprises data gathered during the 2019 agricultural season in the Lower Mondego Valley case study (Portugal). The experiment was carried out in a pilot field at the Quinta do Canal (Alqueidão) experimental site, under a wet seeding and continuous flooding irrigation regime. The dataset also contains the experimental field layouts and information on the cultivated rice variety."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "de Lima, Isabel"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2021-03-24"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2019-05-05"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2019-12-31"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties",
+                                                                                                                "Irrigation volumes",
+                                                                                                                "Crop development",
+                                                                                                                "Rice yield and product quality",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Data collected at Quinta do Canal, in the Lower Mondego Valley (plots 1 and 2) adopting the irrigation strategy wet seeding and conventional continuous flooding (WFL)",
+                                                         "label":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Quinta_do_Canal_WFL_2019.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  340,
+                                                         "dataFile":  {
+                                                                          "id":  6072,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LQW5P2/KJY14D",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LQW5P2/KJY14D",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_Portugal_LowerMondego_Quinta_do_Canal_WFL_2019.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  701506,
+                                                                          "description":  "Data collected at Quinta do Canal, in the Lower Mondego Valley (plots 1 and 2) adopting the irrigation strategy wet seeding and conventional continuous flooding (WFL)",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17867381277-1b4f111e582f",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "292f80ff71188c2da1c261c9090ef550",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "292f80ff71188c2da1c261c9090ef550"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2021-03-25",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Rice variety cultivated in 2019, at pilot farm Quinta do Canal (CS4).",
+                                                         "label":  "MEDWATERICE DMP_CS4_QC_Rice_variety_2019.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  340,
+                                                         "dataFile":  {
+                                                                          "id":  8719,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LQW5P2/SGODMZ",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LQW5P2/SGODMZ",
+                                                                          "filename":  "MEDWATERICE DMP_CS4_QC_Rice_variety_2019.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  95902,
+                                                                          "description":  "Rice variety cultivated in 2019, at pilot farm Quinta do Canal (CS4).",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbacc6ff-cfdb4f1eebb9",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "059d1cc61132fbcf5f9bbe8cd5a49fae",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "059d1cc61132fbcf5f9bbe8cd5a49fae"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Layout of the pilot plots at Quinta do Canal (Pilot Farm 1 of CS4) reporting details about the instrumentation installed in 2019",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS4_QC_PORTUGAL_2019.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  340,
+                                                         "dataFile":  {
+                                                                          "id":  8723,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LQW5P2/T3DNZC",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LQW5P2/T3DNZC",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS4_QC_PORTUGAL_2019.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  83715,
+                                                                          "description":  "Layout of the pilot plots at Quinta do Canal (Pilot Farm 1 of CS4) reporting details about the instrumentation installed in 2019",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17fdbbb4da9-5d79a69bb87d",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "4bff794a97efc7abcf68f1d723acadae",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "4bff794a97efc7abcf68f1d723acadae"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-03-30",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE CS4_LOWER MODEGO VALLEY_PORTUGAL_2019.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  340,
+                                                         "dataFile":  {
+                                                                          "id":  214139,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/LQW5P2/PQ3OAS",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/LQW5P2/PQ3OAS",
+                                                                          "filename":  "README FILE CS4_LOWER MODEGO VALLEY_PORTUGAL_2019.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  4430,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a166bcc64-482a27cd0cd4",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "8ba22ffdd8e1dfb461c6e60366ae6b3b",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "8ba22ffdd8e1dfb461c6e60366ae6b3b"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-24",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

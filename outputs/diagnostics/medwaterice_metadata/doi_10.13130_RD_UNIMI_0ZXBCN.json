@@ -1,0 +1,323 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  11777,
+                 "identifier":  "RD_UNIMI/0ZXBCN",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/0ZXBCN",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-27",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/0ZXBCN",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  561,
+                                       "datasetId":  11777,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/0ZXBCN",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/0ZXBCN",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  13,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-27T12:12:44Z",
+                                       "releaseTime":  "2025-10-27T12:12:44Z",
+                                       "createTime":  "2022-04-29T12:37:41Z",
+                                       "publicationDate":  "2025-10-27",
+                                       "citationDate":  "2025-10-27",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2019"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Abdrabbo Shehata"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Agricultural Research Centre (Egypt)"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Abdrabbo Shehata"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Agricultural Research Centre (Egypt)"
+                                                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Olfa Gharsallah"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "University of Milan"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2019 agricultural season in the Nile Delta (Egypt). The experiment was conducted in pilot fields at the pilot farm Sakha (North Nile Delta) under traditional flooding (WFL) using both fresh water and drainage water. Three cultivation methods were tested (drill seeding, raised beds, and the System of Rice Intensification), along with five rice varieties (Giza 177, Giza 178, Sakha 107, Hybrid Rice-EH1, and Dry Rice-L1). The dataset also includes the experimental field layouts and details of the cultivated rice varieties."
+                                                                                                                                           }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Gharsallah, Olfa"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2022-04-29"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2019-05-01"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2019-10-31"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties",
+                                                                                                                "Irrigation volumes and quality",
+                                                                                                                "Water balance components",
+                                                                                                                "Rice yield",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "description":  "Cultivated rice varieties in 2019",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_varieties_2019.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  561,
+                                                         "dataFile":  {
+                                                                          "id":  11781,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/0ZXBCN/27QP96",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/0ZXBCN/27QP96",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_varieties_2019.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  89670,
+                                                                          "description":  "Cultivated rice varieties in 2019",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:1807568571a-4cfac7939e76",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "0542b33e656f0ad11d17db03721f90f5",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "0542b33e656f0ad11d17db03721f90f5"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and drainage water (WFL-DRAINAGE WATER) 2019",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_WFL-DRAINAGE WATER_2019.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  561,
+                                                         "dataFile":  {
+                                                                          "id":  11779,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/0ZXBCN/RZZKBP",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/0ZXBCN/RZZKBP",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_WFL-DRAINAGE WATER_2019.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  63344,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and drainage water (WFL-DRAINAGE WATER) 2019",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:18075664851-ae2d3deb56d4",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "d04d94606433293be9bfcbe914af3cfd",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "d04d94606433293be9bfcbe914af3cfd"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and freshwater (WFL-FRESHWATER) 2019",
+                                                         "label":  "MEDWATERICE DMP_CS6_EGYPT_WFL-FRESHWATER_2019.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  2,
+                                                         "datasetVersionId":  561,
+                                                         "dataFile":  {
+                                                                          "id":  11778,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/0ZXBCN/D3XXIX",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/0ZXBCN/D3XXIX",
+                                                                          "filename":  "MEDWATERICE DMP_CS6_EGYPT_WFL-FRESHWATER_2019.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  68146,
+                                                                          "description":  "Data collected at pilot field adopting the irrigation strategy of continuous flooding and freshwater (WFL-FRESHWATER) 2019",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:18075647961-c1893a3f4f29",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "0e1fc7176c149fcdb5c7394a2e319df7",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "0e1fc7176c149fcdb5c7394a2e319df7"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "description":  "Layout of the experimental platform 2019",
+                                                         "label":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS6_EGYPT_2019.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  561,
+                                                         "dataFile":  {
+                                                                          "id":  11780,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/0ZXBCN/SOFFAV",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/0ZXBCN/SOFFAV",
+                                                                          "filename":  "MEDWATERICE_EXPERIMENTAL LAYOUT_CS6_EGYPT_2019.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  188633,
+                                                                          "description":  "Layout of the experimental platform 2019",
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:18075678878-08a4dbecbd14",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "33688eb83e2bc0a1510f156ca2ee29d5",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "33688eb83e2bc0a1510f156ca2ee29d5"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-04-29",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE CS6_NILE DELTA_EGYPT__2019.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  561,
+                                                         "dataFile":  {
+                                                                          "id":  214153,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/0ZXBCN/UBMBGX",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/0ZXBCN/UBMBGX",
+                                                                          "filename":  "README FILE CS6_NILE DELTA_EGYPT__2019.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  4878,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a24dda646-e3713d6489ce",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "23c9cd478f2de27c30afcff21acf0b31",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "23c9cd478f2de27c30afcff21acf0b31"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-27",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}

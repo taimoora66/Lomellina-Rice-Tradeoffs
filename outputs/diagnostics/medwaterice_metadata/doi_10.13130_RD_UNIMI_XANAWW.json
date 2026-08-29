@@ -1,0 +1,375 @@
+﻿{
+    "status":  "OK",
+    "data":  {
+                 "id":  8033,
+                 "identifier":  "RD_UNIMI/XANAWW",
+                 "persistentUrl":  "https://doi.org/10.13130/RD_UNIMI/XANAWW",
+                 "protocol":  "doi",
+                 "authority":  "10.13130",
+                 "separator":  "/",
+                 "publisher":  "UNIMI Dataverse",
+                 "publicationDate":  "2025-10-27",
+                 "storageIdentifier":  "s3://10.13130/RD_UNIMI/XANAWW",
+                 "datasetType":  "dataset",
+                 "latestVersion":  {
+                                       "id":  461,
+                                       "datasetId":  8033,
+                                       "datasetPersistentId":  "doi:10.13130/RD_UNIMI/XANAWW",
+                                       "datasetType":  "dataset",
+                                       "storageIdentifier":  "s3://10.13130/RD_UNIMI/XANAWW",
+                                       "versionNumber":  1,
+                                       "internalVersionNumber":  11,
+                                       "versionMinorNumber":  0,
+                                       "versionState":  "RELEASED",
+                                       "latestVersionPublishingState":  "RELEASED",
+                                       "deaccessionLink":  "",
+                                       "lastUpdateTime":  "2025-10-27T12:22:52Z",
+                                       "releaseTime":  "2025-10-27T12:22:52Z",
+                                       "createTime":  "2022-01-14T11:24:14Z",
+                                       "publicationDate":  "2025-10-27",
+                                       "citationDate":  "2025-10-27",
+                                       "license":  {
+                                                       "name":  "CC0 1.0",
+                                                       "uri":  "http://creativecommons.org/publicdomain/zero/1.0",
+                                                       "iconUri":  "https://licensebuttons.net/p/zero/1.0/88x31.png",
+                                                       "rightsIdentifier":  "CC0-1.0",
+                                                       "rightsIdentifierScheme":  "SPDX",
+                                                       "schemeUri":  "https://spdx.org/licenses/",
+                                                       "languageCode":  "en"
+                                                   },
+                                       "fileAccessRequest":  false,
+                                       "metadataBlocks":  {
+                                                              "citation":  {
+                                                                               "displayName":  "Citation Metadata",
+                                                                               "name":  "citation",
+                                                                               "fields":  [
+                                                                                              {
+                                                                                                  "typeName":  "title",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Agricultural season 2021"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "author",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "authorName":  {
+                                                                                                                                       "typeName":  "authorName",
+                                                                                                                                       "multiple":  false,
+                                                                                                                                       "typeClass":  "primitive",
+                                                                                                                                       "value":  "Pinsach Boada, Jaume"
+                                                                                                                                   },
+                                                                                                                    "authorAffiliation":  {
+                                                                                                                                              "typeName":  "authorAffiliation",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "Universitat de Girona"
+                                                                                                                                          },
+                                                                                                                    "authorIdentifierScheme":  {
+                                                                                                                                                   "typeName":  "authorIdentifierScheme",
+                                                                                                                                                   "multiple":  false,
+                                                                                                                                                   "typeClass":  "controlledVocabulary",
+                                                                                                                                                   "value":  "ORCID"
+                                                                                                                                               },
+                                                                                                                    "authorIdentifier":  {
+                                                                                                                                             "typeName":  "authorIdentifier",
+                                                                                                                                             "multiple":  false,
+                                                                                                                                             "typeClass":  "primitive",
+                                                                                                                                             "value":  "0000-0003-3328-5877"
+                                                                                                                                         }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "datasetContact",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "datasetContactName":  {
+                                                                                                                                               "typeName":  "datasetContactName",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "Pinsach Boada, Jaume"
+                                                                                                                                           },
+                                                                                                                    "datasetContactAffiliation":  {
+                                                                                                                                                      "typeName":  "datasetContactAffiliation",
+                                                                                                                                                      "multiple":  false,
+                                                                                                                                                      "typeClass":  "primitive",
+                                                                                                                                                      "value":  "Universitat de Girona"
+                                                                                                                                                  }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dsDescription",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dsDescriptionValue":  {
+                                                                                                                                               "typeName":  "dsDescriptionValue",
+                                                                                                                                               "multiple":  false,
+                                                                                                                                               "typeClass":  "primitive",
+                                                                                                                                               "value":  "This dataset contains data collected during the 2021 agricultural season for the Baix Ter case study (CS2). The irrigation strategies applied were similar to those used in 2020: wet seeding with continuous flooding (WFL), dry seeding with delayed flooding (DFL), and dry seeding with subsurface drip irrigation (SDI). As in the previous year, the SDI method was implemented in two pilot farms: Camp del Cobert and Benzinera, both located in Pals. The dataset also includes the experimental layouts of the pilot fields and the rice varieties cultivated under each irrigation treatment."
+                                                                                                                                           },
+                                                                                                                    "dsDescriptionDate":  {
+                                                                                                                                              "typeName":  "dsDescriptionDate",
+                                                                                                                                              "multiple":  false,
+                                                                                                                                              "typeClass":  "primitive",
+                                                                                                                                              "value":  "2022-01-14"
+                                                                                                                                          }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "subject",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "controlledVocabulary",
+                                                                                                  "value":  [
+                                                                                                                "Agricultural Sciences",
+                                                                                                                "Earth and Environmental Sciences",
+                                                                                                                "Engineering"
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "depositor",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "Pinsach Boada, Jaume"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfDeposit",
+                                                                                                  "multiple":  false,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  "2022-01-14"
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "dateOfCollection",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "compound",
+                                                                                                  "value":  [
+                                                                                                                {
+                                                                                                                    "dateOfCollectionStart":  {
+                                                                                                                                                  "typeName":  "dateOfCollectionStart",
+                                                                                                                                                  "multiple":  false,
+                                                                                                                                                  "typeClass":  "primitive",
+                                                                                                                                                  "value":  "2021-05-01"
+                                                                                                                                              },
+                                                                                                                    "dateOfCollectionEnd":  {
+                                                                                                                                                "typeName":  "dateOfCollectionEnd",
+                                                                                                                                                "multiple":  false,
+                                                                                                                                                "typeClass":  "primitive",
+                                                                                                                                                "value":  "2021-11-15"
+                                                                                                                                            }
+                                                                                                                }
+                                                                                                            ]
+                                                                                              },
+                                                                                              {
+                                                                                                  "typeName":  "kindOfData",
+                                                                                                  "multiple":  true,
+                                                                                                  "typeClass":  "primitive",
+                                                                                                  "value":  [
+                                                                                                                "Agro-climatic data",
+                                                                                                                "Soil physico-chemical properties,",
+                                                                                                                "Soil water status",
+                                                                                                                "Groundwater level and quality,",
+                                                                                                                "Irrigation volumes and quality,",
+                                                                                                                "Water balance components,",
+                                                                                                                "Crop development,",
+                                                                                                                "Rice yield and product quality,",
+                                                                                                                "Soil, crop and irrigation management operations"
+                                                                                                            ]
+                                                                                              }
+                                                                                          ]
+                                                                           }
+                                                          },
+                                       "files":  [
+                                                     {
+                                                         "label":  "2021_2020_Plots location.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  461,
+                                                         "dataFile":  {
+                                                                          "id":  8041,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/XANAWW/0ZI9RB",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/XANAWW/0ZI9RB",
+                                                                          "filename":  "2021_2020_Plots location.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  4004726,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e58993139-9f181017c59e",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "0d3f9ae7482a7c2d7bae0bb2ae1e6f7d",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "0d3f9ae7482a7c2d7bae0bb2ae1e6f7d"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-14",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS2_Mas Pla_Dry sowing_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  461,
+                                                         "dataFile":  {
+                                                                          "id":  8036,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/XANAWW/NWVXHT",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/XANAWW/NWVXHT",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_Mas Pla_Dry sowing_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  194939,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e585868a5-11baaeeba2c1",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "b61161332cff2dad1641d89e58095595",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "b61161332cff2dad1641d89e58095595"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-14",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS2_Mas Pla_Wet sowing_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  461,
+                                                         "dataFile":  {
+                                                                          "id":  8034,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/XANAWW/DZIWTD",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/XANAWW/DZIWTD",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_Mas Pla_Wet sowing_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  191012,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e585869b9-2873ab79860f",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "07558ff1623d5659d72dea1bf5956292",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "07558ff1623d5659d72dea1bf5956292"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-14",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS2_SDI_Benzinera_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  461,
+                                                         "dataFile":  {
+                                                                          "id":  8037,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/XANAWW/EVBPOU",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/XANAWW/EVBPOU",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_SDI_Benzinera_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  189990,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e58586a9b-6e121e8efe62",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "c68c50d85d27f8ac4a570b42893bb1ba",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "c68c50d85d27f8ac4a570b42893bb1ba"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-14",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS2_SDI_Cobert_2021.xlsx",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  461,
+                                                         "dataFile":  {
+                                                                          "id":  8035,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/XANAWW/P9JGJC",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/XANAWW/P9JGJC",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_SDI_Cobert_2021.xlsx",
+                                                                          "contentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                                                          "friendlyType":  "MS Excel Spreadsheet",
+                                                                          "filesize":  179733,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e58586dcb-ad129a445edc",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "ddfc5f784c4942152efb4ed4f5fc53ba",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "ddfc5f784c4942152efb4ed4f5fc53ba"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-14",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "MEDWATERICE DMP_CS2_varieties_2021.pdf",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  461,
+                                                         "dataFile":  {
+                                                                          "id":  8044,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/XANAWW/DAVASA",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/XANAWW/DAVASA",
+                                                                          "filename":  "MEDWATERICE DMP_CS2_varieties_2021.pdf",
+                                                                          "contentType":  "application/pdf",
+                                                                          "friendlyType":  "Adobe PDF",
+                                                                          "filesize":  39701,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi:17e6d0b77e0-36145f873021",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "8bd31202192044f7e7d0b1af06865170",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "8bd31202192044f7e7d0b1af06865170"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2022-01-18",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     },
+                                                     {
+                                                         "label":  "README FILE_CS2_Baix Ter_Spain_2021.txt",
+                                                         "restricted":  false,
+                                                         "version":  1,
+                                                         "datasetVersionId":  461,
+                                                         "dataFile":  {
+                                                                          "id":  214131,
+                                                                          "persistentId":  "doi:10.13130/RD_UNIMI/XANAWW/YRKJSL",
+                                                                          "pidURL":  "https://doi.org/10.13130/RD_UNIMI/XANAWW/YRKJSL",
+                                                                          "filename":  "README FILE_CS2_Baix Ter_Spain_2021.txt",
+                                                                          "contentType":  "text/plain",
+                                                                          "friendlyType":  "Plain Text",
+                                                                          "filesize":  5160,
+                                                                          "storageIdentifier":  "s3://4s-dataverse-unimi-restore2:19a15890f76-fa5c053bf780",
+                                                                          "rootDataFileId":  -1,
+                                                                          "md5":  "4612763fecdd7e1e56f5b1451247b9bc",
+                                                                          "checksum":  {
+                                                                                           "type":  "MD5",
+                                                                                           "value":  "4612763fecdd7e1e56f5b1451247b9bc"
+                                                                                       },
+                                                                          "tabularData":  false,
+                                                                          "creationDate":  "2025-10-24",
+                                                                          "publicationDate":  "2025-10-27",
+                                                                          "fileAccessRequest":  false
+                                                                      }
+                                                     }
+                                                 ]
+                                   }
+             }
+}
