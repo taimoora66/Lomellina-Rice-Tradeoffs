@@ -1,0 +1,10 @@
+# Normalize text files in Git to LF so Windows/Linux worktrees do not create whole-repository diffs.
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.xlsx binary

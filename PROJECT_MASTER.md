@@ -1305,3 +1305,55 @@ response times.
 
 A failed GO/NO-GO gate may shorten the project because downstream
 analyses must then stop rather than continue unnecessarily.
+
+---
+
+# 24. PUBLICATION-TRACK PIVOT — 31 AUGUST 2026
+
+The publication strategy changed after the original fixed-composition configuration concept was subjected to open-data feasibility and hostile novelty audits.
+
+## 24.1 Status of the previous publication concept
+
+The fixed-composition canal-network/configuration study remains part of the scientific decision history but is **not the active publication route**. It requires service topology, operational canal constraints and/or other evidence that is not presently available as open data at a defensible publication standard.
+
+The project will not be designed around requests to authors, AIES, unpublished code, restricted datasets or assumed future access.
+
+## 24.2 Active publication candidate
+
+The current candidate is an observational open-data study linking:
+
+- RiceFloodIT sowing-period flooding/hydroperiod signals;
+- ARPA Pavia shallow-groundwater observations;
+- ARPA Lombardia precipitation and air temperature;
+- within-location interannual variation over the common 2008–2021 period.
+
+Candidate question:
+
+**Are interannual anomalies in remotely observed sowing-period rice inundation associated with subsequent shallow-groundwater dynamics within locations, after accounting for antecedent groundwater conditions, meteorological variability, persistent spatial heterogeneity and common annual shocks?**
+
+The permitted interpretation is association. Direct recharge, depletion or irrigation-management causation is not established.
+
+## 24.3 Discovery status
+
+Interactive exploratory analyses conducted on 30–31 August 2026 produced a potentially interesting late-season pattern, concentrated around August in selected 10-km landscape-support models. However:
+
+- the pattern was discovered after extensive model exploration;
+- overlapping 10-km exposures create spatial dependence that well-clustered standard errors do not solve;
+- spring groundwater baselines can overlap the RiceFloodIT observation window;
+- actual canal deliveries, pumping and drainage remain unobserved;
+- fixed-date groundwater interpolation is unstable;
+- several alternative mechanistic/event-study formulations failed hostile tests.
+
+Therefore all current coefficients and nominal p-values are **discovery results only**.
+
+## 24.4 Mandatory gates
+
+Before manuscript drafting, the publication track must pass the gates in `docs/publication/GROUNDWATER_PUBLICATION_TRACK.md` and `docs/publication/HOSTILE_AUDIT_2026-08-31.md`, especially spatially robust inference and multiplicity/post-selection control.
+
+## 24.5 Held-out validation priority
+
+A high-priority next phase is to reconstruct a RiceFloodIT-compatible 2022–2025 flooding metric entirely from open MODIS/Sentinel data. The new metric must first be bridged quantitatively to RiceFloodIT over historical overlap. Post-2021 groundwater outcomes must not be used to choose or tune that bridge. If compatibility fails, the extension is rejected rather than forced.
+
+## 24.6 Reproducibility recovery
+
+Because much of the exploratory publication analysis was conducted interactively outside the repository, the repository is now being reconstructed as the authoritative research record. Recovered scripts are preserved under `scripts/04_publication_groundwater/recovered/` as historical discovery code and are not falsely represented as a final production pipeline.

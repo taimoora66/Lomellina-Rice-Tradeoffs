@@ -1,0 +1,20 @@
+{
+  "study_period_discovery": [2008, 2021],
+  "heldout_extension_target": [2022, 2025],
+  "aquifer_primary_prefix": "GWB ISS",
+  "ricefloodit_buffers_km_explored": [2, 5, 10],
+  "weather_assignment_exploratory": {
+    "nearest_n": 3,
+    "max_distance_km": 50,
+    "minimum_stations": 2,
+    "weight": "inverse_distance_squared"
+  },
+  "weather_quality_exploratory": {
+    "status_keep": "VA",
+    "temperature_missing_sentinel": -999,
+    "minimum_within_day_fraction": 0.8,
+    "minimum_valid_days_fraction": 0.8
+  },
+  "confirmatory_primary_model": "TO_FREEZE_AFTER_SPATIAL_AND_MULTIPLICITY_DESIGN",
+  "claim_status": "exploratory_observational_association_only"
+}

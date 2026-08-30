@@ -110,3 +110,29 @@ Status:
 FROZEN
 
 Failure of this condition requires optimization to stop.
+
+---
+
+## 2026-08-31 — Publication track pivot to open-data groundwater analysis
+
+**Decision:** The earlier fixed-composition canal-network/configuration publication concept is no longer the active publication route. The active candidate is an observational RiceFloodIT × ARPA groundwater analysis using only data already openly accessible.
+
+**Reason:** Operational/topological evidence needed for the configuration experiment is not openly available at the required standard, whereas RiceFloodIT, ARPA groundwater and ARPA meteorology support an independent empirical panel.
+
+**Restriction:** No author requests, AIES requests, unpublished code or restricted/institutional-only data may be treated as required inputs.
+
+**Interpretation boundary:** Association only; no causal recharge/depletion claim.
+
+## 2026-08-31 — Exploratory results reclassified as discovery only
+
+**Decision:** All groundwater coefficients and nominal p-values produced during 2026-08-30/31 interactive exploration are classified as discovery results.
+
+**Reason:** Multiple months, spatial supports, transformations, falsifications and model structures were explored before the August/10-km pattern emerged. Spatial overlap among 10-km exposure fields also invalidates reliance on well-clustered SEs alone.
+
+**Consequence:** A new protocol freeze cannot retroactively make these results confirmatory. Spatially robust and multiplicity-aware inference are mandatory.
+
+## 2026-08-31 — Post-2021 extension designated held-out validation
+
+**Decision:** Prioritize independent reconstruction of a RiceFloodIT-compatible 2022–2025 flooding metric using open satellite data.
+
+**Guardrail:** The measurement bridge must be chosen using overlap with RiceFloodIT, without using 2022–2025 groundwater outcomes. If the bridge cannot be defended quantitatively, the extension is rejected.
