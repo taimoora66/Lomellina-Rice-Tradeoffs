@@ -282,3 +282,166 @@ After historical validation is accepted, the following will be frozen:
 Only after this freeze will 2022–2025 flooding values be generated.
 
 Post-2021 groundwater results cannot cause any of these rules to be changed.
+
+## Historical calibration/validation split — 2026-08-31
+
+The historical bridge will use a chronological split fixed before fitting the
+final reconstruction model.
+
+Development/calibration years:
+
+- 2017
+- 2018
+- 2019
+
+Held-out historical validation years:
+
+- 2020
+- 2021
+
+The primary validation sample is the year-specific set of RiceFloodIT cells
+for which published FF is available in that year.
+
+A secondary robustness analysis will use the balanced set of 3,062 grid cells
+present in all five years from 2017 through 2021.
+
+This split is chronological because the intended application is forward
+extension beyond 2021.
+
+The held-out 2020-2021 RiceFloodIT FF values may be used only for final
+historical bridge evaluation after candidate processing rules and model form
+have been fixed using 2017-2019.
+
+Post-2021 groundwater outcomes remain entirely outside this process.
+
+## Bridge Experiment 1 result and confirmatory revision — 2026-08-31
+
+### Experiment 1
+
+The prespecified historical bridge experiment used:
+
+- development: 2017-2019;
+- held-out historical validation: 2020-2021;
+- three candidate QA rules;
+- two candidate 500-m / 1-km aggregation orders;
+- a linear FF-on-seasonal-NDFI bridge.
+
+The experiment showed strong historical measurement agreement but the linear
+bridge was not accepted or frozen.
+
+Across the six prespecified candidates, pooled 2020-2021 spatial Pearson
+correlations were approximately 0.842-0.855 and Spearman correlations were
+approximately 0.828-0.838.
+
+However, all linear candidates produced large numbers of FF predictions below
+zero. Because flooding fraction is physically bounded to [0,1], the unbounded
+linear bridge fails the physical-support criterion.
+
+The 2020 and 2021 RiceFloodIT values have now been inspected and therefore
+must not be treated as untouched validation data for any revised bridge.
+
+### Revised bridge architecture
+
+The revised bridge is specified before examining performance in a new
+historical confirmation period.
+
+Processing rule:
+
+- MOD09A1.061;
+- h18v04;
+- the fixed 15 March-June composite starts;
+- native 500-m geometry;
+- exact previously recovered 2x2 registration to the RiceFloodIT grid;
+- require valid red/Band 1 and SWIR2/Band 7 reflectance for NDFI;
+- calculate NDFI at native 500-m resolution;
+- average valid native NDFI within the exact 2x2 RiceFloodIT block for each
+  composite;
+- average composite-level NDFI across the fixed seasonal window.
+
+Bridge model:
+
+- fractional-logit mean model;
+- FF is the response;
+- seasonal NDFI is the sole predictor;
+- predictions are therefore constrained to [0,1];
+- no clipping, polynomial terms, groundwater variables, threshold search, or
+  additional predictors will be introduced for the confirmation experiment.
+
+Model-development evidence:
+
+- 2017
+- 2018
+- 2019
+- 2020
+- 2021
+
+New untouched historical confirmation years:
+
+- 2014
+- 2015
+- 2016
+
+RiceFloodIT performance for 2014-2016 must not be inspected until the revised
+processing rule and model have been implemented and fitted using 2017-2021.
+
+The 2014-2016 confirmation is an independent historical check, not a claim of
+forward temporal validation.
+
+Post-2021 groundwater outcomes remain entirely outside measurement-bridge
+development and validation.
+
+## Bounded bridge confirmation result — 2014-2016
+
+The prespecified bounded confirmation experiment has been completed.
+
+The model was fitted using RiceFloodIT observations from 2017-2021 before
+RiceFloodIT FF for the 2014-2016 confirmation period was opened.
+
+Frozen specification tested:
+
+- MOD09A1.061;
+- fixed 15 March-June composites;
+- native 500-m NDFI;
+- exact 2x2 RiceFloodIT registration;
+- valid Band 1 and Band 7 reflectance;
+- index-then-aggregate spatial processing;
+- seasonal mean NDFI;
+- fractional-logit bridge;
+- seasonal NDFI as the sole predictor.
+
+Fitted development coefficients:
+
+- intercept = -0.589681615540
+- seasonal-NDFI slope = 15.145272547528
+
+Independent historical confirmation results:
+
+- 2014 Pearson r = 0.931648; Spearman rho = 0.918460
+- 2015 Pearson r = 0.934467; Spearman rho = 0.920736
+- 2016 Pearson r = 0.944850; Spearman rho = 0.925436
+- pooled 2014-2016 Pearson r = 0.932687
+- pooled 2014-2016 Spearman rho = 0.919143
+- pooled RMSE = 0.056936
+- pooled bias = 0.003707
+- no predictions fell outside [0,1]
+
+Balanced-confirmation robustness was similar:
+
+- Pearson r = 0.932790
+- Spearman rho = 0.928511
+
+The spatial and physical-range confirmation criteria therefore pass strongly.
+
+Interannual preservation is not yet frozen as adequate. Across only three
+confirmation years, annual-mean Pearson correlation was 0.727555, Spearman
+correlation was 0.5, annual-mean RMSE was 0.012906, and maximum absolute
+annual-mean error was 0.020194.
+
+Because the intended groundwater analysis depends on interannual flooding
+anomalies, the measurement bridge will not yet be frozen for post-2021 use.
+
+No model modification or refitting will be made in response to the 2014-2016
+confirmation results. Additional historical years will be used only as an
+extended confirmation of the already fixed specification and coefficients.
+
+Post-2021 groundwater outcomes remain unused.

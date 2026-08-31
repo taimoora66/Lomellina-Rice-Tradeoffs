@@ -1,0 +1,6 @@
+year,published_ff_cells,native_modis_cells,exact_xy_overlap,published_not_in_modis,modis_not_in_published
+2017,3635,4331,3635,0,696
+2018,3345,4331,3345,0,986
+2019,3412,4331,3412,0,919
+2020,3782,4331,3782,0,549
+2021,3778,4331,3778,0,553
