@@ -318,13 +318,13 @@ must be audited later using geography and pre-existing well metadata.
 The manuscript must report the sample hierarchy transparently:
 
 Primary:
-- 12 wells complete in all four years.
+- 12 wells complete in all four years; 48 station-year observations.
 
 Secondary robustness:
-- 18 wells complete in at least two years.
+- 18 wells complete in at least two years; 62 station-year observations.
 
 Sample-stability diagnostic:
-- 14 wells complete in at least three years.
+- 14 wells complete in at least three years; 54 station-year observations.
 
 The number of station-year observations must be reported together with the
 number of distinct wells.
