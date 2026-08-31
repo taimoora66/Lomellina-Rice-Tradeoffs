@@ -578,3 +578,194 @@ The production annual groundwater builder was extended through 2024 without chan
 For 2024, 28 of the frozen 37 historical ISS wells have observations, 16 have Jan-Feb antecedent groundwater observations, 16 have August observations, and 15 have both. No new ISS wells enter the historical 37-well universe.
 
 Across 2022-2024, 12 wells are complete in all three years, 15 are complete in at least two years, and 3 are complete in exactly one year. No flooding-groundwater association model was fitted during this availability and panel-structure audit.
+
+---
+
+## 2026-08-31 — Freeze 2022–2025 groundwater temporal-transport extension
+
+### Scientific status
+
+The previously frozen 2022–2023 held-out groundwater confirmation remains
+unchanged and will not be rerun, reclassified, or replaced by the later-year
+extension.
+
+The 2024–2025 observations constitute a subsequent temporal-transport
+extension, not a rescue or replacement of the original held-out confirmation.
+
+The original 2022–2023 result therefore remains part of the publication
+record regardless of the 2022–2025 result.
+
+### Eligibility audit
+
+Before inspection of any 2022–2025 flooding-groundwater coefficient, the
+integrated eligibility pipeline was frozen.
+
+The eligibility definition requires:
+
+- `gw_aug_nearest_aug23_m` available;
+- `gw_pre_last_janfeb_m` available;
+- frozen 10-km `ff10_anomaly_2010_2021` available with positive geometric
+  support;
+- `P_A8` available;
+- `T_A8` available.
+
+The audit produced:
+
+- 2022: 17 eligible wells;
+- 2023: 13 eligible wells;
+- 2024: 15 eligible wells;
+- 2025: 17 eligible wells;
+- 12 wells eligible in all four years;
+- 14 wells eligible in at least three years;
+- 18 wells eligible in at least two years.
+
+Flooding exposure removed zero groundwater-complete observations in every
+year.
+
+Weather availability removed zero groundwater-plus-flooding-complete
+observations in every year.
+
+The generalized eligibility pipeline exactly reproduced the 13 station IDs
+frozen for the original 2022–2023 confirmation.
+
+### Primary temporal-transport sample
+
+The primary 2022–2025 temporal-transport analysis will use the 12 ISS wells
+eligible in all four years.
+
+This balanced sample is frozen before any 2022–2025 association coefficient
+is inspected.
+
+The balanced design is primary because every well contributes the same four
+calendar years, eliminating changes in well composition across the prospective
+period.
+
+The 18 wells eligible in at least two years will be used only as a
+prespecified unbalanced-sample robustness analysis.
+
+The 14 wells eligible in at least three years may be used only as an
+additional sample-stability diagnostic.
+
+Neither larger sample may replace the balanced primary sample according to
+coefficient magnitude, sign, confidence interval, or p-value.
+
+### Frozen variables
+
+Outcome:
+
+`gw_aug_nearest_aug23_m`
+
+Flooding exposure:
+
+`ff10_anomaly_2010_2021`
+
+Antecedent groundwater:
+
+`gw_pre_last_janfeb_m`
+
+These definitions are inherited unchanged from the frozen 2022–2023 held-out
+confirmation.
+
+No alternative groundwater month, flooding radius, historical flooding
+baseline, exposure construction, or antecedent-groundwater definition will
+be selected in response to the extended result.
+
+### Primary estimator
+
+The primary 2022–2025 model is:
+
+`gw_aug_nearest_aug23_m ~ ff10_anomaly_2010_2021 + gw_pre_last_janfeb_m + C(station) + C(year)`
+
+The coefficient of interest is the coefficient on
+`ff10_anomaly_2010_2021`.
+
+This two-way fixed-effects specification is the multi-period continuation of
+the original two-period first-difference design.
+
+With two periods, station fixed effects are removed by first differencing and
+the common temporal shift is absorbed by the difference-model intercept.
+With four periods, station and year fixed effects provide the corresponding
+within-well, common-year-adjusted estimator without selecting an arbitrary
+single pair of years.
+
+### Weather robustness
+
+Weather controls remain prespecified robustness analyses rather than
+alternative primary specifications.
+
+W1:
+
+primary model + `P_A8`
+
+W2:
+
+primary model + `T_A8`
+
+W3:
+
+primary model + `P_A8` + `T_A8`
+
+Weather specifications will not replace the primary model according to
+statistical significance.
+
+### Inference
+
+Repeated observations within groundwater wells require inference that
+recognizes station-level dependence.
+
+Primary small-sample inference will use a wild cluster bootstrap-t procedure
+clustered by groundwater station.
+
+The bootstrap design will be implemented with:
+
+- groundwater station as the clustering unit;
+- 9,999 bootstrap repetitions;
+- a fixed deterministic random seed;
+- the same frozen primary model in every bootstrap iteration.
+
+Conventional station-clustered covariance will be reported as a benchmark.
+
+HC3 inference may be reported descriptively for continuity with the original
+2022–2023 first-difference analysis but will not be treated as the sole
+primary four-year inference because observations are repeated within wells.
+
+### Influence and spatial-dependence diagnostics
+
+No well will be deleted because it is statistically influential.
+
+Prespecified diagnostics will include:
+
+- leave-one-well-out primary FF10 coefficient;
+- coefficient range and sign stability;
+- leverage/influence diagnostics where defined for the fixed-effects model.
+
+Because 10-km flooding supports can overlap spatially, the established
+20-km geographic scale remains relevant.
+
+Twenty-km shifted geographic leave-block-out analyses may be used as
+coefficient-stability diagnostics.
+
+Spatial or geographic sensitivity results will not be selected according to
+statistical significance.
+
+### Interpretation
+
+The 2022–2025 analysis is an observational temporal-transport test.
+
+It does not convert the historical exploratory association into a causal
+effect.
+
+Possible outcomes will be interpreted symmetrically:
+
+- corroboration would indicate greater temporal transportability;
+- weak or imprecise evidence would indicate continued lack of corroboration;
+- changing signs or unstable estimates would indicate temporal instability.
+
+No result will cause the frozen measurement bridge, 2010–2021 flooding
+baseline, 10-km support, groundwater outcome, antecedent definition, or
+sample hierarchy to be changed.
+
+### Status
+
+FROZEN BEFORE 2022–2025 ASSOCIATION MODEL FITTING
+

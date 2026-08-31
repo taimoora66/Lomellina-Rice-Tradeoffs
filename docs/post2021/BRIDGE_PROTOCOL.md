@@ -685,3 +685,76 @@ for either a positive or negative causal effect.
 No alternative radius, groundwater outcome, flooding metric, sample,
 or regression specification will be selected to rescue this result.
 
+
+---
+
+## 2022–2025 groundwater temporal-transport protocol — 2026-08-31
+
+The original frozen 2022–2023 groundwater confirmation remains unchanged.
+
+The later 2024–2025 observations define a subsequent temporal-transport
+extension and are not used to rewrite or rescue the original confirmation.
+
+Before viewing any 2022–2025 association coefficient, the following are
+frozen.
+
+Primary sample:
+
+- 12 ISS wells eligible in every year from 2022 through 2025;
+- 48 level station-year observations;
+- sample identities determined entirely by the pre-model eligibility audit.
+
+Primary outcome:
+
+`gw_aug_nearest_aug23_m`
+
+Primary exposure:
+
+`ff10_anomaly_2010_2021`
+
+Antecedent groundwater:
+
+`gw_pre_last_janfeb_m`
+
+Primary model:
+
+`gw_aug_nearest_aug23_m ~ ff10_anomaly_2010_2021 + gw_pre_last_janfeb_m + C(station) + C(year)`
+
+This is the multi-period continuation of the frozen two-period
+first-difference design.
+
+Primary small-sample inference:
+
+- wild cluster bootstrap-t;
+- groundwater station is the clustering unit;
+- 9,999 repetitions;
+- fixed deterministic random seed.
+
+Benchmarks and diagnostics:
+
+- conventional station-clustered covariance;
+- HC3 shown only as a continuity benchmark;
+- leave-one-well-out coefficient stability;
+- 20-km shifted geographic leave-block-out stability where computationally
+  applicable.
+
+Weather robustness:
+
+- W1: + `P_A8`;
+- W2: + `T_A8`;
+- W3: + `P_A8` + `T_A8`.
+
+Secondary sample robustness:
+
+- the 18 wells eligible in at least two years may be fitted using the same
+  variables, fixed-effects structure, and inference architecture;
+- this analysis cannot replace the 12-well balanced primary result according
+  to statistical significance.
+
+No alternate month, radius, flooding baseline, exposure definition,
+antecedent-groundwater definition, weather specification, or sample may be
+selected to rescue a weak result.
+
+No 2022–2025 flooding-groundwater coefficient has been inspected at the time
+of this freeze.
+
