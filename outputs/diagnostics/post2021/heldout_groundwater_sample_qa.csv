@@ -1,0 +1,2 @@
+frozen_wells_n,level_rows_n,difference_rows_n,primary_predictors_n,primary_df_resid,primary_delta_ff10_sign,max_leverage,max_cooks_distance,loo_beta_min,loo_beta_max,loo_beta_all_same_sign_as_primary
+13,26,13,2,10.0,negative,0.9899702081865613,1.0071703164326227,-13.732901064107985,38.375589177822704,False
