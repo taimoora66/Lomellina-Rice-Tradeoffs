@@ -63,3 +63,6 @@ Thumbs.db
 ~$*.docx
 ~$*.xlsx
 ~$*.pptx
+# Regenerable groundwater publication outputs
+data/processed/publication_groundwater/
+.pytest_cache/
