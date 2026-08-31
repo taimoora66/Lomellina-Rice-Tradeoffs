@@ -1,0 +1,5 @@
+comparison,column,rows_compared,mismatch_n,exact_reproduction
+frozen_2008_2023_weather_monthly,value,2536,0,True
+frozen_2008_2023_weather_monthly,valid_days,2536,0,True
+frozen_2008_2023_weather_monthly,days_in_month,2536,0,True
+frozen_2008_2023_weather_monthly,coverage,2536,0,True

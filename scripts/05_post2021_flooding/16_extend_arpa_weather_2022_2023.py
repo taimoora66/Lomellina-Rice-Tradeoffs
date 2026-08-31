@@ -1,9 +1,9 @@
-﻿"""Extend the frozen ARPA Lombardia weather pipeline through 2023.
+﻿"""Extend the frozen ARPA Lombardia weather pipeline through 2025.
 
 Scientific role
 ---------------
 This stage extends the historically established meteorological controls
-without inspecting groundwater values.
+without reading groundwater observations or fitting any groundwater model.
 
 It preserves the publication-track definitions:
 
@@ -36,13 +36,17 @@ Primary historical weather controls
     - P_A8: April-August cumulative precipitation
     - T_A8: April-August day-weighted mean temperature
 
-Integrity gate
---------------
-The newly implemented weather pipeline must reproduce the frozen
-2008-2021 weather_sensor_monthly.csv artifact before any 2022-2023
-weather result is trusted.
+Integrity gates
+---------------
+1. Reproduce frozen 2008-2021 weather_sensor_monthly.csv.
+2. Reproduce the previously frozen 2008-2023 weather extension before
+   accepting 2024-2025.
+3. Reproduce the previously frozen 2022-2023 37-well weather panel before
+   accepting 2024-2025.
 
-No groundwater depth values are read.
+No groundwater observation table is read.
+No groundwater depth is inspected.
+No flooding exposure is merged.
 No groundwater association is calculated.
 No regression is fitted.
 """
@@ -90,22 +94,6 @@ GW_META_IN = (
     / "groundwater_station_metadata.csv"
 )
 
-FROZEN_IDS_IN = (
-    ROOT
-    / "outputs"
-    / "diagnostics"
-    / "post2021"
-    / "post2021_primary_repeated_sample_ids.csv"
-)
-
-FF10_IN = (
-    ROOT
-    / "data"
-    / "processed"
-    / "post2021"
-    / "well_frozen_ff10_exposures_2022_2023.csv"
-)
-
 POST_DIR = (
     ROOT
     / "data"
@@ -120,34 +108,49 @@ QA_DIR = (
     / "post2021"
 )
 
-MONTHLY_OUT = (
+PREVIOUS_MONTHLY_IN = (
     POST_DIR
     / "weather_sensor_monthly_2008_2023.csv"
 )
 
-WELL_WEATHER_OUT = (
+PREVIOUS_WELL_WEATHER_IN = (
     POST_DIR
     / "well_weather_A8_2022_2023.csv"
 )
 
-REPRO_QA_OUT = (
+MONTHLY_OUT = (
+    POST_DIR
+    / "weather_sensor_monthly_2008_2025.csv"
+)
+
+WELL_WEATHER_OUT = (
+    POST_DIR
+    / "well_weather_A8_2022_2025.csv"
+)
+
+HIST_REPRO_QA_OUT = (
     QA_DIR
     / "post2021_weather_historical_reproduction_qa.csv"
 )
 
-COMPLETENESS_QA_OUT = (
+PRE2024_MONTHLY_REPRO_QA_OUT = (
     QA_DIR
-    / "post2021_weather_primary_sample_completeness.csv"
+    / "post2021_weather_2008_2023_reproduction_qa.csv"
 )
 
-DELTA_QA_OUT = (
+PRE2024_WELL_REPRO_QA_OUT = (
     QA_DIR
-    / "post2021_weather_primary_sample_delta_qa.csv"
+    / "post2021_weather_well_panel_2022_2023_reproduction_qa.csv"
+)
+
+COMPLETENESS_QA_OUT = (
+    QA_DIR
+    / "post2021_weather_all_iss_completeness_2022_2025.csv"
 )
 
 PROVENANCE_QA_OUT = (
     QA_DIR
-    / "post2021_weather_source_provenance.csv"
+    / "post2021_weather_source_provenance_2024_2025.csv"
 )
 
 
@@ -179,19 +182,19 @@ TEMP_SENSORS = [
     17573,
 ]
 
-POST_JOBS = [
+NEW_JOBS = [
     (
-        "precip_2022_2023",
+        "precip_2024_2025",
         PRECIP_DATASET,
-        2022,
-        2023,
+        2024,
+        2025,
         PRECIP_SENSORS,
     ),
     (
-        "temp_2022_2023",
+        "temp_2024_2025",
         TEMP_DATASET,
-        2022,
-        2023,
+        2024,
+        2025,
         TEMP_SENSORS,
     ),
 ]
@@ -202,12 +205,14 @@ FILES = {
         "precip_2011_2020.csv",
         "precip_2021.csv",
         "precip_2022_2023.csv",
+        "precip_2024_2025.csv",
     ],
     "temp": [
         "temp_2008_2010.csv",
         "temp_2011_2020.csv",
         "temp_2021.csv",
         "temp_2022_2023.csv",
+        "temp_2024_2025.csv",
     ],
 }
 
@@ -228,11 +233,12 @@ COMMON_CADENCES = np.array(
 
 START_YEAR = 2008
 HIST_END_YEAR = 2021
-END_YEAR = 2023
+PREVIOUS_END_YEAR = 2023
+END_YEAR = 2025
 
-POST_YEARS = (2022, 2023)
+POST_YEARS = (2022, 2023, 2024, 2025)
 
-EXPECTED_FROZEN_WELLS = 13
+EXPECTED_ISS_WELLS = 37
 
 NEAREST_N = 3
 MAX_KM = 50.0
@@ -261,7 +267,7 @@ def download(
     y1: int,
     sensors: list[int],
 ) -> dict:
-    """Exact acquisition architecture used by historical downloader."""
+    """Exact acquisition architecture used by the historical downloader."""
 
     path = RAW_DIR / f"{name}.csv"
 
@@ -373,6 +379,39 @@ def download(
             f"expected {expected_header}."
         )
 
+    audit = pd.read_csv(
+        path,
+        usecols=[
+            "idsensore",
+            "data",
+        ],
+    )
+
+    audit["data"] = pd.to_datetime(
+        audit["data"],
+        errors="raise",
+    )
+
+    observed_years = sorted(
+        audit["data"]
+        .dt.year
+        .unique()
+        .tolist()
+    )
+
+    expected_years = list(
+        range(
+            y0,
+            y1 + 1,
+        )
+    )
+
+    if observed_years != expected_years:
+        raise AssertionError(
+            f"{name}: downloaded years {observed_years}; "
+            f"expected {expected_years}."
+        )
+
     digest = sha256_file(path)
 
     print(
@@ -390,6 +429,10 @@ def download(
             for x in sensors
         ),
         "rows_downloaded": rows_total,
+        "observed_date_min":
+            audit["data"].min().isoformat(),
+        "observed_date_max":
+            audit["data"].max().isoformat(),
         "acquisition_utc": acquisition_utc,
         "sha256": digest,
         "source": (
@@ -480,6 +523,27 @@ def acquire_or_reuse(
             f"{y0}-{y1} range."
         )
 
+    observed_years = sorted(
+        audit["data"]
+        .dt.year
+        .unique()
+        .tolist()
+    )
+
+    expected_years = list(
+        range(
+            y0,
+            y1 + 1,
+        )
+    )
+
+    if observed_years != expected_years:
+        raise AssertionError(
+            f"{name}: existing raw file covers years "
+            f"{observed_years}; expected {expected_years}. "
+            "Delete the stale local file and rerun to reacquire."
+        )
+
     digest = sha256_file(path)
 
     print(
@@ -497,6 +561,10 @@ def acquire_or_reuse(
             for x in sensors
         ),
         "rows_downloaded": len(audit),
+        "observed_date_min":
+            audit["data"].min().isoformat(),
+        "observed_date_max":
+            audit["data"].max().isoformat(),
         "acquisition_utc": "existing_local_download",
         "sha256": digest,
         "source": (
@@ -853,72 +921,81 @@ def monthly(
     ]
 
 
-def compare_historical_monthly(
-    extended: pd.DataFrame,
-    historical: pd.DataFrame,
+def compare_tables(
+    generated: pd.DataFrame,
+    frozen: pd.DataFrame,
+    key: list[str],
+    label: str,
+    start_year: int | None = None,
+    end_year: int | None = None,
 ) -> pd.DataFrame:
-    """
-    Require exact reproduction of the frozen 2008-2021
-    sensor-month artifact, allowing only tiny floating-point
-    representation differences.
-    """
+    """Compare all common columns over an exact key universe."""
 
-    key = [
-        "variable",
-        "idsensore",
-        "year",
-        "month",
-    ]
+    g = generated.copy()
+    f = frozen.copy()
 
-    generated = (
-        extended.loc[
-            extended["year"].between(
-                START_YEAR,
-                HIST_END_YEAR,
-            )
-        ]
-        .sort_values(key)
-        .reset_index(drop=True)
-    )
+    if start_year is not None:
+        g = g.loc[
+            g["year"] >= start_year
+        ].copy()
+        f = f.loc[
+            f["year"] >= start_year
+        ].copy()
 
-    historical = (
-        historical
-        .sort_values(key)
-        .reset_index(drop=True)
-    )
+    if end_year is not None:
+        g = g.loc[
+            g["year"] <= end_year
+        ].copy()
+        f = f.loc[
+            f["year"] <= end_year
+        ].copy()
 
-    if len(generated) != len(historical):
+    if g.duplicated(key).any():
         raise AssertionError(
-            "Historical weather reproduction row-count mismatch: "
-            f"generated={len(generated)}, "
-            f"frozen={len(historical)}."
+            f"{label}: duplicate keys in generated table."
         )
 
-    generated_key = generated[key].copy()
-    historical_key = historical[key].copy()
-
-    generated_key["variable"] = generated_key["variable"].astype(str)
-    historical_key["variable"] = historical_key["variable"].astype(str)
-
-    for col in ["idsensore", "year", "month"]:
-        generated_key[col] = pd.to_numeric(
-            generated_key[col],
-            errors="raise",
-        ).astype("int64")
-
-        historical_key[col] = pd.to_numeric(
-            historical_key[col],
-            errors="raise",
-        ).astype("int64")
-
-    if not generated_key.equals(historical_key):
+    if f.duplicated(key).any():
         raise AssertionError(
-            "Historical weather sensor-month key values do not reproduce."
+            f"{label}: duplicate keys in frozen table."
         )
+
+    g = g.sort_values(key).reset_index(drop=True)
+    f = f.sort_values(key).reset_index(drop=True)
+
+    if len(g) != len(f):
+        raise AssertionError(
+            f"{label}: row-count mismatch: "
+            f"generated={len(g)}, frozen={len(f)}."
+        )
+
+    g_key = g[key].copy()
+    f_key = f[key].copy()
+
+    for col in key:
+        if col in {"variable", "station"}:
+            g_key[col] = g_key[col].astype(str)
+            f_key[col] = f_key[col].astype(str)
+        else:
+            g_key[col] = pd.to_numeric(
+                g_key[col],
+                errors="raise",
+            ).astype("int64")
+
+            f_key[col] = pd.to_numeric(
+                f_key[col],
+                errors="raise",
+            ).astype("int64")
+
+    if not g_key.equals(f_key):
+        raise AssertionError(
+            f"{label}: key values do not reproduce."
+        )
+
     common = [
-        c
-        for c in historical.columns
-        if c in generated.columns
+        col
+        for col in f.columns
+        if col in g.columns
     ]
 
     rows = []
@@ -927,15 +1004,12 @@ def compare_historical_monthly(
         if col in key:
             continue
 
-        a = historical[col]
-        b = generated[col]
+        a = f[col]
+        b = g[col]
 
         if (
-            pd.api.types
-            .is_numeric_dtype(a)
-            and
-            pd.api.types
-            .is_numeric_dtype(b)
+            pd.api.types.is_numeric_dtype(a)
+            and pd.api.types.is_numeric_dtype(b)
         ):
             equal = np.isclose(
                 pd.to_numeric(
@@ -968,11 +1042,10 @@ def compare_historical_monthly(
 
         rows.append(
             {
+                "comparison": label,
                 "column": col,
-                "rows_compared":
-                    len(equal),
-                "mismatch_n":
-                    mismatch_n,
+                "rows_compared": len(equal),
+                "mismatch_n": mismatch_n,
                 "exact_reproduction":
                     mismatch_n == 0,
             }
@@ -980,7 +1053,7 @@ def compare_historical_monthly(
 
     qa = pd.DataFrame(rows)
 
-    if not qa[
+    if len(qa) and not qa[
         "exact_reproduction"
     ].all():
         bad = qa.loc[
@@ -988,8 +1061,7 @@ def compare_historical_monthly(
         ]
 
         raise AssertionError(
-            "Extended weather pipeline does not reproduce "
-            "frozen 2008-2021 monthly weather:\n"
+            f"{label} failed:\n"
             + bad.to_string(index=False)
         )
 
@@ -1211,125 +1283,11 @@ def link_months(
     return pd.DataFrame(rows)
 
 
-def main() -> None:
-    RAW_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    POST_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    QA_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    # -------------------------------------------------------------
-    # 1. Open-data acquisition.
-    # -------------------------------------------------------------
-
-    provenance = []
-
-    for job in POST_JOBS:
-        provenance.append(acquire_or_reuse(*job))
-
-    provenance_df = pd.DataFrame(
-        provenance
-    )
-
-    provenance_df.to_csv(
-        PROVENANCE_QA_OUT,
-        index=False,
-    )
-
-    # -------------------------------------------------------------
-    # 2. Rebuild sensor-month weather 2008-2023 using exact
-    #    historical validation definitions.
-    # -------------------------------------------------------------
-
-    monthly_parts = []
-
-    for variable, names in FILES.items():
-        daily, _ = read_daily(
-            [
-                RAW_DIR / name
-                for name in names
-            ],
-            variable,
-        )
-
-        monthly_parts.append(
-            monthly(
-                daily,
-                variable,
-            )
-        )
-
-    monthly_all = (
-        pd.concat(
-            monthly_parts,
-            ignore_index=True,
-        )
-        .sort_values(
-            [
-                "variable",
-                "idsensore",
-                "year",
-                "month",
-            ]
-        )
-        .reset_index(
-            drop=True
-        )
-    )
-
-    historical = pd.read_csv(
-        HIST_MONTHLY_IN
-    )
-
-    repro_qa = (
-        compare_historical_monthly(
-            monthly_all,
-            historical,
-        )
-    )
-
-    repro_qa.to_csv(
-        REPRO_QA_OUT,
-        index=False,
-    )
-
-    print("")
-    print(
-        "Historical weather reproduction: PASS"
-    )
-    print(
-        f"  columns reproduced: {len(repro_qa)}"
-    )
-    print(
-        "  mismatches: 0"
-    )
-    print("")
-
-    monthly_all.to_csv(
-        MONTHLY_OUT,
-        index=False,
-    )
-
-    # -------------------------------------------------------------
-    # 3. Build weather controls for all 37 ISS wells, 2022-2023.
-    #
-    # Groundwater STATION METADATA only:
-    # no groundwater observation/depth table is read.
-    # -------------------------------------------------------------
-
-    gw_meta = pd.read_csv(
-        GW_META_IN
-    )
-
+def build_well_weather(
+    monthly_all: pd.DataFrame,
+    gw_meta: pd.DataFrame,
+    weather_meta: pd.DataFrame,
+) -> pd.DataFrame:
     wells = (
         gw_meta.loc[
             gw_meta[
@@ -1344,12 +1302,14 @@ def main() -> None:
         .drop_duplicates(
             "station"
         )
-        .copy()
+        .sort_values("station")
+        .reset_index(drop=True)
     )
 
-    if len(wells) != 37:
+    if len(wells) != EXPECTED_ISS_WELLS:
         raise AssertionError(
-            f"Expected 37 ISS wells; found {len(wells)}."
+            f"Expected {EXPECTED_ISS_WELLS} ISS wells; "
+            f"found {len(wells)}."
         )
 
     panel = pd.MultiIndex.from_product(
@@ -1370,10 +1330,6 @@ def main() -> None:
         on="station",
         how="left",
         validate="many_to_one",
-    )
-
-    weather_meta = pd.read_csv(
-        WX_META_IN
     )
 
     precip = link_months(
@@ -1415,7 +1371,6 @@ def main() -> None:
         )
     )
 
-    # Exact historical April-August definitions.
     months = list(
         range(
             4,
@@ -1483,71 +1438,236 @@ def main() -> None:
         .all(axis=1)
     )
 
-    p = p.sort_values(
+    return p.sort_values(
         [
             "station",
             "year",
         ]
+    ).reset_index(drop=True)
+
+
+def main() -> None:
+    RAW_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
     )
 
-    p.to_csv(
-        WELL_WEATHER_OUT,
-        index=False,
+    POST_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    QA_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    if not PREVIOUS_MONTHLY_IN.exists():
+        raise FileNotFoundError(
+            "Frozen previous weather monthly extension is required "
+            "for regression QA:\n"
+            f"{PREVIOUS_MONTHLY_IN}"
+        )
+
+    if not PREVIOUS_WELL_WEATHER_IN.exists():
+        raise FileNotFoundError(
+            "Frozen previous 2022-2023 well-weather panel is required "
+            "for regression QA:\n"
+            f"{PREVIOUS_WELL_WEATHER_IN}"
+        )
+
+    # -------------------------------------------------------------
+    # 1. Acquire only new 2024-2025 raw weather.
+    # -------------------------------------------------------------
+
+    provenance = []
+
+    for job in NEW_JOBS:
+        provenance.append(
+            acquire_or_reuse(*job)
+        )
+
+    provenance_df = pd.DataFrame(
+        provenance
     )
 
     # -------------------------------------------------------------
-    # 4. Frozen 13-well completeness audit.
-    #
-    # Frozen sample IDs were selected before weather/outcome
-    # inspection. Still no groundwater values.
+    # 2. Rebuild sensor-month weather 2008-2025 using exact frozen
+    #    validation definitions.
     # -------------------------------------------------------------
 
-    ids = pd.read_csv(
-        FROZEN_IDS_IN
+    monthly_parts = []
+
+    for variable, names in FILES.items():
+        daily, _ = read_daily(
+            [
+                RAW_DIR / name
+                for name in names
+            ],
+            variable,
+        )
+
+        monthly_parts.append(
+            monthly(
+                daily,
+                variable,
+            )
+        )
+
+    monthly_all = (
+        pd.concat(
+            monthly_parts,
+            ignore_index=True,
+        )
+        .sort_values(
+            [
+                "variable",
+                "idsensore",
+                "year",
+                "month",
+            ]
+        )
+        .reset_index(
+            drop=True
+        )
     )
 
-    if len(ids) != EXPECTED_FROZEN_WELLS:
+    historical = pd.read_csv(
+        HIST_MONTHLY_IN
+    )
+
+    historical_repro_qa = compare_tables(
+        generated=monthly_all,
+        frozen=historical,
+        key=[
+            "variable",
+            "idsensore",
+            "year",
+            "month",
+        ],
+        label="frozen_2008_2021_weather_monthly",
+        start_year=START_YEAR,
+        end_year=HIST_END_YEAR,
+    )
+
+    print("")
+    print(
+        "Historical weather reproduction: PASS"
+    )
+    print(
+        "  columns reproduced:",
+        len(historical_repro_qa),
+    )
+    print(
+        "  mismatches: 0"
+    )
+    print("")
+
+    previous_monthly = pd.read_csv(
+        PREVIOUS_MONTHLY_IN
+    )
+
+    pre2024_monthly_repro_qa = compare_tables(
+        generated=monthly_all,
+        frozen=previous_monthly,
+        key=[
+            "variable",
+            "idsensore",
+            "year",
+            "month",
+        ],
+        label="frozen_2008_2023_weather_monthly",
+        start_year=START_YEAR,
+        end_year=PREVIOUS_END_YEAR,
+    )
+
+    print(
+        "Previous 2008-2023 weather extension reproduction: PASS"
+    )
+    print(
+        "  columns reproduced:",
+        len(pre2024_monthly_repro_qa),
+    )
+    print(
+        "  mismatches: 0"
+    )
+    print("")
+
+    # -------------------------------------------------------------
+    # 3. Build weather controls for all 37 frozen ISS wells.
+    # -------------------------------------------------------------
+
+    gw_meta = pd.read_csv(
+        GW_META_IN
+    )
+
+    weather_meta = pd.read_csv(
+        WX_META_IN
+    )
+
+    well_weather = build_well_weather(
+        monthly_all,
+        gw_meta,
+        weather_meta,
+    )
+
+    expected_rows = (
+        EXPECTED_ISS_WELLS
+        * len(POST_YEARS)
+    )
+
+    if len(well_weather) != expected_rows:
         raise AssertionError(
-            f"Expected {EXPECTED_FROZEN_WELLS} frozen wells; "
-            f"found {len(ids)}."
+            f"Expected {expected_rows} well-years in 2022-2025 "
+            f"weather panel; found {len(well_weather)}."
         )
 
-    if ids["station"].duplicated().any():
-        raise AssertionError(
-            "Frozen sample contains duplicate station IDs."
-        )
+    previous_well_weather = pd.read_csv(
+        PREVIOUS_WELL_WEATHER_IN
+    )
 
-    frozen_weather = p.loc[
-        p["station"].isin(
-            ids["station"]
-        )
-    ].copy()
+    pre2024_well_repro_qa = compare_tables(
+        generated=well_weather,
+        frozen=previous_well_weather,
+        key=[
+            "station",
+            "year",
+        ],
+        label="frozen_2022_2023_well_weather",
+        start_year=2022,
+        end_year=2023,
+    )
 
-    if (
-        frozen_weather[
-            "station"
-        ].nunique()
-        != EXPECTED_FROZEN_WELLS
-    ):
-        raise AssertionError(
-            "Not all frozen wells were found in weather panel."
-        )
+    print(
+        "Previous 2022-2023 well-weather panel reproduction: PASS"
+    )
+    print(
+        "  columns reproduced:",
+        len(pre2024_well_repro_qa),
+    )
+    print(
+        "  mismatches: 0"
+    )
+    print("")
+
+    # -------------------------------------------------------------
+    # 4. Weather completeness counts for all 37 ISS wells.
+    # -------------------------------------------------------------
 
     completeness_rows = []
 
     for year in POST_YEARS:
-        y = frozen_weather.loc[
-            frozen_weather[
+        y = well_weather.loc[
+            well_weather[
                 "year"
             ].eq(year)
         ]
 
         completeness_rows.append(
             {
-                "year":
-                    year,
-                "frozen_wells_n":
-                    EXPECTED_FROZEN_WELLS,
+                "year": year,
+                "iss_wells_n":
+                    EXPECTED_ISS_WELLS,
                 "P_A8_complete_n":
                     int(
                         y[
@@ -1578,228 +1698,87 @@ def main() -> None:
         completeness_rows
     )
 
+    # -------------------------------------------------------------
+    # 5. Save only after all integrity gates pass.
+    # -------------------------------------------------------------
+
+    monthly_all.to_csv(
+        MONTHLY_OUT,
+        index=False,
+    )
+
+    well_weather.to_csv(
+        WELL_WEATHER_OUT,
+        index=False,
+    )
+
+    historical_repro_qa.drop(
+        columns=["comparison"],
+    ).to_csv(
+        HIST_REPRO_QA_OUT,
+        index=False,
+    )
+
+    pre2024_monthly_repro_qa.to_csv(
+        PRE2024_MONTHLY_REPRO_QA_OUT,
+        index=False,
+    )
+
+    pre2024_well_repro_qa.to_csv(
+        PRE2024_WELL_REPRO_QA_OUT,
+        index=False,
+    )
+
     completeness.to_csv(
         COMPLETENESS_QA_OUT,
         index=False,
     )
 
-    # -------------------------------------------------------------
-    # 5. Weather-change diagnostics among frozen repeated wells.
-    # -------------------------------------------------------------
-
-    weather_wide = (
-        frozen_weather[
-            [
-                "station",
-                "year",
-                "P_A8",
-                "T_A8",
-            ]
-        ]
-        .pivot(
-            index="station",
-            columns="year",
-            values=[
-                "P_A8",
-                "T_A8",
-            ],
-        )
-    )
-
-    complete_both = (
-        weather_wide
-        .dropna()
-        .copy()
-    )
-
-    delta_rows = []
-
-    if len(complete_both):
-        delta_p = (
-            complete_both[
-                ("P_A8", 2023)
-            ]
-            - complete_both[
-                ("P_A8", 2022)
-            ]
-        )
-
-        delta_t = (
-            complete_both[
-                ("T_A8", 2023)
-            ]
-            - complete_both[
-                ("T_A8", 2022)
-            ]
-        )
-
-        ff = pd.read_csv(
-            FF10_IN
-        )
-
-        ff = ff.loc[
-            ff[
-                "station"
-            ].isin(
-                complete_both.index
-            ),
-            [
-                "station",
-                "year",
-                "ff10_anomaly_2010_2021",
-            ],
-        ]
-
-        ff_wide = ff.pivot(
-            index="station",
-            columns="year",
-            values="ff10_anomaly_2010_2021",
-        )
-
-        common = (
-            complete_both.index
-            .intersection(
-                ff_wide.index
-            )
-        )
-
-        if len(common) != len(
-            complete_both
-        ):
-            raise AssertionError(
-                "Weather-complete frozen wells do not all "
-                "have frozen FF10 exposure."
-            )
-
-        delta_ff = (
-            ff_wide.loc[
-                common,
-                2023,
-            ]
-            - ff_wide.loc[
-                common,
-                2022,
-            ]
-        )
-
-        delta_p = (
-            delta_p.loc[
-                common
-            ]
-        )
-
-        delta_t = (
-            delta_t.loc[
-                common
-            ]
-        )
-
-        delta_rows.append(
-            {
-                "weather_complete_repeated_wells_n":
-                    len(common),
-
-                "delta_P_A8_mean":
-                    float(
-                        delta_p.mean()
-                    ),
-                "delta_P_A8_sd":
-                    float(
-                        delta_p.std()
-                    ),
-                "delta_P_A8_min":
-                    float(
-                        delta_p.min()
-                    ),
-                "delta_P_A8_median":
-                    float(
-                        delta_p.median()
-                    ),
-                "delta_P_A8_max":
-                    float(
-                        delta_p.max()
-                    ),
-
-                "delta_T_A8_mean":
-                    float(
-                        delta_t.mean()
-                    ),
-                "delta_T_A8_sd":
-                    float(
-                        delta_t.std()
-                    ),
-                "delta_T_A8_min":
-                    float(
-                        delta_t.min()
-                    ),
-                "delta_T_A8_median":
-                    float(
-                        delta_t.median()
-                    ),
-                "delta_T_A8_max":
-                    float(
-                        delta_t.max()
-                    ),
-
-                "corr_delta_ff10_delta_P_A8":
-                    float(
-                        delta_ff.corr(
-                            delta_p
-                        )
-                    ),
-                "corr_delta_ff10_delta_T_A8":
-                    float(
-                        delta_ff.corr(
-                            delta_t
-                        )
-                    ),
-                "corr_delta_P_A8_delta_T_A8":
-                    float(
-                        delta_p.corr(
-                            delta_t
-                        )
-                    ),
-            }
-        )
-
-    delta_qa = pd.DataFrame(
-        delta_rows
-    )
-
-    delta_qa.to_csv(
-        DELTA_QA_OUT,
+    provenance_df.to_csv(
+        PROVENANCE_QA_OUT,
         index=False,
     )
 
+    # -------------------------------------------------------------
+    # 6. Console output: structure and availability only.
+    # -------------------------------------------------------------
+
+    print("=" * 72)
     print(
-        "POST-2021 WEATHER EXTENSION COMPLETE"
+        "POST-2021 WEATHER EXTENSION THROUGH 2025"
     )
+    print("=" * 72)
     print("")
 
     print(
-        "Frozen-sample weather completeness:"
+        "New open-data acquisitions:"
+    )
+    print(
+        provenance_df[
+            [
+                "name",
+                "dataset_id",
+                "start_year",
+                "end_year",
+                "rows_downloaded",
+                "observed_date_min",
+                "observed_date_max",
+                "sha256",
+            ]
+        ].to_string(
+            index=False
+        )
+    )
+
+    print("")
+    print(
+        "ALL-ISS WEATHER COMPLETENESS - COUNTS ONLY"
     )
     print(
         completeness.to_string(
             index=False
         )
     )
-    print("")
-
-    print(
-        "Frozen-sample weather-change QA:"
-    )
-
-    if len(delta_qa):
-        print(
-            delta_qa.to_string(
-                index=False
-            )
-        )
-    else:
-        print(
-            "No wells with complete weather in both years."
-        )
 
     print("")
     print(
@@ -1809,11 +1788,15 @@ def main() -> None:
         "No groundwater depth was inspected."
     )
     print(
+        "No flooding exposure was merged."
+    )
+    print(
         "No groundwater association was calculated."
     )
     print(
         "No regression was fitted."
     )
+
     print("")
     print(
         f"Wrote: {MONTHLY_OUT}"
@@ -1822,20 +1805,24 @@ def main() -> None:
         f"Wrote: {WELL_WEATHER_OUT}"
     )
     print(
-        f"Wrote: {REPRO_QA_OUT}"
+        f"Wrote: {HIST_REPRO_QA_OUT}"
+    )
+    print(
+        f"Wrote: {PRE2024_MONTHLY_REPRO_QA_OUT}"
+    )
+    print(
+        f"Wrote: {PRE2024_WELL_REPRO_QA_OUT}"
     )
     print(
         f"Wrote: {COMPLETENESS_QA_OUT}"
     )
     print(
-        f"Wrote: {DELTA_QA_OUT}"
-    )
-    print(
         f"Wrote: {PROVENANCE_QA_OUT}"
     )
+
+    print("")
+    print("DONE")
 
 
 if __name__ == "__main__":
     main()
-
-
