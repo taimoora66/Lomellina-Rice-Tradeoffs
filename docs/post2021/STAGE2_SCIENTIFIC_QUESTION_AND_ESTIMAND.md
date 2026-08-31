@@ -21,11 +21,12 @@ the numerical result.
 
 Primary question:
 
-> Among the groundwater wells retained in the prespecified post-2021 analysis,
+> Among groundwater wells retained in the post-2021 analytical population,
 > is within-well interannual variation in the frozen 10-km
 > RiceFloodIT-compatible flooding anomaly associated with late-season
-> groundwater depth during 2022â€“2025 after accounting for antecedent
-> groundwater state and shocks common to all wells in a calendar year?
+> groundwater depth during 2022-2025 after accounting for persistent
+> well-specific differences, antecedent groundwater state, and conditions
+> common to all included wells in a calendar year?
 
 This is a subsequent observational extension informed by the prior research
 history documented in `EVIDENCE_CHRONOLOGY.md`.
@@ -226,14 +227,15 @@ Potential omitted and simultaneous drivers remain, including:
 
 ## 10. Weather controls
 
-`P_A8` and `T_A8` remain prespecified robustness controls inherited from the
+P_A8 and T_A8 remain prespecified robustness controls inherited from the
 original held-out protocol.
 
-They are not part of the definition of the primary estimand.
+They are not included in the primary adjustment set.
 
-Their role is to examine whether the estimated flooding association is
-materially altered after additional adjustment for measured Aprilâ€“August
-precipitation and temperature.
+Their role is to estimate prespecified alternative conditional associations
+after additional adjustment for measured April-August precipitation and
+temperature, and to assess whether the substantive interpretation is sensitive
+to that additional adjustment.
 
 Weather-adjusted models cannot replace the primary specification according to
 coefficient sign, magnitude, confidence interval, or p-value.
