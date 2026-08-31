@@ -1,0 +1,7 @@
+station,date,province,rows_n,unique_gw_values_n,gw_values,exact_duplicate_group,conflicting_gw_group,pavia_group
+PO017070NU0001,2025-05-07,BS,2,2,1.93;2.08,False,True,False
+PO0130230U0003,2025-08-18,CO,2,2,8.62;8.95,False,True,False
+PO0970480U0001,2025-05-19,LC,2,2,20.15;20.22,False,True,False
+PO0200270R0053,2025-07-02,MN,2,1,1.8,True,False,False
+PO020050NU0002,2025-01-22,MN,2,1,1.0,True,False,False
+PO0140570R0020,2025-11-10,SO,2,1,2.53,True,False,False
