@@ -386,3 +386,53 @@ stability diagnostics.
 
 The previously reproduced exploratory +6.44 result was not used to select
 the spatial cutoff or covariance design.
+
+## Historical groundwater publication-model freeze
+
+This specification was frozen before inspection of the clean historical
+publication-model coefficient.
+
+Primary historical model:
+
+`gw_aug_mean_m ~ ff_10_anom + gw_pre_last_janfeb_m + P_A8 + T_A8 + C(station) + C(year)`
+
+Definitions:
+- outcome: mean August groundwater depth, `gw_aug_mean_m`;
+- exposure: within-station anomaly in the 10-km flooding fraction,
+  `ff_10_anom`;
+- antecedent groundwater: last valid January-February groundwater
+  observation, `gw_pre_last_janfeb_m`;
+- meteorological controls: cumulative April-August precipitation `P_A8`
+  and April-August day-weighted mean temperature `T_A8`;
+- fixed effects: groundwater station and calendar year.
+
+The primary coefficient is the coefficient on `ff_10_anom`.
+
+No alternative outcome month, flooding radius, antecedent-groundwater
+construction, weather specification, transformation, or model form will
+replace the primary model according to statistical significance.
+
+Frozen inference:
+- primary: combined station-serial plus same-year 20-km Bartlett
+  spatial-HAC covariance;
+- spatial sensitivities: 30 km and 40 km;
+- benchmark: conventional station-clustered covariance;
+- 20-km shifted geographic grids: coefficient-stability diagnostics only.
+
+Multiplicity / historical selection audit:
+- the recovered exploratory monthly-timing script contains at least nine
+  directly comparable flooding-coefficient tests:
+  three target months under cumulative weather plus pre,
+  three target months under separate weather plus pre,
+  and three target months under cumulative weather without pre;
+- nine is therefore a documented lower bound, not the complete historical
+  specification-search universe;
+- the historical exploratory nominal p-value will be reported with at least
+  a nine-test Bonferroni audit;
+- exact Holm and Benjamini-Hochberg adjustments will be reported only if all
+  nine corresponding nominal p-values are recovered;
+- the multiplicity audit will not be used to select a replacement model.
+
+The clean publication model is distinct from the recovered exploratory
+spring-to-August model and is not expected to reproduce its +6.44
+coefficient.
