@@ -1,5 +1,4 @@
-@'
-# Evidence Chronology and Claim Classification
+﻿# Evidence Chronology and Claim Classification
 
 Status: FROZEN RESEARCH CHRONOLOGY
 Date: 2026-08-31
@@ -433,7 +432,5 @@ rules.
 
 The next analysis must preserve these distinctions permanently.
 
-Status: STAGE 1 FROZEN PENDING REPOSITORY COMMIT
-'@ | Set-Content `
-    .\docs\post2021\EVIDENCE_CHRONOLOGY.md `
-    -Encoding UTF8
+Status: STAGE 1 FROZEN
+
