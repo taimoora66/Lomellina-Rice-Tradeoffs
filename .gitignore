@@ -80,3 +80,5 @@ __pycache__/
 
 # Large raw MODIS downloads
 data/raw/modis/
+
+data/processed/post2021/
