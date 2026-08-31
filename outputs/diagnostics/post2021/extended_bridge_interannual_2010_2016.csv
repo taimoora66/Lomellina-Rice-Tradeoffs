@@ -1,0 +1,2 @@
+bridge,years,n_years,pearson_annual_means,spearman_annual_means,annual_mean_rmse,annual_mean_mae,annual_mean_bias,annual_mean_max_abs_error
+valid__index_then_aggregate__fractional_logit,2010-2016,7,0.957773924196666,0.9285714285714288,0.03439394482681013,0.0258969856060526,0.023164229081510283,0.07572373629616302

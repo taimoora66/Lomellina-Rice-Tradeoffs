@@ -445,3 +445,91 @@ confirmation results. Additional historical years will be used only as an
 extended confirmation of the already fixed specification and coefficients.
 
 Post-2021 groundwater outcomes remain unused.
+
+## Measurement bridge freeze — extended historical confirmation
+
+The bounded RiceFloodIT-compatible MODIS bridge is now frozen for post-2021
+generation.
+
+No further tuning of the historical measurement bridge will be performed.
+
+Frozen satellite product and domain:
+
+- MOD09A1.061
+- Terra
+- tile h18v04
+- fixed 15 March-June composite starts, DOY 065 through 177 at 8-day spacing
+- native MODIS sinusoidal geometry
+- exact empirically recovered 2x2 native-pixel registration to each
+  RiceFloodIT grid cell
+
+Frozen spectral processing:
+
+- Band 1 red
+- Band 7 SWIR2
+- valid Band 1 and Band 7 reflectance required for NDFI
+- NDFI = (red - SWIR2) / (red + SWIR2)
+- NDFI calculated at native 500-m resolution
+- valid native NDFI values averaged within the exact 2x2 RiceFloodIT block
+  for each composite
+- composite-level NDFI averaged across the fixed 15-composite season
+
+Frozen bridge model:
+
+- fractional-logit mean model
+- seasonal NDFI is the sole predictor
+- intercept = -0.589681615540
+- seasonal-NDFI slope = 15.145272547528
+- no clipping
+- no polynomial terms
+- no additional satellite predictors
+- no groundwater information
+
+The model was fitted using 2017-2021 RiceFloodIT observations.
+
+Independent historical confirmation:
+
+2014-2016:
+- pooled Pearson r = 0.932687
+- pooled Spearman rho = 0.919143
+- pooled RMSE = 0.056936
+- no predictions outside [0,1]
+
+Additional untouched confirmation in 2010-2013 used the identical stored
+coefficients and unchanged processing rule:
+
+- 2010 Pearson r = 0.950553
+- 2011 Pearson r = 0.929359
+- 2012 Pearson r = 0.959707
+- 2013 Pearson r = 0.949693
+- pooled 2010-2013 Pearson r = 0.945527
+- pooled 2010-2013 Spearman rho = 0.936057
+
+Across the full independent 2010-2016 annual-mean confirmation:
+
+- Pearson r = 0.957774
+- Spearman rho = 0.928571
+- annual-mean RMSE = 0.034394
+- annual-mean MAE = 0.025897
+- annual-mean bias = +0.023164
+- maximum absolute annual-mean error = 0.075724
+
+Interpretation:
+
+The bridge passes the spatial-agreement, physical-range, and interannual
+covariation requirements sufficiently to support generation of a
+RiceFloodIT-compatible post-2021 flooding signal.
+
+The reconstruction must not be described as an exact reproduction of the
+original RiceFloodIT algorithm or as direct irrigation volume.
+
+Absolute reconstructed FF levels retain measurable calibration error,
+including substantial overprediction in some historical years. Accordingly,
+the intended groundwater analysis will emphasize interannual flooding
+anomalies rather than interpreting reconstructed FF levels literally.
+
+The measurement specification and coefficients are frozen before generation
+of 2022-2025 flooding values and before inspection of post-2021 groundwater
+outcomes.
+
+Post-2021 groundwater outcomes remain held out.
