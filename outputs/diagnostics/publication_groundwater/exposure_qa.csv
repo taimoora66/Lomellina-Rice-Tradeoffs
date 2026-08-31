@@ -1,0 +1,13 @@
+metric,value
+median_pixels_2km,9.0
+median_balanced_pixels_2km,4.0
+station_years_with_ff_2km,402.0
+median_pixels_5km,52.0
+median_balanced_pixels_5km,25.0
+station_years_with_ff_5km,433.0
+median_pixels_10km,182.0
+median_balanced_pixels_10km,72.0
+station_years_with_ff_10km,479.0
+rows,518.0
+wells,37.0
+years,14.0

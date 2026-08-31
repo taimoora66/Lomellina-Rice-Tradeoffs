@@ -1,0 +1,13 @@
+metric,value
+raw_rows_precip_2008_2010,574046
+raw_rows_precip_2011_2020,2322108
+raw_rows_precip_2021,323353
+sensor_month_rows_precip,1004
+valid_sensor_months_precip,952
+unique_sensors_precip,11
+raw_rows_temp_2008_2010,408884
+raw_rows_temp_2011_2020,2646837
+raw_rows_temp_2021,376004
+sensor_month_rows_temp,1172
+valid_sensor_months_temp,1079
+unique_sensors_temp,11
