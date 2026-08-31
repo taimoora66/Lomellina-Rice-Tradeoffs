@@ -301,3 +301,38 @@ The following remain open:
 - historical bridge calibration and validation design.
 
 No groundwater outcome was used in this decision.
+
+## Historical exploratory groundwater model reproduction
+
+The previously reported exploratory August groundwater association was
+reproduced from the preserved exploratory pre-weather panel combined with
+the publication weather reconstruction.
+
+Recovered exploratory specification:
+
+`d_spr_8 ~ ff10_anom + P_A8 + T_A8 + pre + C(station) + C(year)`
+
+Definitions:
+- `d_spr_8 = m8 - aprmay`;
+- `ff10_anom` is `ff_10` centered on the station-specific historical mean;
+- `pre` is the groundwater-state variable preserved in the recovered
+  exploratory panel;
+- standard errors are clustered by groundwater station.
+
+Reproduced result:
+- N = 191;
+- wells = 32;
+- beta = 6.440268535973067;
+- clustered SE = 2.907251833007603;
+- p = 0.026743407265692277;
+- 95% CI = [0.7421596492901097, 12.138377422656024].
+
+The reproduced coefficient differs from the previously documented
+6.440269 by approximately -4.64e-07, and the p-value differs from
+0.026743 by approximately +4.07e-07.
+
+Status: PASS for historical computational reproduction.
+
+This result remains exploratory. Reproduction does not make the
+specification confirmatory and does not resolve spatial dependence,
+post-selection, or multiplicity.

@@ -1,0 +1,13 @@
+﻿metric,value
+N,191
+wells,32
+beta_ff10_anom,6.440268535973067
+clustered_se,2.907251833007603
+p_value,0.026743407265692277
+ci95_low,0.7421596492901097
+ci95_high,12.138377422656024
+target_beta,6.440269
+target_p,0.026743
+beta_difference,-4.6402693243408066e-07
+p_difference,4.0726569227808596e-07
+reproduction_status,PASS
