@@ -521,3 +521,46 @@ Twenty-km shifted-grid leave-block-out diagnostics:
 Interpretation remains associational. This historical result does not
 override the independently frozen 2022-2023 held-out confirmation, which
 did not corroborate the historical flooding-groundwater relationship.
+
+## Historical minimum multiplicity audit
+
+The recovered monthly-timing analysis defines a minimum family of nine
+directly comparable FF10 coefficient tests:
+
+- June, July, and August under cumulative weather plus `pre`;
+- June, July, and August under separate April/May/target-month weather
+  plus `pre`;
+- June, July, and August under cumulative weather without `pre`.
+
+The reconstructed nine-model family passed computational QA.
+
+Recovered selected August exploratory model:
+- beta = 6.440268535973067;
+- nominal p = 0.026743407265692277;
+- beta reproduction difference = 0;
+- p-value reproduction difference = 0.
+
+Across the nine-test minimum family:
+- nominal p < 0.05: 3 tests;
+- Bonferroni-adjusted p < 0.05: 0 tests;
+- Holm-adjusted p < 0.05: 0 tests;
+- Benjamini-Hochberg-adjusted p < 0.05: 0 tests.
+
+For the originally selected August cumulative-weather-plus-pre result:
+- Bonferroni p = 0.240691;
+- Holm p = 0.187204;
+- BH p = 0.080230.
+
+This nine-test family is a documented lower bound on the historical
+exploratory universe. The broader recovered analysis also included
+lead-lag, nonlinear, alternative-exposure, exact-date, simultaneity,
+and other robustness specifications.
+
+Therefore the original exploratory August association is not treated as
+multiplicity-robust confirmatory evidence.
+
+The separately frozen clean historical publication model remains a
+distinct analysis and is not mechanically assigned these nine adjusted
+p-values. Its interpretation is instead constrained by the historical
+selection record and the independent held-out 2022-2023 confirmation,
+which did not corroborate the historical association.

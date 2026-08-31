@@ -1,0 +1,5 @@
+check,value,status,target,difference
+minimum_family_size,9,PASS,,
+recovered_august_beta,6.440268535973067,PASS,6.440268535973067,0.0
+recovered_august_p,0.026743407265692277,PASS,0.026743407265692277,0.0
+overall,PASS,PASS,,
