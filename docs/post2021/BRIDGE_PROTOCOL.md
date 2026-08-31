@@ -630,3 +630,58 @@ or model specification will be chosen to rescue a weak or null result.
 This held-out analysis is interpreted as a small-sample confirmation /
 falsification exercise rather than a high-powered independent replication.
 
+
+## Held-out groundwater confirmation result
+
+The frozen held-out groundwater analysis was run after the sample,
+exposure, outcome, antecedent control, weather robustness models,
+inference rule, and influence diagnostics had been prespecified.
+
+Primary first-difference model:
+`delta_aug_gw ~ delta_ff10 + delta_pre_gw`
+
+Frozen sample:
+- 13 repeated ISS wells.
+- Contrast: 2023 minus 2022.
+- HC3 heteroskedasticity-robust inference.
+
+Primary FF10 result:
+- coefficient = -4.303743831
+- HC3 SE = 44.728387384
+- p = 0.925247225
+- 95% CI = [-103.964801548, 95.357313886]
+- implied coefficient per +0.01 FF10 = -0.043037438 m
+
+The confidence interval is extremely wide and includes large effects in
+both directions. The held-out analysis therefore does not provide
+directionally informative evidence for a flooding-groundwater association.
+
+Prespecified weather robustness:
+- W1 precipitation-adjusted FF10 coefficient = -39.0840, p = 0.8844
+- W2 temperature-adjusted FF10 coefficient = -12.9346, p = 0.9682
+- W3 precipitation-and-temperature-adjusted FF10 coefficient = -30.8660,
+  p = 0.9397
+
+Weather adjustment does not produce confirmatory evidence and substantially
+increases uncertainty in this small sample.
+
+Prespecified influence diagnostics:
+- maximum leverage = 0.989970208
+- maximum Cook's distance = 1.007170316
+- leave-one-well-out FF10 coefficient range =
+  [-13.732901064, 38.375589178]
+- leave-one-out coefficients do not retain a common sign.
+
+The highest-leverage observation is retained. No observation is removed
+unless an independently documented data error is established.
+
+Interpretation:
+The post-2021 held-out exercise does not corroborate the historical
+flooding-groundwater association. The FF10 coefficient is weakly identified,
+highly imprecise, and sensitive to individual wells. This result is treated
+as a failed / indeterminate small-sample confirmation rather than evidence
+for either a positive or negative causal effect.
+
+No alternative radius, groundwater outcome, flooding metric, sample,
+or regression specification will be selected to rescue this result.
+
