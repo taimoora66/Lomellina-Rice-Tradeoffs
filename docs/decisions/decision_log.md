@@ -564,3 +564,17 @@ distinct analysis and is not mechanically assigned these nine adjusted
 p-values. Its interpretation is instead constrained by the historical
 selection record and the independent held-out 2022-2023 confirmation,
 which did not corroborate the historical association.
+
+## 2024 Pavia groundwater extension
+
+The ARPA Lombardia Pavia 2024 quantitative groundwater dataset was acquired from two openly accessible official releases: the original 25 June 2025 release and the 14 October 2025 update.
+
+The two workbooks contain the same 267 unique station-date observations from 51 stations and have no groundwater-depth value differences. The October update corrects metadata for station PO0181220U0001, including municipality, coordinates, measuring-point elevation, well depth, and screen metadata. The corrected October coordinates and metadata agree with the established 2014-2023 historical record for that station.
+
+Therefore the October 2025 update is the authoritative production source for 2024. The June release is retained locally only for provenance and release-comparison audit.
+
+The production annual groundwater builder was extended through 2024 without changing the frozen annual-summary definitions. The extended builder reproduces the frozen 2008-2021 historical annual artifact and the previous 2008-2023 extension with zero mismatches across all 41 overlapping columns.
+
+For 2024, 28 of the frozen 37 historical ISS wells have observations, 16 have Jan-Feb antecedent groundwater observations, 16 have August observations, and 15 have both. No new ISS wells enter the historical 37-well universe.
+
+Across 2022-2024, 12 wells are complete in all three years, 15 are complete in at least two years, and 3 are complete in exactly one year. No flooding-groundwater association model was fitted during this availability and panel-structure audit.

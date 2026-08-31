@@ -1,0 +1,13 @@
+metric,value
+all_2024_stations,51
+all_2024_observations,267
+iss_stations,28
+historical_iss_stations_present,28
+new_iss_stations,0
+iss_with_janfeb,16
+iss_with_august,16
+iss_complete_pre_plus_aug,15
+historical_iss_with_janfeb,16
+historical_iss_with_august,16
+historical_iss_complete_pre_plus_aug,15
+new_iss_complete_pre_plus_aug,0

@@ -1,0 +1,8 @@
+check,expected,observed,status
+authoritative_raw_rows,267,267,PASS
+authoritative_raw_stations,51,51,PASS
+observed_iss_metadata_coordinate_match,28,28,PASS
+stations_any_obs_n,28,28,PASS
+stations_janfeb_n,16,16,PASS
+stations_augmean_n,16,16,PASS
+complete_pre_plus_augmean_n,15,15,PASS

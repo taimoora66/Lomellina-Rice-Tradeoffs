@@ -1,0 +1,3 @@
+﻿release_id,reference_year,publication_date,source_page,local_file,sha256,rows,stations,status,production_use
+june_2025,2024,2025-06-25,https://www.arpalombardia.it/dati/2024/acqua/dati-quantitativi-pavia-2024/,pavia_groundwater_quantitative_2024_release_2025-06-25.xlsx,5AF4CB1F6D4D618ACFDAAB5A9E6E48952AFD8BB5E959B3B1ECDEE76FD7B0D720,267,51,SUPERSEDED_WITH_METADATA_CORRECTIONS,NO
+october_2025,2024,2025-10-14,https://www.arpalombardia.it/dati/2024/acqua/dati-quantitativi-pavia-2024-aggiornamento-ottobre-2025/,pavia_groundwater_quantitative_2024_update_2025-10-14.xlsx,8E0F8E1F6CC9A621F674FE833EF8DF153F017AE3325FE7823184DF74DD3857E8,267,51,CURRENT_UPDATED_RELEASE,YES
