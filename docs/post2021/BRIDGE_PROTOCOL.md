@@ -578,3 +578,55 @@ or anomaly.
 
 The anomaly definition will not be changed in response to subsequent
 groundwater results.
+
+## Held-out groundwater confirmation model freeze
+
+The post-2021 groundwater confirmation design was frozen before inspection
+of groundwater-depth values or any groundwater–flooding association.
+
+Frozen sample:
+- 13 ISS wells with complete 2022 and 2023 groundwater antecedent/outcome
+  availability and valid 10-km flooding exposure in both years.
+- No sample selection is based on groundwater values.
+
+Frozen exposure:
+- 10-km unweighted mean of cell-level `ff_anomaly_2010_2021`.
+- Cell anomaly is reconstructed annual FF minus the fixed 2010–2021
+  reconstructed cell baseline.
+- No alternative radius, flooding window, or anomaly definition will be
+  selected in response to groundwater results.
+
+Primary held-out estimator:
+- First-difference OLS across the 13 repeated wells.
+- Outcome: 2023 minus 2022 August-nearest-Aug-23 groundwater depth.
+- Exposure: 2023 minus 2022 frozen FF10 anomaly.
+- Antecedent control: 2023 minus 2022 last-valid-Jan–Feb groundwater depth.
+- HC3 heteroskedasticity-robust standard errors.
+- The intercept absorbs the common 2022–2023 year shift.
+
+Primary equation:
+
+`delta_aug_gw ~ delta_ff10 + delta_pre_gw`
+
+Prespecified weather robustness:
+- W1: add `delta_P_A8`.
+- W2: add `delta_T_A8`.
+- W3: add both `delta_P_A8` and `delta_T_A8`.
+
+Weather robustness models are not alternative primary specifications and
+will not be selected according to statistical significance.
+
+Influence diagnostics:
+- leave-one-well-out coefficient range;
+- leverage;
+- Cook's distance.
+
+No influential observation will be removed unless an independently
+documented data error is identified.
+
+No alternative groundwater month, flooding radius, flooding definition,
+or model specification will be chosen to rescue a weak or null result.
+
+This held-out analysis is interpreted as a small-sample confirmation /
+falsification exercise rather than a high-powered independent replication.
+
