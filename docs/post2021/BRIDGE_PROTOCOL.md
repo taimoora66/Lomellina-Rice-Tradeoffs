@@ -533,3 +533,48 @@ of 2022-2025 flooding values and before inspection of post-2021 groundwater
 outcomes.
 
 Post-2021 groundwater outcomes remain held out.
+
+## Frozen flooding-anomaly exposure definition
+
+Before inspection of post-2021 groundwater outcomes, the flooding-anomaly
+definition is frozen.
+
+For every RiceFloodIT grid cell, the historical satellite baseline is the
+mean reconstructed flooding fraction over 2010-2021:
+
+FF_baseline_i = mean(FF_reconstructed_i,t), t = 2010,...,2021
+
+The annual anomaly is:
+
+FF_anomaly_i,t =
+    FF_reconstructed_i,t - FF_baseline_i
+
+This definition is applied unchanged through 2025.
+
+The baseline uses reconstructed FF in both the historical and post-2021
+periods. Published RiceFloodIT FF and reconstructed post-2021 FF are not
+mixed within the anomaly calculation.
+
+The resulting reconstructed panel contains:
+
+- 4,331 grid cells;
+- 16 years, 2010-2025;
+- 69,296 cell-year observations;
+- 17,324 post-2021 cell-year observations.
+
+The maximum absolute residual from cell-specific centering over the
+2010-2021 baseline is approximately 1.16e-16.
+
+Post-2021 spatial-mean anomalies relative to the frozen historical baseline
+are approximately:
+
+- 2022: -0.097810
+- 2023: -0.068459
+- 2024: +0.077705
+- 2025: -0.022925
+
+No groundwater outcomes were used to define the bridge, historical baseline,
+or anomaly.
+
+The anomaly definition will not be changed in response to subsequent
+groundwater results.
