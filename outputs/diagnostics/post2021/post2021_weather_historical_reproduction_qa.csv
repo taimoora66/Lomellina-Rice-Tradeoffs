@@ -1,0 +1,5 @@
+column,rows_compared,mismatch_n,exact_reproduction
+value,2176,0,True
+valid_days,2176,0,True
+days_in_month,2176,0,True
+coverage,2176,0,True

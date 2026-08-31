@@ -1,0 +1,3 @@
+name,dataset_id,start_year,end_year,sensor_ids,rows_downloaded,acquisition_utc,sha256,source
+precip_2022_2023,pstb-pga6,2022,2023,2195;2368;8155;9863;12724;17437;17572,713039,existing_local_download,231bc06617a6e30608415d67b2075e25bdcf244e0161c6c713ec127d5bf198ef,Regione Lombardia / ARPA Lombardia Open Data Socrata SODA2
+temp_2022_2023,w9wd-u6jh,2022,2023,2187;6698;8157;8196;9868;12716;17432;17573,816688,existing_local_download,57a2e2c30ed9a94f2cd6a30b6ea1fb267515b566afc7f2279d069e65c82dfec0,Regione Lombardia / ARPA Lombardia Open Data Socrata SODA2
