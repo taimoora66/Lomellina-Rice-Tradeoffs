@@ -336,3 +336,53 @@ Status: PASS for historical computational reproduction.
 This result remains exploratory. Reproduction does not make the
 specification confirmatory and does not resolve spatial dependence,
 post-selection, or multiplicity.
+
+## Historical groundwater spatial-inference freeze
+
+This inference design was frozen before inspection of the clean historical
+publication-model coefficient.
+
+Primary exposure geometry:
+- the primary flooding exposure is the mean flooding fraction within 10 km
+  of each groundwater well;
+- two 10-km supports may overlap for wells separated by as much as
+  approximately 20 km;
+- therefore 20 km is the prespecified primary spatial-HAC cutoff.
+
+Geometry audit:
+- 37 groundwater wells;
+- median pairwise distance = 27.09 km;
+- median neighbors within 10 km = 3;
+- median neighbors within 20 km = 11;
+- median neighbors within 30 km = 22;
+- median neighbors within 40 km = 28.
+
+Frozen primary covariance estimator:
+- OLS coefficient from the frozen historical publication specification;
+- station-cluster component to allow arbitrary serial covariance within well;
+- same-year spatial-HAC component with a Bartlett distance kernel and
+  20-km cutoff;
+- subtract the observation-level HC0 intersection component to avoid
+  double-counting the diagonal.
+
+Frozen spatial-HAC sensitivity cutoffs:
+- 30 km;
+- 40 km.
+
+The 20-km cutoff is primary because it follows directly from the geometry of
+the 10-km exposure support and was selected before viewing the clean-model
+result. Larger cutoffs are conservative sensitivity analyses and will not be
+selected according to statistical significance.
+
+Geographic-block audit:
+- 20-km shifted grids produce only 10-11 occupied blocks;
+- 30-km grids produce 6-7 occupied blocks;
+- 40-km grids produce 4-6 occupied blocks.
+
+Because these cluster counts are small, ordinary block-cluster asymptotic
+p-values will not be treated as primary inference. Twenty-km shifted blocks
+will instead be used for geographic influence / leave-block-out coefficient
+stability diagnostics.
+
+The previously reproduced exploratory +6.44 result was not used to select
+the spatial cutoff or covariance design.
