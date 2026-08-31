@@ -436,3 +436,88 @@ Multiplicity / historical selection audit:
 The clean publication model is distinct from the recovered exploratory
 spring-to-August model and is not expected to reproduce its +6.44
 coefficient.
+
+## Spatial covariance QA failure and repair
+
+The first execution of the frozen historical publication model passed
+sample and design-matrix QA but revealed that the prespecified
+inclusion-exclusion covariance
+
+`M_station + M_spatial - M_HC0`
+
+was not positive semidefinite.
+
+Observed minimum covariance eigenvalues were approximately:
+- 20 km: -0.101;
+- 30 km: -0.179;
+- 40 km: -0.245.
+
+The corresponding inclusion-exclusion standard errors and p-values are
+therefore retained only as failed diagnostic outputs and will not be used
+for publication inference.
+
+This is a covariance-estimator QA failure, not a model-selection decision.
+The OLS coefficient, estimation sample, outcome, exposure, controls, fixed
+effects, and spatial cutoffs remain unchanged.
+
+The repair is frozen before rerunning inference:
+
+`M_additive = M_station + M_spatial`
+
+with 20 km primary and 30/40 km sensitivities.
+
+This additive sandwich intentionally does not subtract the shared
+observation-level diagonal. It therefore errs toward retaining rather than
+removing duplicated variance contribution and is treated as a conservative
+combined dependence estimator.
+
+The failed inclusion-exclusion estimator will remain reported in QA for
+transparency but will not determine substantive conclusions.
+
+No outcome, month, flooding radius, control set, or cutoff is changed in
+response to the observed coefficient or statistical significance.
+
+## Clean historical groundwater publication result
+
+The frozen clean historical publication model was executed after the model
+and spatial-inference design had been recorded.
+
+Specification:
+
+`gw_aug_mean_m ~ ff_10_anom + gw_pre_last_janfeb_m + P_A8 + T_A8 + C(station) + C(year)`
+
+Estimation sample:
+- N = 194 station-years;
+- 32 groundwater wells;
+- 14 years, 2008-2021;
+- design rank = 49/49;
+- production complete-case flag agreement = PASS.
+
+OLS coefficient on `ff_10_anom`:
+- beta = 7.7429292844732505.
+
+The initially frozen inclusion-exclusion covariance failed PSD QA and is
+retained only as a failed diagnostic.
+
+The pre-recorded QA repair used the additive station-plus-spatial sandwich.
+
+Primary 20-km additive result:
+- SE = 3.0184014508774752;
+- p = 0.015370514563907879;
+- 95% CI = [1.5868589387862109, 13.89899963016029].
+
+Spatial-cutoff sensitivities:
+- 30 km: SE = 3.028763, p = 0.015693;
+- 40 km: SE = 2.992586, p = 0.014585.
+
+All additive 20/30/40-km covariance matrices passed PSD QA.
+
+Twenty-km shifted-grid leave-block-out diagnostics:
+- 39 block-deletion runs;
+- beta range = [6.324203093273122, 12.157390393489147];
+- median beta = 7.682540533992654;
+- all estimates retained the positive full-sample sign.
+
+Interpretation remains associational. This historical result does not
+override the independently frozen 2022-2023 held-out confirmation, which
+did not corroborate the historical flooding-groundwater relationship.
