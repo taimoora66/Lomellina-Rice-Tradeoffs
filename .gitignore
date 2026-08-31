@@ -66,3 +66,17 @@ Thumbs.db
 # Regenerable groundwater publication outputs
 data/processed/publication_groundwater/
 .pytest_cache/
+
+# Large regenerable MODIS source files
+data/raw/modis/
+outputs/diagnostics/post2021/_scratch/
+
+# Local Earthdata / OPeNDAP configuration
+.dodsrc
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Large raw MODIS downloads
+data/raw/modis/

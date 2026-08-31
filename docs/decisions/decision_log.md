@@ -243,3 +243,61 @@ The post-2021 groundwater outcome data are designated held-out validation inform
 
 If the historical bridge cannot reproduce RiceFloodIT adequately, the 2022–2025 groundwater validation will not proceed using that metric.
 
+
+---
+
+## 2026-08-31 — Decision: freeze native MOD09A1-to-RiceFloodIT geometry
+
+### Decision
+
+The RiceFloodIT approximately 1-km grid will be treated as a deterministic
+2x2 aggregation of native MOD09A1 500-m pixels.
+
+### Evidence
+
+The registration audit produced:
+
+- 4,331 RiceFloodIT coordinates.
+- 4,331 valid native 2x2 MOD09A1 registrations.
+- 0 coordinates outside MODIS tile h18v04.
+- MOD09A1 pixel size: 463.312717 m.
+- RiceFloodIT grid spacing: 926.625400 m.
+- Grid-spacing ratio: 1.99999993.
+- Median implied 2x2 block-center residual: 0.181267 m.
+- Maximum implied 2x2 block-center residual: 0.182391 m.
+- Invariant left-column parity: [0].
+- Invariant top-row parity: [1].
+
+### Interpretation
+
+The observed approximately 327-m distance from a RiceFloodIT coordinate to the
+nearest individual 500-m MODIS pixel center is the expected diagonal
+half-pixel offset when the RiceFloodIT coordinate lies at the center of four
+adjacent MOD09A1 cells.
+
+The sub-metre residual to the implied 2x2 block center demonstrates that this
+offset is systematic rather than a CRS or geolocation mismatch.
+
+### Production rule
+
+Future satellite reconstruction will preserve MOD09A1 native geometry and map
+each RiceFloodIT coordinate to its exact four-cell native MODIS block.
+
+No bilinear interpolation or arbitrary 1-km reprojection will be used for the
+primary RiceFloodIT bridge.
+
+### What remains unfrozen
+
+This decision freezes geometry only.
+
+The following remain open:
+
+- exact RiceFloodIT MODIS QA exclusion rule;
+- exact NDFI-to-flooding-fraction estimator;
+- order of 500-m FF calculation versus 2x2 aggregation;
+- NDVI reliability rule;
+- seasonal aggregation details beyond the recovered 15-composite
+  March-June acquisition sequence;
+- historical bridge calibration and validation design.
+
+No groundwater outcome was used in this decision.

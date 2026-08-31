@@ -1,0 +1,20 @@
+{
+  "rice_points": 4331,
+  "inside_for_2x2": 4331,
+  "outside_for_2x2": 0,
+  "pixel_size_m": 463.31271652777775,
+  "max_abs_col_edge_residual_pixels": 5.7611975989857456e-05,
+  "max_abs_row_edge_residual_pixels": 0.00039033451275827247,
+  "median_abs_col_edge_residual_pixels": 5.218967226028326e-05,
+  "median_abs_row_edge_residual_pixels": 0.00038769470711486065,
+  "block_center_distance_median": 0.1812665221005126,
+  "block_center_distance_max": 0.18239123692487166,
+  "unique_left_col_parities": [
+    0
+  ],
+  "unique_top_row_parities": [
+    1
+  ],
+  "unique_2x2_blocks": 4331,
+  "rice_unique_coordinates": 4331
+}

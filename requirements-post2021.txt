@@ -1,0 +1,8 @@
+﻿# Post-2021 MODIS / RiceFloodIT measurement bridge
+# Tested on Python 3.13.15, Windows
+numpy==2.5.2
+pandas==3.0.5
+pyproj==3.7.2
+requests==2.34.2
+earthaccess==0.18.0
+pyhdf==0.11.7

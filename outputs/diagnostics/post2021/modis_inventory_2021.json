@@ -1,0 +1,58 @@
+{
+  "product": "MOD09A1.061",
+  "doi": "10.5067/MODIS/MOD09A1.061",
+  "initial_development_year": 2021,
+  "initial_date_window": [
+    "2021-03-01",
+    "2021-06-30"
+  ],
+  "ricefloodit_bbox_wgs84": {
+    "lon_min": 8.045516319819253,
+    "lon_max": 9.541490386571809,
+    "lat_min": 45.02499838977754,
+    "lat_max": 45.59166503617859
+  },
+  "corner_tiles": {
+    "southwest": {
+      "lon": 8.045516319819253,
+      "lat": 45.02499838977754,
+      "h": 18,
+      "v": 4
+    },
+    "northwest": {
+      "lon": 8.045516319819253,
+      "lat": 45.59166503617859,
+      "h": 18,
+      "v": 4
+    },
+    "southeast": {
+      "lon": 9.541490386571809,
+      "lat": 45.02499838977754,
+      "h": 18,
+      "v": 4
+    },
+    "northeast": {
+      "lon": 9.541490386571809,
+      "lat": 45.59166503617859,
+      "h": 18,
+      "v": 4
+    }
+  },
+  "unique_tiles": [
+    {
+      "h": 18,
+      "v": 4,
+      "name": "h18v04"
+    }
+  ],
+  "required_reflectance_bands": {
+    "red": "sur_refl_b01",
+    "nir": "sur_refl_b02",
+    "swir2": "sur_refl_b07"
+  },
+  "indices": {
+    "ndvi": "(nir - red) / (nir + red)",
+    "ndfi": "(red - swir2) / (red + swir2)"
+  },
+  "status": "inventory_only_no_satellite_files_downloaded"
+}
