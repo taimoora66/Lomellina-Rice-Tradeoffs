@@ -1,0 +1,10 @@
+comparison,column,rows_compared,mismatch_n,exact_reproduction
+frozen_2022_2023_ff10_geometry,wells_n,1,0,True
+frozen_2022_2023_ff10_geometry,wells_with_zero_cells_10km,1,0,True
+frozen_2022_2023_ff10_geometry,wells_with_positive_cells_10km,1,0,True
+frozen_2022_2023_ff10_geometry,min_cells_10km,1,0,True
+frozen_2022_2023_ff10_geometry,median_cells_10km,1,0,True
+frozen_2022_2023_ff10_geometry,mean_cells_10km,1,0,True
+frozen_2022_2023_ff10_geometry,max_cells_10km,1,0,True
+frozen_2022_2023_ff10_geometry,max_farthest_included_distance_m,1,0,True
+frozen_2022_2023_ff10_geometry,max_abs_anomaly_identity_residual,1,0,True

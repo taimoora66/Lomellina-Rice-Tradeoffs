@@ -1,0 +1,8 @@
+comparison,column,rows_compared,mismatch_n,exact_reproduction
+frozen_2022_2023_ff10_crossyear,wells_with_both_years_n,1,0,True
+frozen_2022_2023_ff10_crossyear,pearson_2022_2023,1,0,True
+frozen_2022_2023_ff10_crossyear,spearman_2022_2023,1,0,True
+frozen_2022_2023_ff10_crossyear,mean_change_2023_minus_2022,1,0,True
+frozen_2022_2023_ff10_crossyear,sd_change_2023_minus_2022,1,0,True
+frozen_2022_2023_ff10_crossyear,min_change_2023_minus_2022,1,0,True
+frozen_2022_2023_ff10_crossyear,max_change_2023_minus_2022,1,0,True

@@ -1,0 +1,10 @@
+comparison,column,rows_compared,mismatch_n,exact_reproduction
+frozen_2022_2023_ff10_variation,wells_total_n,2,0,True
+frozen_2022_2023_ff10_variation,wells_with_ff10_n,2,0,True
+frozen_2022_2023_ff10_variation,ff10_anomaly_mean,2,0,True
+frozen_2022_2023_ff10_variation,ff10_anomaly_sd,2,0,True
+frozen_2022_2023_ff10_variation,ff10_anomaly_min,2,0,True
+frozen_2022_2023_ff10_variation,ff10_anomaly_p25,2,0,True
+frozen_2022_2023_ff10_variation,ff10_anomaly_median,2,0,True
+frozen_2022_2023_ff10_variation,ff10_anomaly_p75,2,0,True
+frozen_2022_2023_ff10_variation,ff10_anomaly_max,2,0,True

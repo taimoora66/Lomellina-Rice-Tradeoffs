@@ -1,0 +1,2 @@
+radius_km,wells_n,wells_with_zero_cells_10km,wells_with_positive_cells_10km,min_cells_10km,median_cells_10km,mean_cells_10km,max_cells_10km,max_farthest_included_distance_m,max_abs_anomaly_identity_residual
+10,37,2,35,0,241.0,202.2972972972973,342,9999.818776114302,1.1102230246251565e-16

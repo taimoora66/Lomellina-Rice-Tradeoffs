@@ -1,0 +1,7 @@
+comparison,column,rows_compared,mismatch_n,exact_reproduction
+frozen_2022_2023_ff10_exposure,radius_km,74,0,True
+frozen_2022_2023_ff10_exposure,n_cells_10km,74,0,True
+frozen_2022_2023_ff10_exposure,ff10_reconstructed,74,0,True
+frozen_2022_2023_ff10_exposure,ff10_baseline_2010_2021,74,0,True
+frozen_2022_2023_ff10_exposure,ff10_anomaly_2010_2021,74,0,True
+frozen_2022_2023_ff10_exposure,anomaly_identity_residual,74,0,True
