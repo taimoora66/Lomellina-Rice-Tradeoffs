@@ -1,6 +1,6 @@
 ﻿# Stage 4 â€” Model Architecture and Inference
 
-Status: PROPOSED FOR FREEZE
+Status: STAGE 4 FROZEN
 Date: 2026-08-31
 
 ## Purpose
@@ -589,6 +589,7 @@ exposure-information diagnostics are prespecified supporting analyses.
 No 2022â€“2025 floodingâ€“groundwater association coefficient may be inspected
 until this stage is frozen and committed.
 
-Status: STAGE 4 PROPOSED FOR FREEZE
+Status: STAGE 4 FROZEN
+
 
 
