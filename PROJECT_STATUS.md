@@ -65,3 +65,161 @@ If the late-season association fails spatially robust and multiple-analysis-awar
 ## Repository branch
 
 Current recovery branch: `publication-groundwater-reproducibility`.
+
+---
+
+## 2026-08-31 — Groundwater publication reproducibility milestone
+
+The 2008–2021 groundwater publication data pipeline has now been reconstructed and run locally from source/raw inputs using the numbered production scripts in:
+
+`scripts/04_publication_groundwater/`
+
+### Completed computational reconstruction
+
+PASS:
+
+- ARPA groundwater cleaning and duplicate handling.
+- ISS superficial-aquifer selection.
+- RiceFloodIT numerical georeferencing reconstruction.
+- ARPA meteorological download and monthly aggregation.
+- 2 km, 5 km and 10 km well-buffer RiceFloodIT exposure construction.
+- 2008–2021 discovery-panel construction.
+- Executable pipeline QA tests.
+
+### Reproduced groundwater QA
+
+- Raw groundwater observations: 5,946.
+- Raw monitoring stations: 68.
+- Duplicate station-date groups: 249.
+- Conflicting duplicate station-date groups: 1.
+- Clean groundwater observations: 5,696.
+- ISS monitoring wells: 37.
+- Clean ISS observations: 3,084.
+- ISS discovery well-year grid: 518.
+- Observed ISS well-years: 330.
+- Well-years with Jan-Feb antecedent groundwater and August groundwater: 221.
+
+### Reproduced RiceFloodIT QA
+
+- Pixel-year rows: 80,926.
+- Years: 2000–2021.
+- Unique pixels: 4,331.
+- Balanced 22-year pixels: 2,419.
+- Median positive raster-grid spacing: approximately 926.6254 m.
+- ISS wells checked against transformed RiceFloodIT support: 37.
+- Median nearest-pixel distance: approximately 0.54 km.
+- Maximum nearest-pixel distance: approximately 16.70 km.
+
+The numerical transformation is internally consistent with a MODIS sinusoidal grid and the Lomellina spatial extent, but authoritative original-product CRS confirmation remains open.
+
+### Reproduced weather QA
+
+Precipitation raw rows:
+
+- 2008–2010: 574,046.
+- 2011–2020: 2,322,108.
+- 2021: 323,353.
+
+Temperature raw rows:
+
+- 2008–2010: 408,884.
+- 2011–2020: 2,646,837.
+- 2021: 376,004.
+
+Monthly sensor QA:
+
+- Precipitation sensor-month rows: 1,004.
+- Valid precipitation sensor-months: 952.
+- Temperature sensor-month rows: 1,172.
+- Valid temperature sensor-months: 1,079.
+- Unique sensors represented: 11 for precipitation and 11 for temperature.
+
+### Reproduced RiceFloodIT well-buffer exposure QA
+
+2 km:
+
+- Median pixels: 9.
+- Median balanced pixels: 4.
+- Station-years with FF: 402.
+
+5 km:
+
+- Median pixels: 52.
+- Median balanced pixels: 25.
+- Station-years with FF: 433.
+
+10 km:
+
+- Median pixels: 182.
+- Median balanced pixels: 72.
+- Station-years with FF: 479.
+
+Overall exposure grid:
+
+- Rows: 518.
+- Wells: 37.
+- Years: 14.
+
+### Reproduced discovery-panel QA
+
+- Rows: 518.
+- Wells: 37.
+- Years: 14.
+- Jan-Feb antecedent groundwater + August groundwater rows: 221.
+- Candidate primary complete rows: 194.
+- Candidate primary complete wells: 32.
+
+Candidate complete rows by year:
+
+- 2008: 10
+- 2009: 6
+- 2010: 9
+- 2011: 10
+- 2012: 6
+- 2013: 12
+- 2014: 13
+- 2015: 6
+- 2016: 20
+- 2017: 25
+- 2018: 28
+- 2019: 21
+- 2020: 10
+- 2021: 18
+
+No groundwater-RiceFloodIT regression was fitted during this reconstruction stage.
+
+### Executable QA gate
+
+`tests/test_publication_pipeline.py` was run locally with Python 3.13.15 and pytest 9.1.1.
+
+Result:
+
+`4 passed`
+
+The tests currently verify groundwater reconstruction, RiceFloodIT reconstruction, exposure-panel construction and discovery-panel construction.
+
+### Current interpretation
+
+The 2008–2021 raw-to-panel computational pipeline is considered locally reproducible.
+
+This does NOT yet mean that the groundwater scientific association is confirmed. The previous August/10-km result remains exploratory until the statistical model, spatial inference and multiplicity-aware analysis are frozen and rerun.
+
+### Remaining reproducibility gates
+
+OPEN:
+
+- Authoritative confirmation of the original RiceFloodIT coordinate reference system / georeferenced source product.
+- Exact stable public acquisition route and provenance for the Pavia ARPA groundwater workbook.
+- Formal per-well spatial-support / edge-well diagnostic.
+- Clean-clone end-to-end reconstruction from GitHub.
+- Final environment/requirements reproducibility check.
+- Frozen statistical-model and inference specification.
+
+### Next research stage
+
+The next new-data stage is development of a RiceFloodIT-compatible flooding metric for 2022–2025 using openly available satellite data.
+
+The measurement bridge must first be developed and evaluated on historical RiceFloodIT overlap years.
+
+Post-2021 groundwater outcomes must not be inspected while the satellite reconstruction method is being tuned.
+
