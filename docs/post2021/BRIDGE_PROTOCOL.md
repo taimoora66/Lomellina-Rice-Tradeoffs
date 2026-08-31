@@ -169,3 +169,116 @@ The following remain unfrozen:
 - historical calibration/validation design.
 
 No groundwater outcome was used to establish this geometry.
+
+## Historical bridge acceptance protocol — 2026-08-31
+
+### Objective
+
+The purpose of the historical bridge is to determine whether openly available
+MOD09A1.061 data can reproduce the spatial and interannual flooding signal
+represented by the published RiceFloodIT product closely enough to support a
+2022–2025 extension.
+
+The bridge is a measurement-validation exercise. It is not optimized against
+groundwater outcomes.
+
+### Data separation
+
+Published RiceFloodIT observations through 2021 are the reference product.
+
+Post-2021 groundwater outcomes remain held out and must not be inspected or
+used to choose:
+
+- MODIS QA rules;
+- NDVI reliability rules;
+- NDFI processing;
+- spatial aggregation order;
+- temporal aggregation;
+- bridge equation;
+- historical calibration or validation choices.
+
+### Historical validation design
+
+The same MOD09A1.061 reconstruction procedure must be applied to multiple
+historical years for which published RiceFloodIT values already exist.
+
+A bridge rule may not be accepted solely because it performs well in 2021.
+
+Historical years will be divided into:
+
+- development/calibration years;
+- held-out historical validation years.
+
+The split must be recorded before fitting the final bridge.
+
+### Admissible processing choices
+
+Candidate rules may differ only where the published/open methodology remains
+unresolved.
+
+Candidate differences may include:
+
+- documented MODIS QA interpretations;
+- documented or explicitly tested NDVI reliability treatment;
+- order of native 500-m processing and 2x2 aggregation;
+- temporal summarization across the recovered March–June composites;
+- bridge equation linking the recovered spectral signal to RiceFloodIT FF.
+
+The candidate set must remain small, scientifically interpretable and fixed
+before historical validation results are inspected.
+
+No arbitrary threshold search or large parameter grid will be used.
+
+### Validation quantities
+
+For each historical validation year, reconstruction will be evaluated against
+published RiceFloodIT using complementary diagnostics:
+
+- spatial correlation;
+- rank correlation;
+- mean bias;
+- RMSE or equivalent prediction error;
+- regression slope and intercept;
+- spatial coverage and missingness;
+- preservation of the annual spatial distribution;
+- preservation of interannual anomalies when multiple years are combined.
+
+No single metric will determine acceptance.
+
+### Acceptance principle
+
+The bridge will be accepted only if one fixed reconstruction rule shows
+consistent agreement with RiceFloodIT across multiple historical years and does
+not depend on a single year, location, QA threshold or tuning choice.
+
+A candidate that improves one metric while materially degrading others will
+not automatically be preferred.
+
+A candidate showing strong 2021 agreement but unstable historical performance
+will be rejected.
+
+If no scientifically defensible candidate reproduces RiceFloodIT adequately,
+the 2022–2025 extension will not be presented as a continuation of RiceFloodIT.
+
+### Freeze
+
+After historical validation is accepted, the following will be frozen:
+
+- MODIS product and collection;
+- acquisition window;
+- tile;
+- bands;
+- reflectance validity rules;
+- QA mask;
+- NDVI/NDFI definitions;
+- NDVI reliability treatment;
+- spatial aggregation order;
+- temporal aggregation rule;
+- bridge equation;
+- calibration years;
+- historical validation years;
+- missing-data treatment.
+
+Only after this freeze will 2022–2025 flooding values be generated.
+
+Post-2021 groundwater results cannot cause any of these rules to be changed.

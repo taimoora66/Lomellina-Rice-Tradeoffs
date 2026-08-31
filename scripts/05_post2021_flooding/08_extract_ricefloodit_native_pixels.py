@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import argparse
 import csv
 import re
 from pathlib import Path
@@ -19,30 +20,28 @@ RICE_FILE = (
     / "ffavg_2021.csv"
 )
 
-MODIS_DIR = (
-    ROOT
-    / "data"
-    / "raw"
-    / "modis"
-    / "MOD09A1.061"
-    / "2021"
-)
 
-OUT_FILE = (
-    ROOT
-    / "data"
-    / "processed"
-    / "post2021"
-    / "mod09a1_ricefloodit_native_pixels_2021.csv"
-)
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Extract native MOD09A1 pixels registered "
+            "to the RiceFloodIT grid for one year."
+        )
+    )
 
-QA_FILE = (
-    ROOT
-    / "outputs"
-    / "diagnostics"
-    / "post2021"
-    / "native_pixel_extraction_qa_2021.csv"
-)
+    parser.add_argument(
+        "--year",
+        type=int,
+        default=2021,
+        help="MODIS year to extract; default: 2021",
+    )
+
+    args = parser.parse_args()
+
+    if not 2000 <= args.year <= 2025:
+        parser.error("--year must be between 2000 and 2025.")
+
+    return args
 
 
 TILE_SIZE = 1111950.5196666666
@@ -74,15 +73,30 @@ def bitfield(
     return (arr >> start) & ((1 << width) - 1)
 
 
-def parse_composite_start_doy(filename: str) -> int:
-    m = re.search(r"\.A2021(\d{3})\.", filename)
+def parse_composite_start_doy(
+    filename: str,
+    expected_year: int,
+) -> int:
+    m = re.search(
+        r"\.A(\d{4})(\d{3})\.",
+        filename,
+    )
 
     if not m:
         raise ValueError(
-            f"Could not parse 2021 DOY from {filename}"
+            f"Could not parse MODIS year/DOY from {filename}"
         )
 
-    return int(m.group(1))
+    file_year = int(m.group(1))
+    doy = int(m.group(2))
+
+    if file_year != expected_year:
+        raise ValueError(
+            f"Expected year {expected_year}, "
+            f"but {filename} contains {file_year}."
+        )
+
+    return doy
 
 
 def read_sds(
@@ -165,6 +179,34 @@ def build_registration(
 
 
 def main() -> None:
+    args = parse_args()
+    year = args.year
+
+    modis_dir = (
+        ROOT
+        / "data"
+        / "raw"
+        / "modis"
+        / "MOD09A1.061"
+        / str(year)
+    )
+
+    out_file = (
+        ROOT
+        / "data"
+        / "processed"
+        / "post2021"
+        / f"mod09a1_ricefloodit_native_pixels_{year}.csv"
+    )
+
+    qa_file = (
+        ROOT
+        / "outputs"
+        / "diagnostics"
+        / "post2021"
+        / f"native_pixel_extraction_qa_{year}.csv"
+    )
+
     rice = pd.read_csv(RICE_FILE)
 
     rice_xy = (
@@ -182,7 +224,7 @@ def main() -> None:
 
     registration = build_registration(rice_xy)
 
-    files = sorted(MODIS_DIR.glob("*.hdf"))
+    files = sorted(modis_dir.glob("*.hdf"))
 
     if len(files) != 15:
         raise AssertionError(
@@ -193,7 +235,7 @@ def main() -> None:
     expected_doys = list(range(65, 178, 8))
 
     observed_doys = [
-        parse_composite_start_doy(path.name)
+        parse_composite_start_doy(path.name, year)
         for path in files
     ]
 
@@ -203,12 +245,12 @@ def main() -> None:
             f"{observed_doys}"
         )
 
-    OUT_FILE.parent.mkdir(
+    out_file.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    QA_FILE.parent.mkdir(
+    qa_file.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
@@ -220,9 +262,7 @@ def main() -> None:
     cols_idx = registration["modis_col"].to_numpy()
 
     for path in files:
-        composite_start_doy = parse_composite_start_doy(
-            path.name
-        )
+        composite_start_doy = parse_composite_start_doy(path.name, year)
 
         print(path.name)
 
@@ -432,7 +472,7 @@ def main() -> None:
         frame = registration.copy()
 
         frame["source_file"] = path.name
-        frame["year"] = 2021
+        frame["year"] = year
         frame["composite_start_doy"] = (
             composite_start_doy
         )
@@ -531,14 +571,14 @@ def main() -> None:
         )
 
     out.to_csv(
-        OUT_FILE,
+        out_file,
         index=False,
     )
 
     qa = pd.DataFrame(qa_rows)
 
     qa.to_csv(
-        QA_FILE,
+        qa_file,
         index=False,
     )
 
@@ -569,8 +609,8 @@ def main() -> None:
         f"{out['ndfi'].notna().sum():,}"
     )
     print("")
-    print(f"  wrote data: {OUT_FILE}")
-    print(f"  wrote QA:   {QA_FILE}")
+    print(f"  wrote data: {out_file}")
+    print(f"  wrote QA:   {qa_file}")
     print("")
     print(
         "No final QA exclusion rule or FF model "
@@ -580,3 +620,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
