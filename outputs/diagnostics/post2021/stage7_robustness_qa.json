@@ -1,0 +1,21 @@
+{
+  "cr2_rule": "CR2/Satterthwaite not computed because it was not frozen in Stage 4 and no approximate implementation is silently substituted.",
+  "diagnostic14_models": 1,
+  "loo_year_fits": 4,
+  "models_completed": 9,
+  "primary_beta_identity_abs_diff": 0.0,
+  "primary_beta_stage5": -6.464447572337406,
+  "primary_beta_stage7_identity": -6.464447572337406,
+  "primary_model_changed": false,
+  "primary_sample_changed": false,
+  "primary_weather_models": 3,
+  "secondary_base_models": 1,
+  "secondary_weather_models": 3,
+  "selection_rule": "No robustness or diagnostic result may replace the frozen Stage-5 primary result according to sign, magnitude, precision, confidence interval, or p-value.",
+  "stage": "STAGE_7_PRESPECIFIED_ROBUSTNESS_AND_STABILITY",
+  "stage5_cv3j_se_if_available": 30.611594077332484,
+  "stage5_wcr31_p_if_available": null,
+  "stage7_identity_cv3j_se": 30.611594077332484,
+  "stage7_identity_wcr31_p": 0.819081908190819,
+  "status": "PASS"
+}

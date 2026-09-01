@@ -1,0 +1,4 @@
+sample,n_rows,n_wells,min_years_per_well,max_years_per_well,wells_2022,wells_2023,wells_2024,wells_2025
+primary,48,12,4,4,12,12,12,12
+diagnostic14,54,14,3,4,14,12,14,14
+secondary18,62,18,2,4,17,13,15,17
