@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C1_PUBLIC_AVAILABILITY_AUDIT_REV2",
+  "association_models_fitted": 0,
+  "frozen_artifacts_modified": 0,
+  "window": [
+    2015,
+    2023
+  ],
+  "groundwater": {
+    "native_observations_n": 2137,
+    "iss_stations_n": 35,
+    "stations_all_9_years": 21,
+    "stations_median_ge4_rice_months_per_year": 26,
+    "stations_median_ge5_rice_months_per_year": 20,
+    "all9year_stations_median_ge4_rice_months": 15
+  },
+  "sentinel1": {
+    "scenes_n": 4110,
+    "unique_dates_n": 1525
+  },
+  "sidro": {
+    "registry_rows": 1429,
+    "nearby_rows": 273,
+    "coordinate_mode": "EPSG:32632",
+    "source_x_column": "UTM Est",
+    "source_y_column": "UTM Nord"
+  },
+  "rirusibiter": {
+    "public_availability": true,
+    "topology_validation_pending": true
+  }
+}

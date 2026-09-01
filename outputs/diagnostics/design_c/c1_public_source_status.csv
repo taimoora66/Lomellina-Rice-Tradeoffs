@@ -1,0 +1,6 @@
+source,public_status,machine_readable,audited_now,notes
+ARPA groundwater,LOCAL AUTHORITATIVE COPY AVAILABLE,True,True,Native observation cadence audited for ISS wells 2015-2023.
+ARPA SIDRO sensor registry,PUBLIC CSV,True,True,https://idro.arpalombardia.it/manual/AnagraficaSensoriWEB.csv
+Copernicus Sentinel-1 GRD,PUBLIC STAC API,True,True,Metadata inventory only; no raster bulk download.
+RIRU,PUBLIC GIS DOWNLOAD,True,False,https://www.geoportale.regione.lombardia.it/download-pacchetti?_dwnpackageportlet_WAR_gptdownloadportlet_metadataid=r_lombar:e8f83865-9405-48e3-ae4f-168d851f7208&p_p_id=dwnpackageportlet_WAR_gptdownloadportlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal
+SIBITER,PUBLIC GIS / METADATA,True,False,Network completeness explicitly non-homogeneous; https://www.geoportale.regione.lombardia.it/it/metadati?_detailSheetMetadata_WAR_gptmetadataportlet_identifier=r_lombar:9370330e-735a-47df-a8f4-892e1cfec002

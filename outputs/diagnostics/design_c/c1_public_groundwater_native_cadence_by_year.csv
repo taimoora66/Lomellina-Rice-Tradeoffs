@@ -1,0 +1,10 @@
+year,observations_n,stations_n,months_with_any_obs,rice_season_observations_n,rice_season_stations_n,station_years_with_all_6_rice_months,station_years_with_at_least_4_rice_months
+2015,179,28,12,92,28,8,11
+2016,328,33,12,167,33,20,26
+2017,328,33,12,166,33,18,27
+2018,343,34,12,175,33,21,27
+2019,259,33,12,122,33,4,20
+2020,155,28,12,88,27,3,10
+2021,224,30,12,107,27,11,12
+2022,200,29,12,99,29,5,11
+2023,121,26,12,68,26,6,6

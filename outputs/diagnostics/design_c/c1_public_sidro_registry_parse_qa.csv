@@ -1,0 +1,2 @@
+encoding,separator_repr,coordinate_mode,source_x_column,source_y_column,plausible_coordinate_rows,registry_rows,nearby_rows,raw_sha256
+utf-8-sig,';',EPSG:32632,UTM Est,UTM Nord,1429,1429,273,90f958b025118c57df3585c8807be996942b4254ea4646d922ebf7c307eac615

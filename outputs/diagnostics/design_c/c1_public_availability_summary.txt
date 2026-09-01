@@ -1,0 +1,41 @@
+DESIGN C — C1 PUBLIC AVAILABILITY AUDIT REVISION 2
+====================================================
+
+NO association model fitted.
+NO frozen artifact modified.
+
+GROUNDWATER 2015-2023
+---------------------
+Native ISS observations: 2137
+ISS wells: 35
+Wells present all 9 years: 21
+Wells with median >=4 Apr-Sep months/year: 26
+Wells with median >=5 Apr-Sep months/year: 20
+All-9-year wells with median >=4 Apr-Sep months/year: 15
+
+SENTINEL-1
+----------
+Scenes: 4110
+Unique acquisition dates: 1525
+
+SIDRO
+-----
+Registry rows: 1429
+Coordinate interpretation: EPSG:32632
+Coordinate source columns: UTM Est / UTM Nord
+Sensors inside study bbox: 273
+
+RIRU / SIBITER
+--------------
+Public availability: CONFIRMED
+Topology validation: PENDING
+
+NEXT
+----
+1. Inspect rice-season well support.
+2. Inspect nearby SIDRO sensor types and dates.
+3. Acquire RIRU/SIBITER raw GIS with provenance.
+4. Search public Est Sesia historical discharge before sending a request.
+5. Still NO Design-C groundwater-association model.
+
+C1 PUBLIC AVAILABILITY AUDIT REV2: PASS
