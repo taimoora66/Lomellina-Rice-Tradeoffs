@@ -1,0 +1,4 @@
+metric,stage6,stage6r,absolute_difference,pass
+identifying_ff10_residual_sd,0.010624870766403716,0.010624870766403716,0.0,True
+effective_ff10_clusters_inverse_herfindahl,1.5843785508214225,1.5843785508214,2.2648549702353193e-14,True
+max_ff10_partial_leverage_share,0.7880095682826245,0.7880095682826306,6.106226635438361e-15,True

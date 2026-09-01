@@ -1,0 +1,35 @@
+{
+  "beta_absolute_difference": 2.531308496145357e-13,
+  "identifying_ff10_sd_manual": 0.010624870766403716,
+  "information_equivalent_clusters_inverse_herfindahl": 1.5843785508214,
+  "manual_fwl_beta": -6.464447572337659,
+  "matched_scale_validation": {
+    "fe_error_rmse": 0.0033596595588677412,
+    "fe_error_sd": 0.003407316684739683,
+    "fe_error_sd_to_post2021_identifying_sd_ratio": 0.32069252978716317,
+    "fe_observed_signal_sd": 0.0038678326579497683,
+    "fe_pearson": 0.5101543272983661,
+    "fe_predicted_signal_sd": 0.002710187146484638,
+    "fe_rmse_to_post2021_identifying_sd_ratio": 0.3162070986774846,
+    "fe_spearman": 0.2285714285714286,
+    "well_years": 36,
+    "wells": 12,
+    "years": [
+      2014,
+      2015,
+      2016
+    ]
+  },
+  "max_partial_leverage": 0.7880095682826306,
+  "model_changed": false,
+  "most_influential_loo_abs_beta_change": 32.90002216564072,
+  "most_influential_loo_station": "PO018047NR0001",
+  "partial_leverage_squared_cv_Vs": 6.573947522691942,
+  "partial_leverage_vs_stage6_max_difference": 6.106226635438361e-15,
+  "sample_changed": false,
+  "stage": "STAGE_6R_INDEPENDENT_REPLICATION",
+  "stage5_saved_beta": -6.464447572337406,
+  "status": "PASS",
+  "top_partial_leverage_station": "PO018047NR0001",
+  "warning": "Matched-scale validation is a diagnostic of exposure reconstruction quality on the relevant 10-km within-well/interannual scale. It is not an errors-in-variables correction and does not alter Stage 5."
+}

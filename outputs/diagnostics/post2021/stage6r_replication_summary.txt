@@ -1,0 +1,43 @@
+STAGE 6R — INDEPENDENT REPLICATION AUDIT
+=========================================
+
+1. FWL IDENTITY
+Stage-5 saved beta: -6.46444757234
+Manual FWL beta:    -6.46444757234
+Absolute difference: 2.53e-13
+PASS: True
+
+Manual identifying FF10 SD: 0.0106248707664
+
+2. PARTIAL LEVERAGE
+Maximum well share: 0.788009568283
+Top well: PO018047NR0001
+Squared-CV heterogeneity Vs(L): 6.57394752269
+Inverse-Herfindahl information-equivalent clusters: 1.58437855082
+
+3. LEAVE-ONE-WELL INFLUENCE
+Largest absolute beta change:
+station = PO018047NR0001
+beta_minus_g = 26.4355745933
+absolute change = 32.9000221656
+
+4. MATCHED-SCALE HISTORICAL VALIDATION
+Same 12 wells, exact 10-km geometry, 2014-2016 confirmation years.
+
+Well+year-FE observed signal SD: 0.00386783265795
+Well+year-FE predicted signal SD: 0.00271018714648
+Well+year-FE reconstruction-error SD: 0.00340731668474
+Well+year-FE reconstruction-error RMSE: 0.00335965955887
+Residual Pearson correlation: 0.510154327298
+Residual Spearman correlation: 0.228571428571
+
+Matched FE error SD / post-2021 identifying FF10 SD:
+0.320692529787
+
+Matched FE RMSE / post-2021 identifying FF10 SD:
+0.316207098677
+
+5. STAGE-6 CROSS-CHECK
+All independent headline replications pass: True
+
+No primary model or sample was changed.
