@@ -1,0 +1,9 @@
+statement,status,qualification
+Historical analyses showed a positive flooding-groundwater association.,SUPPORTED WITH QUALIFICATION,historically informed/reanalyzed and affected by historical model exploration/multiplicity; not independent confirmation
+The genuine 2022-2023 held-out test corroborated the historical positive association.,NOT SUPPORTED,held-out coefficient was negative and extremely imprecise
+The 2022-2025 extension demonstrates a negative causal effect.,NOT SUPPORTED,observational non-causal estimand; WCR31/CV3J inference is weakly informative and cluster-concentrated
+The 2022-2025 evidence precisely demonstrates no association.,NOT SUPPORTED,primary confidence interval is extremely wide; absence of statistical evidence is not precise evidence of absence
+Weather adjustment explains the post-2021 primary estimate.,NOT SUPPORTED,primary W1-W3 estimates retain the same negative direction and broadly similar magnitude
+The magnitude of the post-2021 association is stable across eligible-well populations.,NOT SUPPORTED,14- and 18-well estimates attenuate substantially toward zero
+The main practical limitation of the post-2021 primary analysis is concentrated identifying information.,SUPPORTED,Stage 6 and independent Stage 6R reproduce the concentration and influential-cluster diagnosis
+Matched-scale validation rules out all exposure measurement error concerns.,NOT SUPPORTED,matched-scale error is smaller than post-2021 identifying SD but residual agreement is only moderate; no EIV correction

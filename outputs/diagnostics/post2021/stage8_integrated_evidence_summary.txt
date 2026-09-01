@@ -1,0 +1,81 @@
+STAGE 8 — INTEGRATED EVIDENCE SYNTHESIS
+=======================================
+
+NO NEW MODEL WAS FITTED IN STAGE 8.
+
+EVIDENCE CHRONOLOGY
+-------------------
+Historical 2008-2021 publication reanalysis:
+  beta = 7.74292928447
+  primary reported 95% CI = [1.58685893879, 13.8989996302]
+  p = 0.0153705145639
+  Status: historically informed frozen reanalysis, not untouched confirmation.
+
+Genuine held-out 2022-2023 confirmation:
+  beta = -4.30374383104
+  HC3 SE = 44.7283873841
+  95% CI = [-103.964801548, 95.3573138861]
+  p = 0.92524722528
+  Status: did not corroborate the historical positive association and was
+  extremely imprecise.
+
+Prespecified subsequent 2022-2025 extension:
+  beta = -6.46444757234
+  CV3J SE = 30.6115940773
+  CV3J 95% CI = [-73.8401118633, 60.9112167186]
+  WCR31-Webb p = 0.819081908191
+  Status: no clear directional evidence under frozen small-cluster inference.
+
+INFORMATION AUDIT
+-----------------
+Identifying FF10 residual SD = 0.0106248707664
+Raw variance retained after full adjustment =
+  0.0604515399209
+Maximum one-well information share =
+  0.788009568283
+Information-equivalent clusters =
+  1.58437855082
+Matched-scale FE error SD / post-2021 identifying SD =
+  0.320692529787
+
+Stage 6R independently reproduced the Stage-5 coefficient and information
+concentration. Therefore the primary practical limitation is concentrated
+identifying information, not an algebraic/rank failure.
+
+ROBUSTNESS / STABILITY
+----------------------
+Primary weather robustness beta range:
+  [-5.19969687538,
+   -4.10169037338]
+
+Secondary 18-well base beta =
+  -1.5419783596
+
+Diagnostic 14-well base beta =
+  -1.42967963683
+
+The primary weather specifications retain a negative direction, but broader
+eligible-well populations attenuate markedly toward zero. Leave-one-year
+diagnostics remain negative in all four omissions but show magnitude
+instability.
+
+PUBLICATION-SAFE SYNTHESIS
+--------------------------
+Historical analyses suggested a positive flooding-groundwater association.
+A genuine held-out 2022-2023 test did not corroborate that association.
+The prespecified 2022-2025 extension also yielded no clear directional
+evidence under the frozen small-cluster inference procedure. Diagnostic
+analysis shows that the later estimate is weakly informed because calendar-
+year adjustment removes most raw exposure variation and the remaining
+identifying information is highly concentrated among wells. Weather
+adjustment does not materially explain the primary estimate, while broader
+eligible-well samples attenuate substantially toward zero.
+
+Accordingly, the post-2021 evidence neither supports a robust negative causal
+effect nor provides precise evidence of no association.
+
+REPORTING FIREWALL
+------------------
+The historical block, genuine held-out test, frozen 2022-2025 primary result,
+Stage-6/6R diagnostics, and Stage-7 robustness retain their original
+epistemic roles. No Stage-8 synthesis operation changes model status.

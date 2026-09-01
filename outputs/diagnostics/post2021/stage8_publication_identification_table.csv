@@ -1,0 +1,8 @@
+diagnostic,value,unit,interpretive_role
+Raw FF10 variance retained after full adjustment,0.06045153992085558,fraction,quantifies how little raw exposure variance identifies beta
+Identifying FF10 residual SD,0.010624870766403716,FF10,scale of coefficient-identifying exposure variation
+Maximum single-well information share,0.7880095682826245,fraction,cluster information concentration
+Information-equivalent clusters,1.5843785508214225,inverse-Herfindahl count,descriptive information concentration; not inferential df
+Stage6R manual FWL beta discrepancy,2.531308496145357e-13,beta units,independent algebraic replication
+Matched-scale FE reconstruction error SD ratio,0.32069252978716317,ratio,historical 10-km reconstruction error relative to post-2021 identifying FF10 SD
+Matched-scale FE observed/predicted Pearson r,0.5101543272983661,correlation,matched-scale bridge validation

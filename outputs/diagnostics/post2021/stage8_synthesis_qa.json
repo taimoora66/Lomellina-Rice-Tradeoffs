@@ -1,0 +1,14 @@
+{
+  "identification_diagnostics_synthesized": 7,
+  "leave_one_year_rows": 4,
+  "main_evidence_rows": 3,
+  "new_models_fitted": 0,
+  "primary_result_changed": false,
+  "reporting_firewall": "Chronology and frozen inferential hierarchy preserved. No estimate selected according to sign, precision or p-value.",
+  "robustness_promoted": false,
+  "stage": "STAGE_8_INTEGRATED_EVIDENCE_SYNTHESIS",
+  "stage5_vs_stage6r_beta_abs_diff": 2.531308496145357e-13,
+  "stage5_vs_stage7_primary_beta_abs_diff": 0.0,
+  "stage7_models_synthesized": 9,
+  "status": "PASS"
+}
