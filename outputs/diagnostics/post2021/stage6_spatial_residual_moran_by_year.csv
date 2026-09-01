@@ -1,0 +1,5 @@
+year,n_wells,moran_i_inverse_distance,permutation_mean,permutation_sd,two_sided_permutation_p_value,permutations,seed,interpretation
+2022,12,-0.07396810531573254,-0.08993715107511317,0.07136934355550126,0.8273,9999,20260901,Dependence diagnostic only; does not change frozen inference.
+2023,12,-0.11338038899024898,-0.0902112544047154,0.06992355431774043,0.7446,9999,20260901,Dependence diagnostic only; does not change frozen inference.
+2024,12,-0.07156377321099487,-0.09061573351498527,0.0686135051143493,0.767,9999,20260901,Dependence diagnostic only; does not change frozen inference.
+2025,12,-0.12043417215512357,-0.09157379070071925,0.06839355045422911,0.6632,9999,20260901,Dependence diagnostic only; does not change frozen inference.

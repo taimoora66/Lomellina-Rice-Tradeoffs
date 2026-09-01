@@ -1,0 +1,2 @@
+ff10_variance_after_well_year_fe,ff10_variance_after_well_year_fe_plus_antecedent,remaining_fraction_after_antecedent,fraction_removed_by_antecedent,rule
+0.00011297183603450992,0.00011288787880278028,0.9992568304218408,0.0007431695781592307,Diagnostic only. Antecedent groundwater remains in the frozen primary model regardless of information loss.

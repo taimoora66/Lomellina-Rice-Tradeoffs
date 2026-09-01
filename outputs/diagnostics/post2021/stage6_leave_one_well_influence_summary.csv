@@ -1,0 +1,2 @@
+full_beta,loo_beta_min,loo_beta_max,loo_beta_sd,loo_sign_changes_across_wells,max_abs_change_from_full_beta,station_with_max_abs_change
+-6.464447572337406,-8.63450386466245,26.435574593303,9.640152044111707,True,32.90002216564041,PO018047NR0001

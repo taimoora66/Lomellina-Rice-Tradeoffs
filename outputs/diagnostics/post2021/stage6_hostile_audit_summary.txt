@@ -1,0 +1,91 @@
+STAGE 6 — COMPLETE HOSTILE IDENTIFICATION / INFORMATION AUDIT
+================================================================
+
+Frozen model changed: NO
+Frozen sample changed: NO
+Rows / wells / years: 48 / 12 / 4
+
+A. EXPOSURE INFORMATION
+-----------------------
+Raw FF10 variance: 0.00186741113544
+After well FE variance: 0.00186318208382
+After year FE variance: 0.000117200887658
+After well + year FE variance: 0.000112971836035
+After well + year FE + antecedent variance: 0.000112887878803
+
+Two-way / raw retained fraction: 0.0604964990786
+Full partial / raw retained fraction: 0.0604515399209
+Full partial / two-way retained fraction: 0.999256830422
+
+Identifying FF10 residual SD: 0.0106248707664
+Identifying FF10 residual range:
+[-0.0298765858723, 0.0475107262303]
+
+B. CLUSTER INFORMATION
+----------------------
+Nominal well clusters: 12
+Effective FF10 clusters (inverse-Herfindahl): 1.58437855082
+Maximum single-well FF10 information share: 0.788009568283
+Top-3 wells FF10 information share: 0.923297325305
+Partial-leverage share CV: 2.67798041734
+
+Highest-information well:
+PO018047NR0001
+share=0.788009568283
+
+Stage-5 leave-one-well output available: True
+
+C. NUMERICAL IDENTIFICATION
+---------------------------
+Design rank: 17/17
+Smallest singular value: 0.0724346178675
+Largest singular value: 31.182690535
+Condition number: 430.494305803
+
+FF10 vs antecedent after well/year FE:
+Pearson r = 0.0272611367731
+Spearman rho = -0.237407729049
+Continuous-pair VIF-like diagnostic = 1.00074372229
+
+Antecedent remaining-information fraction:
+0.999256830422
+
+D. CROSS-WELL SPATIAL DEPENDENCE THREAT
+---------------------------------------
+Inverse-distance Moran-type residual diagnostic by year:
+2022: I=-0.0739681, perm-p=0.8273
+2023: I=-0.11338, perm-p=0.7446
+2024: I=-0.0715638, perm-p=0.767
+2025: I=-0.120434, perm-p=0.6632
+
+These p-values are diagnostics only. They do not authorize replacing the
+frozen one-way well-cluster inference.
+
+E. MEASUREMENT / INFORMATION SCALE
+----------------------------------
+stage6_identifying_ff10_residual_sd: 0.0106249; ratio-to-identifying-SD=1; level=well-year residual after well FE + year FE + antecedent
+bridge_confirmation_pooled_cell_year_rmse: 0.0569362; ratio-to-identifying-SD=5.35877; level=validation cell-year
+bridge_confirmation_pooled_cell_year_mae: 0.0410643; ratio-to-identifying-SD=3.86492; level=validation cell-year
+bridge_confirmation_annual_mean_rmse: 0.0129059; ratio-to-identifying-SD=1.21469; level=regional annual mean validation
+bridge_confirmation_annual_mean_max_abs_error: 0.0201945; ratio-to-identifying-SD=1.90068; level=regional annual mean validation
+
+IMPORTANT:
+Bridge validation errors and the identifying well-year FF10 residual are at
+different aggregation levels. Their ratios are scale comparisons only and must
+not be described as measurement-error SD ratios or used for attenuation
+correction.
+
+HOSTILE-AUDIT DECISION RULE
+---------------------------
+Do not automatically assign an identification category from any single cutoff.
+Interpret jointly:
+1. fraction of FF10 variance surviving well/year FE;
+2. fraction surviving antecedent adjustment;
+3. concentration of FF10 partial leverage across wells;
+4. effective FF10 cluster count;
+5. leave-one-well coefficient stability;
+6. numerical rank/conditioning;
+7. spatial residual dependence threat;
+8. measurement-information scale comparison.
+
+No result in this audit permits changing the frozen Stage-5 primary result.

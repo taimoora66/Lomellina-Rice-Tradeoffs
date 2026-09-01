@@ -1,0 +1,6 @@
+quantity,value,aggregation_level,comparison_ratio_to_identifying_sd,valid_as_measurement_error_correction,note
+stage6_identifying_ff10_residual_sd,0.010624870766403716,well-year residual after well FE + year FE + antecedent,1.0,False,"Identifying exposure scale, not validation error."
+bridge_confirmation_pooled_cell_year_rmse,0.0569362043846402,validation cell-year,5.358766768690952,False,Scale comparison only. Cell-year validation error is not the same object as 10-km well-year residual error.
+bridge_confirmation_pooled_cell_year_mae,0.0410642753960133,validation cell-year,3.8649199880962555,False,Scale comparison only. Cell-year validation error is not the same object as 10-km well-year residual error.
+bridge_confirmation_annual_mean_rmse,0.0129059237599907,regional annual mean validation,1.2146899518815577,False,Scale comparison only. Regional annual-mean error is not a well-year measurement-error SD.
+bridge_confirmation_annual_mean_max_abs_error,0.020194482808089,regional annual mean validation,1.9006803237498942,False,Scale comparison only. Regional annual-mean error is not a well-year measurement-error SD.

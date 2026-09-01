@@ -1,0 +1,41 @@
+{
+  "after_well_fe_variance": 0.001863182083817983,
+  "after_well_year_fe_antecedent_variance": 0.00011288787880278028,
+  "after_well_year_fe_variance": 0.00011297183603450992,
+  "after_year_fe_variance": 0.00011720088765783188,
+  "condition_number": 430.4943058032611,
+  "continuous_pair_vif_like": 1.0007437222899398,
+  "design_columns": 17,
+  "design_rank": 17,
+  "effective_ff10_clusters_inverse_herfindahl": 1.5843785508214225,
+  "ff10_antecedent_partial_pearson_r": 0.027261136773054473,
+  "full_to_raw_variance_ratio": 0.06045153992085558,
+  "full_to_two_way_variance_ratio": 0.9992568304218408,
+  "identifying_ff10_residual_sd": 0.010624870766403716,
+  "max_ff10_partial_leverage_share": 0.7880095682826245,
+  "measurement_comparison_rule": "Validation-error ratios are descriptive scale comparisons only; they are not attenuation corrections.",
+  "n_rows": 48,
+  "n_wells": 12,
+  "outcome_used_for_specification_selection": false,
+  "primary_sample_modified": false,
+  "qualitative_classification_rule": "No automated identification label is assigned. Classification must be written after reviewing all numeric diagnostics without changing the frozen model.",
+  "raw_ff10_variance": 0.001867411135441305,
+  "scientific_model_modified": false,
+  "smallest_singular_value": 0.07243461786746618,
+  "spatial_permutations": 9999,
+  "spatial_seed": 20260901,
+  "stage": "STAGE_6_COMPLETE_HOSTILE_IDENTIFICATION_AUDIT",
+  "stage5_identity": {
+    "stage5_beta": -6.464447572337406,
+    "stage6_refit_beta_for_identity_only": -6.464447572337406
+  },
+  "status": "PASS",
+  "top_3_ff10_information_share": 0.9232973253052678,
+  "two_way_to_raw_variance_ratio": 0.06049649907855589,
+  "years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

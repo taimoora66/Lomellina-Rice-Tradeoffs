@@ -1,0 +1,40 @@
+{
+  "analysis_panel_file": "data\\processed\\post2021\\post2021_primary_balanced_panel_2022_2025.csv",
+  "design_matrix_columns": 17,
+  "design_matrix_rank": 17,
+  "duplicate_station_year_rows": 0,
+  "ff10_partial_residual_max": 0.047510726230306055,
+  "ff10_partial_residual_min": -0.02987658587233394,
+  "ff10_partial_residual_sd": 0.010624870766403716,
+  "ff10_partial_residual_variance": 0.00011288787880278028,
+  "leave_one_well_file": "outputs\\diagnostics\\post2021\\stage5_primary_leave_one_well_out_2022_2025.csv",
+  "missing_primary_values": 0,
+  "n_rows": 48,
+  "n_wells": 12,
+  "primary_result_file": "outputs\\diagnostics\\post2021\\stage5_primary_groundwater_result_2022_2025.csv",
+  "rows_per_well": {
+    "PO018043NUP001": 4,
+    "PO018047NR0001": 4,
+    "PO0180480U0004": 4,
+    "PO018048NRP001": 4,
+    "PO018072NUP001": 4,
+    "PO0180810U0111": 4,
+    "PO0181100U0111": 4,
+    "PO0181140U0002": 4,
+    "PO018162NUP001": 4,
+    "PO018173NUP001": 4,
+    "PO018176NUP001": 4,
+    "PO018180NUP001": 4
+  },
+  "smoke_test_firewall": "NO_REAL_POST2021_DATA_READ",
+  "smoke_test_status": "PASS",
+  "software_file": "outputs\\diagnostics\\post2021\\stage5_primary_reveal_software.json",
+  "stage4_status_required": "STAGE 4 FROZEN",
+  "status": "PASS_PRIMARY_REVEAL_COMPLETED",
+  "years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

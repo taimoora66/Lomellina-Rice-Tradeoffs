@@ -1,0 +1,116 @@
+{
+  "bootstrap": {
+    "B": 9999,
+    "bootstrap_type": "31",
+    "fixed_seed_exactly_reproducible": true,
+    "impose_null": true,
+    "label": "WCR31",
+    "parallel": false,
+    "pvalue_run_1": 0.0042004200420042,
+    "pvalue_run_2": 0.0042004200420042,
+    "seed": 20260831,
+    "weights_type": "webb"
+  },
+  "cv3j": {
+    "beta_bar_jack": 0.8344981984911924,
+    "beta_hat": 0.8338848444279028,
+    "cv3j_se": 0.24794968156287112,
+    "cv3j_variance": 0.06147904458712919,
+    "leave_one_cluster_out": [
+      {
+        "beta_minus_g": 0.8058790582312509,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S01"
+      },
+      {
+        "beta_minus_g": 0.8654265950862701,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S02"
+      },
+      {
+        "beta_minus_g": 0.8285054451444518,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S03"
+      },
+      {
+        "beta_minus_g": 0.7503318599080478,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S04"
+      },
+      {
+        "beta_minus_g": 0.8142824036012158,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S05"
+      },
+      {
+        "beta_minus_g": 0.8806081234380146,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S06"
+      },
+      {
+        "beta_minus_g": 0.8453780210958115,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S07"
+      },
+      {
+        "beta_minus_g": 0.9921565501424059,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S08"
+      },
+      {
+        "beta_minus_g": 0.7421324923499156,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S09"
+      },
+      {
+        "beta_minus_g": 0.8466447677323264,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S10"
+      },
+      {
+        "beta_minus_g": 0.9253279182996383,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S11"
+      },
+      {
+        "beta_minus_g": 0.7173051468649609,
+        "n_clusters": 11,
+        "n_rows": 44,
+        "omitted_station": "S12"
+      }
+    ]
+  },
+  "design_matrix_columns": 17,
+  "design_matrix_rank": 17,
+  "firewall": "NO_REAL_POST2021_DATA_READ",
+  "formula": "y_synth ~ ff_synth + a_synth + C(station) + C(year)",
+  "n_clusters": 12,
+  "n_rows": 48,
+  "numpy_version": "2.5.2",
+  "pandas_version": "3.0.5",
+  "python_implementation": "CPython",
+  "python_version": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "scientific_interpretation": "NONE_SYNTHETIC_SMOKE_TEST_ONLY",
+  "scipy_version": "1.18.1",
+  "statsmodels_version": "0.15.0",
+  "status": "PASS",
+  "tested_parameter": "ff_synth",
+  "wildboottest_version": "0.3.2",
+  "years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}
