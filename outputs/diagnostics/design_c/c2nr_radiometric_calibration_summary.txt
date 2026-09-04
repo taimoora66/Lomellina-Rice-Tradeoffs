@@ -1,0 +1,41 @@
+DESIGN C - C2N-R POST-RECOVERY RADIOMETRIC CALIBRATION
+========================================================================
+
+Base C2M rows: 191857
+Recovered C2M-R rows: 7365
+Combined rows before dedup: 199222
+Duplicate rows removed: 0
+Post-recovery raw rows: 199222
+Canonical scene/polarization assets: 68 / 68
+Spatially contributing scene/polarization pairs: 66 / 66
+Zero-support canonical scene/polarization assets: 2
+  ZERO SUPPORT: S1A_IW_GRDH_1SDV_20150830T053449_20150830T053518_007488_00A55C_50E8_COG VH (S1A)
+  ZERO SUPPORT: S1A_IW_GRDH_1SDV_20150830T053449_20150830T053518_007488_00A55C_50E8_COG VV (S1A)
+Calibration XMLs parsed for contributing pairs: 66 / 66
+Calibrated scene-point rows: 199222
+Target/polarization summaries: 36 / 36
+Rows outside LUT line support: 0
+Samples outside LUT range support: 0
+All calibrated linear values finite: True
+
+CALIBRATION
+-----------
+value = DN^2 / LUT^2
+Bilinear line/range interpolation.
+Strict support checking: no silent np.interp edge clamping outside LUT support.
+Scene overlap is aggregated using median LINEAR power before dB conversion.
+
+FIREWALL
+--------
+Historical C2N outputs preserved.
+All 68 canonical scene/polarization assets are accounted for.
+Zero-support canonical assets are documented but not artificially sampled/calibrated.
+No thermal-noise subtraction applied at this stage.
+No inundation threshold selected.
+No groundwater values read.
+No irrigation-flow values read.
+No pre-existing flood/exposure labels read.
+No association model fitted.
+C2J frozen acquisition universe unchanged.
+
+C2N-R STATUS: PASS

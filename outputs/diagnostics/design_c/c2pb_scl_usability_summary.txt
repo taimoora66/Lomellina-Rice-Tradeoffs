@@ -1,0 +1,25 @@
+DESIGN C - C2P-B SENTINEL-2 SCL RICE-SUPPORT USABILITY AUDIT
+==============================================================================
+
+Matchable frozen S1 targets: 14
+RiceFloodIT support coordinates per target: 4331
+SCL assets opened: 46
+Unknown SCL values: 0
+
+ACTUAL RICE-SUPPORT OPTICAL USABILITY
+------------------------------------
+Strict-clear share: min=0.000000, median=0.409374
+Broad-clear share:  min=0.000000, median=0.411568
+Maximum ambiguous-overlap share: 0.047795
+
+Definitions:
+  strict clear = SCL {4 vegetation, 5 bare soil, 6 water}
+  broad clear  = SCL {2 dark area, 4 vegetation, 5 bare soil, 6 water, 7 unclassified}
+  obscured     = SCL {3 cloud shadow, 8/9 cloud, 10 cirrus, 11 snow/ice}
+  invalid      = SCL {0 no data, 1 saturated/defective}
+
+Catalogue eo:cloud_cover was NOT used as final rice-support usability.
+No optical water index or flooding classifier was fitted.
+No groundwater or irrigation-flow outcome was read.
+
+C2P-B STATUS: PASS

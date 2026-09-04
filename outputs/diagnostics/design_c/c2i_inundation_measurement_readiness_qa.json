@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2I_SENTINEL1_INUNDATION_MEASUREMENT_READINESS",
+  "groundwater_level_values_read": 0,
+  "irrigation_flow_values_read": 0,
+  "association_models_fitted": 0,
+  "flood_classification_thresholds_tuned": 0,
+  "frozen_artifacts_modified": 0,
+  "sentinel_inventory_file": "data\\design_c\\raw\\sentinel1\\sentinel1_grd_scene_inventory_2015_2023.csv",
+  "sentinel_rows_2015_2023_n": 4110,
+  "sentinel_unique_dates_2015_2023_n": 1525,
+  "rice_season_years_with_all_apr_sep_months_n": 9,
+  "minimum_rice_season_acquisition_dates_in_any_year_n": 53,
+  "worst_rice_season_max_gap_days": 19.0,
+  "ricefloodit_csv_files_found_n": 19,
+  "interpretation_rule": "Cadence readiness does not validate an inundation classifier.",
+  "next_stage": "C2J pixel/product-level inundation measurement validation, outcome-blind."
+}

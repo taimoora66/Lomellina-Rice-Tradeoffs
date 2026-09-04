@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2PC2_SENTINEL2_BOA_CANONICAL_TILE_REBUILD",
+  "generated_utc": "2026-09-03T11:23:52.749365+00:00",
+  "ricefloodit_support_points_n": 4331,
+  "targets_n": 14,
+  "required_bands": [
+    "B02_20m",
+    "B03_20m",
+    "B04_20m",
+    "B8A_20m",
+    "B11_20m",
+    "B12_20m"
+  ],
+  "quantification_value": 10000.0,
+  "boa_add_offset": -1000.0,
+  "nodata_dn": 0,
+  "processing_baseline_required": "05.xx",
+  "all_assets_pass": true,
+  "all_assets_pb05xx": true,
+  "all_targets_expected_support_rows": true,
+  "confirmed_usable_scl_codes": [
+    4,
+    5,
+    6
+  ],
+  "obscured_scl_codes": [
+    2,
+    3,
+    8,
+    9,
+    10,
+    11
+  ],
+  "unclassified_scl_codes": [
+    7
+  ],
+  "invalid_scl_codes": [
+    0,
+    1
+  ],
+  "index_out_of_range_counts": {
+    "NDVI": 0,
+    "NDWI": 0,
+    "MNDWI": 0,
+    "LSWI": 0
+  },
+  "index_range_pass": true,
+  "negative_reflectance_counts_report_only": {
+    "B02": 27,
+    "B03": 1,
+    "B04": 6,
+    "B8A": 7,
+    "B11": 0,
+    "B12": 0
+  },
+  "reflectance_gt_1p5_counts_report_only": {
+    "B02": 312,
+    "B03": 121,
+    "B04": 43,
+    "B8A": 12,
+    "B11": 0,
+    "B12": 0
+  },
+  "groundwater_values_read": false,
+  "irrigation_flow_values_read": false,
+  "preexisting_flood_exposure_values_read": false,
+  "inundation_threshold_selected": false,
+  "inundation_classifier_fitted": false,
+  "association_models_fitted": 0,
+  "frozen_sentinel1_target_universe_modified": false,
+  "canonical_tile_rule": "maximum distance in pixels from nearest tile edge; lexicographic item_id tie-break; geometry only",
+  "normalized_difference_rule": "index emitted only when both inputs are finite and nonnegative and denominator > 1e-6",
+  "next_stage": "If PASS, inspect cross-sensor S1-S2 measurement trajectories without groundwater and audit exact annual rice-parcel geography in parallel."
+}

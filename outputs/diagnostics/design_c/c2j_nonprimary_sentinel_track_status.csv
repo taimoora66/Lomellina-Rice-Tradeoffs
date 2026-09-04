@@ -1,0 +1,4 @@
+orbit_state,relative_orbit,primary_status,future_status,reason
+ascending,88,EXCLUDED_FROM_PRIMARY,DIAGNOSTIC_SPATIAL_ROBUSTNESS_ONLY,Systematically incomplete actual RiceFloodIT-support coverage; includes severe low/zero-coverage dates.
+descending,168,EXCLUDED_FROM_PRIMARY,DIAGNOSTIC_SPATIAL_ROBUSTNESS_ONLY,Persistent partial spatial support; approximately three-quarters of actual RiceFloodIT coordinates on typical dates.
+descending,139,EXCLUDED_FROM_PRIMARY,TEMPORAL_DIAGNOSTIC_ONLY,Not temporally continuous across all complete candidate years 2015-2025.

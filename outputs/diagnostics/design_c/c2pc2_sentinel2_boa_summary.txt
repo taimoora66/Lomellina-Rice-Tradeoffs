@@ -1,0 +1,41 @@
+DESIGN C - C2P-C2 SENTINEL-2 BOA CANONICAL-TILE REBUILD
+==============================================================================
+
+Targets: 14
+Support coordinates per target: 4331
+Asset-band reads: 322
+PB05.xx assets only: True
+
+FROZEN RADIOMETRIC RULE
+-----------------------
+DN == 0 -> nodata
+BOA reflectance = (DN - 1000) / 10000
+
+CANONICAL TILE RULE
+-------------------
+Choose the covering tile where the support point is deepest inside the tile.
+Tie-break by item_id. Reflectance/SCL values do not enter tile ownership.
+
+SCL CONFIRMED-USABLE RULE
+-------------------------
+Owner-tile SCL in {4 vegetation, 5 not-vegetated, 6 water}
+Class 2 treated as cast shadow; class 7 retained as unclassified.
+
+OPTICAL INDEX USABILITY
+-----------------------
+Minimum target usable share: 0.000000
+Median target usable share: 0.409374
+Maximum target usable share: 0.955668
+
+INDEX RANGE QA
+--------------
+NDVI: out-of-range count = 0
+NDWI: out-of-range count = 0
+MNDWI: out-of-range count = 0
+LSWI: out-of-range count = 0
+
+Negative BOA reflectance values are reported, not automatically rejected.
+No inundation threshold or classifier was selected.
+No groundwater or irrigation-flow outcome was read.
+
+C2P-C2 STATUS: PASS

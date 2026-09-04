@@ -1,0 +1,29 @@
+DESIGN C - C2M-R TARGETED FAILED-ASSET RECOVERY
+================================================================
+
+Original failed assets: 3
+Recovered assets: 3
+Still failed assets: 0
+Augmented target/polarization summaries: 36
+Minimum augmented target/pol coverage: 0.999769
+Median augmented target/pol coverage: 1.000000
+
+RECOVERY ASSET QA
+-----------------
+                                                     canonical_scene_id polarization recovery_status  full_operation_attempts  points_mapped_inside_raster_n  points_with_finite_raw_value_n recovery_error
+S1B_IW_GRDH_1SDV_20200513T171428_20200513T171453_021566_028F1C_8C3C_COG           VV       RECOVERED                        1                           3035                            3035           None
+S1B_IW_GRDH_1SDV_20200513T171428_20200513T171453_021566_028F1C_8C3C_COG           VH       RECOVERED                        1                           3035                            3035           None
+S1B_IW_GRDH_1SDV_20200712T171407_20200712T171431_022441_02A977_2B36_COG           VV       RECOVERED                        1                           1295                            1295           None
+
+FIREWALL
+--------
+Original C2M PASS_WITH_LIMITATIONS record preserved.
+No existing flooding/exposure values were read.
+No groundwater-level values were read.
+No irrigation-flow values were read.
+No threshold was tuned or selected.
+No association model was fitted.
+C2J frozen acquisition universe unchanged.
+Raw uint16 signal remains uncalibrated.
+
+C2M-R STATUS: RECOVERY_PASS

@@ -1,0 +1,13 @@
+year,year_status,items_n,unique_dates_n,rice_season_mar_sep_items_n,rice_season_mar_sep_unique_dates_n,establishment_apr_jun_items_n,establishment_apr_jun_unique_dates_n,rice_season_max_gap_days,rice_season_median_gap_days,median_catalog_cloud_pct,items_cloud_le_20pct_n,items_cloud_le_50pct_n,items_full_rice_support_coverage_n,items_ge_95pct_rice_support_coverage_n,items_all_core_assets_n,platforms,mgrs_tiles
+2015,candidate_complete,60,21,34,12,0,0,10,7.0,45.0,23,30,0,0,60,S2A,32TMQ|32TMR|32TNQ|32TNR
+2016,candidate_complete,212,69,124,40,50,17,10,7.0,46.254999999999995,69,115,0,0,212,S2A,32TMQ|32TMR|32TNQ|32TNR
+2017,candidate_complete,397,130,256,84,111,36,7,2.0,38.96,138,217,0,0,397,S2A|S2B,32TMQ|32TMR|32TNQ|32TNR
+2018,candidate_complete,438,144,259,85,106,35,5,2.5,37.24,155,246,0,0,438,S2A|S2B,32TMQ|32TMR|32TNQ|32TNR
+2019,candidate_complete,440,145,257,85,107,35,5,2.5,43.09,163,232,0,0,440,S2A|S2B,32TMQ|32TMR|32TNQ|32TNR
+2020,candidate_complete,439,146,257,85,112,37,3,2.5,46.01,147,231,0,0,439,S2A|S2B,32TMQ|32TMR|32TNQ|32TNR
+2021,candidate_complete,438,146,256,85,112,37,3,2.5,46.61,134,226,0,0,438,S2A|S2B,32TMQ|32TMR|32TNQ|32TNR
+2022,candidate_complete,433,144,257,85,113,37,3,2.5,40.4,159,243,0,0,433,S2A|S2B,32TMQ|32TMR|32TNQ|32TNR
+2023,candidate_complete,439,146,256,85,112,37,3,2.5,44.18,157,230,0,0,439,S2A|S2B,32TMQ|32TMR|32TNQ|32TNR
+2024,candidate_complete,480,146,258,86,108,36,3,3.0,58.475,136,216,0,0,480,S2A|S2B|S2C,32TMQ|32TMR|32TNQ|32TNR
+2025,candidate_complete,611,174,377,105,157,44,4,2.0,55.577427,189,285,0,0,611,S2A|S2B|S2C,32TMQ|32TMR|32TNQ|32TNR
+2026,current_partial,417,115,331,91,162,45,5,2.0,46.55,149,219,0,0,417,S2A|S2B|S2C,32TMQ|32TMR|32TNQ|32TNR

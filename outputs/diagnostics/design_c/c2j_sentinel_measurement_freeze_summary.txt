@@ -1,0 +1,86 @@
+DESIGN C - C2J PRIMARY SENTINEL-1 UNIVERSE FREEZE
+==============================================================
+
+PRIMARY TRACKS
+--------------
+ascending relative orbit 15
+descending relative orbit 66
+
+PRIMARY DATE RULE
+-----------------
+2015-2025 complete candidate years
+April-September
+IW, VV|VH
+actual RiceFloodIT support coverage >= 0.99
+same-track same-date scenes = one mosaic
+
+ELIGIBLE PRIMARY DATE SUPPORT
+-----------------------------
+orbit_state  relative_orbit  year  eligible_dates_n  min_support_fraction  median_support_fraction
+  ascending              15  2015                12              1.000000                      1.0
+  ascending              15  2016                12              1.000000                      1.0
+  ascending              15  2017                30              1.000000                      1.0
+  ascending              15  2018                28              1.000000                      1.0
+  ascending              15  2019                28              1.000000                      1.0
+  ascending              15  2020                29              1.000000                      1.0
+  ascending              15  2021                31              1.000000                      1.0
+  ascending              15  2022                16              1.000000                      1.0
+  ascending              15  2023                15              1.000000                      1.0
+  ascending              15  2024                15              1.000000                      1.0
+  ascending              15  2025                27              1.000000                      1.0
+ descending              66  2015                11              1.000000                      1.0
+ descending              66  2016                15              1.000000                      1.0
+ descending              66  2017                30              1.000000                      1.0
+ descending              66  2018                30              1.000000                      1.0
+ descending              66  2019                29              1.000000                      1.0
+ descending              66  2020                30              1.000000                      1.0
+ descending              66  2021                29              1.000000                      1.0
+ descending              66  2022                15              1.000000                      1.0
+ descending              66  2023                16              1.000000                      1.0
+ descending              66  2024                15              1.000000                      1.0
+ descending              66  2025                29              0.990302                      1.0
+
+OUTCOME-BLIND SAR VALIDATION MANIFEST
+-------------------------------------
+ anchor_year  season_phase anchor_date orbit_state  relative_orbit selected_date  distance_from_anchor_days  rice_support_coverage_fraction  scenes_on_date_n selection_status                                                                                                                                                                                                                                                                                       scene_ids
+        2015 establishment  2015-05-15   ascending              15    2015-05-22                          7                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1A_IW_GRDH_1SDV_20150522T171425_20150522T171450_006037_007CBA_4DE2_COG
+        2015    mid_season  2015-07-15   ascending              15    2015-07-09                          6                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1A_IW_GRDH_1SDV_20150709T171426_20150709T171451_006737_009069_C5EF_COG
+        2015   late_season  2015-09-01   ascending              15    2015-08-26                          6                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1A_IW_GRDH_1SDV_20150826T171429_20150826T171454_007437_00A3E8_5198_COG
+        2015 establishment  2015-05-15  descending              66    2015-05-14                          1                             1.0                 2         SELECTED                                                                                                                                                 S1A_IW_GRDH_1SDV_20150514T053449_20150514T053518_005913_0079E8_64A1_COG|S1A_IW_GRDH_1SDV_20150514T053518_20150514T053543_005913_0079E8_0FAE_COG
+        2015    mid_season  2015-07-15  descending              66    2015-07-13                          2                             1.0                 2         SELECTED                                                                                                                                                 S1A_IW_GRDH_1SDV_20150713T053452_20150713T053521_006788_0091FF_470D_COG|S1A_IW_GRDH_1SDV_20150713T053521_20150713T053546_006788_0091FF_45DD_COG
+        2015   late_season  2015-09-01  descending              66    2015-08-30                          2                             1.0                 2         SELECTED                                                                                                                                                 S1A_IW_GRDH_1SDV_20150830T053449_20150830T053518_007488_00A55C_50E8_COG|S1A_IW_GRDH_1SDV_20150830T053518_20150830T053543_007488_00A55C_E5D2_COG
+        2020 establishment  2020-05-15   ascending              15    2020-05-13                          2                             1.0                 4         SELECTED S1B_IW_GRDH_1SDV_20200513T171403_20200513T171428_021566_028F1C_3676_COG|S1B_IW_GRDH_1SDV_20200513T171403_20200513T171428_021566_028F1C_9CEA_COG|S1B_IW_GRDH_1SDV_20200513T171428_20200513T171453_021566_028F1C_8C3C_COG|S1B_IW_GRDH_1SDV_20200513T171428_20200513T171453_021566_028F1C_C99D_COG
+        2020    mid_season  2020-07-15   ascending              15    2020-07-12                          3                             1.0                 4         SELECTED S1B_IW_GRDH_1SDV_20200712T171407_20200712T171431_022441_02A977_2B36_COG|S1B_IW_GRDH_1SDV_20200712T171407_20200712T171431_022441_02A977_56E1_COG|S1B_IW_GRDH_1SDV_20200712T171432_20200712T171456_022441_02A977_1D82_COG|S1B_IW_GRDH_1SDV_20200712T171432_20200712T171456_022441_02A977_675E_COG
+        2020   late_season  2020-09-01   ascending              15    2020-08-29                          3                             1.0                 4         SELECTED S1B_IW_GRDH_1SDV_20200829T171409_20200829T171434_023141_02BF02_603C_COG|S1B_IW_GRDH_1SDV_20200829T171409_20200829T171434_023141_02BF02_B78B_COG|S1B_IW_GRDH_1SDV_20200829T171434_20200829T171459_023141_02BF02_9109_COG|S1B_IW_GRDH_1SDV_20200829T171434_20200829T171459_023141_02BF02_FAC5_COG
+        2020 establishment  2020-05-15  descending              66    2020-05-17                          2                             1.0                 3         SELECTED                                                                         S1B_IW_GRDH_1SDV_20200517T053443_20200517T053508_021617_02909E_D89D_COG|S1B_IW_GRDH_1SDV_20200517T053451_20200517T053516_021617_02909E_5D39_COG|S1B_IW_GRDH_1SDV_20200517T053508_20200517T053533_021617_02909E_1E32_COG
+        2020    mid_season  2020-07-15  descending              66    2020-07-16                          1                             1.0                 3         SELECTED                                                                         S1B_IW_GRDH_1SDV_20200716T053446_20200716T053511_022492_02AB06_1455_COG|S1B_IW_GRDH_1SDV_20200716T053455_20200716T053520_022492_02AB06_34E9_COG|S1B_IW_GRDH_1SDV_20200716T053511_20200716T053536_022492_02AB06_E10B_COG
+        2020   late_season  2020-09-01  descending              66    2020-09-02                          1                             1.0                 3         SELECTED                                                                         S1B_IW_GRDH_1SDV_20200902T053450_20200902T053515_023192_02C0A1_65BC_COG|S1B_IW_GRDH_1SDV_20200902T053457_20200902T053522_023192_02C0A1_694F_COG|S1B_IW_GRDH_1SDV_20200902T053515_20200902T053540_023192_02C0A1_F39C_COG
+        2025 establishment  2025-05-15   ascending              15    2025-05-17                          2                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1A_IW_GRDH_1SDV_20250517T171511_20250517T171536_059237_0759CE_DB5C_COG
+        2025    mid_season  2025-07-15   ascending              15    2025-07-16                          1                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1A_IW_GRDH_1SDV_20250716T171508_20250716T171533_060112_077801_0775_COG
+        2025   late_season  2025-09-01   ascending              15    2025-09-02                          1                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1A_IW_GRDH_1SDV_20250902T171508_20250902T171533_060812_07921D_08D0_COG
+        2025 establishment  2025-05-15  descending              66    2025-05-15                          0                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1C_IW_GRDH_1SDV_20250515T053436_20250515T053501_002337_004EE6_613B_COG
+        2025    mid_season  2025-07-15  descending              66    2025-07-14                          1                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1C_IW_GRDH_1SDV_20250714T053441_20250714T053506_003212_0067EB_EE07_COG
+        2025   late_season  2025-09-01  descending              66    2025-08-31                          1                             1.0                 1         SELECTED                                                                                                                                                                                                                         S1C_IW_GRDH_1SDV_20250831T053443_20250831T053508_003912_007CAC_02DA_COG
+
+NON-PRIMARY TRACK STATUS
+------------------------
+orbit_state  relative_orbit        primary_status                      future_status                                                                                                               reason
+  ascending              88 EXCLUDED_FROM_PRIMARY DIAGNOSTIC_SPATIAL_ROBUSTNESS_ONLY              Systematically incomplete actual RiceFloodIT-support coverage; includes severe low/zero-coverage dates.
+ descending             168 EXCLUDED_FROM_PRIMARY DIAGNOSTIC_SPATIAL_ROBUSTNESS_ONLY Persistent partial spatial support; approximately three-quarters of actual RiceFloodIT coordinates on typical dates.
+ descending             139 EXCLUDED_FROM_PRIMARY           TEMPORAL_DIAGNOSTIC_ONLY                                             Not temporally continuous across all complete candidate years 2015-2025.
+
+FIREWALL
+--------
+No SAR pixel values inspected.
+No flooding/exposure values read.
+No groundwater-level values read.
+No irrigation-flow values read.
+No thresholds tuned.
+No association model fitted.
+
+DECISION
+--------
+Primary Sentinel track/date universe is now frozen before measurement validation.
+Any later departure from this rule must be labeled post-freeze diagnostic.
+
+C2J FREEZE STATUS: PASS

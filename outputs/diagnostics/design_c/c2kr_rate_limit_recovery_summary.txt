@@ -1,0 +1,27 @@
+DESIGN C - C2K-R RATE-LIMITED SENTINEL-1 RECOVERY
+==============================================================
+
+Expected frozen scene IDs: 36
+Already resolved before recovery: 20
+Recovery attempted: 16
+Recovered now: 16
+Total resolved after recovery: 36
+Remaining unresolved: 0
+
+PLATFORMS
+---------
+S1B    21
+S1A    12
+S1C     3
+
+Complete asset rows: 396
+Technical metadata mismatches: 0
+
+FIREWALL
+--------
+No SAR raster pixels read.
+No VV/VH values calculated.
+No groundwater or irrigation outcomes read.
+C2J frozen universe unchanged.
+
+C2K-R STATUS: PASS

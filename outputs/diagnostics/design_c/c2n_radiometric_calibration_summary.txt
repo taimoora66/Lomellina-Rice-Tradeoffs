@@ -1,0 +1,71 @@
+DESIGN C - C2N SENTINEL-1 RADIOMETRIC CALIBRATION AUDIT
+==================================================================
+
+Scene/polarization pairs: 66
+Calibration XMLs parsed: 66
+Calibrated scene-point rows: 199222
+Target/polarization summaries: 36
+Platforms: S1A|S1B|S1C
+Polarizations: VH|VV
+
+CALIBRATION
+-----------
+value = DN^2 / LUT^2
+LUT interpolation: bilinear in image line and range pixel
+sigma0, beta0 and gamma0 computed in linear and dB forms
+
+THERMAL NOISE
+-------------
+NOT subtracted at C2N.
+Noise XMLs will be audited prospectively in the next stage.
+
+TARGET / POLARIZATION SIGMA0 SUMMARY
+------------------------------------
+ anchor_year  season_phase selected_date orbit_state  relative_orbit platform polarization  points_n  sigma0_db_median  sigma0_db_mean  sigma0_db_p10  sigma0_db_p90
+        2015 establishment    2015-05-14  descending              66      S1A           VH      4331        -19.621226      -19.566245     -24.178294     -14.959870
+        2015 establishment    2015-05-14  descending              66      S1A           VV      4331        -11.411664      -11.680613     -17.288866      -6.778795
+        2015 establishment    2015-05-22   ascending              15      S1A           VH      4331        -18.446522      -18.455155     -23.054769     -13.926608
+        2015 establishment    2015-05-22   ascending              15      S1A           VV      4331         -9.597159       -9.693643     -14.814732      -4.855264
+        2015   late_season    2015-08-26   ascending              15      S1A           VH      4331        -15.468915      -15.607400     -18.859912     -12.560736
+        2015   late_season    2015-08-26   ascending              15      S1A           VV      4331        -10.037302       -9.963032     -13.586761      -6.408417
+        2015   late_season    2015-08-30  descending              66      S1A           VH      4331        -15.124940      -15.335546     -18.659658     -12.238744
+        2015   late_season    2015-08-30  descending              66      S1A           VV      4331         -9.524285       -9.627488     -13.108297      -6.311302
+        2015    mid_season    2015-07-09   ascending              15      S1A           VH      4331        -16.551050      -16.657578     -20.067412     -13.528092
+        2015    mid_season    2015-07-09   ascending              15      S1A           VV      4331         -9.560812       -9.588350     -13.694692      -5.677324
+        2015    mid_season    2015-07-13  descending              66      S1A           VH      4331        -16.646634      -16.714036     -19.957027     -13.563754
+        2015    mid_season    2015-07-13  descending              66      S1A           VV      4331         -9.779167       -9.840559     -13.828440      -5.943446
+        2020 establishment    2020-05-13   ascending              15      S1B           VH      4331        -17.893287      -18.091383     -22.930101     -13.587870
+        2020 establishment    2020-05-13   ascending              15      S1B           VV      4331         -9.002197       -9.592065     -15.921826      -4.676670
+        2020 establishment    2020-05-17  descending              66      S1B           VH      4331        -17.569119      -17.842230     -22.433080     -13.822166
+        2020 establishment    2020-05-17  descending              66      S1B           VV      4331         -9.207167       -9.698232     -14.430648      -5.931618
+        2020   late_season    2020-08-29   ascending              15      S1B           VH      4331        -15.266166      -15.344056     -18.550956     -12.192102
+        2020   late_season    2020-08-29   ascending              15      S1B           VV      4331         -9.641785       -9.675989     -13.164195      -6.267165
+        2020   late_season    2020-09-02  descending              66      S1B           VH      4331        -15.679346      -15.760124     -18.237361     -13.429290
+        2020   late_season    2020-09-02  descending              66      S1B           VV      4331        -10.251258      -10.174790     -12.842391      -7.486306
+        2020    mid_season    2020-07-12   ascending              15      S1B           VH      4330        -17.123021      -17.157315     -20.507785     -13.937960
+        2020    mid_season    2020-07-12   ascending              15      S1B           VV      4330        -10.044227      -10.109767     -14.075752      -6.287397
+        2020    mid_season    2020-07-16  descending              66      S1B           VH      4331        -17.021935      -16.948149     -19.576247     -14.412916
+        2020    mid_season    2020-07-16  descending              66      S1B           VV      4331         -9.986715      -10.008663     -13.133868      -7.096930
+        2025 establishment    2025-05-15  descending              66      S1C           VH      4331        -20.019955      -20.176229     -25.438455     -15.242027
+        2025 establishment    2025-05-15  descending              66      S1C           VV      4331        -11.192119      -11.745115     -17.422225      -6.846064
+        2025 establishment    2025-05-17   ascending              15      S1A           VH      4331        -19.121118      -18.897029     -22.950113     -14.563627
+        2025 establishment    2025-05-17   ascending              15      S1A           VV      4331        -11.901348      -11.868280     -16.617500      -7.273896
+        2025   late_season    2025-08-31  descending              66      S1C           VH      4331        -15.439646      -15.580648     -18.819893     -12.543913
+        2025   late_season    2025-08-31  descending              66      S1C           VV      4331         -9.714172       -9.803866     -13.166592      -6.628139
+        2025   late_season    2025-09-02   ascending              15      S1A           VH      4331        -15.526616      -15.661464     -19.003758     -12.580819
+        2025   late_season    2025-09-02   ascending              15      S1A           VV      4331        -10.151813      -10.193269     -13.777294      -6.729853
+        2025    mid_season    2025-07-14  descending              66      S1C           VH      4331        -17.304229      -17.373993     -20.773816     -14.171671
+        2025    mid_season    2025-07-14  descending              66      S1C           VV      4331        -10.205231      -10.291356     -14.147873      -6.688703
+        2025    mid_season    2025-07-16   ascending              15      S1A           VH      4331        -16.535230      -16.627197     -19.927356     -13.487564
+        2025    mid_season    2025-07-16   ascending              15      S1A           VV      4331        -10.120990      -10.235336     -14.152346      -6.537063
+
+FIREWALL
+--------
+No inundation threshold selected.
+No groundwater values read.
+No irrigation-flow values read.
+No pre-existing flooding exposure values read.
+No association model fitted.
+C2J frozen acquisition universe unchanged.
+
+C2N STATUS: PASS

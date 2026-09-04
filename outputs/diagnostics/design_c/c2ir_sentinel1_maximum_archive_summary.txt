@@ -1,0 +1,69 @@
+DESIGN C - C2I-R MAXIMUM SENTINEL-1 METADATA ARCHIVE
+================================================================
+
+STAC: https://stac.dataspace.copernicus.eu/v1/search
+Collection: sentinel-1-grd
+Query: 2014-01-01T00:00:00Z -> 2026-09-02T14:46:49Z
+Study bbox: 7.94551632, 44.92499839, 9.64149039, 45.69166504
+
+STAC pages retrieved: 5
+Raw features returned: 4994
+Unique scenes retained: 4994
+First scene: 2014-10-06T17:14:32.153853+00:00
+Last scene: 2026-09-02T05:34:45.842081+00:00
+
+ANNUAL SUPPORT
+--------------
+ year  scenes_n  acquisition_dates_n  platforms_n  relative_orbits_n             year_status
+ 2014        34                   28            1                  7      PARTIAL_START_YEAR
+ 2015       150                  116            1                  6 COMPLETE_CANDIDATE_YEAR
+ 2016       236                  133            2                  5 COMPLETE_CANDIDATE_YEAR
+ 2017       423                  199            2                  5 COMPLETE_CANDIDATE_YEAR
+ 2018       615                  212            2                  5 COMPLETE_CANDIDATE_YEAR
+ 2019       875                  205            2                  5 COMPLETE_CANDIDATE_YEAR
+ 2020       869                  209            2                  5 COMPLETE_CANDIDATE_YEAR
+ 2021       510                  210            2                  5 COMPLETE_CANDIDATE_YEAR
+ 2022       218                  119            1                  4 COMPLETE_CANDIDATE_YEAR
+ 2023       214                  122            1                  4 COMPLETE_CANDIDATE_YEAR
+ 2024       223                  122            1                  4 COMPLETE_CANDIDATE_YEAR
+ 2025       348                  183            2                  5 COMPLETE_CANDIDATE_YEAR
+ 2026       279                  143            2                  5    PARTIAL_CURRENT_YEAR
+
+RICE-SEASON SUPPORT
+-------------------
+ year             year_status  rice_season_scenes_n  rice_season_acquisition_dates_n  rice_season_months_present_n rice_season_months rice_season_first_date rice_season_last_date  rice_season_median_gap_days  rice_season_max_gap_days  all_apr_sep_months_present
+ 2015 COMPLETE_CANDIDATE_YEAR                    70                               53                             6        4_5_6_7_8_9             2015-04-01            2015-09-30                          4.0                        12                        True
+ 2016 COMPLETE_CANDIDATE_YEAR                    98                               57                             6        4_5_6_7_8_9             2016-04-02            2016-09-30                          2.5                        19                        True
+ 2017 COMPLETE_CANDIDATE_YEAR                   213                              100                             6        4_5_6_7_8_9             2017-04-03            2017-09-30                          1.0                         5                        True
+ 2018 COMPLETE_CANDIDATE_YEAR                   279                              104                             6        4_5_6_7_8_9             2018-04-03            2018-09-30                          1.0                         5                        True
+ 2019 COMPLETE_CANDIDATE_YEAR                   449                              102                             6        4_5_6_7_8_9             2019-04-01            2019-09-28                          1.0                         5                        True
+ 2020 COMPLETE_CANDIDATE_YEAR                   432                              104                             6        4_5_6_7_8_9             2020-04-01            2020-09-28                          1.0                         5                        True
+ 2021 COMPLETE_CANDIDATE_YEAR                   226                              105                             6        4_5_6_7_8_9             2021-04-01            2021-09-29                          1.0                         5                        True
+ 2022 COMPLETE_CANDIDATE_YEAR                   104                               60                             6        4_5_6_7_8_9             2022-04-02            2022-09-30                          4.0                         7                        True
+ 2023 COMPLETE_CANDIDATE_YEAR                   110                               62                             6        4_5_6_7_8_9             2023-04-02            2023-09-30                          1.0                         6                        True
+ 2024 COMPLETE_CANDIDATE_YEAR                   115                               61                             6        4_5_6_7_8_9             2024-04-03            2024-09-30                          2.5                         6                        True
+ 2025 COMPLETE_CANDIDATE_YEAR                   195                               99                             6        4_5_6_7_8_9             2025-04-03            2025-09-30                          1.0                         6                        True
+ 2026    PARTIAL_CURRENT_YEAR                   182                               90                             6        4_5_6_7_8_9             2026-04-04            2026-09-02                          1.0                         4                        True
+
+IW VV/VH TRACK SUPPORT
+----------------------
+orbit_state  relative_orbit  scenes_n  dates_n  years_present_n first_date  last_date  complete_candidate_years_present_n  complete_candidate_years_total_n  present_all_complete_candidate_years
+  ascending              15       480      274               12 2015-04-04 2026-08-29                                  11                                11                                  True
+  ascending              88       658      275               12 2015-04-21 2026-08-28                                  11                                11                                  True
+ descending              66       590      279               12 2015-05-02 2026-09-02                                  11                                11                                  True
+ descending             139       138      102                8 2015-04-01 2026-08-26                                   7                                11                                 False
+ descending             168       602      283               12 2015-04-03 2026-08-28                                  11                                11                                  True
+
+INTERPRETATION
+--------------
+2014 = PARTIAL_START_YEAR.
+2026 = PARTIAL_CURRENT_YEAR.
+All intervening observed calendar years are COMPLETE_CANDIDATE_YEAR.
+No pixel values or groundwater outcomes were inspected.
+
+DECISION
+--------
+Use this maximum archive for the next stable-track and spatial-footprint audit.
+Do not overwrite or reinterpret the original C1 2015-2023 inventory.
+
+C2I-R STATUS: PASS

@@ -1,0 +1,6 @@
+orbit_state,relative_orbit,scenes_n,dates_n,years_present_n,first_date,last_date,complete_candidate_years_present_n,complete_candidate_years_total_n,present_all_complete_candidate_years
+ascending,15,480,274,12,2015-04-04,2026-08-29,11,11,True
+ascending,88,658,275,12,2015-04-21,2026-08-28,11,11,True
+descending,66,590,279,12,2015-05-02,2026-09-02,11,11,True
+descending,139,138,102,8,2015-04-01,2026-08-26,7,11,False
+descending,168,602,283,12,2015-04-03,2026-08-28,11,11,True

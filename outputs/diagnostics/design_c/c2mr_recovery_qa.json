@@ -1,0 +1,23 @@
+{
+  "status": "RECOVERY_PASS",
+  "stage": "DESIGN_C_C2MR_TARGETED_FAILED_ASSET_RECOVERY",
+  "original_c2m_status_preserved": "PASS_WITH_LIMITATIONS",
+  "original_failed_assets_n": 3,
+  "assets_recovered_n": 3,
+  "assets_still_failed_n": 0,
+  "augmented_target_polarization_summaries_n": 36,
+  "unique_rice_support_coordinates_n": 4331,
+  "augmented_minimum_target_pol_point_coverage_fraction": 0.9997691064419303,
+  "augmented_median_target_pol_point_coverage_fraction": 1.0,
+  "original_outputs_overwritten": false,
+  "retry_scope": "whole_open_gcp_block_read_operation",
+  "max_full_operation_attempts": 6,
+  "sar_raster_pixels_read": true,
+  "existing_flooding_exposure_values_read": false,
+  "groundwater_level_values_read": false,
+  "irrigation_flow_values_read": false,
+  "thresholds_tuned": false,
+  "association_models_fitted": 0,
+  "c2j_frozen_rule_modified": false,
+  "raw_signal_interpretation": "Raw uint16 values remain uncalibrated and are not interpreted as dB."
+}

@@ -1,0 +1,5 @@
+orbit_state,relative_orbit,years_present_n,acquisition_dates_n,median_coverage_fraction_all_dates,min_coverage_fraction_all_dates,full_coverage_dates_share_all,high_coverage_dates_share_all,years_with_100pct_high_coverage_dates_n,worst_year_high_coverage_share,minimum_dates_in_any_year,max_scenes_needed_on_single_date
+ascending,15,11,245,1.0,0.7899248506785671,0.9918367346938776,0.9918367346938776,10,0.8571428571428571,12,4
+ascending,88,11,246,0.8681209866610293,0.018556135118049065,0.0,0.0,0,0.0,10,4
+descending,66,11,250,1.0,0.799781807460857,0.992,0.992,9,0.9166666666666666,12,4
+descending,168,11,254,0.7451378051948618,0.5808864686582182,0.0,0.0,0,0.0,14,4

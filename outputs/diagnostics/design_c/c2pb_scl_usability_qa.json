@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2PB_SENTINEL2_SCL_RICE_SUPPORT_USABILITY_AUDIT",
+  "generated_utc": "2026-09-03T08:18:40.837889+00:00",
+  "ricefloodit_support_points_n": 4331,
+  "matchability_window_days": 1,
+  "matchable_s1_targets_n": 14,
+  "s2_scl_assets_opened_n": 46,
+  "all_scl_assets_pass": true,
+  "all_targets_have_expected_support_rows": true,
+  "unknown_scl_values_n": 0,
+  "strict_clear_scl_codes": [
+    4,
+    5,
+    6
+  ],
+  "broad_clear_scl_codes": [
+    2,
+    4,
+    5,
+    6,
+    7
+  ],
+  "obscured_scl_codes": [
+    3,
+    8,
+    9,
+    10,
+    11
+  ],
+  "invalid_scl_codes": [
+    0,
+    1
+  ],
+  "strict_clear_share_min": 0.0,
+  "strict_clear_share_median": 0.409374278457631,
+  "broad_clear_share_min": 0.0,
+  "broad_clear_share_median": 0.41156776725929345,
+  "tile_overlap_ambiguity_share_max": 0.04779496652043408,
+  "catalogue_cloud_percentage_used_as_final_optical_usability": false,
+  "groundwater_values_read": false,
+  "irrigation_flow_values_read": false,
+  "preexisting_flood_exposure_values_read": false,
+  "optical_water_indices_derived": false,
+  "inundation_classifier_fitted": false,
+  "association_models_fitted": 0,
+  "frozen_sentinel1_target_universe_modified": false,
+  "next_stage": "If PASS, audit L2A reflectance scaling/offset metadata and extract radiometrically comparable optical bands for the same outcome-blind target set before any water-index or inundation-rule calibration."
+}

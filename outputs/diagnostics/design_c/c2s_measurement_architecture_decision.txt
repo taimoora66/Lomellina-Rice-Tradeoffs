@@ -1,0 +1,31 @@
+DESIGN C - C2S PRE-FREEZE MULTI-SENSOR MEASUREMENT ARCHITECTURE AUDIT
+==================================================================================
+
+Eligible target rule: paired_n >= 100
+Single-snapshot stability screen: >= 3 targets, >= 75% sign agreement, median |rho| >= 0.20
+
+SINGLE-SNAPSHOT SENSOR SCREEN
+-----------------------------
+VV_db            targets= 7 majority=negative sign_agree=0.857 median_rho=-0.114 median_|rho|=0.114 PASS=False
+VH_db            targets= 7 majority=negative sign_agree=1.000 median_rho=-0.056 median_|rho|=0.056 PASS=False
+VV_minus_VH_db   targets= 7 majority=positive sign_agree=0.571 median_rho=0.066 median_|rho|=0.080 PASS=False
+NDVI             targets= 7 majority=positive sign_agree=0.571 median_rho=0.044 median_|rho|=0.177 PASS=False
+NDWI             targets= 7 majority=negative sign_agree=0.571 median_rho=-0.003 median_|rho|=0.130 PASS=False
+MNDWI            targets= 7 majority=positive sign_agree=0.857 median_rho=0.333 median_|rho|=0.333 PASS=True
+LSWI             targets= 7 majority=positive sign_agree=1.000 median_rho=0.164 median_|rho|=0.164 PASS=False
+
+Variables passing screen: ['MNDWI']
+
+ARCHITECTURE DECISION
+---------------------
+Do NOT freeze a single-snapshot inundation classifier.
+Proceed to multi-temporal Sentinel-1 phenology as the primary measurement backbone.
+Use Sentinel-2 as clear-pixel optical support, not as the sole backbone.
+Retain observed RiceFloodIT/MODIS-compatible FF as the seasonal historical bridge.
+
+Groundwater read: False
+Threshold selected: False
+Classifier fitted: False
+Composite score optimized: False
+
+C2S STATUS: PASS

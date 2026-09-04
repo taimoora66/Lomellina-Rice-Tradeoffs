@@ -1,0 +1,22 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "stage": "DESIGN_C_C2M_FROZEN_SENTINEL_RASTER_SIGNAL_QA_GCP_REVISION",
+  "supersedes_initial_failed_c2m_attempt": true,
+  "frozen_targets_n": 18,
+  "expected_target_polarization_combinations_n": 36,
+  "canonical_scene_polarization_assets_expected_n": 68,
+  "canonical_scene_polarization_assets_opened_n": 65,
+  "failed_asset_opens_n": 3,
+  "target_polarization_summaries_n": 36,
+  "unique_rice_support_coordinates_n": 4331,
+  "minimum_target_pol_point_coverage_fraction": 0.2992380512583699,
+  "median_target_pol_point_coverage_fraction": 1.0,
+  "sar_raster_pixels_read": true,
+  "existing_flooding_exposure_values_read": false,
+  "groundwater_level_values_read": false,
+  "irrigation_flow_values_read": false,
+  "thresholds_tuned": false,
+  "association_models_fitted": 0,
+  "c2j_frozen_rule_modified": false,
+  "raw_signal_interpretation": "Raw uint16 values are not yet interpreted as dB/calibrated backscatter."
+}

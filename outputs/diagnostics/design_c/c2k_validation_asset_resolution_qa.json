@@ -1,0 +1,28 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "stage": "DESIGN_C_C2K_FROZEN_SENTINEL_ASSET_RESOLUTION",
+  "frozen_validation_targets_n": 18,
+  "unique_scene_ids_n": 36,
+  "resolved_scene_ids_n": 20,
+  "unresolved_scene_ids_n": 16,
+  "platforms_present": [
+    "S1A",
+    "S1B",
+    "sentinel-1a",
+    "sentinel-1b",
+    "sentinel-1c"
+  ],
+  "asset_rows_n": 220,
+  "data_role_assets_n": 60,
+  "tiff_like_assets_n": 40,
+  "targets_requiring_multi_scene_mosaic_n": 9,
+  "targets_with_effectively_duplicate_bbox_pairs_n": 1,
+  "sar_raster_pixels_read": 0,
+  "vv_vh_statistics_calculated": 0,
+  "flooding_values_read": 0,
+  "groundwater_level_values_read": 0,
+  "irrigation_flow_values_read": 0,
+  "association_models_fitted": 0,
+  "c2j_frozen_rule_modified": false,
+  "next_stage": "Canonicalize exact data assets for each frozen target, then read only the required spatial windows for independent SAR measurement validation."
+}

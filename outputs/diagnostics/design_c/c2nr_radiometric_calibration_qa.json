@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2NR_POST_RECOVERY_RADIOMETRIC_CALIBRATION",
+  "historical_c2n_preserved": true,
+  "base_c2m_rows_n": 191857,
+  "recovered_c2mr_rows_n": 7365,
+  "combined_before_dedup_n": 199222,
+  "duplicates_removed_n": 0,
+  "post_recovery_raw_rows_n": 199222,
+  "canonical_scene_polarization_assets_n": 68,
+  "expected_spatially_contributing_scene_polarization_pairs_n": 66,
+  "zero_support_canonical_scene_polarization_assets_n": 2,
+  "zero_support_canonical_scene_polarization_assets": [
+    {
+      "canonical_scene_id": "S1A_IW_GRDH_1SDV_20150830T053449_20150830T053518_007488_00A55C_50E8_COG",
+      "polarization": "VH",
+      "platform": "S1A"
+    },
+    {
+      "canonical_scene_id": "S1A_IW_GRDH_1SDV_20150830T053449_20150830T053518_007488_00A55C_50E8_COG",
+      "polarization": "VV",
+      "platform": "S1A"
+    }
+  ],
+  "observed_spatially_contributing_scene_polarization_pairs_n": 66,
+  "calibration_xmls_parsed_n": 66,
+  "calibrated_scene_point_rows_n": 199222,
+  "target_polarization_summaries_n": 36,
+  "calibration_equation": "value = DN^2 / LUT^2",
+  "lut_interpolation": "bilinear line/range with strict no-outside-support rule",
+  "row_outside_lut_support_n": 0,
+  "range_outside_lut_support_n": 0,
+  "all_calibrated_linear_values_finite": true,
+  "thermal_noise_subtraction_applied": false,
+  "inundation_threshold_selected": false,
+  "groundwater_level_values_read": false,
+  "irrigation_flow_values_read": false,
+  "existing_flooding_exposure_values_read": false,
+  "association_models_fitted": 0,
+  "c2j_frozen_rule_modified": false,
+  "next_stage": "Post-recovery thermal-noise audit/correction using C2N-R outputs."
+}

@@ -1,0 +1,24 @@
+DESIGN C - C2Q-R S1/S2 COORDINATE-KEY REPAIR
+==============================================================================
+
+Targets: 14
+Matched support rows: 60634
+Coordinate crosswalk rows: 4331
+Numeric S1/S2 IDs equal for only: 0/4331 (0.000000)
+Max exact coordinate difference after coordinate-key join: 0 degrees
+S1 scene-point rows (14 targets): 164574
+S1 collapsed target-point-pol rows: 121266
+S1 target-point-pol rows with >1 scene: 43308
+S1 target-point-pol rows missing positive finite corrected sigma0: 1056
+Joint S1-dualpol + S2-base-valid rows: 26970
+Joint valid share: 0.444800
+
+The failed C2Q integer-ID join is retained as an audit finding:
+ricept_<n> and C2P-C2 support_id encode different row-order conventions.
+C2Q-R uses actual coordinates and explicitly verifies a one-to-one universe.
+
+No groundwater / flow / RiceFloodIT flood outcome read.
+No threshold or classifier fitted.
+Correlation results are descriptive and do not determine PASS.
+
+C2Q-R STATUS: PASS

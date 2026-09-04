@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2IS_SENTINEL1_STABLE_TRACK_SPATIAL_FOOTPRINT",
+  "complete_candidate_years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "study_bbox": [
+    7.945516319819253,
+    44.924998389777535,
+    9.641490386571808,
+    45.69166503617859
+  ],
+  "study_bbox_margin_deg": 0.1,
+  "stable_tracks": [
+    {
+      "orbit_state": "ascending",
+      "relative_orbit": 15
+    },
+    {
+      "orbit_state": "ascending",
+      "relative_orbit": 88
+    },
+    {
+      "orbit_state": "descending",
+      "relative_orbit": 66
+    },
+    {
+      "orbit_state": "descending",
+      "relative_orbit": 168
+    }
+  ],
+  "stable_tracks_n": 4,
+  "all_stable_tracks_present_all_2015_2025_years": true,
+  "track_date_rows_n": 995,
+  "scene_bbox_invalid_rows_n": 0,
+  "full_coverage_definition": "study bbox coverage >= 0.995",
+  "high_coverage_definition": "study bbox coverage >= 0.95",
+  "sar_pixels_inspected": 0,
+  "inundation_thresholds_tuned": 0,
+  "groundwater_level_values_read": 0,
+  "irrigation_flow_values_read": 0,
+  "association_models_fitted": 0,
+  "frozen_artifacts_modified": 0,
+  "interpretation_rule": "Spatial footprint support is assessed independently of SAR signal and independently of groundwater outcomes.",
+  "next_stage": "Select a prespecified small validation set of dates/areas from spatially adequate stable tracks, then inspect SAR measurement behavior."
+}

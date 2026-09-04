@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2KR_RATE_LIMIT_RECOVERY",
+  "expected_scene_ids_n": 36,
+  "already_resolved_before_recovery_n": 20,
+  "attempted_recovery_n": 16,
+  "recovered_scene_ids_n": 16,
+  "remaining_unresolved_scene_ids_n": 0,
+  "platform_counts": {
+    "S1B": 21,
+    "S1A": 12,
+    "S1C": 3
+  },
+  "technical_mismatch_scene_ids_n": 0,
+  "asset_rows_complete_n": 396,
+  "sar_raster_pixels_read": 0,
+  "vv_vh_statistics_calculated": 0,
+  "groundwater_level_values_read": 0,
+  "irrigation_flow_values_read": 0,
+  "association_models_fitted": 0,
+  "c2j_frozen_rule_modified": false,
+  "interpretation": "HTTP 429 recovery is an infrastructure/catalogue-access step and does not alter the frozen scientific design."
+}

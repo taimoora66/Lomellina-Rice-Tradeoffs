@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2N_SENTINEL1_RADIOMETRIC_CALIBRATION",
+  "scene_polarization_pairs_n": 66,
+  "calibration_xmls_parsed_n": 66,
+  "calibrated_scene_point_rows_n": 199222,
+  "target_polarization_summaries_n": 36,
+  "platforms": [
+    "S1A",
+    "S1B",
+    "S1C"
+  ],
+  "polarizations": [
+    "VH",
+    "VV"
+  ],
+  "calibration_equation": "value = DN^2 / LUT^2",
+  "lut_interpolation": "bilinear in image line and range pixel",
+  "thermal_noise_subtraction_applied": false,
+  "inundation_threshold_selected": false,
+  "groundwater_level_values_read": false,
+  "irrigation_flow_values_read": false,
+  "existing_flooding_exposure_values_read": false,
+  "association_models_fitted": 0,
+  "c2j_frozen_rule_modified": false,
+  "next_stage": "Audit scene-specific noise XMLs and processing metadata before deciding whether/how thermal-noise correction is required."
+}

@@ -1,0 +1,35 @@
+DESIGN C - C2O-R POST-RECOVERY THERMAL-NOISE REBUILD
+========================================================================
+
+Canonical scene/polarization assets: 68 / 68 accounted
+Spatially contributing scene/pol pairs: 66 / 66
+Zero-support canonical assets: 2
+Noise XMLs parsed: 66 / 66
+Schemas observed: legacy_noiseVectorList|modern_range_x_azimuth
+Input thermal-noise flags: false
+Scene-point rows: 199222
+Missing noise-power rows: 0
+Multiple azimuth-block matches: 0
+Non-positive corrected-power rows: 1604
+Non-positive corrected-power share: 0.00805132
+Target/polarization summaries: 36 / 36
+
+METHOD
+------
+corrected_power = DN^2 - eta
+sigma0_corrected = corrected_power / sigmaLUT^2
+No silent clipping of non-positive corrected power.
+Strict LUT support checking; no silent edge extrapolation.
+Overlapping scenes mosaicked using median corrected LINEAR power before dB.
+
+FIREWALL
+--------
+Historical C2O outputs preserved.
+No inundation threshold selected.
+No groundwater values read.
+No irrigation-flow values read.
+No pre-existing flood/exposure labels read.
+No association model fitted.
+C2J frozen acquisition universe unchanged.
+
+C2O-R STATUS: PASS

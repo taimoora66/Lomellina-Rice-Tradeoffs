@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2PA_SENTINEL2_L2A_MAXIMUM_ARCHIVE_AUDIT",
+  "stac_collection": "sentinel-2-l2a",
+  "stac_search_endpoint": "https://stac.dataspace.copernicus.eu/v1/search",
+  "period_start": "2015-01-01T00:00:00Z",
+  "period_end": "2026-09-03T07:46:44Z",
+  "ricefloodit_support_points_n": 4331,
+  "study_bbox_wgs84": [
+    8.044516319819254,
+    45.02399838977754,
+    9.542490386571808,
+    45.59266503617859
+  ],
+  "unique_stac_items_n": 4804,
+  "first_item_date": "2015-07-30",
+  "last_item_date": "2026-09-02",
+  "years_found": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "missing_years": [],
+  "mgrs_tiles_n": 4,
+  "platforms": [
+    "S2A",
+    "S2B",
+    "S2C"
+  ],
+  "scene_footprint_support_evaluable_share": 1.0,
+  "all_core_optical_assets_present_share": 1.0,
+  "s1_frozen_target_dates_n": 18,
+  "s1_targets_with_any_s2_item_by_window_days": {
+    "1": 14,
+    "3": 14,
+    "5": 14,
+    "7": 14,
+    "10": 14
+  },
+  "scene_cloud_percentage_used_as_rice_support_clear_sky_truth": false,
+  "groundwater_values_read": false,
+  "irrigation_flow_values_read": false,
+  "preexisting_flood_exposure_values_read": false,
+  "inundation_threshold_selected": false,
+  "inundation_classifier_fitted": false,
+  "association_models_fitted": 0,
+  "c2j_frozen_rule_modified": false,
+  "next_stage": "Audit actual rice-support clear-sky usability from Sentinel-2 SCL and bands."
+}

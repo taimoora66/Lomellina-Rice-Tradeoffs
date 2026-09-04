@@ -1,0 +1,69 @@
+DESIGN C - C2M FROZEN SENTINEL-1 RASTER SIGNAL QA (GCP REVISION)
+========================================================================
+
+Frozen targets: 18
+Expected target-polarization combinations: 36
+Canonical scene/polarization assets expected: 68
+Canonical scene/polarization assets opened: 65
+Failed asset opens: 3
+Target-polarization summaries produced: 36
+Unique rice-support coordinates: 4331
+Minimum target/pol point coverage: 0.299238
+Median target/pol point coverage: 1.000000
+
+TARGET / POLARIZATION RAW-SIGNAL SUMMARY
+----------------------------------------
+ anchor_year  season_phase selected_date orbit_state  relative_orbit platform polarization  rice_support_points_sampled_n  rice_support_point_coverage_fraction  points_with_multi_scene_overlap_n  raw_n  raw_min  raw_p01  raw_p10  raw_median   raw_mean  raw_p90  raw_p99  raw_max     raw_sd  raw_zero_share
+        2015 establishment    2015-05-14  descending              66      S1A           VH                           4331                              1.000000                                  0   4331     16.0     24.0    38.00        64.0  70.773263    110.0  188.400    588.0  34.104226             0.0
+        2015 establishment    2015-05-14  descending              66      S1A           VV                           4331                              1.000000                                  0   4331     27.0     47.0    83.00       165.0 178.901178    280.0  496.800   2018.0  93.961234             0.0
+        2015 establishment    2015-05-22   ascending              15      S1A           VH                           4331                              1.000000                                  0   4331     19.0     30.0    44.00        75.0  82.048026    126.0  187.700   1380.0  40.801734             0.0
+        2015 establishment    2015-05-22   ascending              15      S1A           VV                           4331                              1.000000                                  0   4331     30.0     66.0   114.00       207.0 230.635881    363.0  618.100   2912.0 131.630897             0.0
+        2015   late_season    2015-08-26   ascending              15      S1A           VH                           4331                              1.000000                                  0   4331     29.0     49.0    71.00       106.0 109.126991    149.0  211.700   1367.0  38.306477             0.0
+        2015   late_season    2015-08-26   ascending              15      S1A           VV                           4331                              1.000000                                  0   4331     41.0     88.0   131.00       198.0 213.577696    303.0  488.100   2945.0 103.115445             0.0
+        2015   late_season    2015-08-30  descending              66      S1A           VH                           4331                              1.000000                                  0   4331     26.0     48.0    72.00       108.0 109.895867    150.0  197.000    977.0  36.757937             0.0
+        2015   late_season    2015-08-30  descending              66      S1A           VV                           4331                              1.000000                                  0   4331     35.0     92.0   136.00       206.0 214.049642    297.0  427.700   2099.0  84.831372             0.0
+        2015    mid_season    2015-07-09   ascending              15      S1A           VH                           4331                              1.000000                                  0   4331     26.0     44.0    62.00        93.0  96.951974    133.0  187.700   1331.0  36.320723             0.0
+        2015    mid_season    2015-07-09   ascending              15      S1A           VV                           4331                              1.000000                                  0   4331     54.0     87.0   129.00       209.0 224.997460    329.0  506.600   3014.0 111.206394             0.0
+        2015    mid_season    2015-07-13  descending              66      S1A           VH                           4331                              1.000000                                  0   4331     23.0     40.0    61.00        90.0  93.882475    129.0  185.000    515.0  31.618070             0.0
+        2015    mid_season    2015-07-13  descending              66      S1A           VV                           4331                              1.000000                                  0   4331     49.0     82.0   124.00       199.0 211.976680    308.0  490.600   1946.0  92.631753             0.0
+        2020 establishment    2020-05-13   ascending              15      S1B           VH                           1296                              0.299238                                  0   1296     17.0     29.0    44.00        77.0  81.395833    122.5  174.050    593.0  35.474586             0.0
+        2020 establishment    2020-05-13   ascending              15      S1B           VV                           1296                              0.299238                                  0   1296     35.0     57.0   114.00       206.0 227.710648    337.0  741.850   2901.0 146.698189             0.0
+        2020 establishment    2020-05-17  descending              66      S1B           VH                           4331                              1.000000                               4331   4331     20.0     28.0    44.50        79.0  82.779035    122.5  177.550    576.0  35.880317             0.0
+        2020 establishment    2020-05-17  descending              66      S1B           VV                           4331                              1.000000                               4331   4331     36.0     52.5   109.50       206.5 212.727892    303.5  484.350   1772.0  99.159852             0.0
+        2020   late_season    2020-08-29   ascending              15      S1B           VH                           4331                              1.000000                               4331   4331     25.0     47.0    74.00       108.0 112.070423    155.0  203.700    732.0  35.022560             0.0
+        2020   late_season    2020-08-29   ascending              15      S1B           VV                           4331                              1.000000                               4331   4331     45.0     89.3   137.00       207.0 218.516163    306.0  473.800   3461.0  97.838924             0.0
+        2020   late_season    2020-09-02  descending              66      S1B           VH                           4331                              1.000000                               4331   4331     38.5     54.0    73.50        98.5 100.847033    128.5  167.850    671.5  26.793192             0.0
+        2020   late_season    2020-09-02  descending              66      S1B           VV                           4331                              1.000000                               4331   4331     61.0    101.3   137.00       185.0 193.346456    255.0  368.350   1338.0  63.316440             0.0
+        2020    mid_season    2020-07-12   ascending              15      S1B           VH                           4330                              0.999769                               4330   4330     22.0     39.0    59.00        87.0  91.431178    127.0  192.355    533.0  31.481811             0.0
+        2020    mid_season    2020-07-12   ascending              15      S1B           VV                           4330                              0.999769                               3035   4330     45.5     77.0   123.45       197.0 209.709238    305.0  482.615   1745.0  87.128707             0.0
+        2020    mid_season    2020-07-16  descending              66      S1B           VH                           4331                              1.000000                               4331   4331     32.0     48.5    63.00        85.0  88.541099    115.5  166.550    573.5  27.088004             0.0
+        2020    mid_season    2020-07-16  descending              66      S1B           VV                           4331                              1.000000                               4331   4331     55.5     99.0   133.00       190.5 197.619834    264.0  383.400   1161.5  63.432043             0.0
+        2025 establishment    2025-05-15  descending              66      S1C           VH                           4331                              1.000000                                  0   4331     14.0     20.3    33.00        61.0  67.144539    105.0  170.000   2332.0  47.588914             0.0
+        2025 establishment    2025-05-15  descending              66      S1C           VV                           4331                              1.000000                                  0   4331     24.0     39.0    82.00       169.0 178.056107    277.0  444.800   2997.0  96.417291             0.0
+        2025 establishment    2025-05-17   ascending              15      S1A           VH                           4331                              1.000000                                  0   4331     18.0     31.0    45.00        70.0  77.006234    118.0  188.400    899.0  35.567224             0.0
+        2025 establishment    2025-05-17   ascending              15      S1A           VV                           4331                              1.000000                                  0   4331     30.0     61.0    92.00       159.0 176.737012    274.0  494.300   2319.0  96.117585             0.0
+        2025   late_season    2025-08-31  descending              66      S1C           VH                           4331                              1.000000                                  0   4331     25.0     43.3    66.00        98.0 101.000000    138.0  184.700    584.0  32.117294             0.0
+        2025   late_season    2025-08-31  descending              66      S1C           VV                           4331                              1.000000                                  0   4331     25.0     85.0   128.00       190.0 198.601709    271.0  401.000   2176.0  81.335561             0.0
+        2025   late_season    2025-09-02   ascending              15      S1A           VH                           4331                              1.000000                                  0   4331     24.0     49.0    70.00       105.0 107.854306    148.0  196.000    893.0  33.535473             0.0
+        2025   late_season    2025-09-02   ascending              15      S1A           VV                           4331                              1.000000                                  0   4331     51.0     86.0   129.00       195.0 205.157008    290.0  423.400   1308.0  77.104217             0.0
+        2025    mid_season    2025-07-14  descending              66      S1C           VH                           4331                              1.000000                                  0   4331     19.0     35.0    53.00        79.0  82.627107    115.0  166.400    651.0  28.340909             0.0
+        2025    mid_season    2025-07-14  descending              66      S1C           VV                           4331                              1.000000                                  0   4331     34.0     72.3   114.00       180.0 189.544909    268.0  407.100   2496.0  81.265368             0.0
+        2025    mid_season    2025-07-16   ascending              15      S1A           VH                           4331                              1.000000                                  0   4331     27.0     41.0    63.00        93.0  96.904872    134.0  188.700    831.0  32.363220             0.0
+        2025    mid_season    2025-07-16   ascending              15      S1A           VV                           4331                              1.000000                                  0   4331     42.0     81.0   122.00       195.0 206.038790    298.0  452.400   1319.0  82.222760             0.0
+
+FIREWALL
+--------
+SAR raster pixels WERE read for technical measurement QA.
+Embedded GCPs were used for geolocation.
+No existing flooding/exposure values were read.
+No groundwater-level values were read.
+No irrigation-flow values were read.
+No threshold was tuned or selected.
+No association model was fitted.
+C2J frozen acquisition universe unchanged.
+
+RAW-SIGNAL CAUTION
+------------------
+Raw uint16 values are not yet interpreted as dB/calibrated backscatter.
+
+C2M STATUS: PASS_WITH_LIMITATIONS

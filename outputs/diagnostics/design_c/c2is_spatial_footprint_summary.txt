@@ -1,0 +1,74 @@
+DESIGN C - C2I-S SENTINEL-1 STABLE-TRACK SPATIAL FOOTPRINT AUDIT
+========================================================================
+
+Study bbox: 7.94551632, 44.92499839, 9.64149039, 45.69166504
+Complete candidate years: 2015-2025
+Technical family: IW VV|VH, Apr-Sep
+
+STABLE TRACK SPATIAL SUPPORT
+----------------------------
+orbit_state  relative_orbit  years_present_n  acquisition_dates_n  median_coverage_fraction_all_dates  min_coverage_fraction_all_dates  full_coverage_dates_share_all  high_coverage_dates_share_all  years_with_100pct_high_coverage_dates_n  worst_year_high_coverage_share  minimum_dates_in_any_year  max_scenes_needed_on_single_date
+  ascending              15               11                  245                            1.000000                         0.789925                       0.991837                       0.991837                                       10                        0.857143                         12                                 4
+  ascending              88               11                  246                            0.868121                         0.018556                       0.000000                       0.000000                                        0                        0.000000                         10                                 4
+ descending              66               11                  250                            1.000000                         0.799782                       0.992000                       0.992000                                        9                        0.916667                         12                                 4
+ descending             168               11                  254                            0.745138                         0.580886                       0.000000                       0.000000                                        0                        0.000000                         14                                 4
+
+TRACK-YEAR SUPPORT
+------------------
+orbit_state  relative_orbit  year  acquisition_dates_n  median_scenes_per_date  max_scenes_per_date  median_coverage_fraction  min_coverage_fraction  p10_coverage_fraction  full_coverage_dates_n  high_coverage_dates_n  full_coverage_share  high_coverage_share
+  ascending              15  2015                   14                     1.0                    1                  1.000000               0.789925               0.853285                     12                     12             0.857143             0.857143
+  ascending              15  2016                   12                     2.0                    2                  1.000000               1.000000               1.000000                     12                     12             1.000000             1.000000
+  ascending              15  2017                   30                     2.0                    2                  1.000000               1.000000               1.000000                     30                     30             1.000000             1.000000
+  ascending              15  2018                   28                     2.0                    4                  1.000000               1.000000               1.000000                     28                     28             1.000000             1.000000
+  ascending              15  2019                   28                     2.0                    4                  1.000000               1.000000               1.000000                     28                     28             1.000000             1.000000
+  ascending              15  2020                   29                     2.0                    4                  1.000000               1.000000               1.000000                     29                     29             1.000000             1.000000
+  ascending              15  2021                   31                     2.0                    4                  1.000000               1.000000               1.000000                     31                     31             1.000000             1.000000
+  ascending              15  2022                   16                     1.0                    1                  1.000000               1.000000               1.000000                     16                     16             1.000000             1.000000
+  ascending              15  2023                   15                     1.0                    1                  1.000000               1.000000               1.000000                     15                     15             1.000000             1.000000
+  ascending              15  2024                   15                     1.0                    2                  1.000000               1.000000               1.000000                     15                     15             1.000000             1.000000
+  ascending              15  2025                   27                     1.0                    3                  1.000000               1.000000               1.000000                     27                     27             1.000000             1.000000
+  ascending              88  2015                   10                     1.0                    1                  0.819626               0.815095               0.815330                      0                      0             0.000000             0.000000
+  ascending              88  2016                   15                     2.0                    2                  0.871133               0.847386               0.852112                      0                      0             0.000000             0.000000
+  ascending              88  2017                   28                     2.0                    2                  0.868953               0.843678               0.844201                      0                      0             0.000000             0.000000
+  ascending              88  2018                   29                     2.0                    4                  0.867426               0.401058               0.842624                      0                      0             0.000000             0.000000
+  ascending              88  2019                   30                     4.0                    4                  0.855706               0.843387               0.843583                      0                      0             0.000000             0.000000
+  ascending              88  2020                   28                     4.0                    4                  0.866998               0.843576               0.844292                      0                      0             0.000000             0.000000
+  ascending              88  2021                   30                     2.0                    2                  0.888251               0.868770               0.869130                      0                      0             0.000000             0.000000
+  ascending              88  2022                   15                     2.0                    2                  0.888776               0.887653               0.888206                      0                      0             0.000000             0.000000
+  ascending              88  2023                   16                     2.0                    3                  0.888776               0.873199               0.887862                      0                      0             0.000000             0.000000
+  ascending              88  2024                   15                     2.0                    4                  0.890237               0.245387               0.888597                      0                      0             0.000000             0.000000
+  ascending              88  2025                   30                     2.0                    2                  0.877142               0.018556               0.859801                      0                      0             0.000000             0.000000
+ descending              66  2015                   12                     2.0                    2                  1.000000               0.799782               1.000000                     11                     11             0.916667             0.916667
+ descending              66  2016                   15                     2.0                    2                  1.000000               1.000000               1.000000                     15                     15             1.000000             1.000000
+ descending              66  2017                   30                     2.0                    2                  1.000000               1.000000               1.000000                     30                     30             1.000000             1.000000
+ descending              66  2018                   30                     2.0                    4                  1.000000               1.000000               1.000000                     30                     30             1.000000             1.000000
+ descending              66  2019                   29                     4.0                    4                  1.000000               1.000000               1.000000                     29                     29             1.000000             1.000000
+ descending              66  2020                   30                     3.5                    4                  1.000000               1.000000               1.000000                     30                     30             1.000000             1.000000
+ descending              66  2021                   29                     2.0                    2                  1.000000               1.000000               1.000000                     29                     29             1.000000             1.000000
+ descending              66  2022                   15                     2.0                    2                  1.000000               1.000000               1.000000                     15                     15             1.000000             1.000000
+ descending              66  2023                   16                     2.0                    2                  1.000000               1.000000               1.000000                     16                     16             1.000000             1.000000
+ descending              66  2024                   15                     2.0                    4                  1.000000               1.000000               1.000000                     15                     15             1.000000             1.000000
+ descending              66  2025                   29                     2.0                    2                  1.000000               0.821602               1.000000                     28                     28             0.965517             0.965517
+ descending             168  2015                   15                     1.0                    2                  0.627260               0.580886               0.581006                      0                      0             0.000000             0.000000
+ descending             168  2016                   14                     1.0                    2                  0.743405               0.659476               0.662906                      0                      0             0.000000             0.000000
+ descending             168  2017                   30                     1.0                    2                  0.744093               0.680364               0.688631                      0                      0             0.000000             0.000000
+ descending             168  2018                   30                     2.0                    3                  0.744940               0.680261               0.680714                      0                      0             0.000000             0.000000
+ descending             168  2019                   29                     4.0                    4                  0.786962               0.642008               0.681058                      0                      0             0.000000             0.000000
+ descending             168  2020                   30                     4.0                    4                  0.789567               0.656681               0.694166                      0                      0             0.000000             0.000000
+ descending             168  2021                   31                     2.0                    3                  0.720514               0.710275               0.710783                      0                      0             0.000000             0.000000
+ descending             168  2022                   14                     2.0                    2                  0.746701               0.745337               0.745547                      0                      0             0.000000             0.000000
+ descending             168  2023                   15                     2.0                    2                  0.746696               0.745134               0.746112                      0                      0             0.000000             0.000000
+ descending             168  2024                   16                     2.0                    4                  0.746684               0.744496               0.745238                      0                      0             0.000000             0.000000
+ descending             168  2025                   30                     2.0                    2                  0.734975               0.655495               0.719150                      0                      0             0.000000             0.000000
+
+INTERPRETATION
+--------------
+Coverage is based only on STAC scene bounding boxes.
+Multiple same-track scenes on the same date are unioned before coverage is computed.
+No SAR pixel values or groundwater outcomes were inspected.
+
+DECISION
+--------
+Use these results to prespecify the spatially adequate track/date universe for C2J inundation measurement validation.
+
+C2I-S STATUS: PASS

@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2IT_SENTINEL1_ACTUAL_RICE_SUPPORT_FOOTPRINT",
+  "complete_candidate_years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "stable_tracks": [
+    {
+      "orbit_state": "ascending",
+      "relative_orbit": 15
+    },
+    {
+      "orbit_state": "ascending",
+      "relative_orbit": 88
+    },
+    {
+      "orbit_state": "descending",
+      "relative_orbit": 66
+    },
+    {
+      "orbit_state": "descending",
+      "relative_orbit": 168
+    }
+  ],
+  "rice_georef_rows_n": 80926,
+  "unique_rice_support_coordinates_n": 4331,
+  "duplicate_rice_support_coordinates_n": 76595,
+  "track_date_rows_n": 995,
+  "sar_pixels_inspected": 0,
+  "flooding_exposure_values_read": 0,
+  "groundwater_level_values_read": 0,
+  "irrigation_flow_values_read": 0,
+  "thresholds_tuned": 0,
+  "association_models_fitted": 0,
+  "frozen_artifacts_modified": 0,
+  "interpretation_rule": "Final metadata footprint adequacy must be judged on actual RiceFloodIT support, not on unused corners of a rectangular bbox.",
+  "next_stage": "Freeze the spatially adequate track/date universe and select a small prespecified SAR validation set without groundwater outcomes."
+}

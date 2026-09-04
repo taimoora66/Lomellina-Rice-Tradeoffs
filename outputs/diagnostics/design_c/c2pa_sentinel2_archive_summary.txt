@@ -1,0 +1,40 @@
+DESIGN C - C2P-A SENTINEL-2 L2A MAXIMUM ARCHIVE AUDIT
+============================================================================
+
+STAC collection: sentinel-2-l2a
+Period: 2015-01-01T00:00:00Z -> 2026-09-03T07:46:44Z
+RiceFloodIT support coordinates: 4331
+Unique Sentinel-2 L2A items: 4804
+First item: 2015-07-30
+Last item: 2026-09-02
+Years found: 2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026
+Missing years: NONE
+MGRS tiles: 4
+Platforms: S2A|S2B|S2C
+All-core-optical-asset item share: 1.000000
+
+SENTINEL-1 TARGET MATCHABILITY
+------------------------------
+Frozen S1 targets with >=1 S2 catalogue item within +/-1 d: 14/18
+Frozen S1 targets with >=1 S2 catalogue item within +/-3 d: 14/18
+Frozen S1 targets with >=1 S2 catalogue item within +/-5 d: 14/18
+Frozen S1 targets with >=1 S2 catalogue item within +/-7 d: 14/18
+Frozen S1 targets with >=1 S2 catalogue item within +/-10 d: 14/18
+
+IMPORTANT LIMIT
+---------------
+eo:cloud_cover is catalogue metadata only.
+It is NOT clear-sky coverage over rice-support pixels.
+Actual optical usability requires SCL/band sampling in the next stage.
+
+FIREWALL
+--------
+No groundwater values read.
+No irrigation-flow values read.
+No pre-existing flooding/exposure outcomes read.
+No inundation threshold selected.
+No inundation classifier fitted.
+No association model fitted.
+C2J frozen Sentinel-1 acquisition universe unchanged.
+
+C2P-A STATUS: PASS

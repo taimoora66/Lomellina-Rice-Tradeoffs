@@ -1,0 +1,49 @@
+DESIGN C - C2L CANONICAL SENTINEL-1 ASSET PLAN
+============================================================
+
+Frozen targets: 18
+Input scene IDs: 36
+Duplicate/alternate groups: 2
+Canonical scene IDs: 34
+Selected VV assets: 34
+Selected VH assets: 34
+Target-scene rows missing VV: 0
+Target-scene rows missing VH: 0
+Targets complete for VV+VH: 18/18
+
+TARGET MOSAIC PLAN
+------------------
+ anchor_year  season_phase selected_date orbit_state  relative_orbit  canonical_scenes_n platforms  vv_assets_complete  vh_assets_complete
+        2015 establishment    2015-05-14  descending              66                   2       S1A                True                True
+        2015 establishment    2015-05-22   ascending              15                   1       S1A                True                True
+        2015   late_season    2015-08-26   ascending              15                   1       S1A                True                True
+        2015   late_season    2015-08-30  descending              66                   2       S1A                True                True
+        2015    mid_season    2015-07-09   ascending              15                   1       S1A                True                True
+        2015    mid_season    2015-07-13  descending              66                   2       S1A                True                True
+        2020 establishment    2020-05-13   ascending              15                   2       S1B                True                True
+        2020 establishment    2020-05-17  descending              66                   3       S1B                True                True
+        2020   late_season    2020-08-29   ascending              15                   4       S1B                True                True
+        2020   late_season    2020-09-02  descending              66                   3       S1B                True                True
+        2020    mid_season    2020-07-12   ascending              15                   4       S1B                True                True
+        2020    mid_season    2020-07-16  descending              66                   3       S1B                True                True
+        2025 establishment    2025-05-15  descending              66                   1       S1C                True                True
+        2025 establishment    2025-05-17   ascending              15                   1       S1A                True                True
+        2025   late_season    2025-08-31  descending              66                   1       S1C                True                True
+        2025   late_season    2025-09-02   ascending              15                   1       S1A                True                True
+        2025    mid_season    2025-07-14  descending              66                   1       S1C                True                True
+        2025    mid_season    2025-07-16   ascending              15                   1       S1A                True                True
+
+DUPLICATE / ALTERNATE ITEM GROUPS
+---------------------------------
+                                                                                                                       _dup_key  scene_ids_n                                                                                                                                       scene_ids platform                         datetime                     end_datetime orbit_state  relative_orbit                                       bbox  is_duplicate_group
+S1B|2020-05-13 17:14:03.408826+00:00|2020-05-13 17:14:28.407203+00:00|ascending|15.0|(7.911925, 43.593575, 11.567924, 45.50169)            2 S1B_IW_GRDH_1SDV_20200513T171403_20200513T171428_021566_028F1C_3676_COG|S1B_IW_GRDH_1SDV_20200513T171403_20200513T171428_021566_028F1C_9CEA_COG      S1B 2020-05-13 17:14:03.408826+00:00 2020-05-13 17:14:28.407203+00:00   ascending            15.0 [7.911925, 43.593575, 11.567924, 45.50169]                True
+S1B|2020-05-13 17:14:28.408701+00:00|2020-05-13 17:14:53.407078+00:00|ascending|15.0|(7.517754, 45.09304, 11.243735, 47.003242)            2 S1B_IW_GRDH_1SDV_20200513T171428_20200513T171453_021566_028F1C_8C3C_COG|S1B_IW_GRDH_1SDV_20200513T171428_20200513T171453_021566_028F1C_C99D_COG      S1B 2020-05-13 17:14:28.408701+00:00 2020-05-13 17:14:53.407078+00:00   ascending            15.0 [7.517754, 45.09304, 11.243735, 47.003242]                True
+
+FIREWALL
+--------
+No raster pixels opened/read.
+No VV/VH statistics calculated.
+No flooding, groundwater, or irrigation outcomes read.
+C2J frozen universe unchanged.
+
+C2L STATUS: PASS

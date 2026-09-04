@@ -1,0 +1,5 @@
+orbit_state,relative_orbit,years_present_n,acquisition_dates_n,median_rice_support_coverage_fraction_all_dates,min_rice_support_coverage_fraction_all_dates,full_rice_support_dates_share_all,rice_support_ge_99pct_dates_share_all,years_with_100pct_dates_ge99pct_support_n,worst_year_ge99pct_support_share,minimum_dates_in_any_year
+ascending,15,11,245,1.0,0.9572846917571,0.9918367346938776,0.9918367346938776,10,0.8571428571428571,12
+ascending,88,11,246,0.9896097898868621,0.0,0.0,0.21951219512195122,0,0.0,10
+descending,66,11,250,1.0,0.9651350727314708,0.992,0.996,10,0.9166666666666666,12
+descending,168,11,254,0.7716462710690372,0.5054259986146387,0.0,0.0,0,0.0,14

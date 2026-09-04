@@ -1,0 +1,27 @@
+{
+  "stage": "DESIGN_C_C2S_PRE_FREEZE_MEASUREMENT_ARCHITECTURE_AUDIT",
+  "generated_utc": "2026-09-03T12:13:32.168763+00:00",
+  "technical_status": "PASS",
+  "screening_rules": {
+    "minimum_paired_n_per_target": 100,
+    "minimum_eligible_targets": 3,
+    "minimum_sign_agreement_share": 0.75,
+    "minimum_median_absolute_spearman_rho": 0.2
+  },
+  "single_snapshot_variables_passing_screen": [
+    "MNDWI"
+  ],
+  "single_snapshot_architecture_frozen": false,
+  "reason": "Observed RiceFloodIT FF is an annual/seasonal flooding-frequency construct whereas S1/S2 anchors are date-specific snapshots. Associations vary materially by phenological phase and sensor. A single-date threshold/classifier would therefore conflate seasonal state with annual inundation behavior.",
+  "next_measurement_architecture": {
+    "primary": "multi-temporal Sentinel-1 phenology using the stable outcome-blind track families and all suitable rice-season acquisitions",
+    "secondary_support": "Sentinel-2 clear-pixel optical phenology/water-state descriptors",
+    "historical_bridge": "observed RiceFloodIT FF through 2021 and the separately frozen MODIS RiceFloodIT-compatible reconstruction through 2025"
+  },
+  "groundwater_values_read": false,
+  "irrigation_flow_values_read": false,
+  "inundation_threshold_selected": false,
+  "classifier_fitted": false,
+  "composite_score_optimized": false,
+  "p_values_used": false
+}

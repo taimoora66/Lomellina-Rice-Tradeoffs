@@ -1,0 +1,2 @@
+inventory_file,rows_raw_n,bad_datetime_n,rows_2015_2023_n,unique_scene_ids_n,duplicate_scene_ids_n,unique_acquisition_dates_n,first_acquisition,last_acquisition,median_gap_any_date_days,p90_gap_any_date_days,max_gap_any_date_days
+data\design_c\raw\sentinel1\sentinel1_grd_scene_inventory_2015_2023.csv,4110,0,4110,4110,0,1525,2015-01-02T05:35:07.163291+00:00,2023-12-30T17:15:19.831911+00:00,1.0,4.0,19
