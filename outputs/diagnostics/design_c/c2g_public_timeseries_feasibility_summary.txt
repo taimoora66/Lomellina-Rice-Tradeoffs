@@ -1,0 +1,32 @@
+DESIGN C — C2G PUBLIC TIME-SERIES ACQUISITION FEASIBILITY
+==================================================================
+
+Authoritative endpoints tested: 5
+Authoritative endpoints reachable: 5/5
+Historically verified target series: 4
+Targets visible in current Est Sesia public idrometry: 3/4
+Public historical downloadable target series established: 0
+Historical series files downloaded: 0
+
+TARGET STATUS
+-------------
+- ROGGIONE DI SARTIRANA: historical 2005-01-01 to 2014-12-31 (Associazione Irrigazione Est Sesia); current_public=YES; historical_public_download=NOT ESTABLISHED
+- NAVIGLIO LANGOSCO: historical 1957-06-01 to 2015-11-30 (Consorzio del Ticino); current_public=YES; historical_public_download=NOT ESTABLISHED
+- ROGGIA MAGNA E CASTELLANA: historical 1999-04-01 to 2015-05-31 (Consorzio del Ticino / AIES); current_public=YES; historical_public_download=NOT ESTABLISHED
+- ROGGIA VECCHIA: historical 2005-01-01 to 2014-12-31 (Associazione Irrigazione Est Sesia); current_public=NO; historical_public_download=NOT ESTABLISHED
+
+INTERPRETATION
+--------------
+The historical series are documentary-confirmed by ISIL.
+Current Est Sesia operational readings are publicly visible for some targets.
+No public historical-download route is accepted unless actually demonstrated.
+CeDATeR documents the active regional monitoring system, but public reports
+do not by themselves establish open access to raw historical target series.
+
+DECISION
+--------
+Do not model.
+Next pursue authoritative historical acquisition using the exact series names,
+providers and date ranges documented by ISIL.
+
+C2G STATUS: PASS

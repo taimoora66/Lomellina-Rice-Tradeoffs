@@ -1,0 +1,66 @@
+DESIGN C — C2B FINAL OFFICIAL RIRU / EST SESIA RECONCILIATION
+================================================================
+
+Official ZIP
+------------
+SHA256: f444961b75c40033e70a7d264b752728b0f0548d2830c0a5ae6faa83537d9f3f
+bytes: 18,705,077
+
+Official schemas
+----------------
+Corsi_acqua_RIB features: 309
+Corsi_acqua_RIB CRS: EPSG:7791
+Tratti_idrici features: 25645
+Tratti_idrici CRS: EPSG:7791
+
+Authoritative Est Sesia management selection
+--------------------------------------------
+GESTIONE = ASSOCIAZIONE IRRIGAZIONE EST SESIA
+Est Sesia watercourses: 271
+Unique Est Sesia names: 271
+Non-null COD_RIB among Est Sesia watercourses: 0
+
+Exact normalized-name reconciliation
+------------------------------------
+Matched Est Sesia watercourses: 238
+Unmatched Est Sesia watercourses: 33
+Exact-name coverage: 87.823%
+
+Detailed Tratti_idrici support
+------------------------------
+Matched detailed segments: 1681
+Segments with ID_SIBITER: 1678
+Segments with TRATTI_SIB: 1681
+Unique ID_SIBITER values: 246
+
+Authoritative downstream geometry
+---------------------------------
+ALL 271 Est Sesia Corsi_acqua_RIB geometries retained.
+Fuzzy matching used: NO
+Processed CRS: EPSG:32632
+Bounds: (461303.283, 4987143.18, 514807.344, 5026445.163)
+
+Output:
+  data/design_c/processed/official_riru_est_sesia_network.gpkg
+    layer: est_sesia_watercourses
+    layer: matched_detailed_tratti
+
+Audit tables:
+  c2b_est_sesia_official_reconciliation.csv
+  c2b_est_sesia_unmatched_names.csv
+  c2b_est_sesia_matched_detailed_tratti.csv
+  c2b_final_est_sesia_reconciliation_qa.json
+
+Interpretation
+--------------
+The RIB management layer is the authoritative Est Sesia geometry source.
+Exact-name linkage to Tratti_idrici is provenance/enrichment evidence only;
+the unmatched watercourses are NOT dropped from the spatial network.
+
+Groundwater measurements read: 0
+Flooding measurements read: 0
+Association models fitted: 0
+Frozen artifacts modified: 0
+
+C2B FINAL STATUS: PASS
+C2C SPATIAL LINKAGE INPUT: READY

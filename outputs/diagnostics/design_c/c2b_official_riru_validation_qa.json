@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2B_OFFICIAL_RIRU_PAVIA_VALIDATION",
+  "association_models_fitted": 0,
+  "groundwater_values_read": 0,
+  "flooding_values_read": 0,
+  "frozen_artifacts_modified": 0,
+  "zip_sha256": "f444961b75c40033e70a7d264b752728b0f0548d2830c0a5ae6faa83537d9f3f",
+  "zip_bytes": 18705077,
+  "archive_members_n": 20,
+  "spatial_datasets_n": 5,
+  "readable_spatial_datasets_n": 5,
+  "datasets_intersecting_study_bbox_n": 5,
+  "irrigation_candidate_layers_n": 0,
+  "est_sesia_crosscheck_status": "NO_LAYER_WITH_MANAGER_FIELD_FOUND",
+  "best_crosscheck_layer": null
+}

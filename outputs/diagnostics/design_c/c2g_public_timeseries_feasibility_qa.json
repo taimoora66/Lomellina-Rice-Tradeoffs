@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2G_PUBLIC_TIMESERIES_ACQUISITION_FEASIBILITY",
+  "association_models_fitted": 0,
+  "groundwater_measurements_read": 0,
+  "flooding_measurements_read": 0,
+  "frozen_artifacts_modified": 0,
+  "authoritative_endpoints_tested_n": 5,
+  "authoritative_endpoints_reachable_n": 5,
+  "manually_verified_historical_target_series_n": 4,
+  "targets_with_public_current_observation_visible_n": 3,
+  "public_historical_downloads_established_n": 0,
+  "historical_series_files_downloaded_n": 0,
+  "cedater_monitoring_system_description_found": true,
+  "cedater_restricted_platform_language_found": true,
+  "consorzio_ticino_current_hydrology_page_found": true,
+  "rule": "Public current HTML visibility is not treated as proof of a public downloadable historical archive."
+}

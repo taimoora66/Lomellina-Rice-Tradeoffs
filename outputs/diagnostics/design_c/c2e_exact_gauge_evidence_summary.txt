@@ -1,0 +1,22 @@
+DESIGN C — C2E EXACT CANAL / GAUGE / TIME-SERIES CANDIDATES
+================================================================
+
+C2D retained match rows: 327
+Exact normalized-name rows: 77
+Secondary token-only lead rows: 250
+Canals with exact-name evidence: 12
+Canals with exact-name + hydrometric evidence: 12
+Parsed candidate gauge/station identifiers: 4
+
+EVIDENCE RULE
+-------------
+A direct hydrometric lead requires the canal name and a hydrometric term in the SAME archive row.
+Regex-parsed station/gauge identifiers remain candidates until verified against the underlying source.
+
+NEXT
+----
+Review evidence classes A and B first.
+Trace their source documents/endpoints to actual gauge metadata and
+obtainable time-series coverage before any hydrological assignment.
+
+C2E STATUS: PASS

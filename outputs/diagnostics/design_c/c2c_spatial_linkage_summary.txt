@@ -1,0 +1,37 @@
+DESIGN C — C2C GROUNDWATER / IRRIGATION NETWORK LINKAGE
+=========================================================
+
+Groundwater measurements read: 0
+Flooding measurements read: 0
+Association models fitted: 0
+Frozen artifacts modified: 0
+
+Stations with coordinates: 68
+Complete Est Sesia segments: 148
+
+Nearest Est Sesia canal distance:
+  minimum: nan m
+  median: nan m
+  75th percentile: nan m
+  maximum: nan m
+
+Stations within:
+  250 m: 0
+  500 m: 0
+  1 km: 0
+  2 km: 0
+  5 km: 0
+  10 km: 0
+
+Stations intersecting a public comprensorio polygon:
+  0
+
+NEXT
+----
+Inspect c2c_station_canal_review.csv.
+
+If wells are broadly connected to named Est Sesia canals, the next stage is
+to identify public/archived hydrometric gauges and flow histories for those
+specific canal families. No association analysis yet.
+
+C2C STATUS: PASS

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2D_CANAL_FAMILY_PUBLIC_GAUGE_EVIDENCE_AUDIT",
+  "association_models_fitted": 0,
+  "groundwater_measurements_read": 0,
+  "flooding_measurements_read": 0,
+  "frozen_artifacts_modified": 0,
+  "stations_n": 68,
+  "unique_nearest_canal_families_n": 37,
+  "canal_families_with_station_within_2km_n": 27,
+  "canal_families_with_public_archive_evidence_n": 17,
+  "archive_match_rows_n": 327,
+  "priority_score_interpretation": "Search-follow-up convenience only; not an exposure, treatment, inclusion criterion, or model weight."
+}

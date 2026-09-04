@@ -1,0 +1,29 @@
+DESIGN C — C2B OFFICIAL RIRU PAVIA VALIDATION
+================================================
+
+ZIP SHA256: f444961b75c40033e70a7d264b752728b0f0548d2830c0a5ae6faa83537d9f3f
+ZIP bytes: 18,705,077
+Archive members: 20
+Spatial datasets discovered: 5
+Readable spatial datasets: 5
+Datasets intersecting study bbox: 5
+Irrigation-relevant candidates: 0
+
+Est Sesia cross-check status: NO_LAYER_WITH_MANAGER_FIELD_FOUND
+Best candidate layer: None
+
+No groundwater/flooding values read.
+No association model fitted.
+No frozen artifact modified.
+
+NEXT
+----
+Inspect:
+- c2b_official_riru_candidate_irrigation_layers.csv
+- c2b_official_vs_rest_est_sesia_crosscheck.csv
+- c2b_official_riru_spatial_dataset_inventory.csv
+
+If an official layer matches the REST Est Sesia inventory and has valid
+geometry, that layer becomes the authoritative C2C geometry source.
+
+C2B OFFICIAL PACKAGE STATUS: PASS

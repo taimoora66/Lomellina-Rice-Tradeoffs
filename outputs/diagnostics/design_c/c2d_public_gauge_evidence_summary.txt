@@ -1,0 +1,45 @@
+DESIGN C — C2D CANAL-FAMILY / PUBLIC GAUGE EVIDENCE AUDIT
+==============================================================
+
+Stations: 68
+Unique nearest canal families: 37
+Families with >=1 station within 2 km: 27
+Families with public archive evidence: 17
+Retained archive evidence rows: 327
+
+TOP PUBLIC-DATA FOLLOW-UP FAMILIES
+----------------------------------
+- ROGGIONE DI SARTIRANA | score=15 | <=2km wells=2 | min distance=220.1 m | archive rows=11
+- LANGOSCO (NAVIGLIO) | score=14 | <=2km wells=2 | min distance=315.1 m | archive rows=15
+- CONSORTILE (COLATORE) | score=10 | <=2km wells=1 | min distance=117.8 m | archive rows=15
+- VECCHIA (ROGGIA) | score=10 | <=2km wells=1 | min distance=130.8 m | archive rows=6
+- BIRAGA (ROGGIA) | score=10 | <=2km wells=1 | min distance=208.2 m | archive rows=1
+- CASTELLANA (ROGGIA) | score=10 | <=2km wells=1 | min distance=379.3 m | archive rows=7
+- VIGEVANO (DIRAMATORE) | score=10 | <=2km wells=1 | min distance=426.7 m | archive rows=6
+- CAVO REALE | score=9 | <=2km wells=1 | min distance=584.1 m | archive rows=103
+- MALASPINA (CAVO) | score=9 | <=2km wells=1 | min distance=691.8 m | archive rows=3
+- NICORVO (CAVO) | score=9 | <=2km wells=1 | min distance=744.4 m | archive rows=3
+- PAVIA (SUBDIRAMATORE) | score=8 | <=2km wells=1 | min distance=1106.5 m | archive rows=9
+- CERETTO BASSO (CAVO) | score=7 | <=2km wells=1 | min distance=217.3 m | archive rows=29
+- BIRAGHETTA II TRATTO (ROGGIA) | score=7 | <=2km wells=1 | min distance=360.5 m | archive rows=3
+- COSTA (FONTANE ALLA) O VECCHIA DEL CORNO (ROGGIA) | score=7 | <=2km wells=1 | min distance=379.2 m | archive rows=87
+- CANTAGRILLINO (COLATORE) | score=6 | <=2km wells=2 | min distance=1851.1 m | archive rows=0
+- NUOVO DI SANNAZZARO (CAVO) | score=6 | <=2km wells=1 | min distance=551.3 m | archive rows=25
+- VIADANE (CAVO) | score=6 | <=2km wells=0 | min distance=3919.5 m | archive rows=2
+- VALLARA (COLATORE) O FOSSE O PENNE (COLATORE DELLE) | score=5 | <=2km wells=1 | min distance=56.4 m | archive rows=0
+- ROSASCO (FOSSA COMUNALE DI) | score=5 | <=2km wells=1 | min distance=140.7 m | archive rows=0
+- GAMARRA MANUFATTA (ROGGIA) | score=5 | <=2km wells=1 | min distance=201.4 m | archive rows=0
+
+INTERPRETATION
+--------------
+Priority ranks where to search public gauge/discharge records first.
+It is NOT a hydrological service assignment and NOT a sample filter.
+
+NEXT
+----
+Inspect exact archive matches for the highest-priority canal families.
+Then identify named gauges/stations and obtainable time series.
+Only after topology/monitoring validation should irrigation delivery
+be linked to groundwater stations.
+
+C2D STATUS: PASS

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2C_OFFICIAL_EST_SESIA_SPATIAL_LINKAGE",
+  "association_models_fitted": 0,
+  "groundwater_measurements_read": 0,
+  "flooding_measurements_read": 0,
+  "frozen_artifacts_modified": 0,
+  "groundwater_stations_n": 68,
+  "official_est_sesia_watercourses_n": 271,
+  "matched_detailed_segments_n": 1681,
+  "nearest_est_sesia_distance_m": {
+    "min": 56.35558808827065,
+    "median": 3629.9412011435807,
+    "p75": 9512.19199272241,
+    "max": 34220.11150862679
+  },
+  "stations_within_distance_m": {
+    "250": 8,
+    "500": 18,
+    "1000": 26,
+    "2000": 30,
+    "5000": 37,
+    "10000": 51
+  },
+  "stations_with_est_sesia_watercourse_with_exact_tratti_name_link_n": 48
+}

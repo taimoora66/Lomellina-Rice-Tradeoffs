@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2B_FINAL_OFFICIAL_RIRU_EST_SESIA_RECONCILIATION",
+  "association_models_fitted": 0,
+  "groundwater_measurements_read": 0,
+  "flooding_measurements_read": 0,
+  "frozen_artifacts_modified": 0,
+  "zip_sha256": "f444961b75c40033e70a7d264b752728b0f0548d2830c0a5ae6faa83537d9f3f",
+  "zip_bytes": 18705077,
+  "rib_original_crs": "EPSG:7791",
+  "tratti_original_crs": "EPSG:7791",
+  "processed_crs": "EPSG:32632",
+  "rib_features_n": 309,
+  "tratti_features_n": 25645,
+  "est_sesia_management_watercourses_n": 271,
+  "est_sesia_unique_names_n": 271,
+  "est_sesia_cod_rib_nonnull_n": 0,
+  "exact_name_matched_watercourses_n": 238,
+  "exact_name_unmatched_watercourses_n": 33,
+  "exact_name_match_fraction": 0.8782287822878229,
+  "matched_detailed_segments_n": 1681,
+  "matched_segments_with_id_sibiter_n": 1678,
+  "matched_segments_with_tratti_sib_n": 1681,
+  "unique_id_sibiter_n": 246,
+  "authoritative_est_sesia_geometry_features_n": 271,
+  "authoritative_est_sesia_geometry_bounds_epsg32632": [
+    461303.283,
+    4987143.18,
+    514807.344,
+    5026445.163
+  ],
+  "authoritative_geometry_includes_unmatched_names": true,
+  "fuzzy_matching_used": false,
+  "rib_read_warnings": [],
+  "tratti_read_warnings": [
+    "Measured (M) geometry types are not supported. Original type 'Measured 3D LineString' is converted to 'LineString Z'",
+    "Measured (M) geometry types are not supported. Original type 'Measured 3D LineString' is converted to 'LineString Z'"
+  ],
+  "M_dimension_policy": "M/Z dimensions are not used downstream; processed output is explicitly forced to 2D XY in EPSG:32632.",
+  "authoritative_geometry_output": "data\\design_c\\processed\\official_riru_est_sesia_network.gpkg"
+}

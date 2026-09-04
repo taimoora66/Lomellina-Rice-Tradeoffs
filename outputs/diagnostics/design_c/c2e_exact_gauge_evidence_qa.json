@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2E_EXACT_CANAL_GAUGE_TIME_SERIES_CANDIDATES",
+  "association_models_fitted": 0,
+  "groundwater_measurements_read": 0,
+  "flooding_measurements_read": 0,
+  "frozen_artifacts_modified": 0,
+  "c2d_match_rows_n": 327,
+  "exact_normalized_name_rows_n": 77,
+  "secondary_token_lead_rows_n": 250,
+  "canals_with_exact_name_evidence_n": 12,
+  "canals_with_exact_name_plus_hydrometric_evidence_n": 12,
+  "parsed_candidate_gauge_identifier_rows_n": 4,
+  "evidence_rule": "Direct hydrometric evidence requires exact normalized canal-name match and hydrometric terminology in the same archive row.",
+  "candidate_identifier_rule": "Regex-extracted identifiers are candidates for manual/source validation only; they are not accepted gauges automatically."
+}

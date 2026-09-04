@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2B_PUBLIC_SIBITER_EST_SESIA_NETWORK",
+  "association_models_fitted": 0,
+  "frozen_artifacts_modified": 0,
+  "study_bbox_wgs84": [
+    8.045516319819253,
+    45.02499838977754,
+    9.541490386571809,
+    45.59166503617859
+  ],
+  "study_bbox_epsg32632": [
+    424804.80243903276,
+    4985870.0144600775,
+    542659.1637747663,
+    5049123.324050797
+  ],
+  "est_sesia_manager_code_verified_from_server": 1,
+  "est_sesia_manager_label": "ASSOCIAZIONE IRRIGAZIONE EST SESIA",
+  "est_sesia_features_n": 148,
+  "est_sesia_authoritative_object_ids_n": 148,
+  "est_sesia_query_batches_n": 2,
+  "est_sesia_download_complete": true,
+  "est_sesia_named_features_n": 148,
+  "est_sesia_unique_canal_names_n": 127,
+  "est_sesia_unique_canal_codes_n": 127
+}

@@ -82,3 +82,35 @@ __pycache__/
 data/raw/modis/
 
 data/processed/post2021/
+
+# ==========================================================
+# DESIGN C - REGENERABLE / LARGE LOCAL ARTIFACTS
+# ==========================================================
+
+# Sentinel metadata/API caches
+outputs/diagnostics/design_c/c2u_item_cache/
+outputs/diagnostics/design_c/c2us_item_cache/
+
+# C2V full-resolution scene checkpoints and mosaics
+outputs/diagnostics/design_c/c2v/scene_checkpoints/
+outputs/diagnostics/design_c/c2v/primary_mosaic/
+outputs/diagnostics/design_c/c2v/auxiliary_mosaic/
+
+# Temporary diagnostic scripts
+outputs/diagnostics/design_c/_tmp*
+scripts/06_design_c/_tmp*
+
+# Large regenerable point-level validation tables
+outputs/diagnostics/design_c/c2m_target_point_signal_samples.csv
+outputs/diagnostics/design_c/c2n_scene_point_calibrated_samples.csv
+outputs/diagnostics/design_c/c2nr_scene_point_calibrated_samples.csv
+outputs/diagnostics/design_c/c2o_scene_point_noise_corrected_samples.csv
+outputs/diagnostics/design_c/c2or_scene_point_noise_corrected_samples.csv
+outputs/diagnostics/design_c/c2pb_scl_point_samples.csv
+outputs/diagnostics/design_c/c2pc_sentinel2_boa_point_samples.csv
+outputs/diagnostics/design_c/c2pc2_sentinel2_boa_point_samples.csv
+outputs/diagnostics/design_c/c2q_s1_point_polarization_collapsed.csv
+outputs/diagnostics/design_c/c2qr_s1_point_polarization_collapsed.csv
+outputs/diagnostics/design_c/c2qr_s1_s2_point_matched.csv
+outputs/diagnostics/design_c/c2r_observed_ff_cross_sensor_joined.csv
+

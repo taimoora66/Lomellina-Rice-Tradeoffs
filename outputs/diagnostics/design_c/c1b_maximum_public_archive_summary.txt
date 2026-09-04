@@ -1,0 +1,37 @@
+DESIGN C — C1B MAXIMUM PUBLIC IRRIGATION ARCHIVE
+==================================================
+
+Sources attempted: 17
+Sources acquired: 17
+Sources failed: 0
+
+Earliest useful public horizons found:
+- Sentinel-1: October 2014 onward.
+- ISIL irrigation-system survey: 2015-2018.
+- Regional irrigation-volume rules/data framework: 2016 onward.
+- ANBI validated flow/volume collection explicitly documented for 2017.
+- Regional historical seasonal withdrawals preserved for 2016-2023.
+- CeDATeR monitoring infrastructure: 2017 onward.
+- CeDATeR annual reports: 2020-2025.
+- SIBITER database provenance reaches back to consortium inputs from 1997
+  (NOT a 1997-present time series).
+
+Important:
+Older years are retained whenever an authoritative public source supports them.
+No year is excluded because it is 'too old'.
+Later C2 validation will decide comparability and usable overlap.
+
+Association models fitted: 0
+Frozen artifacts modified: 0
+
+Failed source IDs:
+- none
+
+Next:
+1. Inspect downloaded archive and manifest.
+2. Unpack the Regione ISIL/methodology bundle read-only.
+3. Inventory RIRU layers from service metadata.
+4. Determine whether public sources expose gauge/irrigation-unit-level time series.
+5. Only request institutional data for gaps that remain.
+
+C1B STATUS: PASS

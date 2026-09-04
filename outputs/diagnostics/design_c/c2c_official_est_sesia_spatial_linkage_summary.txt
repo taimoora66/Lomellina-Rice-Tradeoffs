@@ -1,0 +1,40 @@
+DESIGN C — C2C OFFICIAL EST SESIA / GROUNDWATER SPATIAL LINKAGE
+=================================================================
+
+Groundwater measurements read: 0
+Flooding measurements read: 0
+Association models fitted: 0
+Frozen artifacts modified: 0
+
+Groundwater stations: 68
+Official Est Sesia watercourses: 271
+Matched detailed RIRU/SIBITER segments: 1681
+
+Nearest official Est Sesia watercourse distance:
+  minimum: 56.4 m
+  median: 3629.9 m
+  75th percentile: 9512.2 m
+  maximum: 34220.1 m
+
+Stations within:
+  250 m: 8
+  500 m: 18
+  1 km: 26
+  2 km: 30
+  5 km: 37
+  10 km: 51
+
+Outputs:
+  c2c_groundwater_official_est_sesia_linkage.csv
+  c2c_station_est_sesia_review.csv
+  c2c_official_est_sesia_spatial_linkage_qa.json
+  c2c_official_est_sesia_spatial_linkage_summary.txt
+
+INTERPRETATION RULE
+-------------------
+Nearest watercourse is spatial proximity only.
+It is NOT automatically the canal that hydraulically serves the well.
+Network density/proximity is feasibility evidence for the next topology/
+gauge-identification stage, not an irrigation treatment assignment.
+
+C2C STATUS: PASS

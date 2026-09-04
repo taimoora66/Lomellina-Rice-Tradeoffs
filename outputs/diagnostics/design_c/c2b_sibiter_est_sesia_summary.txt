@@ -1,0 +1,32 @@
+DESIGN C — C2B PUBLIC SIBITER / EST SESIA NETWORK
+===================================================
+
+Association models fitted: 0
+Frozen artifacts modified: 0
+
+Public server verification:
+  Est Sesia manager code: 1
+  Est Sesia manager label: ASSOCIAZIONE IRRIGAZIONE EST SESIA
+
+Est Sesia network inside study footprint:
+  feature segments: 148
+  authoritative object IDs: 148
+  query batches: 2
+  completeness verified: YES
+  named segments: 148
+  unique canal names: 127
+  unique canal codes: 127
+
+Outputs:
+  c2b_est_sesia_canal_inventory.csv
+  c2b_sibiter_layer_summary.csv
+  c2b_sibiter_est_sesia_qa.json
+  c2b_sibiter_public_acquisition_manifest.csv
+
+NEXT
+----
+Inspect canal names/codes and comprensorio attributes.
+Then spatially link groundwater wells to the public Est Sesia network
+WITHOUT using groundwater values or association results.
+
+C2B STATUS: PASS

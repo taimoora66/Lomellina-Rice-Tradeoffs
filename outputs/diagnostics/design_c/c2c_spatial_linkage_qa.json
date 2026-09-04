@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2C_GROUNDWATER_IRRIGATION_NETWORK_LINKAGE",
+  "association_models_fitted": 0,
+  "groundwater_measurements_read": 0,
+  "flooding_measurements_read": 0,
+  "frozen_artifacts_modified": 0,
+  "stations_with_coordinates_n": 68,
+  "est_sesia_segments_n": 148,
+  "nearest_est_sesia_distance_m": {
+    "min": null,
+    "median": null,
+    "p75": null,
+    "max": null
+  },
+  "stations_within_distance_m": {
+    "250": 0,
+    "500": 0,
+    "1000": 0,
+    "2000": 0,
+    "5000": 0,
+    "10000": 0
+  },
+  "stations_with_comprensorio_match_n": 0
+}

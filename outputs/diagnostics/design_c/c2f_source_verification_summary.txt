@@ -1,0 +1,49 @@
+DESIGN C — C2F SOURCE-LEVEL EXACT GAUGE EVIDENCE VERIFICATION
+===================================================================
+
+Exact input rows: 77
+Deduplicated source-evidence rows: 77
+Duplicate rows removed: 0
+Canals with source-level exact evidence: 12
+Canals with Class A evidence: 2
+Canals with Class B evidence: 12
+Candidate identifier rows: 4
+Accepted gauges: 0
+
+TOP SOURCE-VERIFICATION TARGETS
+-------------------------------
+- CONSORTILE (COLATORE) | A=2 | B=9 | sources=4 | score=11
+- PAVIA (SUBDIRAMATORE) | A=2 | B=6 | sources=5 | score=9
+- ROGGIONE DI SARTIRANA | A=0 | B=9 | sources=1 | score=9
+- LANGOSCO (NAVIGLIO) | A=0 | B=15 | sources=4 | score=7
+- CASTELLANA (ROGGIA) | A=0 | B=7 | sources=1 | score=6
+- VECCHIA (ROGGIA) | A=0 | B=5 | sources=1 | score=6
+- VIGEVANO (DIRAMATORE) | A=0 | B=5 | sources=1 | score=6
+- BIRAGA (ROGGIA) | A=0 | B=1 | sources=1 | score=6
+- MALASPINA (CAVO) | A=0 | B=3 | sources=1 | score=4
+- NICORVO (CAVO) | A=0 | B=3 | sources=1 | score=4
+- CAVO REALE | A=0 | B=1 | sources=1 | score=4
+- VIADANE (CAVO) | A=0 | B=1 | sources=1 | score=3
+- VALLARA (COLATORE) O FOSSE O PENNE (COLATORE DELLE) | A=0 | B=0 | sources=0 | score=3
+- ROSASCO (FOSSA COMUNALE DI) | A=0 | B=0 | sources=0 | score=3
+- GAMARRA MANUFATTA (ROGGIA) | A=0 | B=0 | sources=0 | score=3
+- CERETTO BASSO (CAVO) | A=0 | B=0 | sources=0 | score=3
+- VECCHIO PLEZZA (FONTANA) | A=0 | B=0 | sources=0 | score=3
+- DASSI CIMITERO (CAVO) | A=0 | B=0 | sources=0 | score=3
+- CASTELLANETTA (ROGGIA) | A=0 | B=0 | sources=0 | score=3
+- BIRAGHETTA II TRATTO (ROGGIA) | A=0 | B=0 | sources=0 | score=3
+
+INTERPRETATION
+--------------
+Class A = exact canal name + hydrometric text + parsed candidate identifier.
+Class B = exact canal name + hydrometric text, no parsed identifier.
+Neither class establishes a valid gauge until the source is checked.
+
+NEXT
+----
+Inspect Class A rows first, then Class B rows.
+Verify gauge/station identity, location, variable, temporal coverage,
+and whether data are publicly downloadable before any station-to-canal
+hydrological assignment.
+
+C2F STATUS: PASS

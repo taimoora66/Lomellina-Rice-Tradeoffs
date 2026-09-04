@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2A_PUBLIC_IRRIGATION_ARCHIVE_STRUCTURE",
+  "association_models_fitted": 0,
+  "frozen_artifacts_modified": 0,
+  "manifest_files_verified_n": 17,
+  "manifest_sha256_failures_n": 0,
+  "isil_extracted_files_n": 6,
+  "text_sources_extracted_n": 22,
+  "evidence_snippets_n": 2306,
+  "riru_layer_records_n": 19,
+  "candidate_public_endpoints_n": 397,
+  "evidence_files": {
+    "est_sesia": 8,
+    "lomellina": 10,
+    "flow_volume": 18,
+    "gauge_monitoring": 18
+  },
+  "ocr_used": false
+}
