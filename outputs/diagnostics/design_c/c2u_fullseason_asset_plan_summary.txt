@@ -1,0 +1,23 @@
+DESIGN C - C2U FULL-SEASON SENTINEL-1 ASSET RESOLUTION
+==============================================================================
+
+C2T frozen scene IDs: 2170
+Resolved STAC scene IDs: 2165
+Metadata mismatches against C2T: 0
+Non-IW candidate scenes documented: 2
+Candidate scenes without VV+VH documented: 5
+Outcome-blind technical exclusions: 5
+Measurement-eligible IW+VV/VH scenes: 2165 / 2170
+Duplicate/alternate item groups among eligible scenes: 31
+Canonical scenes after duplicate collapse: 2134
+Missing selected VV/VH raster assets: 0
+Missing required calibration/noise/product schema assets: 0
+Year-track combinations retained: 44/44
+
+SAR raster pixels read: False
+Groundwater read: False
+RiceFloodIT flooding outcome read: False
+Threshold/classifier: False
+C2T temporal rule modified: False
+
+C2U-RR STATUS: PASS

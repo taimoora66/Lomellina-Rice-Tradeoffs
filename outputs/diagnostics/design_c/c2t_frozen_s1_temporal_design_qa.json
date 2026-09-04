@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "stage": "DESIGN_C_C2T_FREEZE_FULL_S1_TEMPORAL_DESIGN",
+  "generated_utc": "2026-09-03T12:17:45.109055+00:00",
+  "chosen_scene_inventory": "data\\design_c\\raw\\sentinel1\\sentinel1_grd_scene_inventory_2014_latest2026.csv",
+  "chosen_date_col": "datetime",
+  "chosen_orbit_state_col": "orbit_state",
+  "chosen_relative_orbit_col": "relative_orbit",
+  "chosen_scene_id_col": "scene_id",
+  "chosen_platform_col": "platform",
+  "years": [
+    2015,
+    2025
+  ],
+  "rice_season": "04-01 to 09-30 inclusive",
+  "stable_tracks": [
+    {
+      "orbit_state": "ascending",
+      "relative_orbit": 15
+    },
+    {
+      "orbit_state": "ascending",
+      "relative_orbit": 88
+    },
+    {
+      "orbit_state": "descending",
+      "relative_orbit": 66
+    },
+    {
+      "orbit_state": "descending",
+      "relative_orbit": 168
+    }
+  ],
+  "scenes_n": 2170,
+  "acquisition_dates_n": 822,
+  "year_track_combinations_expected_n": 44,
+  "year_track_combinations_present_n": 44,
+  "missing_year_track_combinations": [],
+  "groundwater_values_read": false,
+  "irrigation_flow_values_read": false,
+  "ricefloodit_flood_outcomes_read": false,
+  "sensor_response_values_used_for_selection": false,
+  "inundation_threshold_selected": false,
+  "classifier_fitted": false,
+  "feature_optimization_performed": false
+}

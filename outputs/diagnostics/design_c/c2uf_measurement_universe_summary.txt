@@ -1,0 +1,45 @@
+DESIGN C - C2U-F FINAL SENTINEL-1 MEASUREMENT-UNIVERSE FREEZE
+==================================================================================
+
+C2T candidate scene records: 2170 / 2170
+Resolved STAC items: 2170 / 2170
+PRIMARY_VVVH scene records: 2165
+AUXILIARY_HHHV scene records: 3
+OUTSIDE_STUDY_SUPPORT scene records: 2
+Primary canonical VV/VH scenes: 2134
+Candidate year-track combinations: 44/44
+Primary VV/VH year-track combinations: 44/44
+
+2016 AUXILIARY HH/HV
+--------------------
+2016-07-03 ASC15 union support coverage: 1.000000
+2016-08-20 ASC15 union support coverage: 1.000000
+
+2025 EW AUDIT-ONLY
+------------------
+2025-04-21 DESC66 EW HH/HV union support coverage: 0.000000
+
+PRIMARY SPATIAL-COVERAGE POLICY
+-------------------------------
+Partial primary scene coverage is valid.
+Observed support points are retained.
+Uncovered support points remain missing and are not imputed.
+The C2U-S >=99% rescue threshold is NOT a scene inclusion threshold.
+
+POLARIZATION POLICY
+-------------------
+HH/HV is retained only as a separate auxiliary stream.
+HH is never substituted for VV.
+HV is never substituted for VH.
+
+FIREWALL
+--------
+C2T modified: False
+SAR pixel values read: False
+Groundwater read: False
+Irrigation flow read: False
+RiceFloodIT flood values read: False
+Sensor-response optimization: False
+Threshold/classifier: False
+
+C2U-F STATUS: PASS

@@ -1,0 +1,2648 @@
+
+################################################################################
+FILE: .\scripts\06_design_c\16_resolve_frozen_sentinel1_assets.py
+################################################################################
+
+"""Design C — C2K Sentinel-1 Frozen Validation Asset Resolution.
+
+PURPOSE
+-------
+Resolve exact STAC item metadata and assets for the C2J-frozen SAR
+validation manifest, without reading SAR pixel values.
+
+This stage answers:
+- Which platform (S1A/S1B/S1C) produced each frozen target?
+- Which STAC assets are available for each scene?
+- Are multiple same-date scene IDs true adjacent frames, duplicate/alternate
+  representations, or overlapping frames?
+- What exact assets should the next measurement-validation stage read?
+
+FIREWALL
+--------
+This stage DOES NOT:
+- open/read raster pixel values;
+- calculate VV/VH statistics;
+- classify flooding;
+- read groundwater levels;
+- read irrigation discharge;
+- fit any association model;
+- alter the C2J frozen universe.
+
+INPUT
+-----
+outputs/diagnostics/design_c/c2j_sar_validation_manifest.csv
+
+OUTPUTS
+-------
+outputs/diagnostics/design_c/
+    c2k_validation_item_metadata.csv
+    c2k_validation_asset_inventory.csv
+    c2k_validation_mosaic_qa.csv
+    c2k_validation_asset_resolution_qa.json
+    c2k_validation_asset_resolution_summary.txt
+
+RUN
+---
+python scripts/06_design_c/16_resolve_frozen_sentinel1_assets.py
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from urllib.parse import quote
+from urllib.request import Request, urlopen
+
+import pandas as pd
+
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "outputs" / "diagnostics" / "design_c"
+OUT.mkdir(parents=True, exist_ok=True)
+
+MANIFEST = OUT / "c2j_sar_validation_manifest.csv"
+
+STAC_ROOT = "https://stac.dataspace.copernicus.eu/v1"
+COLLECTION = "sentinel-1-grd"
+
+
+def fetch_json(url: str, timeout: int = 120) -> dict:
+    req = Request(
+        url,
+        headers={"User-Agent": "DesignC-C2K-frozen-sentinel-assets/1.0"},
+    )
+    with urlopen(req, timeout=timeout) as r:
+        return json.loads(r.read())
+
+
+def item_url(scene_id: str) -> str:
+    return (
+        f"{STAC_ROOT}/collections/{COLLECTION}/items/"
+        + quote(scene_id, safe="")
+    )
+
+
+def bbox_overlap_fraction(a, b):
+    """Intersection area / smaller bbox area in lon-lat planar degrees.
+    Metadata QA only; not a physical area calculation.
+    """
+    if not a or not b or len(a) < 4 or len(b) < 4:
+        return None
+
+    ax1, ay1, ax2, ay2 = map(float, a[:4])
+    bx1, by1, bx2, by2 = map(float, b[:4])
+
+    ix1, iy1 = max(ax1, bx1), max(ay1, by1)
+    ix2, iy2 = min(ax2, bx2), min(ay2, by2)
+
+    iw = max(0.0, ix2 - ix1)
+    ih = max(0.0, iy2 - iy1)
+    inter = iw * ih
+
+    aa = max(0.0, ax2 - ax1) * max(0.0, ay2 - ay1)
+    ba = max(0.0, bx2 - bx1) * max(0.0, by2 - by1)
+
+    denom = min(aa, ba)
+    return inter / denom if denom > 0 else None
+
+
+def main():
+    print("DESIGN C - C2K FROZEN SENTINEL-1 ASSET RESOLUTION")
+    print("=" * 64)
+    print("NO SAR raster pixels read.")
+    print("NO VV/VH statistics calculated.")
+    print("NO flooding values read.")
+    print("NO groundwater-level values read.")
+    print("NO irrigation-flow values read.")
+    print("NO association model fitted.")
+    print("NO C2J frozen rule modified.\n")
+
+    if not MANIFEST.exists():
+        raise FileNotFoundError(
+            f"Missing C2J manifest: {MANIFEST}"
+        )
+
+    m = pd.read_csv(MANIFEST)
+
+    required = {
+        "anchor_year", "season_phase", "orbit_state", "relative_orbit",
+        "selected_date", "selection_status", "scene_ids"
+    }
+    missing = required - set(m.columns)
+    if missing:
+        raise AssertionError(
+            f"C2J manifest missing required columns: {sorted(missing)}"
+        )
+
+    m = m[m["selection_status"].eq("SELECTED")].copy()
+
+    item_rows = []
+    asset_rows = []
+
+    unique_scene_ids = sorted({
+        sid
+        for x in m["scene_ids"].dropna().astype(str)
+        for sid in x.split("|")
+        if sid.strip()
+    })
+
+    print(f"Frozen validation targets: {len(m)}")
+    print(f"Unique STAC scene IDs to resolve: {len(unique_scene_ids)}\n")
+
+    item_cache = {}
+
+    for i, sid in enumerate(unique_scene_ids, 1):
+        url = item_url(sid)
+        try:
+            item = fetch_json(url)
+            err = None
+        except Exception as e:
+            item = {}
+            err = repr(e)
+
+        item_cache[sid] = item
+
+        p = item.get("properties", {}) if item else {}
+        bbox = item.get("bbox") if item else None
+        assets = item.get("assets", {}) if item else {}
+
+        scene_platform = (
+            p.get("platform")
+            or p.get("constellation")
+            or sid[:3]
+        )
+
+        item_rows.append({
+            "scene_id": sid,
+            "resolve_status": "OK" if err is None else "ERROR",
+            "resolve_error": err,
+            "platform": scene_platform,
+            "datetime": p.get("datetime") or p.get("start_datetime"),
+            "end_datetime": p.get("end_datetime"),
+            "instrument_mode": p.get("sar:instrument_mode"),
+            "polarizations": "|".join(
+                map(str, p.get("sar:polarizations", []) or [])
+            ),
+            "orbit_state": p.get("sat:orbit_state"),
+            "relative_orbit": p.get("sat:relative_orbit"),
+            "absolute_orbit": p.get("sat:absolute_orbit"),
+            "product_type": p.get("sar:product_type"),
+            "processing_level": p.get("processing:level"),
+            "bbox": json.dumps(bbox) if bbox is not None else None,
+            "asset_count": len(assets),
+            "stac_item_url": url,
+        })
+
+        for key, a in assets.items():
+            href = a.get("href")
+            roles = a.get("roles", []) or []
+            asset_rows.append({
+                "scene_id": sid,
+                "asset_key": key,
+                "title": a.get("title"),
+                "media_type": a.get("type"),
+                "roles": "|".join(map(str, roles)),
+                "href": href,
+                "is_data_role": "data" in roles,
+                "looks_like_tiff": bool(
+                    href and str(href).lower().split("?")[0].endswith(
+                        (".tif", ".tiff")
+                    )
+                ),
+            })
+
+        print(f"[{i:02d}/{len(unique_scene_ids):02d}] {sid}: "
+              f"{'OK' if err is None else 'ERROR'}; assets={len(assets)}")
+
+    items = pd.DataFrame(item_rows)
+    assets = pd.DataFrame(asset_rows)
+
+    items.to_csv(
+        OUT / "c2k_validation_item_metadata.csv",
+        index=False,
+    )
+    assets.to_csv(
+        OUT / "c2k_validation_asset_inventory.csv",
+        index=False,
+    )
+
+    # Build target-level mosaic QA from exact frozen manifest.
+    mosaic_rows = []
+
+    for _, r in m.iterrows():
+        ids = [x for x in str(r["scene_ids"]).split("|") if x]
+        subset = items[items["scene_id"].isin(ids)].copy()
+
+        bboxes = {}
+        for sid in ids:
+            it = item_cache.get(sid, {})
+            bboxes[sid] = it.get("bbox") if it else None
+
+        pair_overlaps = []
+        for i in range(len(ids)):
+            for j in range(i + 1, len(ids)):
+                ov = bbox_overlap_fraction(
+                    bboxes.get(ids[i]),
+                    bboxes.get(ids[j]),
+                )
+                pair_overlaps.append({
+                    "a": ids[i],
+                    "b": ids[j],
+                    "overlap_fraction_of_smaller_bbox": ov,
+                })
+
+        overlap_vals = [
+            x["overlap_fraction_of_smaller_bbox"]
+            for x in pair_overlaps
+            if x["overlap_fraction_of_smaller_bbox"] is not None
+        ]
+
+        platforms = sorted(
+            subset["platform"].dropna().astype(str).unique()
+        )
+        datetimes = sorted(
+            subset["datetime"].dropna().astype(str).unique()
+        )
+
+        duplicate_exact_bbox_pairs = 0
+        near_duplicate_bbox_pairs = 0
+
+        for x in pair_overlaps:
+            ov = x["overlap_fraction_of_smaller_bbox"]
+            if ov is not None and ov >= 0.999999:
+                duplicate_exact_bbox_pairs += 1
+            elif ov is not None and ov >= 0.95:
+                near_duplicate_bbox_pairs += 1
+
+        mosaic_rows.append({
+            "anchor_year": int(r["anchor_year"]),
+            "season_phase": r["season_phase"],
+            "selected_date": r["selected_date"],
+            "orbit_state": r["orbit_state"],
+            "relative_orbit": int(r["relative_orbit"]),
+            "scene_ids_n": len(ids),
+            "resolved_scene_ids_n": int(
+                subset["resolve_status"].eq("OK").sum()
+            ),
+            "platforms": "|".join(platforms),
+            "platforms_n": len(platforms),
+            "unique_item_datetimes_n": len(datetimes),
+            "item_datetimes": "|".join(datetimes),
+            "pairwise_bbox_comparisons_n": len(pair_overlaps),
+            "exact_or_effectively_exact_bbox_overlap_pairs_n":
+                duplicate_exact_bbox_pairs,
+            "near_duplicate_bbox_overlap_pairs_n":
+                near_duplicate_bbox_pairs,
+            "max_pairwise_overlap_fraction_of_smaller_bbox": (
+                max(overlap_vals) if overlap_vals else None
+            ),
+            "min_pairwise_overlap_fraction_of_smaller_bbox": (
+                min(overlap_vals) if overlap_vals else None
+            ),
+            "requires_multiple_scene_mosaic": len(ids) > 1,
+        })
+
+    mosaic = pd.DataFrame(mosaic_rows)
+    mosaic.to_csv(
+        OUT / "c2k_validation_mosaic_qa.csv",
+        index=False,
+    )
+
+    unresolved_n = int(
+        (items["resolve_status"] != "OK").sum()
+    )
+
+    data_assets_n = (
+        int(assets["is_data_role"].sum())
+        if len(assets) and "is_data_role" in assets.columns
+        else 0
+    )
+
+    tiff_assets_n = (
+        int(assets["looks_like_tiff"].sum())
+        if len(assets) and "looks_like_tiff" in assets.columns
+        else 0
+    )
+
+    platforms = sorted(
+        items["platform"].dropna().astype(str).unique()
+    )
+
+    qa = {
+        "status": "PASS" if unresolved_n == 0 else "PASS_WITH_LIMITATIONS",
+        "stage": "DESIGN_C_C2K_FROZEN_SENTINEL_ASSET_RESOLUTION",
+        "frozen_validation_targets_n": int(len(m)),
+        "unique_scene_ids_n": int(len(unique_scene_ids)),
+        "resolved_scene_ids_n": int(
+            items["resolve_status"].eq("OK").sum()
+        ),
+        "unresolved_scene_ids_n": unresolved_n,
+        "platforms_present": platforms,
+        "asset_rows_n": int(len(assets)),
+        "data_role_assets_n": data_assets_n,
+        "tiff_like_assets_n": tiff_assets_n,
+        "targets_requiring_multi_scene_mosaic_n": int(
+            mosaic["requires_multiple_scene_mosaic"].sum()
+        ),
+        "targets_with_effectively_duplicate_bbox_pairs_n": int(
+            (
+                mosaic[
+                    "exact_or_effectively_exact_bbox_overlap_pairs_n"
+                ] > 0
+            ).sum()
+        ),
+        "sar_raster_pixels_read": 0,
+        "vv_vh_statistics_calculated": 0,
+        "flooding_values_read": 0,
+        "groundwater_level_values_read": 0,
+        "irrigation_flow_values_read": 0,
+        "association_models_fitted": 0,
+        "c2j_frozen_rule_modified": False,
+        "next_stage": (
+            "Canonicalize exact data assets for each frozen target, then "
+            "read only the required spatial windows for independent SAR "
+            "measurement validation."
+        ),
+    }
+
+    (OUT / "c2k_validation_asset_resolution_qa.json").write_text(
+        json.dumps(qa, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    lines = [
+        "DESIGN C - C2K FROZEN SENTINEL-1 ASSET RESOLUTION",
+        "=" * 62,
+        "",
+        f"Frozen validation targets: {len(m)}",
+        f"Unique scene IDs: {len(unique_scene_ids)}",
+        f"Resolved scene IDs: {len(unique_scene_ids) - unresolved_n}",
+        f"Unresolved scene IDs: {unresolved_n}",
+        f"Platforms present: {'|'.join(platforms)}",
+        f"Total STAC asset rows: {len(assets)}",
+        f"Data-role assets: {data_assets_n}",
+        f"TIFF-like assets: {tiff_assets_n}",
+        "",
+        "MOSAIC QA",
+        "---------",
+        mosaic.to_string(index=False),
+        "",
+        "ITEM METADATA",
+        "-------------",
+        items.to_string(index=False),
+        "",
+        "FIREWALL",
+        "--------",
+        "No raster pixels were opened/read.",
+        "No VV/VH values were calculated.",
+        "No flooding, groundwater, or irrigation outcomes were read.",
+        "C2J primary universe was not modified.",
+        "",
+        f"C2K STATUS: {qa['status']}",
+    ]
+
+    txt = "\n".join(lines) + "\n"
+    (OUT / "c2k_validation_asset_resolution_summary.txt").write_text(
+        txt, encoding="utf-8"
+    )
+
+    print("\n" + txt)
+
+
+if __name__ == "__main__":
+    main()
+
+################################################################################
+FILE: .\scripts\06_design_c\18_canonicalize_sentinel1_validation_assets.py
+################################################################################
+
+"""Design C — C2L Canonical Sentinel-1 Asset Plan.
+
+PURPOSE
+-------
+Using the complete C2K-R metadata/assets, build a canonical raster-asset plan
+for the 18 C2J-frozen validation targets BEFORE opening any SAR raster.
+
+This stage resolves:
+1. duplicate/alternate STAC item representations with identical acquisition
+   geometry/time;
+2. exact VV and VH data assets;
+3. same-track same-date mosaic membership;
+4. platform identity (S1A/S1B/S1C);
+5. a deterministic canonical scene/asset plan for the next raster-reading stage.
+
+FIREWALL
+--------
+- no raster pixels opened/read
+- no VV/VH statistics calculated
+- no flooding values read
+- no groundwater values read
+- no irrigation-flow values read
+- no thresholds tuned
+- no association model fitted
+- no C2J scientific rule modified
+
+INPUTS
+------
+outputs/diagnostics/design_c/c2j_sar_validation_manifest.csv
+outputs/diagnostics/design_c/c2kr_validation_item_metadata_complete.csv
+outputs/diagnostics/design_c/c2kr_validation_asset_inventory_complete.csv
+
+OUTPUTS
+-------
+outputs/diagnostics/design_c/
+    c2l_scene_duplicate_groups.csv
+    c2l_canonical_scene_inventory.csv
+    c2l_canonical_vvvh_asset_plan.csv
+    c2l_target_mosaic_asset_plan.csv
+    c2l_canonical_asset_plan_qa.json
+    c2l_canonical_asset_plan_summary.txt
+
+RUN
+---
+python scripts/06_design_c/18_canonicalize_sentinel1_validation_assets.py
+"""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+import pandas as pd
+
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "outputs" / "diagnostics" / "design_c"
+OUT.mkdir(parents=True, exist_ok=True)
+
+MANIFEST = OUT / "c2j_sar_validation_manifest.csv"
+ITEMS = OUT / "c2kr_validation_item_metadata_complete.csv"
+ASSETS = OUT / "c2kr_validation_asset_inventory_complete.csv"
+
+
+def norm(x):
+    return str(x).strip().lower()
+
+
+def classify_pol_asset(row):
+    """Return VV, VH, or None from metadata only."""
+    text = " ".join(
+        [
+            norm(row.get("asset_key", "")),
+            norm(row.get("title", "")),
+            norm(row.get("href", "")),
+        ]
+    )
+
+    # Prefer token-style matches; avoid accidental substring matches.
+    vv = bool(re.search(r"(^|[^a-z0-9])vv([^a-z0-9]|$)", text))
+    vh = bool(re.search(r"(^|[^a-z0-9])vh([^a-z0-9]|$)", text))
+
+    if vv and not vh:
+        return "VV"
+    if vh and not vv:
+        return "VH"
+    return None
+
+
+def parse_bbox(x):
+    if pd.isna(x):
+        return None
+    try:
+        b = json.loads(x) if isinstance(x, str) else x
+        if b and len(b) >= 4:
+            return tuple(round(float(v), 6) for v in b[:4])
+    except Exception:
+        return None
+    return None
+
+
+def platform_norm(scene_id, platform):
+    p = str(platform).strip().upper()
+    if p in {"S1A", "S1B", "S1C"}:
+        return p
+    s = str(scene_id)[:3].upper()
+    return s if s in {"S1A", "S1B", "S1C"} else p
+
+
+def main():
+    print("DESIGN C - C2L CANONICAL SENTINEL-1 ASSET PLAN")
+    print("=" * 62)
+    print("NO SAR raster pixels read.")
+    print("NO VV/VH statistics calculated.")
+    print("NO flooding, groundwater, or irrigation outcomes read.")
+    print("NO C2J rule modified.\n")
+
+    for p in [MANIFEST, ITEMS, ASSETS]:
+        if not p.exists():
+            raise FileNotFoundError(f"Missing required input: {p}")
+
+    manifest = pd.read_csv(MANIFEST)
+    items = pd.read_csv(ITEMS)
+    assets = pd.read_csv(ASSETS)
+
+    items["datetime"] = pd.to_datetime(
+        items["datetime"], errors="coerce", utc=True
+    )
+    items["end_datetime"] = pd.to_datetime(
+        items["end_datetime"], errors="coerce", utc=True
+    )
+    items["platform_norm"] = [
+        platform_norm(s, p)
+        for s, p in zip(items["scene_id"], items["platform"])
+    ]
+    items["_bbox_key"] = items["bbox"].apply(parse_bbox)
+
+    # Duplicate/alternate representation key:
+    # same platform, acquisition start/end, orbit, and bbox.
+    dup_cols = [
+        "platform_norm", "datetime", "end_datetime",
+        "orbit_state", "relative_orbit", "_bbox_key"
+    ]
+
+    items["_dup_key"] = (
+        items[dup_cols]
+        .astype(str)
+        .agg("|".join, axis=1)
+    )
+
+    dup_summary = (
+        items.groupby("_dup_key")
+        .agg(
+            scene_ids_n=("scene_id", "nunique"),
+            scene_ids=("scene_id", lambda x: "|".join(sorted(set(map(str, x))))),
+            platform=("platform_norm", "first"),
+            datetime=("datetime", "first"),
+            end_datetime=("end_datetime", "first"),
+            orbit_state=("orbit_state", "first"),
+            relative_orbit=("relative_orbit", "first"),
+            bbox=("bbox", "first"),
+        )
+        .reset_index()
+    )
+    dup_summary["is_duplicate_group"] = dup_summary["scene_ids_n"] > 1
+    dup_summary.to_csv(
+        OUT / "c2l_scene_duplicate_groups.csv", index=False
+    )
+
+    # Asset classification.
+    assets["polarization_asset"] = assets.apply(
+        classify_pol_asset, axis=1
+    )
+
+    # Score each scene for canonicalization:
+    # prefer both VV/VH identified, data-role assets, TIFF-like assets,
+    # then deterministic lexical scene_id.
+    asset_scene = (
+        assets.groupby("scene_id")
+        .agg(
+            vv_assets_n=("polarization_asset", lambda x: int((x == "VV").sum())),
+            vh_assets_n=("polarization_asset", lambda x: int((x == "VH").sum())),
+            data_role_assets_n=("is_data_role", "sum"),
+            tiff_assets_n=("looks_like_tiff", "sum"),
+            asset_rows_n=("asset_key", "count"),
+        )
+        .reset_index()
+    )
+
+    ix = items.merge(asset_scene, on="scene_id", how="left")
+    for c in [
+        "vv_assets_n", "vh_assets_n", "data_role_assets_n",
+        "tiff_assets_n", "asset_rows_n"
+    ]:
+        ix[c] = ix[c].fillna(0).astype(int)
+
+    ix["has_both_vv_vh"] = (
+        (ix["vv_assets_n"] > 0) & (ix["vh_assets_n"] > 0)
+    )
+
+    canonical_rows = []
+    for key, g in ix.groupby("_dup_key"):
+        z = g.sort_values(
+            [
+                "has_both_vv_vh",
+                "data_role_assets_n",
+                "tiff_assets_n",
+                "asset_rows_n",
+                "scene_id",
+            ],
+            ascending=[False, False, False, False, True],
+        ).copy()
+
+        chosen = z.iloc[0]
+
+        for rank, (_, r) in enumerate(z.iterrows(), 1):
+            canonical_rows.append({
+                "duplicate_group_key": key,
+                "scene_id": r["scene_id"],
+                "canonical_rank": rank,
+                "is_canonical_scene": rank == 1,
+                "canonical_scene_id": chosen["scene_id"],
+                "duplicate_group_size": len(z),
+                "platform": r["platform_norm"],
+                "datetime": r["datetime"],
+                "end_datetime": r["end_datetime"],
+                "orbit_state": r["orbit_state"],
+                "relative_orbit": r["relative_orbit"],
+                "bbox": r["bbox"],
+                "vv_assets_n": r["vv_assets_n"],
+                "vh_assets_n": r["vh_assets_n"],
+                "data_role_assets_n": r["data_role_assets_n"],
+                "tiff_assets_n": r["tiff_assets_n"],
+                "asset_rows_n": r["asset_rows_n"],
+            })
+
+    canon = pd.DataFrame(canonical_rows)
+    canon.to_csv(
+        OUT / "c2l_canonical_scene_inventory.csv",
+        index=False,
+    )
+
+    canonical_ids = set(
+        canon.loc[canon["is_canonical_scene"], "scene_id"].astype(str)
+    )
+
+    # Candidate exact polarization assets for canonical scenes only.
+    a = assets.loc[
+        assets["scene_id"].astype(str).isin(canonical_ids)
+        & assets["polarization_asset"].isin(["VV", "VH"])
+    ].copy()
+
+    # Rank asset choices within scene x polarization.
+    # Prefer data role, then TIFF-like, then key/href lexical.
+    a = a.sort_values(
+        [
+            "scene_id", "polarization_asset",
+            "is_data_role", "looks_like_tiff",
+            "asset_key", "href"
+        ],
+        ascending=[True, True, False, False, True, True],
+    )
+    a["asset_rank"] = (
+        a.groupby(["scene_id", "polarization_asset"])
+        .cumcount() + 1
+    )
+    a["is_selected_asset"] = a["asset_rank"].eq(1)
+
+    a.to_csv(
+        OUT / "c2l_canonical_vvvh_asset_plan.csv",
+        index=False,
+    )
+
+    selected = a[a["is_selected_asset"]].copy()
+
+    # Map original frozen scene IDs to canonical scene IDs.
+    map_original_to_canon = dict(
+        zip(
+            canon["scene_id"].astype(str),
+            canon["canonical_scene_id"].astype(str),
+        )
+    )
+
+    manifest = manifest[
+        manifest["selection_status"].eq("SELECTED")
+    ].copy()
+
+    target_rows = []
+
+    for _, r in manifest.iterrows():
+        original_ids = [
+            x for x in str(r["scene_ids"]).split("|") if x
+        ]
+
+        canonical_target_ids = sorted(set(
+            map_original_to_canon.get(x, x) for x in original_ids
+        ))
+
+        for sid in canonical_target_ids:
+            im = items[items["scene_id"].astype(str).eq(sid)]
+            sel = selected[selected["scene_id"].astype(str).eq(sid)]
+
+            vv = sel[sel["polarization_asset"].eq("VV")]
+            vh = sel[sel["polarization_asset"].eq("VH")]
+
+            target_rows.append({
+                "anchor_year": int(r["anchor_year"]),
+                "season_phase": r["season_phase"],
+                "selected_date": r["selected_date"],
+                "orbit_state": r["orbit_state"],
+                "relative_orbit": int(r["relative_orbit"]),
+                "canonical_scene_id": sid,
+                "platform": (
+                    platform_norm(
+                        sid,
+                        im.iloc[0]["platform"]
+                    )
+                    if len(im) else sid[:3]
+                ),
+                "vv_asset_found": len(vv) == 1,
+                "vv_asset_key": vv.iloc[0]["asset_key"] if len(vv) else None,
+                "vv_href": vv.iloc[0]["href"] if len(vv) else None,
+                "vh_asset_found": len(vh) == 1,
+                "vh_asset_key": vh.iloc[0]["asset_key"] if len(vh) else None,
+                "vh_href": vh.iloc[0]["href"] if len(vh) else None,
+            })
+
+    plan = pd.DataFrame(target_rows)
+
+    target_id_cols = [
+        "anchor_year", "season_phase", "selected_date",
+        "orbit_state", "relative_orbit"
+    ]
+
+    target_summary = (
+        plan.groupby(target_id_cols)
+        .agg(
+            canonical_scenes_n=("canonical_scene_id", "nunique"),
+            platforms=("platform", lambda x: "|".join(sorted(set(map(str, x))))),
+            vv_assets_complete=("vv_asset_found", "all"),
+            vh_assets_complete=("vh_asset_found", "all"),
+        )
+        .reset_index()
+    )
+
+    plan = plan.merge(
+        target_summary,
+        on=target_id_cols,
+        how="left",
+    )
+
+    plan.to_csv(
+        OUT / "c2l_target_mosaic_asset_plan.csv",
+        index=False,
+    )
+
+    duplicate_groups_n = int(
+        dup_summary["is_duplicate_group"].sum()
+    )
+    duplicate_scene_rows_n = int(
+        canon.loc[
+            canon["duplicate_group_size"] > 1,
+            "scene_id"
+        ].nunique()
+    )
+
+    vv_missing = int((~plan["vv_asset_found"]).sum())
+    vh_missing = int((~plan["vh_asset_found"]).sum())
+
+    targets_complete = int(
+        target_summary[
+            target_summary["vv_assets_complete"]
+            & target_summary["vh_assets_complete"]
+        ].shape[0]
+    )
+
+    qa = {
+        "status": (
+            "PASS"
+            if vv_missing == 0 and vh_missing == 0
+            else "PASS_WITH_LIMITATIONS"
+        ),
+        "stage": "DESIGN_C_C2L_CANONICAL_SENTINEL_ASSET_PLAN",
+        "frozen_targets_n": int(len(target_summary)),
+        "input_scene_ids_n": int(items["scene_id"].nunique()),
+        "duplicate_or_alternate_groups_n": duplicate_groups_n,
+        "scene_ids_in_duplicate_groups_n": duplicate_scene_rows_n,
+        "canonical_scene_ids_n": int(
+            canon["canonical_scene_id"].nunique()
+        ),
+        "selected_vv_assets_n": int(
+            (
+                selected["polarization_asset"] == "VV"
+            ).sum()
+        ),
+        "selected_vh_assets_n": int(
+            (
+                selected["polarization_asset"] == "VH"
+            ).sum()
+        ),
+        "target_scene_rows_missing_vv_asset_n": vv_missing,
+        "target_scene_rows_missing_vh_asset_n": vh_missing,
+        "targets_with_complete_vv_vh_assets_n": targets_complete,
+        "sar_raster_pixels_read": 0,
+        "vv_vh_statistics_calculated": 0,
+        "flooding_values_read": 0,
+        "groundwater_level_values_read": 0,
+        "irrigation_flow_values_read": 0,
+        "thresholds_tuned": 0,
+        "association_models_fitted": 0,
+        "c2j_frozen_rule_modified": False,
+        "canonicalization_rule": (
+            "Within identical platform/time/orbit/bbox groups, prefer scene "
+            "with both identifiable VV and VH assets, then more data-role "
+            "assets, then more TIFF assets, then lexical scene_id."
+        ),
+        "next_stage": (
+            "Open only the frozen canonical VV/VH assets and read only the "
+            "required study-area windows for SAR measurement validation."
+        ),
+    }
+
+    (OUT / "c2l_canonical_asset_plan_qa.json").write_text(
+        json.dumps(qa, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    lines = [
+        "DESIGN C - C2L CANONICAL SENTINEL-1 ASSET PLAN",
+        "=" * 60,
+        "",
+        f"Frozen targets: {len(target_summary)}",
+        f"Input scene IDs: {items['scene_id'].nunique()}",
+        f"Duplicate/alternate groups: {duplicate_groups_n}",
+        f"Canonical scene IDs: {canon['canonical_scene_id'].nunique()}",
+        f"Selected VV assets: {(selected['polarization_asset'] == 'VV').sum()}",
+        f"Selected VH assets: {(selected['polarization_asset'] == 'VH').sum()}",
+        f"Target-scene rows missing VV: {vv_missing}",
+        f"Target-scene rows missing VH: {vh_missing}",
+        f"Targets complete for VV+VH: {targets_complete}/{len(target_summary)}",
+        "",
+        "TARGET MOSAIC PLAN",
+        "------------------",
+        target_summary.to_string(index=False),
+        "",
+        "DUPLICATE / ALTERNATE ITEM GROUPS",
+        "---------------------------------",
+        dup_summary[
+            dup_summary["is_duplicate_group"]
+        ].to_string(index=False),
+        "",
+        "FIREWALL",
+        "--------",
+        "No raster pixels opened/read.",
+        "No VV/VH statistics calculated.",
+        "No flooding, groundwater, or irrigation outcomes read.",
+        "C2J frozen universe unchanged.",
+        "",
+        f"C2L STATUS: {qa['status']}",
+    ]
+
+    txt = "\n".join(lines) + "\n"
+    (OUT / "c2l_canonical_asset_plan_summary.txt").write_text(
+        txt,
+        encoding="utf-8",
+    )
+
+    print(txt)
+
+
+if __name__ == "__main__":
+    main()
+
+################################################################################
+FILE: .\scripts\06_design_c\19_audit_frozen_sentinel1_raster_signal.py
+################################################################################
+
+"""Design C — C2M Frozen Sentinel-1 Raster Signal QA (GCP revision).
+
+Corrected C2M implementation using embedded Sentinel-1 GCP geolocation.
+No flooding threshold or dB conversion is selected here.
+"""
+
+from __future__ import annotations
+
+import json, os, time
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import rasterio
+from pyproj import Transformer
+from rasterio.transform import GCPTransformer
+from rasterio.windows import Window
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "outputs" / "diagnostics" / "design_c"
+OUT.mkdir(parents=True, exist_ok=True)
+
+PLAN = OUT / "c2l_target_mosaic_asset_plan.csv"
+RICE_GEO = ROOT / "data" / "processed" / "publication_groundwater" / "ricefloodit_georef.csv"
+
+RASTER_ENV = {
+    "AWS_S3_ENDPOINT": "eodata.dataspace.copernicus.eu",
+    "AWS_VIRTUAL_HOSTING": "FALSE",
+    "AWS_DEFAULT_REGION": "default",
+}
+
+MAX_OPEN_ATTEMPTS = 4
+OPEN_DELAY_SECONDS = 2.0
+
+
+def require_credentials():
+    missing = [k for k in ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"] if not os.environ.get(k)]
+    if missing:
+        raise RuntimeError("Missing CDSE S3 environment credential(s): " + ", ".join(missing))
+
+
+def retry_open(href):
+    last = None
+    for attempt in range(1, MAX_OPEN_ATTEMPTS + 1):
+        try:
+            return rasterio.open(href), attempt, None
+        except Exception as e:
+            last = repr(e)
+            if attempt < MAX_OPEN_ATTEMPTS:
+                time.sleep(OPEN_DELAY_SECONDS * attempt)
+    return None, MAX_OPEN_ATTEMPTS, last
+
+
+def finite_stats(values):
+    x = np.asarray(values, dtype=float)
+    x = x[np.isfinite(x)]
+    if len(x) == 0:
+        return dict(n=0, min=None, p01=None, p10=None, median=None, mean=None,
+                    p90=None, p99=None, max=None, sd=None, zero_share=None)
+    return {
+        "n": int(len(x)),
+        "min": float(np.min(x)),
+        "p01": float(np.quantile(x, .01)),
+        "p10": float(np.quantile(x, .10)),
+        "median": float(np.median(x)),
+        "mean": float(np.mean(x)),
+        "p90": float(np.quantile(x, .90)),
+        "p99": float(np.quantile(x, .99)),
+        "max": float(np.max(x)),
+        "sd": float(np.std(x, ddof=1)) if len(x) > 1 else 0.0,
+        "zero_share": float(np.mean(x == 0)),
+    }
+
+
+def choose_point_id_column(g):
+    candidates = ["id","cell_id","pixel_id","grid_id","point_id","ricefloodit_id","fid","index"]
+    cmap = {str(c).strip().lower(): c for c in g.columns}
+    for c in candidates:
+        if c in cmap:
+            return cmap[c]
+    return None
+
+
+def transform_points_to_pixels(ds, lon, lat):
+    gcps, gcp_crs = ds.gcps
+    if not gcps:
+        raise RuntimeError("Raster contains no embedded GCPs.")
+    if gcp_crs is None:
+        raise RuntimeError("Raster GCP CRS is missing.")
+
+    tr = Transformer.from_crs("EPSG:4326", gcp_crs, always_xy=True)
+    x, y = tr.transform(np.asarray(lon, float), np.asarray(lat, float))
+
+    with GCPTransformer(gcps) as gt:
+        rows, cols = gt.rowcol(x, y)
+
+    rows = np.asarray(rows, dtype=np.int64)
+    cols = np.asarray(cols, dtype=np.int64)
+    inside = (rows >= 0) & (rows < ds.height) & (cols >= 0) & (cols < ds.width)
+    return rows, cols, inside, gcps, gcp_crs
+
+
+def sample_required_blocks(ds, rows, cols, inside):
+    out = np.full(len(rows), np.nan, dtype=float)
+    if ds.block_shapes:
+        block_h, block_w = map(int, ds.block_shapes[0])
+    else:
+        block_h, block_w = 512, 512
+
+    groups = {}
+    for i in np.flatnonzero(inside):
+        key = (int(rows[i] // block_h), int(cols[i] // block_w))
+        groups.setdefault(key, []).append(int(i))
+
+    for (br, bc), idxs in groups.items():
+        row_off = br * block_h
+        col_off = bc * block_w
+        h = min(block_h, ds.height - row_off)
+        w = min(block_w, ds.width - col_off)
+        arr = ds.read(1, window=Window(col_off, row_off, w, h), masked=False)
+
+        for i in idxs:
+            v = float(arr[int(rows[i]-row_off), int(cols[i]-col_off)])
+            if ds.nodata is not None and np.isclose(v, ds.nodata):
+                continue
+            out[i] = v
+
+    return out, len(groups)
+
+
+def sample_one_asset(href, lon, lat):
+    ds, attempts, err = retry_open(href)
+    if ds is None:
+        return None, {"open_status":"ERROR","open_attempts":attempts,"open_error":err}
+
+    with ds:
+        try:
+            rows, cols, inside, gcps, gcp_crs = transform_points_to_pixels(ds, lon, lat)
+            values, blocks_n = sample_required_blocks(ds, rows, cols, inside)
+            finite_n = int(np.isfinite(values).sum())
+            inside_n = int(inside.sum())
+            meta = {
+                "open_status":"OK",
+                "open_attempts":attempts,
+                "open_error":None,
+                "driver":ds.driver,
+                "affine_crs":str(ds.crs) if ds.crs else None,
+                "gcp_crs":str(gcp_crs),
+                "gcp_count":len(gcps),
+                "width":ds.width,
+                "height":ds.height,
+                "dtype":str(ds.dtypes[0]),
+                "nodata":float(ds.nodata) if ds.nodata is not None else None,
+                "scale":float(ds.scales[0]) if ds.scales else None,
+                "offset":float(ds.offsets[0]) if ds.offsets else None,
+                "units":str(ds.units[0]) if ds.units and ds.units[0] is not None else None,
+                "block_shape":"x".join(map(str, ds.block_shapes[0])) if ds.block_shapes else None,
+                "unique_blocks_read_n":blocks_n,
+                "points_mapped_inside_raster_n":inside_n,
+                "points_with_finite_raw_value_n":finite_n,
+                "inside_points_finite_share":float(finite_n/inside_n) if inside_n else None,
+            }
+            return values, meta
+        except Exception as e:
+            return None, {"open_status":"ERROR","open_attempts":attempts,"open_error":repr(e)}
+
+
+def main():
+    print("DESIGN C - C2M FROZEN SENTINEL-1 RASTER SIGNAL QA (GCP REVISION)")
+    print("="*74)
+    print("THIS STAGE READS frozen SAR raster pixels.")
+    print("Embedded GCPs are used for geolocation.")
+    print("Only required raster blocks are read.")
+    print("NO flooding threshold is selected.")
+    print("NO existing flooding/exposure outcomes are read.")
+    print("NO groundwater-level values are read.")
+    print("NO irrigation-flow values are read.")
+    print("NO association model is fitted.")
+    print("C2J frozen acquisition universe is unchanged.\n")
+
+    require_credentials()
+    plan = pd.read_csv(PLAN)
+    geo = pd.read_csv(RICE_GEO)
+    geo["lon"] = pd.to_numeric(geo["lon"], errors="coerce")
+    geo["lat"] = pd.to_numeric(geo["lat"], errors="coerce")
+    geo = geo.dropna(subset=["lon","lat"]).copy()
+
+    pid = choose_point_id_column(geo)
+    geo["_point_id"] = geo[pid].astype(str) if pid else [f"ricept_{i}" for i in range(len(geo))]
+    points = geo.drop_duplicates(["lon","lat"]).reset_index(drop=True).copy()
+    lon = points["lon"].to_numpy(float)
+    lat = points["lat"].to_numpy(float)
+
+    print(f"Canonical target-scene rows: {len(plan)}")
+    print(f"Unique RiceFloodIT support coordinates: {len(points)}")
+    print("Credentials detected: YES (values not printed)\n")
+
+    expected = []
+    for _, r in plan.iterrows():
+        for pol in ["VV","VH"]:
+            expected.append((str(r.canonical_scene_id), pol, str(r[f"{pol.lower()}_href"])))
+    expected = list(dict.fromkeys(expected))
+
+    cache = {}
+    asset_rows = []
+
+    with rasterio.Env(**RASTER_ENV):
+        for j,(scene,pol,href) in enumerate(expected,1):
+            r = plan[plan.canonical_scene_id.astype(str).eq(scene)].iloc[0]
+            print(f"[{j:02d}/{len(expected):02d}] {scene} {pol}")
+            values, meta = sample_one_asset(href, lon, lat)
+            row = {
+                "canonical_scene_id":scene,
+                "platform":r.platform,
+                "polarization":pol,
+                "asset_key":r[f"{pol.lower()}_asset_key"],
+                "href":href,
+                **meta,
+            }
+            if values is not None:
+                row.update({f"raw_{k}":v for k,v in finite_stats(values).items()})
+            asset_rows.append(row)
+            cache[(scene,pol,href)] = values
+
+    asset_qa = pd.DataFrame(asset_rows)
+    asset_qa.to_csv(OUT/"c2m_raster_asset_technical_qa.csv", index=False)
+
+    point_rows = []
+    for _, r in plan.iterrows():
+        for pol in ["VV","VH"]:
+            href = str(r[f"{pol.lower()}_href"])
+            scene = str(r.canonical_scene_id)
+            vals = cache.get((scene,pol,href))
+            if vals is None:
+                continue
+            for i in np.flatnonzero(np.isfinite(vals)):
+                point_rows.append({
+                    "anchor_year":int(r.anchor_year),
+                    "season_phase":r.season_phase,
+                    "selected_date":r.selected_date,
+                    "orbit_state":r.orbit_state,
+                    "relative_orbit":int(r.relative_orbit),
+                    "platform":r.platform,
+                    "canonical_scene_id":scene,
+                    "polarization":pol,
+                    "point_id":points.iloc[i]["_point_id"],
+                    "lon":float(lon[i]),
+                    "lat":float(lat[i]),
+                    "raw_value":float(vals[i]),
+                })
+
+    samples = pd.DataFrame(point_rows)
+    samples.to_csv(OUT/"c2m_target_point_signal_samples.csv", index=False)
+    if samples.empty:
+        raise AssertionError("No finite Sentinel-1 point samples were obtained after GCP geolocation.")
+
+    point_keys = ["anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+                  "platform","polarization","point_id","lon","lat"]
+
+    point_target = samples.groupby(point_keys,as_index=False).agg(
+        raw_value=("raw_value","median"),
+        contributing_scenes_n=("canonical_scene_id","nunique"),
+    )
+
+    group_cols = ["anchor_year","season_phase","selected_date","orbit_state",
+                  "relative_orbit","platform","polarization"]
+
+    summaries=[]
+    for key,g in point_target.groupby(group_cols):
+        rec=dict(zip(group_cols,key))
+        n=int(g.point_id.nunique())
+        rec.update({
+            "rice_support_points_sampled_n":n,
+            "rice_support_point_coverage_fraction":float(n/len(points)),
+            "points_with_multi_scene_overlap_n":int((g.contributing_scenes_n>1).sum()),
+        })
+        rec.update({f"raw_{k}":v for k,v in finite_stats(g.raw_value).items()})
+        summaries.append(rec)
+
+    summary_df=pd.DataFrame(summaries)
+    summary_df.to_csv(OUT/"c2m_target_polarization_signal_summary.csv", index=False)
+
+    targets_n = plan[["anchor_year","season_phase","selected_date","orbit_state","relative_orbit"]].drop_duplicates().shape[0]
+    expected_target_pol_n = targets_n*2
+    failed_n = int((~asset_qa.open_status.eq("OK")).sum())
+    status = "PASS" if failed_n==0 and len(summary_df)==expected_target_pol_n else "PASS_WITH_LIMITATIONS"
+
+    qa = {
+        "status":status,
+        "stage":"DESIGN_C_C2M_FROZEN_SENTINEL_RASTER_SIGNAL_QA_GCP_REVISION",
+        "supersedes_initial_failed_c2m_attempt":True,
+        "frozen_targets_n":int(targets_n),
+        "expected_target_polarization_combinations_n":int(expected_target_pol_n),
+        "canonical_scene_polarization_assets_expected_n":int(len(expected)),
+        "canonical_scene_polarization_assets_opened_n":int(asset_qa.open_status.eq("OK").sum()),
+        "failed_asset_opens_n":failed_n,
+        "target_polarization_summaries_n":int(len(summary_df)),
+        "unique_rice_support_coordinates_n":int(len(points)),
+        "minimum_target_pol_point_coverage_fraction":float(summary_df.rice_support_point_coverage_fraction.min()),
+        "median_target_pol_point_coverage_fraction":float(summary_df.rice_support_point_coverage_fraction.median()),
+        "sar_raster_pixels_read":True,
+        "existing_flooding_exposure_values_read":False,
+        "groundwater_level_values_read":False,
+        "irrigation_flow_values_read":False,
+        "thresholds_tuned":False,
+        "association_models_fitted":0,
+        "c2j_frozen_rule_modified":False,
+        "raw_signal_interpretation":"Raw uint16 values are not yet interpreted as dB/calibrated backscatter.",
+    }
+    (OUT/"c2m_raster_signal_qa.json").write_text(json.dumps(qa,indent=2)+"\n",encoding="utf-8")
+
+    txt = "\n".join([
+        "DESIGN C - C2M FROZEN SENTINEL-1 RASTER SIGNAL QA (GCP REVISION)",
+        "="*72,
+        "",
+        f"Frozen targets: {targets_n}",
+        f"Expected target-polarization combinations: {expected_target_pol_n}",
+        f"Canonical scene/polarization assets expected: {len(expected)}",
+        f"Canonical scene/polarization assets opened: {asset_qa.open_status.eq('OK').sum()}",
+        f"Failed asset opens: {failed_n}",
+        f"Target-polarization summaries produced: {len(summary_df)}",
+        f"Unique rice-support coordinates: {len(points)}",
+        f"Minimum target/pol point coverage: {summary_df.rice_support_point_coverage_fraction.min():.6f}",
+        f"Median target/pol point coverage: {summary_df.rice_support_point_coverage_fraction.median():.6f}",
+        "",
+        "TARGET / POLARIZATION RAW-SIGNAL SUMMARY",
+        "----------------------------------------",
+        summary_df.to_string(index=False),
+        "",
+        "FIREWALL",
+        "--------",
+        "SAR raster pixels WERE read for technical measurement QA.",
+        "Embedded GCPs were used for geolocation.",
+        "No existing flooding/exposure values were read.",
+        "No groundwater-level values were read.",
+        "No irrigation-flow values were read.",
+        "No threshold was tuned or selected.",
+        "No association model was fitted.",
+        "C2J frozen acquisition universe unchanged.",
+        "",
+        "RAW-SIGNAL CAUTION",
+        "------------------",
+        "Raw uint16 values are not yet interpreted as dB/calibrated backscatter.",
+        "",
+        f"C2M STATUS: {status}",
+    ]) + "\n"
+
+    (OUT/"c2m_raster_signal_qa_summary.txt").write_text(txt,encoding="utf-8")
+    print("\n"+txt)
+
+
+if __name__=="__main__":
+    main()
+
+################################################################################
+FILE: .\scripts\06_design_c\22_rebuild_sentinel1_radiometric_calibration_post_recovery.py
+################################################################################
+
+"""Design C — C2N-R post-C2M-R radiometric calibration rebuild.
+
+Purpose
+-------
+Rebuild the Sentinel-1 radiometric calibration layer from the COMPLETE
+post-recovery raw-sample universe:
+
+    original C2M samples
+    + successful C2M-R recovered samples
+
+This script DOES NOT overwrite historical C2N outputs.
+
+Key audit improvements over historical C2N
+------------------------------------------
+1. Explicitly expects all 68 canonical scene/polarization assets.
+2. Deduplicates at scene/polarization/target/coordinate level.
+3. Retries remote XML and raster metadata access.
+4. Uses embedded Sentinel-1 GCPs for pixel geolocation.
+5. Strictly checks every sampled row/column lies INSIDE calibration LUT
+   line/range support before interpolation. No silent np.interp edge-clamping
+   is permitted outside LUT support.
+6. Calibrates scene-level samples as DN^2 / LUT^2.
+7. Mosaics overlapping scenes at target x polarization x support-point level
+   using the median in LINEAR power, then converts to dB.
+8. Preserves the scientific firewall.
+
+No thermal-noise subtraction is applied here.
+No inundation threshold is selected.
+No groundwater, irrigation-flow, or pre-existing flood/exposure values are read.
+No association model is fitted.
+C2J frozen acquisition universe is unchanged.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import time
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+import boto3
+import numpy as np
+import pandas as pd
+import rasterio
+from pyproj import Transformer
+from rasterio.transform import GCPTransformer
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "outputs" / "diagnostics" / "design_c"
+OUT.mkdir(parents=True, exist_ok=True)
+
+C2M = OUT / "c2m_target_point_signal_samples.csv"
+C2MR = OUT / "c2mr_recovered_point_signal_samples.csv"
+PLAN = OUT / "c2l_target_mosaic_asset_plan.csv"
+ASSETS = OUT / "c2kr_validation_asset_inventory_complete.csv"
+C2M_TECH_QA = OUT / "c2m_raster_asset_technical_qa.csv"
+C2MR_TECH_QA = OUT / "c2mr_recovered_asset_technical_qa.csv"
+
+SCENE_OUT = OUT / "c2nr_scene_point_calibrated_samples.csv"
+XML_QA_OUT = OUT / "c2nr_calibration_xml_qa.csv"
+TARGET_OUT = OUT / "c2nr_target_polarization_calibrated_summary.csv"
+QA_JSON = OUT / "c2nr_radiometric_calibration_qa.json"
+SUMMARY_TXT = OUT / "c2nr_radiometric_calibration_summary.txt"
+
+S3_ENDPOINT = "https://eodata.dataspace.copernicus.eu"
+RASTER_ENV = {
+    "AWS_S3_ENDPOINT": "eodata.dataspace.copernicus.eu",
+    "AWS_VIRTUAL_HOSTING": "FALSE",
+    "AWS_DEFAULT_REGION": "default",
+}
+MAX_REMOTE_ATTEMPTS = 5
+BASE_DELAY_S = 5
+
+
+def require_credentials():
+    missing = [
+        k for k in ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+        if not os.environ.get(k)
+    ]
+    if missing:
+        raise RuntimeError(
+            "Missing CDSE S3 credential environment variable(s): "
+            + ", ".join(missing)
+        )
+
+
+def lname(tag):
+    return tag.rsplit("}", 1)[-1]
+
+
+def child(el, name):
+    for c in list(el):
+        if lname(c.tag) == name:
+            return c
+    return None
+
+
+def first(root, name):
+    for e in root.iter():
+        if lname(e.tag) == name:
+            return e
+    return None
+
+
+def text_of(el, name):
+    c = child(el, name)
+    if c is None or c.text is None:
+        raise ValueError(f"Missing XML child: {name}")
+    return c.text.strip()
+
+
+def arr_float(text):
+    return np.asarray([float(x) for x in text.split()], dtype=float)
+
+
+def arr_int(text):
+    return np.asarray([int(x) for x in text.split()], dtype=int)
+
+
+def parse_s3_href(href):
+    m = re.match(r"^s3://([^/]+)/(.+)$", str(href))
+    if not m:
+        raise ValueError(f"Not an s3:// href: {href}")
+    return m.group(1), m.group(2)
+
+
+def make_s3():
+    return boto3.client(
+        "s3",
+        endpoint_url=S3_ENDPOINT,
+        region_name="default",
+        aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+        aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
+    )
+
+
+def fetch_bytes_retry(s3, href):
+    last = None
+    for attempt in range(1, MAX_REMOTE_ATTEMPTS + 1):
+        try:
+            bucket, key = parse_s3_href(href)
+            return s3.get_object(Bucket=bucket, Key=key)["Body"].read(), attempt
+        except Exception as e:
+            last = repr(e)
+            if attempt < MAX_REMOTE_ATTEMPTS:
+                delay = BASE_DELAY_S * attempt
+                print(f"    XML fetch attempt {attempt} failed: {last}", flush=True)
+                print(f"    retrying in {delay}s...", flush=True)
+                time.sleep(delay)
+    raise RuntimeError(f"Failed XML fetch after {MAX_REMOTE_ATTEMPTS} attempts: {href}\n{last}")
+
+
+def parse_calibration_xml(xml_bytes):
+    root = ET.fromstring(xml_bytes)
+
+    info = first(root, "calibrationInformation")
+    abs_cal = None
+    if info is not None:
+        x = child(info, "absoluteCalibrationConstant")
+        if x is not None and x.text:
+            abs_cal = float(x.text.strip())
+
+    vector_list = first(root, "calibrationVectorList")
+    if vector_list is None:
+        raise ValueError("No calibrationVectorList found")
+
+    vecs = []
+    for v in list(vector_list):
+        if lname(v.tag) != "calibrationVector":
+            continue
+        line = int(text_of(v, "line"))
+        pixel = arr_int(text_of(v, "pixel"))
+        sigma = arr_float(text_of(v, "sigmaNought"))
+        beta = arr_float(text_of(v, "betaNought"))
+        gamma = arr_float(text_of(v, "gamma"))
+        dn = arr_float(text_of(v, "dn"))
+        n = len(pixel)
+        if not all(len(a) == n for a in [sigma, beta, gamma, dn]):
+            raise ValueError(f"LUT length mismatch at line {line}")
+        if n < 2:
+            raise ValueError(f"Calibration vector at line {line} has <2 range samples")
+        if np.any(np.diff(pixel) <= 0):
+            raise ValueError(f"Non-increasing pixel LUT at line {line}")
+        vecs.append({
+            "line": line,
+            "pixel": pixel,
+            "sigma": sigma,
+            "beta": beta,
+            "gamma": gamma,
+            "dn": dn,
+        })
+
+    if not vecs:
+        raise ValueError("No calibrationVector entries parsed")
+
+    vecs = sorted(vecs, key=lambda z: z["line"])
+    lines = np.asarray([v["line"] for v in vecs], dtype=float)
+    if np.any(np.diff(lines) <= 0):
+        raise ValueError("Calibration vector lines are not strictly increasing")
+    return vecs, abs_cal
+
+
+def interp_range_strict(vec, col, field):
+    px = vec["pixel"].astype(float)
+    c = float(col)
+    if c < px[0] or c > px[-1]:
+        raise ValueError(
+            f"Column {c} outside LUT pixel support [{px[0]}, {px[-1]}] "
+            f"at line {vec['line']}"
+        )
+    return float(np.interp(c, px, vec[field].astype(float)))
+
+
+def interp_2d_strict(vecs, row, col, field):
+    lines = np.asarray([v["line"] for v in vecs], dtype=float)
+    r = float(row)
+
+    if r < lines[0] or r > lines[-1]:
+        raise ValueError(
+            f"Row {r} outside calibration line support [{lines[0]}, {lines[-1]}]"
+        )
+
+    if r == lines[0]:
+        return interp_range_strict(vecs[0], col, field)
+    if r == lines[-1]:
+        return interp_range_strict(vecs[-1], col, field)
+
+    hi = int(np.searchsorted(lines, r, side="right"))
+    lo = hi - 1
+    v0, v1 = vecs[lo], vecs[hi]
+
+    a0 = interp_range_strict(v0, col, field)
+    a1 = interp_range_strict(v1, col, field)
+    l0, l1 = float(v0["line"]), float(v1["line"])
+    w = (r - l0) / (l1 - l0)
+    return float(a0 + w * (a1 - a0))
+
+
+def raster_href(plan, scene, pol):
+    x = plan.loc[plan["canonical_scene_id"].astype(str).eq(str(scene))]
+    if x.empty:
+        raise KeyError(f"Scene absent from C2L plan: {scene}")
+    col = f"{pol.lower()}_href"
+    if col not in x.columns or pd.isna(x.iloc[0][col]):
+        raise KeyError(f"Missing {col} in C2L plan for {scene}")
+    return str(x.iloc[0][col])
+
+
+def geolocate_retry(href, lon, lat):
+    last = None
+    for attempt in range(1, MAX_REMOTE_ATTEMPTS + 1):
+        try:
+            with rasterio.Env(**RASTER_ENV):
+                with rasterio.open(href) as ds:
+                    gcps, gcp_crs = ds.gcps
+                    if not gcps or gcp_crs is None:
+                        raise RuntimeError("Missing embedded GCP geolocation")
+                    tr = Transformer.from_crs("EPSG:4326", gcp_crs, always_xy=True)
+                    x, y = tr.transform(
+                        np.asarray(lon, dtype=float),
+                        np.asarray(lat, dtype=float),
+                    )
+                    with GCPTransformer(gcps) as gt:
+                        rows, cols = gt.rowcol(x, y)
+                    rows = np.asarray(rows, dtype=int)
+                    cols = np.asarray(cols, dtype=int)
+                    inside = (
+                        (rows >= 0) & (rows < ds.height)
+                        & (cols >= 0) & (cols < ds.width)
+                    )
+                    if not inside.all():
+                        bad = int((~inside).sum())
+                        raise RuntimeError(
+                            f"{bad}/{len(rows)} supplied sample coordinates map outside raster"
+                        )
+                    return rows, cols, len(gcps), str(gcp_crs), attempt
+        except Exception as e:
+            last = repr(e)
+            if attempt < MAX_REMOTE_ATTEMPTS:
+                delay = BASE_DELAY_S * attempt
+                print(f"    raster metadata attempt {attempt} failed: {last}", flush=True)
+                print(f"    retrying in {delay}s...", flush=True)
+                time.sleep(delay)
+    raise RuntimeError(f"Raster metadata/GCP access failed: {href}\n{last}")
+
+
+def finite_summary(x, prefix):
+    a = np.asarray(x, dtype=float)
+    a = a[np.isfinite(a)]
+    if len(a) == 0:
+        return {f"{prefix}_{k}": np.nan for k in
+                ["n","min","p01","p10","median","mean","p90","p99","max","sd"]}
+    q = {
+        "n": int(len(a)),
+        "min": float(np.min(a)),
+        "p01": float(np.quantile(a, .01)),
+        "p10": float(np.quantile(a, .10)),
+        "median": float(np.median(a)),
+        "mean": float(np.mean(a)),
+        "p90": float(np.quantile(a, .90)),
+        "p99": float(np.quantile(a, .99)),
+        "max": float(np.max(a)),
+        "sd": float(np.std(a, ddof=1)) if len(a) > 1 else 0.0,
+    }
+    return {f"{prefix}_{k}": v for k, v in q.items()}
+
+
+def main():
+    print("DESIGN C - C2N-R POST-RECOVERY RADIOMETRIC CALIBRATION")
+    print("=" * 72)
+    print("Combines current C2M + successful C2M-R recovered samples.")
+    print("Historical C2N outputs are NOT overwritten.")
+    print("Requires complete accounting of 68 canonical scene/polarization assets.")
+    print("Calibrates only assets with >=1 finite RiceFloodIT support sample.")
+    print("Strict LUT support checks: NO silent edge clamping.")
+    print("Calibration: DN^2 / LUT^2.")
+    print("NO thermal-noise subtraction.")
+    print("NO inundation threshold.")
+    print("NO groundwater / irrigation-flow / pre-existing flood outcomes.")
+    print("NO association model.\n")
+
+    require_credentials()
+    for p in [C2M, C2MR, PLAN, ASSETS, C2M_TECH_QA, C2MR_TECH_QA]:
+        if not p.exists():
+            raise FileNotFoundError(p)
+
+    base = pd.read_csv(C2M)
+    rec = pd.read_csv(C2MR)
+    plan = pd.read_csv(PLAN)
+    assets = pd.read_csv(ASSETS)
+    tech0 = pd.read_csv(C2M_TECH_QA)
+    techr = pd.read_csv(C2MR_TECH_QA)
+
+    required = [
+        "anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+        "platform","canonical_scene_id","polarization","point_id","lon","lat","raw_value"
+    ]
+    for label, df in [("C2M", base), ("C2M-R", rec)]:
+        miss = [c for c in required if c not in df.columns]
+        if miss:
+            raise AssertionError(f"{label} missing columns: {miss}")
+
+    raw = pd.concat(
+        [base[required], rec[required]],
+        ignore_index=True,
+    )
+
+    # Coordinate-level identity is safer than relying on generated point IDs
+    # across two independently written files.
+    dedup_keys = [
+        "anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+        "platform","canonical_scene_id","polarization","lon","lat"
+    ]
+    before = len(raw)
+    raw = raw.drop_duplicates(dedup_keys, keep="last").copy()
+    duplicates_removed = before - len(raw)
+
+    pairs = (
+        raw[["canonical_scene_id","polarization","platform"]]
+        .drop_duplicates()
+        .sort_values(["canonical_scene_id","polarization"])
+        .reset_index(drop=True)
+    )
+
+    # Frozen canonical ASSET universe from C2L: 68 scene/polarization assets.
+    canonical = []
+    for r in plan.itertuples(index=False):
+        scene = str(r.canonical_scene_id)
+        platform = str(r.platform)
+        if bool(getattr(r, "vv_assets_complete")):
+            canonical.append((scene, "VV", platform))
+        if bool(getattr(r, "vh_assets_complete")):
+            canonical.append((scene, "VH", platform))
+    canonical = sorted(set(canonical))
+    if len(canonical) != 68:
+        raise AssertionError(
+            f"Frozen C2L plan does not yield 68 canonical scene/pol assets; got {len(canonical)}"
+        )
+
+    # Analytical CONTRIBUTING universe is narrower: a canonical asset contributes
+    # only if at least one RiceFloodIT support coordinate has a finite raw value.
+    # Original C2M technical QA establishes this for successfully read assets;
+    # C2M-R technical QA supersedes original ERROR rows that were recovered.
+    contrib = set()
+    zero_support = set()
+
+    platform_lookup = {
+        str(r.canonical_scene_id): str(r.platform)
+        for r in plan.itertuples(index=False)
+    }
+
+    recovered_keys = set()
+    for r in techr.itertuples(index=False):
+        if str(getattr(r, "recovery_status", "")) == "RECOVERED":
+            key2 = (str(r.canonical_scene_id), str(r.polarization).upper())
+            recovered_keys.add(key2)
+            nfin = int(float(getattr(r, "points_with_finite_raw_value_n", 0) or 0))
+            tup = (key2[0], key2[1], platform_lookup[key2[0]])
+            if nfin > 0:
+                contrib.add(tup)
+            else:
+                zero_support.add(tup)
+
+    for r in tech0.itertuples(index=False):
+        key2 = (str(r.canonical_scene_id), str(r.polarization).upper())
+        if key2 in recovered_keys:
+            continue
+        status0 = str(getattr(r, "open_status", ""))
+        nfin_raw = getattr(r, "points_with_finite_raw_value_n", 0)
+        nfin = 0 if pd.isna(nfin_raw) else int(float(nfin_raw))
+        tup = (key2[0], key2[1], platform_lookup[key2[0]])
+        if status0 == "OK" and nfin > 0:
+            contrib.add(tup)
+        elif status0 == "OK" and nfin == 0:
+            zero_support.add(tup)
+        elif status0 == "ERROR":
+            raise AssertionError(
+                f"Unrecovered failed canonical asset remains after C2M-R: {key2}"
+            )
+
+    canonical_set = set(canonical)
+    if (contrib | zero_support) != canonical_set:
+        unresolved = sorted(canonical_set - (contrib | zero_support))
+        extra_classified = sorted((contrib | zero_support) - canonical_set)
+        raise AssertionError(
+            f"Canonical asset accounting incomplete. "
+            f"Unresolved={unresolved}; extra_classified={extra_classified}"
+        )
+    if contrib & zero_support:
+        raise AssertionError(
+            f"Assets classified as both contributing and zero-support: "
+            f"{sorted(contrib & zero_support)}"
+        )
+
+    expected = sorted(contrib)
+    observed = sorted(
+        (str(r.canonical_scene_id), str(r.polarization).upper(), str(r.platform))
+        for r in pairs.itertuples(index=False)
+    )
+
+    if observed != expected:
+        missing = sorted(set(expected) - set(observed))
+        extra = sorted(set(observed) - set(expected))
+        raise AssertionError(
+            f"Post-recovery raw analytical universe != expected contributing universe. "
+            f"Missing={missing}; Extra={extra}"
+        )
+
+    print(f"C2M rows + C2M-R rows before dedup: {before}")
+    print(f"Duplicate scene-target-coordinate rows removed: {duplicates_removed}")
+    print(f"Post-recovery raw rows: {len(raw)}")
+    print(f"Canonical scene/polarization assets: {len(canonical)} / 68")
+    print(f"Spatially contributing scene/polarization pairs: {len(expected)}")
+    print(f"Zero-support canonical scene/polarization assets: {len(zero_support)}")
+    for z in sorted(zero_support):
+        print(f"    ZERO SUPPORT: {z[0]} {z[1]} ({z[2]})")
+    print()
+
+    asset_lookup = {
+        (str(r["scene_id"]), str(r["asset_key"])): str(r["href"])
+        for _, r in assets.iterrows()
+    }
+    s3 = make_s3()
+
+    xml_qa = []
+    out_parts = []
+
+    for j, r in enumerate(pairs.itertuples(index=False), 1):
+        scene = str(r.canonical_scene_id)
+        pol = str(r.polarization).upper()
+        platform = str(r.platform)
+        print(f"[{j:02d}/{len(pairs):02d}] {scene} {pol}", flush=True)
+
+        cal_key = f"schema-calibration-{pol.lower()}"
+        cal_href = asset_lookup.get((scene, cal_key))
+        if not cal_href:
+            raise RuntimeError(f"Missing {cal_key} asset for {scene}")
+
+        xml_bytes, xml_attempts = fetch_bytes_retry(s3, cal_href)
+        vecs, abs_cal = parse_calibration_xml(xml_bytes)
+
+        sx = raw.loc[
+            raw["canonical_scene_id"].astype(str).eq(scene)
+            & raw["polarization"].astype(str).str.upper().eq(pol)
+        ].copy()
+
+        rhref = raster_href(plan, scene, pol)
+        rows, cols, gcp_n, gcp_crs, raster_attempts = geolocate_retry(
+            rhref,
+            sx["lon"].to_numpy(float),
+            sx["lat"].to_numpy(float),
+        )
+
+        line_min = float(vecs[0]["line"])
+        line_max = float(vecs[-1]["line"])
+        row_out_n = int(((rows < line_min) | (rows > line_max)).sum())
+
+        # For each point, require range support in BOTH bracketing line vectors.
+        range_out_n = 0
+        sigma_lut = np.empty(len(sx), dtype=float)
+        beta_lut = np.empty(len(sx), dtype=float)
+        gamma_lut = np.empty(len(sx), dtype=float)
+        dn_lut = np.empty(len(sx), dtype=float)
+
+        for i, (rr, cc) in enumerate(zip(rows, cols)):
+            try:
+                sigma_lut[i] = interp_2d_strict(vecs, rr, cc, "sigma")
+                beta_lut[i] = interp_2d_strict(vecs, rr, cc, "beta")
+                gamma_lut[i] = interp_2d_strict(vecs, rr, cc, "gamma")
+                dn_lut[i] = interp_2d_strict(vecs, rr, cc, "dn")
+            except ValueError as e:
+                range_out_n += 1
+                raise RuntimeError(
+                    f"{scene} {pol}: calibration LUT support violation at sample index {i}, "
+                    f"row={rr}, col={cc}: {e}"
+                ) from e
+
+        if row_out_n or range_out_n:
+            raise RuntimeError(
+                f"{scene} {pol}: LUT support violations row={row_out_n}, range={range_out_n}"
+            )
+
+        dn_raw = sx["raw_value"].to_numpy(float)
+        sigma0 = (dn_raw ** 2) / (sigma_lut ** 2)
+        beta0 = (dn_raw ** 2) / (beta_lut ** 2)
+        gamma0 = (dn_raw ** 2) / (gamma_lut ** 2)
+
+        sx["image_row"] = rows
+        sx["image_col"] = cols
+        sx["sigma_lut"] = sigma_lut
+        sx["beta_lut"] = beta_lut
+        sx["gamma_lut"] = gamma_lut
+        sx["dn_lut"] = dn_lut
+        sx["sigma0_linear"] = sigma0
+        sx["sigma0_db"] = np.where(sigma0 > 0, 10*np.log10(sigma0), np.nan)
+        sx["beta0_linear"] = beta0
+        sx["beta0_db"] = np.where(beta0 > 0, 10*np.log10(beta0), np.nan)
+        sx["gamma0_linear"] = gamma0
+        sx["gamma0_db"] = np.where(gamma0 > 0, 10*np.log10(gamma0), np.nan)
+        sx["thermal_noise_subtracted"] = False
+        sx["calibration_xml_href"] = cal_href
+        out_parts.append(sx)
+
+        xml_qa.append({
+            "canonical_scene_id": scene,
+            "platform": platform,
+            "polarization": pol,
+            "calibration_xml_href": cal_href,
+            "xml_fetch_attempts": xml_attempts,
+            "raster_metadata_attempts": raster_attempts,
+            "xml_bytes_n": len(xml_bytes),
+            "calibration_vectors_n": len(vecs),
+            "first_vector_line": int(vecs[0]["line"]),
+            "last_vector_line": int(vecs[-1]["line"]),
+            "min_pixel_lut_points_n": int(min(len(v["pixel"]) for v in vecs)),
+            "max_pixel_lut_points_n": int(max(len(v["pixel"]) for v in vecs)),
+            "absolute_calibration_constant": abs_cal,
+            "gcp_count": int(gcp_n),
+            "gcp_crs": gcp_crs,
+            "sample_rows_n": int(len(sx)),
+            "sample_image_row_min": int(rows.min()),
+            "sample_image_row_max": int(rows.max()),
+            "sample_image_col_min": int(cols.min()),
+            "sample_image_col_max": int(cols.max()),
+            "row_outside_lut_support_n": row_out_n,
+            "range_outside_lut_support_n": range_out_n,
+            "sigma_lut_min": float(np.min(sigma_lut)),
+            "sigma_lut_max": float(np.max(sigma_lut)),
+            "sigma0_finite_n": int(np.isfinite(sigma0).sum()),
+            "status": "PASS",
+        })
+
+    calibrated = pd.concat(out_parts, ignore_index=True)
+    xml_qa_df = pd.DataFrame(xml_qa)
+
+    calibrated.to_csv(SCENE_OUT, index=False)
+    xml_qa_df.to_csv(XML_QA_OUT, index=False)
+
+    point_keys = [
+        "anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+        "platform","polarization","point_id","lon","lat"
+    ]
+    # Recovery may use a different generated point_id convention. Normalize
+    # identity by coordinates within a target before mosaicking.
+    coord_keys = [
+        "anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+        "platform","polarization","lon","lat"
+    ]
+    mosaic = (
+        calibrated.groupby(coord_keys, as_index=False)
+        .agg(
+            point_id=("point_id", "first"),
+            sigma0_linear=("sigma0_linear", "median"),
+            beta0_linear=("beta0_linear", "median"),
+            gamma0_linear=("gamma0_linear", "median"),
+            contributing_scenes_n=("canonical_scene_id", "nunique"),
+        )
+    )
+    mosaic["sigma0_db"] = np.where(
+        mosaic["sigma0_linear"] > 0, 10*np.log10(mosaic["sigma0_linear"]), np.nan
+    )
+    mosaic["beta0_db"] = np.where(
+        mosaic["beta0_linear"] > 0, 10*np.log10(mosaic["beta0_linear"]), np.nan
+    )
+    mosaic["gamma0_db"] = np.where(
+        mosaic["gamma0_linear"] > 0, 10*np.log10(mosaic["gamma0_linear"]), np.nan
+    )
+
+    target_keys = [
+        "anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+        "platform","polarization"
+    ]
+    summary_rows = []
+    for key, g in mosaic.groupby(target_keys, dropna=False):
+        row = dict(zip(target_keys, key))
+        row["points_n"] = int(len(g))
+        row["points_with_multi_scene_overlap_n"] = int((g["contributing_scenes_n"] > 1).sum())
+        row.update(finite_summary(g["sigma0_db"], "sigma0_db"))
+        row.update(finite_summary(g["beta0_db"], "beta0_db"))
+        row.update(finite_summary(g["gamma0_db"], "gamma0_db"))
+        summary_rows.append(row)
+
+    target = pd.DataFrame(summary_rows).sort_values(target_keys)
+    target.to_csv(TARGET_OUT, index=False)
+
+    row_viol = int(xml_qa_df["row_outside_lut_support_n"].sum())
+    range_viol = int(xml_qa_df["range_outside_lut_support_n"].sum())
+    finite_all = bool(
+        np.isfinite(calibrated["sigma0_linear"]).all()
+        and np.isfinite(calibrated["beta0_linear"]).all()
+        and np.isfinite(calibrated["gamma0_linear"]).all()
+    )
+
+    status = (
+        "PASS"
+        if len(pairs) == len(expected)
+        and len(xml_qa_df) == len(expected)
+        and row_viol == 0
+        and range_viol == 0
+        and finite_all
+        and len(target) == 36
+        else "FAIL"
+    )
+
+    qa = {
+        "status": status,
+        "stage": "DESIGN_C_C2NR_POST_RECOVERY_RADIOMETRIC_CALIBRATION",
+        "historical_c2n_preserved": True,
+        "base_c2m_rows_n": int(len(base)),
+        "recovered_c2mr_rows_n": int(len(rec)),
+        "combined_before_dedup_n": int(before),
+        "duplicates_removed_n": int(duplicates_removed),
+        "post_recovery_raw_rows_n": int(len(raw)),
+        "canonical_scene_polarization_assets_n": int(len(canonical)),
+        "expected_spatially_contributing_scene_polarization_pairs_n": int(len(expected)),
+        "zero_support_canonical_scene_polarization_assets_n": int(len(zero_support)),
+        "zero_support_canonical_scene_polarization_assets": [
+            {"canonical_scene_id": s, "polarization": p, "platform": pl}
+            for s, p, pl in sorted(zero_support)
+        ],
+        "observed_spatially_contributing_scene_polarization_pairs_n": int(len(pairs)),
+        "calibration_xmls_parsed_n": int(len(xml_qa_df)),
+        "calibrated_scene_point_rows_n": int(len(calibrated)),
+        "target_polarization_summaries_n": int(len(target)),
+        "calibration_equation": "value = DN^2 / LUT^2",
+        "lut_interpolation": "bilinear line/range with strict no-outside-support rule",
+        "row_outside_lut_support_n": row_viol,
+        "range_outside_lut_support_n": range_viol,
+        "all_calibrated_linear_values_finite": finite_all,
+        "thermal_noise_subtraction_applied": False,
+        "inundation_threshold_selected": False,
+        "groundwater_level_values_read": False,
+        "irrigation_flow_values_read": False,
+        "existing_flooding_exposure_values_read": False,
+        "association_models_fitted": 0,
+        "c2j_frozen_rule_modified": False,
+        "next_stage": "Post-recovery thermal-noise audit/correction using C2N-R outputs.",
+    }
+    QA_JSON.write_text(json.dumps(qa, indent=2) + "\n", encoding="utf-8")
+
+    lines = [
+        "DESIGN C - C2N-R POST-RECOVERY RADIOMETRIC CALIBRATION",
+        "=" * 72,
+        "",
+        f"Base C2M rows: {len(base)}",
+        f"Recovered C2M-R rows: {len(rec)}",
+        f"Combined rows before dedup: {before}",
+        f"Duplicate rows removed: {duplicates_removed}",
+        f"Post-recovery raw rows: {len(raw)}",
+        f"Canonical scene/polarization assets: {len(canonical)} / 68",
+        f"Spatially contributing scene/polarization pairs: {len(pairs)} / {len(expected)}",
+        f"Zero-support canonical scene/polarization assets: {len(zero_support)}",
+        *[
+            f"  ZERO SUPPORT: {s} {p} ({pl})"
+            for s, p, pl in sorted(zero_support)
+        ],
+        f"Calibration XMLs parsed for contributing pairs: {len(xml_qa_df)} / {len(expected)}",
+        f"Calibrated scene-point rows: {len(calibrated)}",
+        f"Target/polarization summaries: {len(target)} / 36",
+        f"Rows outside LUT line support: {row_viol}",
+        f"Samples outside LUT range support: {range_viol}",
+        f"All calibrated linear values finite: {finite_all}",
+        "",
+        "CALIBRATION",
+        "-----------",
+        "value = DN^2 / LUT^2",
+        "Bilinear line/range interpolation.",
+        "Strict support checking: no silent np.interp edge clamping outside LUT support.",
+        "Scene overlap is aggregated using median LINEAR power before dB conversion.",
+        "",
+        "FIREWALL",
+        "--------",
+        "Historical C2N outputs preserved.",
+        "All 68 canonical scene/polarization assets are accounted for.",
+        "Zero-support canonical assets are documented but not artificially sampled/calibrated.",
+        "No thermal-noise subtraction applied at this stage.",
+        "No inundation threshold selected.",
+        "No groundwater values read.",
+        "No irrigation-flow values read.",
+        "No pre-existing flood/exposure labels read.",
+        "No association model fitted.",
+        "C2J frozen acquisition universe unchanged.",
+        "",
+        f"C2N-R STATUS: {status}",
+    ]
+    txt = "\n".join(lines) + "\n"
+    SUMMARY_TXT.write_text(txt, encoding="utf-8")
+    print("\n" + txt)
+
+    if status != "PASS":
+        raise RuntimeError("C2N-R did not satisfy freeze criteria; inspect outputs.")
+
+
+if __name__ == "__main__":
+    main()
+
+################################################################################
+FILE: .\scripts\06_design_c\23_rebuild_sentinel1_thermal_noise_post_recovery.py
+################################################################################
+
+"""Design C — C2O-R post-recovery Sentinel-1 thermal-noise rebuild.
+
+Consumes the completed C2N-R calibrated scene-point table and rebuilds the
+thermal-noise-corrected layer without overwriting historical C2O outputs.
+
+Scientific rules
+----------------
+- 68 canonical scene/polarization assets must remain fully accounted for.
+- 66 spatially contributing scene/polarization pairs are expected.
+- Legacy and modern Sentinel-1 noise XML schemas are supported.
+- thermalNoiseCorrectionPerformed must be false for every contributing asset.
+- Noise LUT interpolation is strict: no silent edge clamping/extrapolation.
+- Modern azimuth blocks must match uniquely for every sampled point.
+- corrected_power = DN^2 - eta
+- Non-positive corrected power is flagged and retained as NaN after calibration;
+  it is NEVER clipped.
+- Scene overlap is mosaicked using median LINEAR corrected power before dB.
+- No inundation threshold, groundwater, irrigation-flow, prior flood labels,
+  or association model are used.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import time
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+import boto3
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "outputs" / "diagnostics" / "design_c"
+OUT.mkdir(parents=True, exist_ok=True)
+
+C2NR = OUT / "c2nr_scene_point_calibrated_samples.csv"
+ASSETS = OUT / "c2kr_validation_asset_inventory_complete.csv"
+PLAN = OUT / "c2l_target_mosaic_asset_plan.csv"
+C2M_TECH = OUT / "c2m_raster_asset_technical_qa.csv"
+C2MR_TECH = OUT / "c2mr_recovered_asset_technical_qa.csv"
+
+SCENE_OUT = OUT / "c2or_scene_point_noise_corrected_samples.csv"
+NOISE_QA_OUT = OUT / "c2or_noise_xml_qa.csv"
+TARGET_OUT = OUT / "c2or_target_polarization_noise_effect_summary.csv"
+QA_JSON = OUT / "c2or_thermal_noise_qa.json"
+SUMMARY_TXT = OUT / "c2or_thermal_noise_summary.txt"
+
+S3_ENDPOINT = "https://eodata.dataspace.copernicus.eu"
+MAX_REMOTE_ATTEMPTS = 5
+BASE_DELAY_S = 5
+
+
+def require_credentials():
+    missing = [k for k in ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+               if not os.environ.get(k)]
+    if missing:
+        raise RuntimeError("Missing CDSE S3 credential environment variable(s): "
+                           + ", ".join(missing))
+
+
+def make_s3():
+    return boto3.client(
+        "s3",
+        endpoint_url=S3_ENDPOINT,
+        region_name="default",
+        aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+        aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
+    )
+
+
+def parse_s3_href(href):
+    m = re.match(r"^s3://([^/]+)/(.+)$", str(href))
+    if not m:
+        raise ValueError(f"Not an s3:// href: {href}")
+    return m.group(1), m.group(2)
+
+
+def fetch_bytes_retry(s3, href):
+    last = None
+    for attempt in range(1, MAX_REMOTE_ATTEMPTS + 1):
+        try:
+            bucket, key = parse_s3_href(href)
+            return s3.get_object(Bucket=bucket, Key=key)["Body"].read(), attempt
+        except Exception as e:
+            last = repr(e)
+            if attempt < MAX_REMOTE_ATTEMPTS:
+                delay = BASE_DELAY_S * attempt
+                print(f"    fetch attempt {attempt} failed: {last}", flush=True)
+                print(f"    retrying in {delay}s...", flush=True)
+                time.sleep(delay)
+    raise RuntimeError(f"Remote XML fetch failed after {MAX_REMOTE_ATTEMPTS} attempts: {href}\n{last}")
+
+
+def lname(tag):
+    return tag.rsplit("}", 1)[-1]
+
+
+def first(root, name):
+    for e in root.iter():
+        if lname(e.tag) == name:
+            return e
+    return None
+
+
+def child_text(el, name, required=True):
+    for c in list(el):
+        if lname(c.tag) == name and c.text is not None:
+            return c.text.strip()
+    if required:
+        raise ValueError(f"Missing XML child: {name}")
+    return None
+
+
+def arr_float(text):
+    return np.asarray([float(x) for x in text.split()], dtype=float)
+
+
+def arr_int(text):
+    return np.asarray([int(x) for x in text.split()], dtype=int)
+
+
+def parse_product_noise_flag(xml_bytes):
+    root = ET.fromstring(xml_bytes)
+    e = first(root, "thermalNoiseCorrectionPerformed")
+    if e is None or e.text is None:
+        return None
+    return e.text.strip().lower()
+
+
+def parse_noise_xml(xml_bytes):
+    root = ET.fromstring(xml_bytes)
+    legacy = first(root, "noiseVectorList")
+    modern_range = first(root, "noiseRangeVectorList")
+    modern_az = first(root, "noiseAzimuthVectorList")
+
+    if legacy is not None:
+        vecs = []
+        for v in list(legacy):
+            if lname(v.tag) != "noiseVector":
+                continue
+            line = int(child_text(v, "line"))
+            pixel = arr_int(child_text(v, "pixel"))
+            lut = arr_float(child_text(v, "noiseLut"))
+            if len(pixel) != len(lut):
+                raise ValueError(f"Legacy LUT length mismatch at line {line}")
+            if len(pixel) < 2 or np.any(np.diff(pixel) <= 0):
+                raise ValueError(f"Invalid legacy pixel support at line {line}")
+            vecs.append({"line": line, "pixel": pixel, "noise": lut})
+        if not vecs:
+            raise ValueError("Legacy schema found but no vectors parsed")
+        vecs = sorted(vecs, key=lambda z: z["line"])
+        lines = np.asarray([v["line"] for v in vecs], dtype=float)
+        if np.any(np.diff(lines) <= 0):
+            raise ValueError("Legacy noise vector lines not strictly increasing")
+        return {
+            "schema": "legacy_noiseVectorList",
+            "legacy_vectors": vecs,
+            "range_vectors": [],
+            "azimuth_vectors": [],
+        }
+
+    if modern_range is not None:
+        rvecs = []
+        for v in list(modern_range):
+            if lname(v.tag) != "noiseRangeVector":
+                continue
+            line = int(child_text(v, "line"))
+            pixel = arr_int(child_text(v, "pixel"))
+            lut = arr_float(child_text(v, "noiseRangeLut"))
+            if len(pixel) != len(lut):
+                raise ValueError(f"Modern range LUT mismatch at line {line}")
+            if len(pixel) < 2 or np.any(np.diff(pixel) <= 0):
+                raise ValueError(f"Invalid modern range support at line {line}")
+            rvecs.append({"line": line, "pixel": pixel, "noise": lut})
+        if not rvecs:
+            raise ValueError("Modern schema found but no range vectors parsed")
+        rvecs = sorted(rvecs, key=lambda z: z["line"])
+        rlines = np.asarray([v["line"] for v in rvecs], dtype=float)
+        if np.any(np.diff(rlines) <= 0):
+            raise ValueError("Modern range vector lines not strictly increasing")
+
+        avecs = []
+        if modern_az is not None:
+            for v in list(modern_az):
+                if lname(v.tag) != "noiseAzimuthVector":
+                    continue
+                fal = child_text(v, "firstAzimuthLine", required=False)
+                lal = child_text(v, "lastAzimuthLine", required=False)
+                frs = child_text(v, "firstRangeSample", required=False)
+                lrs = child_text(v, "lastRangeSample", required=False)
+                line_text = child_text(v, "line", required=False)
+                lut_text = child_text(v, "noiseAzimuthLut", required=False)
+                swath = child_text(v, "swath", required=False)
+                if line_text is None or lut_text is None:
+                    continue
+                lines = arr_int(line_text)
+                lut = arr_float(lut_text)
+                if len(lines) != len(lut):
+                    raise ValueError("Azimuth LUT length mismatch")
+                if len(lines) < 2 or np.any(np.diff(lines) <= 0):
+                    raise ValueError("Invalid azimuth line support")
+                avecs.append({
+                    "swath": swath,
+                    "firstAzimuthLine": int(fal) if fal is not None else None,
+                    "lastAzimuthLine": int(lal) if lal is not None else None,
+                    "firstRangeSample": int(frs) if frs is not None else None,
+                    "lastRangeSample": int(lrs) if lrs is not None else None,
+                    "line": lines,
+                    "noise": lut,
+                })
+        return {
+            "schema": "modern_range_x_azimuth",
+            "legacy_vectors": [],
+            "range_vectors": rvecs,
+            "azimuth_vectors": avecs,
+        }
+
+    raise ValueError("Unrecognized Sentinel-1 noise XML schema")
+
+
+def interp1_strict(px, vals, x, label):
+    px = np.asarray(px, dtype=float)
+    vals = np.asarray(vals, dtype=float)
+    xx = float(x)
+    if xx < px[0] or xx > px[-1]:
+        raise ValueError(f"{label}: coordinate {xx} outside [{px[0]}, {px[-1]}]")
+    return float(np.interp(xx, px, vals))
+
+
+def interp_2d_line_pixel_strict(vectors, row, col, label):
+    lines = np.asarray([v["line"] for v in vectors], dtype=float)
+    r = float(row)
+    if r < lines[0] or r > lines[-1]:
+        raise ValueError(f"{label}: row {r} outside [{lines[0]}, {lines[-1]}]")
+
+    if r == lines[0]:
+        return interp1_strict(vectors[0]["pixel"], vectors[0]["noise"], col, label+" range")
+    if r == lines[-1]:
+        return interp1_strict(vectors[-1]["pixel"], vectors[-1]["noise"], col, label+" range")
+
+    hi = int(np.searchsorted(lines, r, side="right"))
+    lo = hi - 1
+    v0, v1 = vectors[lo], vectors[hi]
+    n0 = interp1_strict(v0["pixel"], v0["noise"], col, label+" range")
+    n1 = interp1_strict(v1["pixel"], v1["noise"], col, label+" range")
+    l0, l1 = float(v0["line"]), float(v1["line"])
+    w = (r - l0) / (l1 - l0)
+    return float(n0 + w * (n1 - n0))
+
+
+def applicable_azimuth_vectors(azvecs, row, col):
+    out = []
+    for v in azvecs:
+        fal, lal = v["firstAzimuthLine"], v["lastAzimuthLine"]
+        frs, lrs = v["firstRangeSample"], v["lastRangeSample"]
+        row_ok = (fal is None or row >= fal) and (lal is None or row <= lal)
+        col_ok = (frs is None or col >= frs) and (lrs is None or col <= lrs)
+        if row_ok and col_ok:
+            out.append(v)
+    return out
+
+
+def modern_azimuth_factor_strict(azvecs, row, col):
+    if not azvecs:
+        return 1.0, 0
+    candidates = applicable_azimuth_vectors(azvecs, row, col)
+    if len(candidates) == 0:
+        raise ValueError(f"No applicable azimuth noise block for row={row}, col={col}")
+    if len(candidates) > 1:
+        raise ValueError(f"Multiple azimuth noise blocks ({len(candidates)}) for row={row}, col={col}")
+    v = candidates[0]
+    val = interp1_strict(v["line"], v["noise"], row, "azimuth")
+    return val, 1
+
+
+def noise_power_at_strict(parsed, row, col):
+    if parsed["schema"] == "legacy_noiseVectorList":
+        eta = interp_2d_line_pixel_strict(
+            parsed["legacy_vectors"], row, col, "legacy noise"
+        )
+        return eta, np.nan, np.nan, 1
+
+    nr = interp_2d_line_pixel_strict(
+        parsed["range_vectors"], row, col, "modern range noise"
+    )
+    na, nc = modern_azimuth_factor_strict(
+        parsed["azimuth_vectors"], row, col
+    )
+    return nr * na, nr, na, nc
+
+
+def finite_summary(x, prefix):
+    a = np.asarray(x, dtype=float)
+    a = a[np.isfinite(a)]
+    keys = ["n","min","p01","p10","median","mean","p90","p99","max"]
+    if len(a) == 0:
+        return {f"{prefix}_{k}": np.nan for k in keys}
+    vals = {
+        "n": int(len(a)),
+        "min": float(np.min(a)),
+        "p01": float(np.quantile(a,.01)),
+        "p10": float(np.quantile(a,.10)),
+        "median": float(np.median(a)),
+        "mean": float(np.mean(a)),
+        "p90": float(np.quantile(a,.90)),
+        "p99": float(np.quantile(a,.99)),
+        "max": float(np.max(a)),
+    }
+    return {f"{prefix}_{k}": v for k,v in vals.items()}
+
+
+def main():
+    print("DESIGN C - C2O-R POST-RECOVERY THERMAL-NOISE REBUILD")
+    print("=" * 72)
+    print("Consumes completed C2N-R calibrated samples.")
+    print("Historical C2O outputs are NOT overwritten.")
+    print("Strict range/azimuth noise support checks.")
+    print("Non-positive corrected power is FLAGGED, never clipped.")
+    print("NO inundation threshold.")
+    print("NO groundwater / irrigation-flow / pre-existing flood outcomes.")
+    print("NO association model.\n")
+
+    require_credentials()
+    for p in [C2NR, ASSETS, PLAN, C2M_TECH, C2MR_TECH]:
+        if not p.exists():
+            raise FileNotFoundError(p)
+
+    s = pd.read_csv(C2NR)
+    a = pd.read_csv(ASSETS)
+    plan = pd.read_csv(PLAN)
+
+    pairs = (
+        s[["canonical_scene_id","polarization","platform"]]
+        .drop_duplicates()
+        .sort_values(["canonical_scene_id","polarization"])
+        .reset_index(drop=True)
+    )
+    if len(pairs) != 66:
+        raise AssertionError(f"Expected 66 spatially contributing scene/pol pairs, got {len(pairs)}")
+
+    # Confirm frozen 68 canonical assets still exist in C2L.
+    canonical = []
+    for r in plan.itertuples(index=False):
+        scene = str(r.canonical_scene_id)
+        platform = str(r.platform)
+        if bool(getattr(r, "vv_assets_complete")):
+            canonical.append((scene,"VV",platform))
+        if bool(getattr(r, "vh_assets_complete")):
+            canonical.append((scene,"VH",platform))
+    canonical = sorted(set(canonical))
+    if len(canonical) != 68:
+        raise AssertionError(f"Expected 68 canonical scene/pol assets in C2L, got {len(canonical)}")
+
+    observed = set(
+        (str(r.canonical_scene_id), str(r.polarization).upper(), str(r.platform))
+        for r in pairs.itertuples(index=False)
+    )
+    zero_support = sorted(set(canonical) - observed)
+    if len(zero_support) != 2:
+        raise AssertionError(f"Expected exactly 2 zero-support canonical assets, got {zero_support}")
+
+    asset_lookup = {
+        (str(r["scene_id"]), str(r["asset_key"])): str(r["href"])
+        for _, r in a.iterrows()
+    }
+
+    s3 = make_s3()
+    corrected_parts = []
+    qa_rows = []
+
+    for j, r in enumerate(pairs.itertuples(index=False), 1):
+        scene = str(r.canonical_scene_id)
+        pol = str(r.polarization).upper()
+        platform = str(r.platform)
+        print(f"[{j:02d}/66] {scene} {pol}", flush=True)
+
+        noise_key = f"schema-noise-{pol.lower()}"
+        prod_key = f"schema-product-{pol.lower()}"
+        noise_href = asset_lookup.get((scene, noise_key))
+        prod_href = asset_lookup.get((scene, prod_key))
+        if not noise_href:
+            raise RuntimeError(f"Missing {noise_key} for {scene}")
+        if not prod_href:
+            raise RuntimeError(f"Missing {prod_key} for {scene}")
+
+        noise_bytes, noise_attempts = fetch_bytes_retry(s3, noise_href)
+        prod_bytes, prod_attempts = fetch_bytes_retry(s3, prod_href)
+
+        flag = parse_product_noise_flag(prod_bytes)
+        if flag != "false":
+            raise RuntimeError(
+                f"{scene} {pol}: expected thermalNoiseCorrectionPerformed=false, got {flag!r}"
+            )
+
+        parsed = parse_noise_xml(noise_bytes)
+        x = s.loc[
+            s["canonical_scene_id"].astype(str).eq(scene)
+            & s["polarization"].astype(str).str.upper().eq(pol)
+        ].copy()
+
+        eta = np.empty(len(x), dtype=float)
+        nr = np.empty(len(x), dtype=float)
+        na = np.empty(len(x), dtype=float)
+        cand_n = np.empty(len(x), dtype=int)
+
+        rows = x["image_row"].to_numpy(int)
+        cols = x["image_col"].to_numpy(int)
+
+        for i, (rr, cc) in enumerate(zip(rows, cols)):
+            try:
+                e, rn, an, nc = noise_power_at_strict(parsed, int(rr), int(cc))
+            except ValueError as e:
+                raise RuntimeError(
+                    f"{scene} {pol}: noise LUT support violation at sample {i}, "
+                    f"row={rr}, col={cc}: {e}"
+                ) from e
+            eta[i] = e
+            nr[i] = rn
+            na[i] = an
+            cand_n[i] = int(nc)
+
+        if not np.isfinite(eta).all():
+            raise RuntimeError(f"{scene} {pol}: missing/non-finite noise power after strict interpolation")
+        if (cand_n > 1).any():
+            raise RuntimeError(f"{scene} {pol}: multiple azimuth blocks remain after strict matching")
+
+        raw_dn = x["raw_value"].to_numpy(float)
+        raw_power = raw_dn ** 2
+        corrected_power = raw_power - eta
+        valid = np.isfinite(corrected_power) & (corrected_power > 0)
+
+        sigma_lut = x["sigma_lut"].to_numpy(float)
+        beta_lut = x["beta_lut"].to_numpy(float)
+        gamma_lut = x["gamma_lut"].to_numpy(float)
+
+        sig_corr = np.full(len(x), np.nan)
+        bet_corr = np.full(len(x), np.nan)
+        gam_corr = np.full(len(x), np.nan)
+
+        sig_corr[valid] = corrected_power[valid] / sigma_lut[valid]**2
+        bet_corr[valid] = corrected_power[valid] / beta_lut[valid]**2
+        gam_corr[valid] = corrected_power[valid] / gamma_lut[valid]**2
+
+        sig_db = np.full(len(x), np.nan)
+        bet_db = np.full(len(x), np.nan)
+        gam_db = np.full(len(x), np.nan)
+        sig_db[valid] = 10*np.log10(sig_corr[valid])
+        bet_db[valid] = 10*np.log10(bet_corr[valid])
+        gam_db[valid] = 10*np.log10(gam_corr[valid])
+
+        x["noise_schema"] = parsed["schema"]
+        x["thermalNoiseCorrectionPerformed_input"] = flag
+        x["noise_power_eta"] = eta
+        x["noise_range_component"] = nr
+        x["noise_azimuth_component"] = na
+        x["noise_azimuth_candidate_blocks_n"] = cand_n
+        x["raw_detected_power"] = raw_power
+        x["noise_to_raw_power_ratio"] = np.divide(
+            eta, raw_power,
+            out=np.full(len(x), np.nan),
+            where=(raw_power > 0) & np.isfinite(eta),
+        )
+        x["corrected_detected_power"] = corrected_power
+        x["corrected_power_positive"] = valid
+        x["sigma0_noise_corrected_linear"] = sig_corr
+        x["sigma0_noise_corrected_db"] = sig_db
+        x["beta0_noise_corrected_linear"] = bet_corr
+        x["beta0_noise_corrected_db"] = bet_db
+        x["gamma0_noise_corrected_linear"] = gam_corr
+        x["gamma0_noise_corrected_db"] = gam_db
+        x["sigma0_noise_effect_db"] = x["sigma0_noise_corrected_db"] - x["sigma0_db"]
+        corrected_parts.append(x)
+
+        qa_rows.append({
+            "canonical_scene_id": scene,
+            "platform": platform,
+            "polarization": pol,
+            "noise_schema": parsed["schema"],
+            "thermalNoiseCorrectionPerformed_input": flag,
+            "noise_xml_href": noise_href,
+            "product_xml_href": prod_href,
+            "noise_fetch_attempts": noise_attempts,
+            "product_fetch_attempts": prod_attempts,
+            "noise_xml_bytes_n": len(noise_bytes),
+            "legacy_vectors_n": len(parsed["legacy_vectors"]),
+            "range_vectors_n": len(parsed["range_vectors"]),
+            "azimuth_vectors_n": len(parsed["azimuth_vectors"]),
+            "sample_rows_n": int(len(x)),
+            "finite_noise_power_n": int(np.isfinite(eta).sum()),
+            "missing_noise_power_n": int((~np.isfinite(eta)).sum()),
+            "nonpositive_corrected_power_n": int((~valid).sum()),
+            "nonpositive_corrected_power_share": float((~valid).mean()),
+            "multiple_azimuth_block_matches_n": int((cand_n > 1).sum()),
+            "noise_to_raw_power_ratio_median": float(np.nanmedian(x["noise_to_raw_power_ratio"])),
+            "noise_to_raw_power_ratio_p99": float(np.nanquantile(x["noise_to_raw_power_ratio"], .99)),
+            "sigma0_noise_effect_db_median": float(np.nanmedian(x["sigma0_noise_effect_db"])),
+            "status": "PASS",
+        })
+
+    corrected = pd.concat(corrected_parts, ignore_index=True)
+    qa_df = pd.DataFrame(qa_rows)
+    corrected.to_csv(SCENE_OUT, index=False)
+    qa_df.to_csv(NOISE_QA_OUT, index=False)
+
+    # Mosaicking is done in corrected LINEAR power.
+    coord_keys = [
+        "anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+        "platform","polarization","lon","lat"
+    ]
+    mosaic = (
+        corrected.groupby(coord_keys, as_index=False)
+        .agg(
+            point_id=("point_id","first"),
+            sigma0_uncorrected_linear=("sigma0_linear","median"),
+            sigma0_corrected_linear=("sigma0_noise_corrected_linear","median"),
+            contributing_scenes_n=("canonical_scene_id","nunique"),
+        )
+    )
+
+    mosaic["sigma0_uncorrected_db"] = np.where(
+        mosaic["sigma0_uncorrected_linear"] > 0,
+        10*np.log10(mosaic["sigma0_uncorrected_linear"]),
+        np.nan,
+    )
+    mosaic["sigma0_corrected_db"] = np.where(
+        mosaic["sigma0_corrected_linear"] > 0,
+        10*np.log10(mosaic["sigma0_corrected_linear"]),
+        np.nan,
+    )
+    mosaic["noise_effect_db"] = (
+        mosaic["sigma0_corrected_db"] - mosaic["sigma0_uncorrected_db"]
+    )
+
+    target_keys = [
+        "anchor_year","season_phase","selected_date","orbit_state","relative_orbit",
+        "platform","polarization"
+    ]
+    rows_out = []
+    for key, g in mosaic.groupby(target_keys, dropna=False):
+        r = dict(zip(target_keys,key))
+        r["points_n"] = int(len(g))
+        r["corrected_finite_points_n"] = int(np.isfinite(g["sigma0_corrected_db"]).sum())
+        r["corrected_finite_share"] = float(np.isfinite(g["sigma0_corrected_db"]).mean())
+        r["points_with_multi_scene_overlap_n"] = int((g["contributing_scenes_n"] > 1).sum())
+        r.update(finite_summary(g["sigma0_uncorrected_db"], "sigma0_uncorrected_db"))
+        r.update(finite_summary(g["sigma0_corrected_db"], "sigma0_corrected_db"))
+        r.update(finite_summary(g["noise_effect_db"], "noise_effect_db"))
+        rows_out.append(r)
+
+    target = pd.DataFrame(rows_out).sort_values(target_keys)
+    target.to_csv(TARGET_OUT, index=False)
+
+    missing_noise = int(qa_df["missing_noise_power_n"].sum())
+    multi_az = int(qa_df["multiple_azimuth_block_matches_n"].sum())
+    nonpos = int(qa_df["nonpositive_corrected_power_n"].sum())
+    nonpos_share = float(nonpos / len(corrected))
+    flags = sorted(set(qa_df["thermalNoiseCorrectionPerformed_input"].astype(str)))
+    schemas = sorted(set(qa_df["noise_schema"].astype(str)))
+
+    status = (
+        "PASS"
+        if len(pairs) == 66
+        and len(qa_df) == 66
+        and len(target) == 36
+        and missing_noise == 0
+        and multi_az == 0
+        and flags == ["false"]
+        else "FAIL"
+    )
+
+    qa = {
+        "status": status,
+        "stage": "DESIGN_C_C2OR_POST_RECOVERY_THERMAL_NOISE_REBUILD",
+        "historical_c2o_preserved": True,
+        "canonical_scene_polarization_assets_n": 68,
+        "spatially_contributing_scene_polarization_pairs_n": int(len(pairs)),
+        "zero_support_canonical_scene_polarization_assets_n": int(len(zero_support)),
+        "zero_support_canonical_scene_polarization_assets": [
+            {"canonical_scene_id": s, "polarization": p, "platform": pl}
+            for s,p,pl in zero_support
+        ],
+        "noise_xmls_parsed_n": int(len(qa_df)),
+        "schemas_observed": schemas,
+        "thermalNoiseCorrectionPerformed_values": flags,
+        "scene_point_rows_n": int(len(corrected)),
+        "missing_noise_power_n": missing_noise,
+        "multiple_azimuth_block_matches_n": multi_az,
+        "nonpositive_corrected_power_n": nonpos,
+        "nonpositive_corrected_power_share": nonpos_share,
+        "target_polarization_summaries_n": int(len(target)),
+        "silent_clipping_applied": False,
+        "strict_noise_support_checking": True,
+        "inundation_threshold_selected": False,
+        "groundwater_values_read": False,
+        "irrigation_flow_values_read": False,
+        "preexisting_flood_exposure_values_read": False,
+        "association_models_fitted": 0,
+        "c2j_frozen_rule_modified": False,
+        "next_stage": "Freeze radiometric/noise measurement layer, then proceed to prospective inundation-measurement validation.",
+    }
+    QA_JSON.write_text(json.dumps(qa, indent=2) + "\n", encoding="utf-8")
+
+    lines = [
+        "DESIGN C - C2O-R POST-RECOVERY THERMAL-NOISE REBUILD",
+        "=" * 72,
+        "",
+        "Canonical scene/polarization assets: 68 / 68 accounted",
+        f"Spatially contributing scene/pol pairs: {len(pairs)} / 66",
+        f"Zero-support canonical assets: {len(zero_support)}",
+        f"Noise XMLs parsed: {len(qa_df)} / 66",
+        f"Schemas observed: {'|'.join(schemas)}",
+        f"Input thermal-noise flags: {'|'.join(flags)}",
+        f"Scene-point rows: {len(corrected)}",
+        f"Missing noise-power rows: {missing_noise}",
+        f"Multiple azimuth-block matches: {multi_az}",
+        f"Non-positive corrected-power rows: {nonpos}",
+        f"Non-positive corrected-power share: {nonpos_share:.8f}",
+        f"Target/polarization summaries: {len(target)} / 36",
+        "",
+        "METHOD",
+        "------",
+        "corrected_power = DN^2 - eta",
+        "sigma0_corrected = corrected_power / sigmaLUT^2",
+        "No silent clipping of non-positive corrected power.",
+        "Strict LUT support checking; no silent edge extrapolation.",
+        "Overlapping scenes mosaicked using median corrected LINEAR power before dB.",
+        "",
+        "FIREWALL",
+        "--------",
+        "Historical C2O outputs preserved.",
+        "No inundation threshold selected.",
+        "No groundwater values read.",
+        "No irrigation-flow values read.",
+        "No pre-existing flood/exposure labels read.",
+        "No association model fitted.",
+        "C2J frozen acquisition universe unchanged.",
+        "",
+        f"C2O-R STATUS: {status}",
+    ]
+    txt = "\n".join(lines) + "\n"
+    SUMMARY_TXT.write_text(txt, encoding="utf-8")
+    print("\n" + txt)
+
+    if status != "PASS":
+        raise RuntimeError("C2O-R did not satisfy freeze criteria; inspect outputs.")
+
+
+if __name__ == "__main__":
+    main()

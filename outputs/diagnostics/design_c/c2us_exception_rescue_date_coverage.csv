@@ -1,0 +1,5 @@
+acquisition_group,scene_rows_n,support_points_total_n,support_points_inside_union_n,support_coverage_union_fraction
+2016-07-03_ASC15_HHHV,1,4331,4331,1.0
+2016-08-20_ASC15_HHHV,2,4331,4331,1.0
+2025-04-21_DESC66_EW_HHHV,2,4331,0,0.0
+2025-04-21_DESC66_IW_VVVH_RESCUE,1,4331,2482,0.5730778111290695

@@ -1,0 +1,23 @@
+DESIGN C - C2T FREEZE FULL SENTINEL-1 TEMPORAL SAMPLING DESIGN
+==================================================================================
+
+Chosen scene inventory: data\design_c\raw\sentinel1\sentinel1_grd_scene_inventory_2014_latest2026.csv
+Scene-ID column: scene_id
+Datetime column: datetime
+Orbit-state column: orbit_state
+Relative-orbit column: relative_orbit
+
+Frozen years: 2015-2025
+Frozen rice season: April 1-September 30
+Frozen stable tracks: asc15, asc88, desc66, desc168
+
+Included unique scenes: 2170
+Included unique acquisition dates: 822
+Year-track combinations present: 44/44
+Missing year-track combinations: 0
+
+No groundwater / flow / RiceFloodIT flood outcome read.
+No sensor-response optimization.
+No threshold or classifier.
+
+C2T STATUS: PASS

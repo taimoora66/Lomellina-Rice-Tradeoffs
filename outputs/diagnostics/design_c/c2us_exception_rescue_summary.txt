@@ -1,0 +1,40 @@
+DESIGN C - C2U-S SENTINEL-1 EXCEPTION RESCUE COVERAGE AUDIT
+==============================================================================
+
+Rice support coordinates: 4331
+Exception scene rows audited: 5
+Additional same-date 2025 IW VV/VH rescue candidate: S1C_IW_GRDH_1SDV_20250421T053447_20250421T053516_001987_003FE6_9043_COG
+
+ACQUISITION-LEVEL COVERAGE
+--------------------------
+               acquisition_group  scene_rows_n  support_points_total_n  support_points_inside_union_n  support_coverage_union_fraction
+           2016-07-03_ASC15_HHHV             1                    4331                           4331                         1.000000
+           2016-08-20_ASC15_HHHV             2                    4331                           4331                         1.000000
+       2025-04-21_DESC66_EW_HHHV             2                    4331                              0                         0.000000
+2025-04-21_DESC66_IW_VVVH_RESCUE             1                    4331                           2482                         0.573078
+
+2025 SAME-DATE RESCUE COMPARISON
+--------------------------------
+EW HH/HV support coverage: 0.000000
+IW VV/VH support coverage: 0.573078
+Support points covered by both: 0
+EW-covered support also covered by IW: nan
+IW-covered support also covered by EW: 0.000000
+
+PRE-OUTCOME TECHNICAL DECISIONS
+-------------------------------
+        acquisition_group                             decision                                                                                                         basis                                                    replacement_scene_id  support_coverage_fraction_used
+2025-04-21_DESC66_EW_HHHV PRIMARY_RESCUE_COVERAGE_INSUFFICIENT                                Same-date, same-track IW VV/VH candidate; technical GCP support coverage only. S1C_IW_GRDH_1SDV_20250421T053447_20250421T053516_001987_003FE6_9043_COG                        0.573078
+    2016-07-03_ASC15_HHHV                       AUXILIARY_HHHV No ±3-day same-track VV/VH replacement found; retain separately from VV/VH if technical coverage supports it.                                                                     NaN                        1.000000
+    2016-08-20_ASC15_HHHV                       AUXILIARY_HHHV        No ±3-day same-track VV/VH replacement found; adjacent HH/HV frames treated as one acquisition mosaic.                                                                     NaN                        1.000000
+
+FIREWALL
+--------
+SAR pixel values read: False
+Groundwater read: False
+Irrigation flow read: False
+RiceFloodIT flood values read: False
+Sensor response used for decision: False
+C2T temporal rule modified: False
+
+C2U-S STATUS: PASS

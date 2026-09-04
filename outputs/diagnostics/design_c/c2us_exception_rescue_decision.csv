@@ -1,0 +1,4 @@
+acquisition_group,decision,basis,replacement_scene_id,support_coverage_fraction_used
+2025-04-21_DESC66_EW_HHHV,PRIMARY_RESCUE_COVERAGE_INSUFFICIENT,"Same-date, same-track IW VV/VH candidate; technical GCP support coverage only.",S1C_IW_GRDH_1SDV_20250421T053447_20250421T053516_001987_003FE6_9043_COG,0.5730778111290695
+2016-07-03_ASC15_HHHV,AUXILIARY_HHHV,No ±3-day same-track VV/VH replacement found; retain separately from VV/VH if technical coverage supports it.,,1.0
+2016-08-20_ASC15_HHHV,AUXILIARY_HHHV,No ±3-day same-track VV/VH replacement found; adjacent HH/HV frames treated as one acquisition mosaic.,,1.0
